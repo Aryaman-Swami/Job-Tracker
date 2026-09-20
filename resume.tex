@@ -1,0 +1,136 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Aryaman Swami
+%-------------------------
+\documentclass[letterpaper,12pt]{article}
+\usepackage{cmap}
+ \usepackage[default]{lato}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.4in}
+\addtolength{\topmargin}{-.9in}
+\addtolength{\textheight}{1.7in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{
+  \vspace{-13pt}\bfseries\raggedright\large
+}{}{0em}{}[\color{black}{\titlerule[0.8pt]}\vspace{-6pt}]
+\pdfgentounicode=1
+\newcommand{\resumeItem}[1]{
+  \item\small{{\small #1 \vspace{-3pt}}}
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \textit{\small{- #3}} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+%-----------EMAIL (pick one, comment out the other)-----------
+\newcommand{\resumeEmail}{swamiaryaman21.as@gmail.com}
+% \newcommand{\resumeEmail}{aryamanswami21@gmail.com}
+\begin{document}
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Aryaman Swami} \\ \vspace{2pt}
+    \small
+    +91 9617949056 $|$
+    \href{mailto:\resumeEmail}{\resumeEmail} $|$
+    \href{https://linkedin.com/in/aryaman-swami}{linkedin.com/in/aryaman-swami} $|$
+    {Pune, India}
+\end{center}
+%-----------SUMMARY-----------
+\section{Professional Summary}
+\small{Software Engineer building event-driven \textbf{Spring Boot}/\textbf{Node.js} systems and \textbf{AI-integrated} full-stack products. Experienced across backend services, cloud deployments, and modern frontend interfaces, with a focus on scalable, production-ready solutions.}
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} Java, RxJava, JavaScript, \mbox{TypeScript}, C++ \\
+    \textbf{Backend:} Spring Boot, Spring Security, \mbox{Hibernate/JPA}, Node.js, \mbox{Express.js}, NestJS \\
+    \textbf{Frontend:} React, TailwindCSS, HTML, CSS \\
+    \textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, \mbox{CI/CD} \\
+    \textbf{Data \& Messaging:} PostgreSQL, Oracle, MongoDB, Apache Kafka, ASB, Redis \\
+    \textbf{AI \& Tools:} Claude Code, GitHub Copilot, Git \\
+    \textbf{Core CS \& Others:} DSA, OOP, System Design, API Gateway, ELK Stack, Grafana
+  }}
+\end{itemize}
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Bajaj Finserv Health Ltd}{September 2025 - Present}
+      {Software Development Engineer}{Pune, India}
+      \resumeItemListStart
+\resumeItem{Re-architected the Hospital Event Listener onto an event-driven \textbf{Apache Kafka} pipeline, boosting throughput \textbf{3x} to handle \textbf{100K+ events/day} decoupled from the Claim Processing System.}
+\resumeItem{Built \textbf{SAML 2.0 SSO} federation for \textbf{15+ Fortune 500 partners} (Google, Accenture, AON, Wipro) via a multi-tenant \textbf{Spring Security SAML2} + \textbf{Okta} setup, removing per-user credential overhead.}
+\resumeItem{Designed a storage abstraction spanning \textbf{Azure Blob Storage} and \mbox{NAS/Kubernetes} for a company-wide file microservice, sustaining \textbf{150K+ daily transactions} at sub-100ms p99 across \textbf{15+ portals}.}
+\resumeItem{Built a \textbf{Claude}-prompted migration framework mapping \textbf{50+ JSP pages} to \textbf{40+ REST APIs}, leading legacy Java Struts apps to Java 25 from inventory through deployment.}
+\resumeItem{Added signed, time-bound \textbf{SAS URLs} and portal-scoped \textbf{RBAC} plus a full CRUD API to the file platform, now the standard file layer across \textbf{15+ internal portals}.}
+\resumeItemListEnd
+    \resumeSubheading
+      {Bajaj Finserv Health Ltd}{June 2024 - September 2025}
+      {Associate Software Development Engineer}{Pune, India}
+      \resumeItemListStart
+        \resumeItem{Built a centralized \textbf{JWT + RBAC} authentication microservice with Kafka-driven employee sync, cutting authentication latency \textbf{80\%} (1,000ms to 200ms) at peak load.}
+        \resumeItem{Set up an async \textbf{Penny Drop Verification} pipeline on Azure Service Bus, cutting verification time \textbf{90\%} (20min to 2-3min) and unblocking \textbf{500+ daily onboarding requests}.}
+        \resumeItem{Shipped a Payment Operations Portal end-to-end (React, Spring Boot) for orders, settlements, and transactions, replacing \textbf{3-4 hours} of daily manual reconciliation.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Shopper Assist} $|$ \emph{React, Node.js, Express, PostgreSQL, Gemini API}}{}
+      \resumeItemListStart
+        \resumeItem{Built an AI shopping assistant that turns a photo/text list into an optimal in-store route: \textbf{Gemini} vision extraction $\rightarrow$ semantic SKU matching $\rightarrow$ shortest-path aisle routing, behind one orchestrated \texttt{/plan} API.}
+        \resumeItem{Implemented hybrid item matching (embedding cosine similarity + \textbf{pg\_trgm} lexical fallback) against a 200+ SKU catalog, and modeled the store as a weighted graph for Dijkstra-based route ordering.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Job Tracker} $|$ \emph{React, Java, Spring Boot, PostgreSQL, Claude API}}{}
+      \resumeItemListStart
+        \resumeItem{Built a full-stack job application tracker (\textbf{React} frontend, \textbf{Spring Boot} REST API) that uses the \textbf{Claude API} to parse job descriptions, score them against my resume, and persist ATS match scores in \textbf{PostgreSQL} to rank openings.}
+        \resumeItem{Wired a scraper-side notifier that pushes newly discovered, high-match job postings straight to my phone in real time via \textbf{ntfy} push notifications, no app polling required.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University Institute of Technology, Bhopal}{Nov 2020 - May 2024}
+      {B.Tech - Computer Science and Engineering}{CGPA: 8.3}
+  \resumeSubHeadingListEnd
+\end{document}

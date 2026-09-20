@@ -1,0 +1,23 @@
+[
+  {"name": "Nationwide", "tenant": "nationwide", "wd": "wd1", "site": "Nationwide_Career_India"},
+  {"name": "Capital One", "tenant": "capitalone", "wd": "wd12", "site": "Capital_One"},
+  {"name": "NVIDIA", "tenant": "nvidia", "wd": "wd5", "site": "NVIDIAExternalCareerSite"},
+  {"name": "Visa", "tenant": "visa", "wd": "wd5", "site": "Visa"},
+  {"name": "Boeing", "tenant": "boeing", "wd": "wd1", "site": "INTERN"},
+  {"name": "Mastercard", "tenant": "mastercard", "wd": "wd1", "site": "CorporateCareers"},
+  {"name": "Salesforce", "tenant": "salesforce", "wd": "wd12", "site": "External_Career_Site"},
+  {"name": "Cisco", "tenant": "cisco", "wd": "wd5", "site": "Cisco_Careers"},
+  {"name": "PayPal", "tenant": "paypal", "wd": "wd1", "site": "jobs"},
+  {"name": "Philips", "tenant": "philips", "wd": "wd3", "site": "jobs-and-careers"},
+  {"name": "Autodesk", "tenant": "autodesk", "wd": "wd1", "site": "Ext"},
+  {"name": "Adobe", "tenant": "adobe", "wd": "wd5", "site": "external_experienced"},
+  {"name": "Qualcomm", "tenant": "qualcomm", "wd": "wd12", "site": "External"},
+  {"name": "Morgan Stanley", "tenant": "ms", "wd": "wd5", "site": "External"},
+  {"name": "First Citizens Bank (SVB) India", "tenant": "svb", "wd": "wd5", "site": "firstcitizensindia"},
+  {"name": "Fiserv", "tenant": "fiserv", "wd": "wd5", "site": "EXT"},
+  {"name": "Deutsche Bank", "tenant": "db", "wd": "wd3", "site": "DBWebsite"},
+  {"name": "Wells Fargo", "tenant": "wf", "wd": "wd1", "site": "WellsFargoJobs"},
+  {"name": "Fidelity", "tenant": "fmr", "wd": "wd1", "site": "FidelityCareers"},
+  {"name": "LSEG", "tenant": "lseg", "wd": "wd3", "site": "Careers"},
+  {"name": "Broadridge", "tenant": "broadridge", "wd": "wd5", "site": "Careers"}
+]

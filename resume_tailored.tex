@@ -1,0 +1,124 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Aryaman Swami
+%-------------------------
+\documentclass[letterpaper,12pt]{article}
+ \usepackage[default]{opensans}
+\usepackage[T1]{fontenc}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.4in}
+\addtolength{\topmargin}{-.8in}
+\addtolength{\textheight}{1.4in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{
+  \vspace{-12pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+\pdfgentounicode=1
+\newcommand{\resumeItem}[1]{
+  \item\small{{\small #1 \vspace{-2pt}}}
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \textit{\small{--- #3}} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\begin{document}
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Aryaman Swami} \\ \vspace{2pt}
+    \small
+    +91 9617949056 $|$
+    \href{mailto:swamiaryaman21.as@gmail.com}{swamiaryaman21.as@gmail.com} $|$
+    \href{https://linkedin.com/in/aryaman-swami}{linkedin.com/in/aryaman-swami} $|$
+    {Pune, India}
+\end{center}
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+\small \textbf{Full-Stack Software Development Engineer} with 2+ years building high-scale microservices in \textbf{Java/Spring Boot} and \textbf{React} across fintech and healthtech. Specializes in \textbf{event-driven architectures}, \textbf{Generative AI-powered application development}, and cloud-native platforms on \textbf{Azure} and \textbf{AWS} --- owning mission-critical services from design to production.
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Bajaj Finserv Health Ltd}{Jul 2024 -- Present}
+      {Software Development Engineer}{Pune, India}
+      \vspace{4pt}
+      \resumeItemListStart
+\resumeItem{Engineered a multi-phase \textbf{AI-assisted migration framework} using \textbf{LLM-powered Claude skills} to modernize legacy \textbf{Java Struts} applications to \textbf{Java 25} --- automated functionality mapping across \textbf{50+ JSP pages}, generated \textbf{40+ REST APIs} with contract-first planning, and orchestrated phased implementation from inventory through deployment.}
+\resumeItem{Designed and shipped a centralized \textbf{JWT + RBAC Authentication Microservice} powering every company portal, leveraging \textbf{Kafka-driven employee sync} and \textbf{Redis-backed token caching} to slash authentication latency by \textbf{80\%} (1,000ms → 200ms) at peak load.}
+\resumeItem{Spearheaded \textbf{SAML 2.0 SSO} federation with \textbf{15+ Fortune 500 partners} (Google, Accenture, AON, Wipro), engineering a multi-tenant \textbf{Spring Security SAML2} + \textbf{Okta} integration that unlocked secure enterprise onboarding and eliminated credential management overhead for thousands of external users.}
+\resumeItem{Drove the re-architecture of the \textbf{Hospital Portal} from brittle synchronous callbacks to a fully \textbf{event-driven pipeline} on \textbf{Apache Kafka}, decoupling it from the Claim Processing System and unlocking \textbf{3x throughput} while eliminating cascading failure modes.}
+\resumeItem{Owned the design and rollout of a company-wide \textbf{File Handling Microservice} with a polymorphic \textbf{storage abstraction layer} bridging \textbf{Azure Blob Storage} and \textbf{NAS/Kubernetes PVs} --- sustaining \textbf{150K+ daily transactions} at \textbf{sub-100ms p99 latency} with \textbf{99.99\% uptime}.}
+\resumeItem{Hardened the file platform with cryptographically \textbf{signed time-bound SAS URLs}, portal-scoped \textbf{RBAC enforcement}, and a full-suite operations API (upload, download, list, copy, move) --- now the de-facto file management standard across \textbf{15+ internal portals}.}
+\resumeItemListEnd
+    \resumeSubheading
+      {Bajaj Finserv Health Ltd}{Jan 2024 -- Jun 2024}
+      {Software Development Engineer Intern}{Pune, India}
+      \resumeItemListStart
+        \resumeItem{Engineered an asynchronous \textbf{Penny Drop Verification} pipeline on \textbf{Azure Service Bus}, collapsing verification time by \textbf{90\%} (20 min → 2--3 min) and unblocking \textbf{500+ daily onboarding requests} previously bottlenecked on banking callbacks.}
+        \resumeItem{Built a Payment Operations Portal end-to-end for order, settlement, and transaction lifecycle management --- automating away \textbf{3--4 hours} of daily manual reconciliation.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \begin{tabular}{@{}l@{\hskip 0.4in}l@{}}
+      \textbf{Languages:} Java, JavaScript, RxJava, C++                            & \textbf{Frontend:} React, TailwindCSS \\
+      \textbf{Backend:} Spring Boot, Hibernate, Node.js       & \textbf{Databases:} PostgreSQL, Oracle, MongoDB \\
+      \textbf{AI \& Tools:} Claude Code, GitHub Copilot, Git            & \textbf{Message Queues:} Apache Kafka, ASB \\
+       \textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, CI/CD   &
+        \textbf{Core CS:} DSA, OOP, System Design \\
+       \textbf{Others:} Redis, API Gateway, ELK Stack, Grafana   & \\
+    \end{tabular}
+  }}
+\end{itemize}
+%-----------NOTABLE ACHIEVEMENTS-----------
+\section{Achievements}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\textbf{Sharp Shark Award:} Recognized for architecting the \textbf{File Handling Microservice} with a unified \textbf{Azure Blob + NAS} abstraction, fine-grained \textbf{RBAC}, and \textbf{expirable SAS URLs} --- now powering file ops org-wide.}
+    \vspace{3pt}
+    \resumeSubItem{\textbf{Stellar Squad Award:} Led the Medisep Project migration of \textbf{5M+ records} with zero data loss on mission-critical services, coordinating an overnight go-live and ensuring \textbf{100\%} uptime at launch.}
+  \resumeSubHeadingListEnd
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University Institute of Technology, Bhopal}{Nov 2020 -- May 2024}
+      {B.Tech -- Computer Science and Engineering}{CGPA: 8.3}
+  \resumeSubHeadingListEnd
+\end{document}

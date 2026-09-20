@@ -1,0 +1,72 @@
+{
+  "name": "Job Auto-Fetch (JobSpy)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "hours", "hoursInterval": 12 }]
+        }
+      },
+      "id": "node-trigger",
+      "name": "Every 12 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [180, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Each item becomes one scraper call.\n// Adjust search_term, location, results_wanted as needed.\nreturn [\n  { json: { search_term: 'software developer 2 years experience', location: 'India', results_wanted: 25, hours_old: 48 } },\n  { json: { search_term: 'java developer',                         location: 'India', results_wanted: 25, hours_old: 48 } },\n  { json: { search_term: 'backend developer',                      location: 'India', results_wanted: 25, hours_old: 48 } },\n  { json: { search_term: 'full stack developer',                   location: 'India', results_wanted: 25, hours_old: 48 } }\n];"
+      },
+      "id": "node-configs",
+      "name": "Search Configs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8000/scrape",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "node-scrape",
+      "name": "Run JobSpy Scraper",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [620, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log the result of each scrape run\nconst results = $input.all().map(i => i.json);\nconsole.log('Scrape results:', JSON.stringify(results, null, 2));\nreturn $input.all();"
+      },
+      "id": "node-log",
+      "name": "Log Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [840, 300]
+    }
+  ],
+  "connections": {
+    "Every 12 Hours": {
+      "main": [[{ "node": "Search Configs", "type": "main", "index": 0 }]]
+    },
+    "Search Configs": {
+      "main": [[{ "node": "Run JobSpy Scraper", "type": "main", "index": 0 }]]
+    },
+    "Run JobSpy Scraper": {
+      "main": [[{ "node": "Log Results", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}

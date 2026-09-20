@@ -1,0 +1,16 @@
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\WebConfig.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\AtsScoreController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\HackerRankController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\JobController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\PdfController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\ResumeController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\SyncController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\TailorController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\db\DbInitializer.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\JobTrackerApplication.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\rubric\HackerRankRubric.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\ClaudeCliService.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\LatexPdfService.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\util\JobRowMapper.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\util\JsonColumns.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\util\LatexUtils.java
