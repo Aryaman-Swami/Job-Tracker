@@ -1374,3 +1374,10 @@
 2026-09-25 03:45:57,462 INFO [Ingram Micro] 'Software Developer India': scraped=17, added=0, dupes=0, filtered=0
 2026-09-25 03:46:00,432 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
 2026-09-25 03:46:01,966 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
+2026-09-25 03:52:35,294 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=6
+2026-09-25 03:52:40,032 INFO [Mastercard] 'Software Developer India': scraped=54, added=0, dupes=0, filtered=3
+2026-09-25 03:55:45,817 WARNING [Mastercard] Failed to post job: 404 Client Error:  for url: http://localhost:3000/api/auth/login
+2026-09-25 03:55:45,821 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=5
+2026-09-25 03:55:50,684 INFO [Mastercard] 'Software Developer India': scraped=54, added=0, dupes=0, filtered=3
+2026-09-25 03:56:09,901 WARNING [Mastercard] Failed to post job: 404 Client Error:  for url: http://localhost:3000/api/auth/login
+2026-09-25 03:56:09,905 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=5
