@@ -1,6 +1,11 @@
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\JwtAuthFilter.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\JwtService.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\SecurityConfig.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\WebConfig.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\AtsScoreController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\AuthController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\HackerRankController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\HealthController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\JobController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\PdfController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\ResumeController.java

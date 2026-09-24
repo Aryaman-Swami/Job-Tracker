@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { api } from './api.js';
 import { SOURCE } from './utils.js';
+import { isLoggedIn, logout } from './auth.js';
 import Header from './components/Header.jsx';
 import Toolbar from './components/Toolbar.jsx';
 import JobList from './components/JobList.jsx';
@@ -8,8 +9,27 @@ import DetailPanel from './components/DetailPanel.jsx';
 import JobFormModal from './components/JobFormModal.jsx';
 import ResumeModal from './components/ResumeModal.jsx';
 import PdfPreviewModal from './components/PdfPreviewModal.jsx';
+import Login from './components/Login.jsx';
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn());
+
+  useEffect(() => {
+    function handleLogout() { setLoggedIn(false); }
+    window.addEventListener('auth:logout', handleLogout);
+    // Catches the token expiring while the tab is idle, not just on the next failed request.
+    const interval = setInterval(() => { if (!isLoggedIn()) setLoggedIn(false); }, 30_000);
+    return () => {
+      window.removeEventListener('auth:logout', handleLogout);
+      clearInterval(interval);
+    };
+  }, []);
+
+  if (!loggedIn) return <Login onLoggedIn={() => setLoggedIn(true)} />;
+  return <AuthedApp onLogout={() => { logout(); setLoggedIn(false); }} />;
+}
+
+function AuthedApp({ onLogout }) {
   const [allJobs, setAllJobs] = useState([]);
   const [source, setSource] = useState(SOURCE.AUTO);
   const [status, setStatus] = useState('all');
@@ -118,6 +138,7 @@ export default function App() {
         onResume={() => setResumeModalOpen(true)}
         onSync={handleSync}
         onAdd={openAddModal}
+        onLogout={onLogout}
         syncing={syncing}
         syncLabel={syncLabel}
       />

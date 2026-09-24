@@ -8,6 +8,7 @@ from datetime import datetime
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from jobspy import scrape_jobs
+from auth_client import get_auth_header
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -19,7 +20,8 @@ _handler = RotatingFileHandler(
 _handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
 logging.basicConfig(level=logging.INFO, handlers=[_handler])
 
-BACKEND = os.environ.get("BACKEND_URL", "http://localhost:3000") + "/api/jobs"
+BASE_URL = os.environ.get("BACKEND_URL", "http://localhost:3000")
+BACKEND = BASE_URL + "/api/jobs"
 
 ADZUNA_CONFIG_PATH = str(SCRIPT_DIR / "adzuna_config.json")
 ADZUNA_BASE_URL = "https://api.adzuna.com/v1/api/jobs/in/search/1"
@@ -212,7 +214,7 @@ def run_search(search_term, location, results_wanted):
         }
 
         try:
-            resp = requests.post(BACKEND, json=payload, timeout=5)
+            resp = requests.post(BACKEND, json=payload, headers=get_auth_header(BASE_URL), timeout=5)
             if resp.json().get("skipped"):
                 skipped += 1
             else:
@@ -305,7 +307,7 @@ def run_adzuna_search(app_id, app_key, search_term, location, results_wanted, ma
         }
 
         try:
-            resp2 = requests.post(BACKEND, json=payload, timeout=5)
+            resp2 = requests.post(BACKEND, json=payload, headers=get_auth_header(BASE_URL), timeout=5)
             if resp2.json().get("skipped"):
                 skipped += 1
             else:

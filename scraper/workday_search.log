@@ -1254,3 +1254,15 @@
 2026-09-25 00:17:10,906 INFO [Broadridge] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=2
 2026-09-25 00:17:12,546 INFO [Broadridge] 'Software Developer India': scraped=19, added=0, dupes=0, filtered=2
 2026-09-25 00:17:12,550 INFO === Done. Total new jobs added: 0 ===
+2026-09-25 01:14:45,662 INFO === Workday search run started ===
+2026-09-25 01:14:48,575 INFO [Nationwide] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-25 01:14:49,995 INFO [Nationwide] 'Software Developer India': scraped=15, added=0, dupes=0, filtered=0
+2026-09-25 01:14:52,022 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-25 01:14:53,002 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-25 01:14:59,252 INFO [NVIDIA] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-25 01:15:03,999 INFO [NVIDIA] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-25 01:15:11,370 INFO [Visa] 'Software Engineer India': scraped=47, added=0, dupes=1, filtered=5
+2026-09-25 01:15:15,972 INFO [Visa] 'Software Developer India': scraped=23, added=0, dupes=1, filtered=3
+2026-09-25 01:15:17,836 INFO [Boeing] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-25 01:15:18,789 INFO [Boeing] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-25 01:15:25,840 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=5

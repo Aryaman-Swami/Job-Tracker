@@ -42,6 +42,7 @@ from pathlib import Path
 
 from run_scraper import TITLE_EXCLUDE, LOCATION_EXCLUDE, COMPANY_EXCLUDE, clean
 from notify import notify_new_jobs
+from auth_client import get_auth_header
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -58,7 +59,8 @@ logger = logging.getLogger("workday_search")
 logger.setLevel(logging.INFO)
 logger.addHandler(_handler)
 
-BACKEND = os.environ.get("BACKEND_URL", "http://localhost:3000") + "/api/jobs"
+BASE_URL = os.environ.get("BACKEND_URL", "http://localhost:3000")
+BACKEND = BASE_URL + "/api/jobs"
 COMPANIES_PATH = str(SCRIPT_DIR / "workday_companies.json")
 
 SEARCH_TERMS = ["Software Engineer India", "Software Developer India"]
@@ -241,7 +243,7 @@ def search_company(company: dict, search_text: str):
         }
 
         try:
-            r = requests.post(BACKEND, json=payload, timeout=5)
+            r = requests.post(BACKEND, json=payload, headers=get_auth_header(BASE_URL), timeout=5)
             if r.json().get("skipped"):
                 skipped += 1
             else:

@@ -12,8 +12,12 @@ services:
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     plan: starter
-    healthCheckPath: /api/jobs
+    healthCheckPath: /healthz
     envVars:
+      - key: APP_USERNAME
+        sync: false # pick a username
+      - key: APP_PASSWORD
+        generateValue: true # Render generates a strong random password for you; view it in the dashboard
       - key: DB_HOST
         fromDatabase: { name: job-tracker-db, property: host }
       - key: DB_PORT
@@ -28,6 +32,8 @@ services:
         sync: false # set to your Netlify site URL, e.g. https://job-tracker.netlify.app
       - key: CLAUDE_CODE_OAUTH_TOKEN
         sync: false # from `claude setup-token` run locally
+      - key: JWT_SECRET
+        sync: false # optional: a random 32+ char string, keeps login sessions valid across redeploys. If unset, every redeploy invalidates existing sessions (users just log in again).
       - key: PYTHON_BIN
         value: python3
 
@@ -43,3 +49,7 @@ services:
     envVars:
       - key: BACKEND_URL
         sync: false # set to the backend's public Render URL, e.g. https://job-tracker-backend.onrender.com
+      - key: APP_USERNAME
+        fromService: { type: web, name: job-tracker-backend, envVarKey: APP_USERNAME }
+      - key: APP_PASSWORD
+        fromService: { type: web, name: job-tracker-backend, envVarKey: APP_PASSWORD }
