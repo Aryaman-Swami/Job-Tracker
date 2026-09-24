@@ -20,7 +20,26 @@ public class DbInitializer implements ApplicationRunner {
     }
 
     @Override
-    public void run(ApplicationArguments args) {
+    public void run(ApplicationArguments args) throws InterruptedException {
+        // The Supabase pooler's first TLS handshake right after JVM startup is
+        // occasionally reset (SSL error: Broken pipe); every statement below
+        // is idempotent, so retrying the whole block is safe.
+        int attempts = 0;
+        while (true) {
+            try {
+                initialize();
+                return;
+            } catch (org.springframework.jdbc.CannotGetJdbcConnectionException e) {
+                attempts++;
+                if (attempts >= 5) {
+                    throw e;
+                }
+                Thread.sleep(2000L * attempts);
+            }
+        }
+    }
+
+    private void initialize() {
         jdbc.execute("""
             CREATE TABLE IF NOT EXISTS jobs (
               id SERIAL PRIMARY KEY,
