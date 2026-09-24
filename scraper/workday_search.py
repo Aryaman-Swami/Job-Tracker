@@ -139,6 +139,11 @@ def years_in_range(text: str) -> bool:
 
 SENIOR_WORDS = re.compile(r"\b(senior|staff|principal|lead|architect)\b", re.I)
 
+# "Software Engineer II"/"SDE II"/"SDE 2" is a standard 2+ yrs level at most
+# companies -- let it through even when the JD's years_in_range() check fails
+# (many JDs for this level just say "2+ years" or omit an explicit range).
+LEVEL_II_TITLE = re.compile(r"\b(?:software\s+(?:engineer|developer)|sde)\s*(?:ii|2)\b", re.I)
+
 
 def fetch_job_detail(tenant: str, wd: str, site: str, external_path: str):
     url = f"https://{tenant}.{wd}.myworkdayjobs.com/wday/cxs/{tenant}/{site}{external_path}"
@@ -223,7 +228,7 @@ def search_company(company: dict, search_text: str):
         # text routinely mentions "senior engineers", "architects", "tech
         # leads" etc. as *colleagues*, not as a seniority requirement for
         # this role, so checking it here produces false positives.
-        if not years_in_range(combined):
+        if not years_in_range(combined) and not LEVEL_II_TITLE.search(title):
             filtered += 1
             continue
 
