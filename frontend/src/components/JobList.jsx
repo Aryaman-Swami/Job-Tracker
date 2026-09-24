@@ -1,5 +1,5 @@
 import JobCard from './JobCard.jsx';
-import { monthKey, postedTime } from '../utils.js';
+import { dayKey, postedTime } from '../utils.js';
 
 export default function JobList({ jobs, search, sort, selectedJobId, onSelect, onEdit, onDelete, onStatusChange }) {
   let filtered = search
@@ -39,7 +39,7 @@ export default function JobList({ jobs, search, sort, selectedJobId, onSelect, o
   const groups = [];
   const seen = {};
   for (const job of filtered) {
-    const key = monthKey(job.created_at);
+    const key = dayKey(job.created_at);
     if (!seen[key]) { seen[key] = []; groups.push({ key, items: seen[key] }); }
     seen[key].push(job);
   }

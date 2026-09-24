@@ -43,5 +43,11 @@
       "Bash(powershell -Command \"Get-Process -Id 23576 | Select-Object Path,CommandLine\")",
       "Bash(taskkill *)"
     ]
+  },
+  "enabledMcpjsonServers": [
+    "supabase"
+  ],
+  "enabledPlugins": {
+    "render@claude-plugins-official": true
   }
 }

@@ -19,5 +19,13 @@
   {"name": "Wells Fargo", "tenant": "wf", "wd": "wd1", "site": "WellsFargoJobs"},
   {"name": "Fidelity", "tenant": "fmr", "wd": "wd1", "site": "FidelityCareers"},
   {"name": "LSEG", "tenant": "lseg", "wd": "wd3", "site": "Careers"},
-  {"name": "Broadridge", "tenant": "broadridge", "wd": "wd5", "site": "Careers"}
+  {"name": "Broadridge", "tenant": "broadridge", "wd": "wd5", "site": "Careers"},
+  {"name": "Cadence", "tenant": "cadence", "wd": "wd1", "site": "External_Careers"},
+  {"name": "Equifax", "tenant": "equifax", "wd": "wd5", "site": "External"},
+  {"name": "Micron", "tenant": "micron", "wd": "wd1", "site": "External"},
+  {"name": "Medtronic", "tenant": "medtronic", "wd": "wd1", "site": "MedtronicCareers"},
+  {"name": "Kyndryl", "tenant": "kyndryl", "wd": "wd5", "site": "KyndrylProfessionalCareers"},
+  {"name": "Blue Yonder", "tenant": "jda", "wd": "wd5", "site": "JDA_Careers"},
+  {"name": "Ingram Micro", "tenant": "ingrammicro", "wd": "wd5", "site": "IngramMicro"},
+  {"name": "TD SYNNEX", "tenant": "synnex", "wd": "wd5", "site": "tdsynnexcareers"}
 ]

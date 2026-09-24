@@ -56,6 +56,19 @@ export function monthKey(dateStr) {
   return new Date(dateStr).toLocaleString('default', { month: 'long', year: 'numeric' });
 }
 
+export function dayKey(dateStr) {
+  const d = new Date(dateStr);
+  if (isNaN(d)) return 'Unknown date';
+
+  const startOfDay = date => new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const daysAgo = Math.round((startOfDay(new Date()) - startOfDay(d)) / 864e5);
+
+  if (daysAgo === 0) return 'Today';
+  if (daysAgo === 1) return 'Yesterday';
+  if (daysAgo > 1 && daysAgo < 7) return d.toLocaleString('default', { weekday: 'long' });
+  return d.toLocaleString('default', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+}
+
 export function postedTime(job) {
   const d = new Date(job.date_posted || job.created_at);
   return isNaN(d) ? 0 : d.getTime();
