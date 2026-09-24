@@ -28,4 +28,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY --from=build /app/target/job-tracker-backend.jar ./app.jar
 EXPOSE 3000
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.2", "-jar", "app.jar"]
