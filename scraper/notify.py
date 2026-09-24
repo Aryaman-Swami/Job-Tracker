@@ -13,10 +13,11 @@ To change the topic, edit notify_config.json.
 import json
 import logging
 import requests
+from pathlib import Path
 
 logger = logging.getLogger("workday_search")
 
-CONFIG_PATH = r"c:\Users\hp\Projects\Job Tracker\scraper\notify_config.json"
+CONFIG_PATH = str(Path(__file__).resolve().parent / "notify_config.json")
 
 
 def _topic():

@@ -32,7 +32,9 @@ public class SyncController {
                 """);
 
         try {
-            Process proc = new ProcessBuilder("python", SCRAPER_SCRIPT.toString())
+            String pythonBin = System.getenv().getOrDefault("PYTHON_BIN",
+                    System.getProperty("os.name", "").toLowerCase().contains("win") ? "python" : "python3");
+            Process proc = new ProcessBuilder(pythonBin, SCRAPER_SCRIPT.toString())
                     .redirectErrorStream(true).start();
             String out = new String(proc.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
             boolean finished = proc.waitFor(300, TimeUnit.SECONDS);

@@ -33,16 +33,20 @@ and add {"name", "tenant", "wd", "site"} to workday_companies.json.
 
 import json
 import logging
+import os
 import re
 import requests
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
+from pathlib import Path
 
 from run_scraper import TITLE_EXCLUDE, LOCATION_EXCLUDE, COMPANY_EXCLUDE, clean
 from notify import notify_new_jobs
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+
 _handler = RotatingFileHandler(
-    r"c:\Users\hp\Projects\Job Tracker\scraper\workday_search.log",
+    str(SCRIPT_DIR / "workday_search.log"),
     maxBytes=1_000_000,
     backupCount=3,
 )
@@ -54,8 +58,8 @@ logger = logging.getLogger("workday_search")
 logger.setLevel(logging.INFO)
 logger.addHandler(_handler)
 
-BACKEND = "http://localhost:3000/api/jobs"
-COMPANIES_PATH = r"c:\Users\hp\Projects\Job Tracker\scraper\workday_companies.json"
+BACKEND = os.environ.get("BACKEND_URL", "http://localhost:3000") + "/api/jobs"
+COMPANIES_PATH = str(SCRIPT_DIR / "workday_companies.json")
 
 SEARCH_TERMS = ["Software Engineer India", "Software Developer India"]
 PAGE_SIZE = 20  # Workday's CXS API rejects limit > 20 with a 400

@@ -1,0 +1,20 @@
+[build]
+  base = "frontend"
+  command = "npm run build -- --outDir dist --emptyOutDir"
+  publish = "dist"
+
+# Proxies /api/* to the Render backend so the frontend can keep using plain
+# relative fetch('/api/...') calls with no CORS handling needed (Netlify
+# makes the request server-side and returns the response as same-origin).
+# Replace the target below with your actual Render backend URL once deployed.
+[[redirects]]
+  from = "/api/*"
+  to = "https://REPLACE-WITH-YOUR-RENDER-BACKEND-URL.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# SPA fallback so client-side routes don't 404 on refresh.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

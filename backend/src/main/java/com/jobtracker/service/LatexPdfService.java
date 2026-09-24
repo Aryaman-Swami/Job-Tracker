@@ -18,22 +18,30 @@ public class LatexPdfService {
     public record OnePageResult(String latex, Integer pages, String note, boolean compileFailed, String errorLine) {}
 
     private static final String[] CANDIDATE_NAMES = {"pdflatex", "xelatex", "lualatex"};
-    private static final String[] KNOWN_DIRS = {
-            System.getProperty("user.home") + "\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64",
-            "C:\\Program Files\\MiKTeX\\miktex\\bin\\x64",
-            "C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64",
-    };
+    private static final boolean IS_WINDOWS = System.getProperty("os.name", "").toLowerCase().contains("win");
+    private static final String[] KNOWN_DIRS = IS_WINDOWS
+            ? new String[]{
+                    System.getProperty("user.home") + "\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64",
+                    "C:\\Program Files\\MiKTeX\\miktex\\bin\\x64",
+                    "C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64",
+            }
+            : new String[]{"/usr/bin", "/usr/local/bin", "/usr/local/texlive/bin/x86_64-linux"};
 
     public String resolveLatexBin() {
+        String override = System.getenv("LATEX_BIN");
+        if (override != null && !override.isBlank() && Files.exists(Path.of(override))) return override;
+
+        String lookupCmd = IS_WINDOWS ? "where" : "which";
         for (String name : CANDIDATE_NAMES) {
             try {
-                Process p = new ProcessBuilder("where", name).redirectErrorStream(true).start();
+                Process p = new ProcessBuilder(lookupCmd, name).redirectErrorStream(true).start();
                 if (p.waitFor(5, TimeUnit.SECONDS) && p.exitValue() == 0) return name;
             } catch (Exception ignored) {}
         }
+        String exeSuffix = IS_WINDOWS ? ".exe" : "";
         for (String dir : KNOWN_DIRS) {
             for (String name : CANDIDATE_NAMES) {
-                Path exe = Path.of(dir, name + ".exe");
+                Path exe = Path.of(dir, name + exeSuffix);
                 if (Files.exists(exe)) return exe.toString();
             }
         }

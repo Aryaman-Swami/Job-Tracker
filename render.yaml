@@ -1,0 +1,45 @@
+databases:
+  - name: job-tracker-db
+    plan: free
+    databaseName: job_tracker
+    user: job_tracker
+
+services:
+  # Spring Boot API + serves the built React app if you ever combine them again.
+  - type: web
+    name: job-tracker-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: starter
+    healthCheckPath: /api/jobs
+    envVars:
+      - key: DB_HOST
+        fromDatabase: { name: job-tracker-db, property: host }
+      - key: DB_PORT
+        fromDatabase: { name: job-tracker-db, property: port }
+      - key: DB_NAME
+        fromDatabase: { name: job-tracker-db, property: database }
+      - key: DB_USER
+        fromDatabase: { name: job-tracker-db, property: user }
+      - key: DB_PASSWORD
+        fromDatabase: { name: job-tracker-db, property: password }
+      - key: FRONTEND_ORIGIN
+        sync: false # set to your Netlify site URL, e.g. https://job-tracker.netlify.app
+      - key: CLAUDE_CODE_OAUTH_TOKEN
+        sync: false # from `claude setup-token` run locally
+      - key: PYTHON_BIN
+        value: python3
+
+  # Runs the Workday scraper on a schedule and POSTs new jobs to the backend
+  # above; phone push still goes out via ntfy.sh from inside the script.
+  - type: cron
+    name: job-tracker-scraper
+    runtime: python
+    plan: starter
+    schedule: "*/30 * * * *"
+    buildCommand: pip install -r scraper/requirements.txt
+    startCommand: cd scraper && python3 workday_search.py
+    envVars:
+      - key: BACKEND_URL
+        sync: false # set to the backend's public Render URL, e.g. https://job-tracker-backend.onrender.com

@@ -114,13 +114,13 @@
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeProjectHeading
-      {\textbf{Shopper Assist} $|$ \emph{React, Node.js, Express, PostgreSQL, Gemini API}}{}
+      {\textbf{Shopper Assist} $|$ \emph{React, Node.js, Express, Supabase (Postgres), pgvector, Gemini API}}{\href{https://github.com/Aryaman-Swami/Shopper-assist}{GitHub}}
       \resumeItemListStart
         \resumeItem{Built an AI shopping assistant that turns a photo/text list into an optimal in-store route: \textbf{Gemini} vision extraction $\rightarrow$ semantic SKU matching $\rightarrow$ shortest-path aisle routing, behind one orchestrated \texttt{/plan} API.}
-        \resumeItem{Implemented hybrid item matching (embedding cosine similarity + \textbf{pg\_trgm} lexical fallback) against a 200+ SKU catalog, and modeled the store as a weighted graph for Dijkstra-based route ordering.}
+        \resumeItem{Implemented hybrid item matching (\textbf{pgvector} cosine similarity over Gemini embeddings + \textbf{pg\_trgm} lexical fallback) against a 200+ SKU catalog on \textbf{Supabase}, and modeled the store as a weighted graph for shortest-path route ordering.}
       \resumeItemListEnd
     \resumeProjectHeading
-      {\textbf{Job Tracker} $|$ \emph{React, Java, Spring Boot, PostgreSQL, Claude API}}{}
+      {\textbf{Job Tracker} $|$ \emph{React, Java, Spring Boot, PostgreSQL, Claude API}}{\href{https://github.com/Aryaman-Swami/Job-Tracker}{GitHub}}
       \resumeItemListStart
         \resumeItem{Built a full-stack job application tracker (\textbf{React} frontend, \textbf{Spring Boot} REST API) that uses the \textbf{Claude API} to parse job descriptions, score them against my resume, and persist ATS match scores in \textbf{PostgreSQL} to rank openings.}
         \resumeItem{Wired a scraper-side notifier that pushes newly discovered, high-match job postings straight to my phone in real time via \textbf{ntfy} push notifications, no app polling required.}

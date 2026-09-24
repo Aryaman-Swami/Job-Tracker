@@ -1,3 +1,4 @@
+import os
 import re
 import json
 import math
@@ -5,19 +6,22 @@ import logging
 import requests
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
+from pathlib import Path
 from jobspy import scrape_jobs
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+
 _handler = RotatingFileHandler(
-    r"c:\Users\hp\Projects\Job Tracker\scraper\scraper.log",
+    str(SCRIPT_DIR / "scraper.log"),
     maxBytes=1_000_000,
     backupCount=3,
 )
 _handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
 logging.basicConfig(level=logging.INFO, handlers=[_handler])
 
-BACKEND = "http://localhost:3000/api/jobs"
+BACKEND = os.environ.get("BACKEND_URL", "http://localhost:3000") + "/api/jobs"
 
-ADZUNA_CONFIG_PATH = r"c:\Users\hp\Projects\Job Tracker\scraper\adzuna_config.json"
+ADZUNA_CONFIG_PATH = str(SCRIPT_DIR / "adzuna_config.json")
 ADZUNA_BASE_URL = "https://api.adzuna.com/v1/api/jobs/in/search/1"
 
 SEARCHES = [
