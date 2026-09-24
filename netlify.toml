@@ -9,7 +9,7 @@
 # Replace the target below with your actual Render backend URL once deployed.
 [[redirects]]
   from = "/api/*"
-  to = "https://REPLACE-WITH-YOUR-RENDER-BACKEND-URL.onrender.com/api/:splat"
+  to = "https://job-tracker-g8bx.onrender.com/api/:splat"
   status = 200
   force = true
 
