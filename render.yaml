@@ -10,7 +10,6 @@ services:
     name: job-tracker-backend
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
     plan: starter
     healthCheckPath: /healthz
     envVars:

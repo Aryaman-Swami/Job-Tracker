@@ -1,12 +1,16 @@
 # Multi-stage build: compile the jar, then assemble a runtime image that also
 # has pdflatex (for resume PDF export) and the Claude Code CLI (for the
 # "Tailor with Claude" feature) available on PATH.
+#
+# Build context is the REPO ROOT (Render's Docker runtime always builds from
+# the repo root regardless of dockerfilePath), so every COPY below is
+# rooted at backend/, not at this Dockerfile's own directory.
 
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /app
-COPY pom.xml .
+COPY backend/pom.xml .
 RUN mvn -B -q dependency:go-offline
-COPY src ./src
+COPY backend/src ./src
 RUN mvn -B -q package -DskipTests
 
 FROM eclipse-temurin:21-jre-jammy
