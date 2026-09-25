@@ -1,0 +1,28 @@
+name: Job Scraper
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scraper/requirements.txt
+
+      - name: Run Workday scraper
+        working-directory: scraper
+        env:
+          BACKEND_URL: ${{ secrets.BACKEND_URL }}
+          APP_USERNAME: ${{ secrets.APP_USERNAME }}
+          APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+        run: python workday_search.py
