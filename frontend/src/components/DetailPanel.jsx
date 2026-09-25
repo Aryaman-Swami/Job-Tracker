@@ -26,6 +26,7 @@ function buildDetailRows(job) {
 export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPreview }) {
   const [tailoring, setTailoring] = useState(false);
   const [tailorNote, setTailorNote] = useState(null);
+  const [applying, setApplying] = useState(false);
 
   const [atsResult, setAtsResult] = useState(null);
   const [atsLoading, setAtsLoading] = useState(false);
@@ -72,6 +73,21 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
       alert('Request failed.');
     }
     setTailoring(false);
+  }
+
+  async function runAutoApply() {
+    setApplying(true);
+    try {
+      const data = await api.autoApply(job.id);
+      if (data.ok) {
+        alert(data.message || 'Chrome is launching — review and submit the application in that window.');
+      } else {
+        alert(data.error || 'Auto-apply failed to launch.');
+      }
+    } catch {
+      alert('Could not reach the apply-bot helper on your machine. Start it with "npm run serve" in the apply-bot folder, then try again.');
+    }
+    setApplying(false);
   }
 
   async function runAtsScore() {
@@ -162,6 +178,9 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
           tailoring={tailoring}
           onTailor={runTailor}
           onGeneratePdf={handleGeneratePdf}
+          onAutoApply={runAutoApply}
+          applying={applying}
+          canApply={!!job.job_url}
         />
         <AtsSection
           atsResult={atsResult}

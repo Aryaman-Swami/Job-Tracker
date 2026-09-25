@@ -1,0 +1,18 @@
+{
+  "name": "apply-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Semi-automated Workday application filler: tailors the resume via the existing backend, then drives a real Chrome window through the application wizard up to the Review step for manual submission.",
+  "type": "commonjs",
+  "main": "apply.js",
+  "scripts": {
+    "apply": "node apply.js",
+    "serve": "node server.js",
+    "postinstall": "playwright install chrome"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-fetch": "^2.7.0",
+    "playwright": "^1.48.0"
+  }
+}

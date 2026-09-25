@@ -3,3 +3,7 @@ legacy-node/node_modules/
 scraper/__pycache__/
 scraper/scraper.log*
 scraper/adzuna_config.json
+apply-bot/node_modules/
+apply-bot/.env
+apply-bot/sessions/
+apply-bot/tmp/

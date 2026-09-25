@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function TailorSection({ latex, note, tailoring, onTailor, onGeneratePdf }) {
+export default function TailorSection({ latex, note, tailoring, onTailor, onGeneratePdf, onAutoApply, applying, canApply }) {
   const [open, setOpen] = useState(!!latex);
   const [copyLabel, setCopyLabel] = useState('Copy');
 
@@ -22,6 +22,16 @@ export default function TailorSection({ latex, note, tailoring, onTailor, onGene
       <button className="btn-referral" onClick={handleClick} disabled={tailoring}>
         {tailoring ? '⏳ Tailoring with Claude…' : '✨ Tailor Resume with Claude'}
       </button>
+      {canApply && (
+        <button
+          className="btn-referral"
+          onClick={onAutoApply}
+          disabled={applying}
+          title="Opens a real Chrome window, fills the Workday application with this tailored resume, and stops at the Review step for you to submit."
+        >
+          {applying ? '⏳ Launching Chrome…' : '🚀 Auto-Apply (Workday)'}
+        </button>
+      )}
       {open && latex && (
         <div className="referral-box">
           <div className="referral-header">

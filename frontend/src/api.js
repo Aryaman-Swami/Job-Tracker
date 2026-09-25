@@ -73,4 +73,11 @@ export const api = {
   sync() {
     return authFetch('/api/sync', { method: 'POST' }).then(json);
   },
+  // Goes straight to the local apply-bot helper (server.js) running on your
+  // own machine, NOT through the Netlify/Render proxy — Chrome has to open
+  // where you can see and submit it, and Render has no display or browser.
+  autoApply(id) {
+    const base = import.meta.env.VITE_APPLY_BOT_URL || 'http://localhost:5055';
+    return fetch(`${base}/apply/${id}`, { method: 'POST' }).then(json);
+  },
 };
