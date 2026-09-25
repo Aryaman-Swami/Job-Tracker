@@ -1381,3 +1381,248 @@
 2026-09-25 03:55:50,684 INFO [Mastercard] 'Software Developer India': scraped=54, added=0, dupes=0, filtered=3
 2026-09-25 03:56:09,901 WARNING [Mastercard] Failed to post job: 404 Client Error:  for url: http://localhost:3000/api/auth/login
 2026-09-25 03:56:09,905 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=5
+2026-09-26 01:15:06,549 INFO === Workday search run started ===
+2026-09-26 01:15:10,759 INFO [Nationwide] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 01:15:12,561 INFO [Nationwide] 'Software Developer India': scraped=15, added=0, dupes=0, filtered=0
+2026-09-26 01:15:15,325 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 01:15:16,621 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 01:15:25,199 INFO [NVIDIA] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 01:15:30,466 INFO [NVIDIA] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 01:15:37,625 INFO [Visa] 'Software Engineer India': scraped=48, added=0, dupes=0, filtered=2
+2026-09-26 01:15:41,289 INFO [Visa] 'Software Developer India': scraped=22, added=0, dupes=0, filtered=0
+2026-09-26 01:15:44,183 INFO [Boeing] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:15:45,622 INFO [Boeing] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:15:53,118 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 01:15:59,253 INFO [Mastercard] 'Software Developer India': scraped=52, added=0, dupes=0, filtered=1
+2026-09-26 01:16:02,420 INFO [Salesforce] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=2
+2026-09-26 01:16:04,003 INFO [Salesforce] 'Software Developer India': scraped=8, added=0, dupes=0, filtered=1
+2026-09-26 01:16:07,037 INFO [Cisco] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 01:16:08,407 INFO [Cisco] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 01:16:13,668 INFO [PayPal] 'Software Engineer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 01:16:15,542 INFO [PayPal] 'Software Developer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 01:16:22,258 INFO [Philips] 'Software Engineer India': scraped=33, added=0, dupes=0, filtered=0
+2026-09-26 01:16:26,885 INFO [Philips] 'Software Developer India': scraped=29, added=0, dupes=0, filtered=0
+2026-09-26 01:16:28,579 WARNING [autodesk] facet discovery failed: 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 01:16:29,613 ERROR [Autodesk] search failed for 'Software Engineer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 01:16:31,210 ERROR [Autodesk] search failed for 'Software Developer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 01:16:36,672 INFO [Adobe] 'Software Engineer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 01:16:39,706 INFO [Adobe] 'Software Developer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 01:16:43,233 INFO [Qualcomm] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:16:44,798 INFO [Qualcomm] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:16:48,970 INFO [Morgan Stanley] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 01:16:50,559 INFO [Morgan Stanley] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 01:16:55,014 INFO [First Citizens Bank (SVB) India] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 01:16:56,655 INFO [First Citizens Bank (SVB) India] 'Software Developer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 01:16:59,213 INFO [Fiserv] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:17:00,534 INFO [Fiserv] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:17:15,969 WARNING [db] facet discovery failed: HTTPSConnectionPool(host='db.wd3.myworkdayjobs.com', port=443): Read timed out. (read timeout=15)
+2026-09-26 01:17:20,558 INFO [Deutsche Bank] 'Software Engineer India': scraped=49, added=0, dupes=0, filtered=3
+2026-09-26 01:17:24,969 INFO [Deutsche Bank] 'Software Developer India': scraped=51, added=0, dupes=0, filtered=3
+2026-09-26 01:17:33,491 INFO [Wells Fargo] 'Software Engineer India': scraped=50, added=0, dupes=0, filtered=9
+2026-09-26 01:17:39,148 INFO [Wells Fargo] 'Software Developer India': scraped=46, added=0, dupes=0, filtered=7
+2026-09-26 01:17:42,873 INFO [Fidelity] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=1
+2026-09-26 01:17:44,488 INFO [Fidelity] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:17:51,327 INFO [LSEG] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 01:17:54,535 INFO [LSEG] 'Software Developer India': scraped=32, added=0, dupes=0, filtered=0
+2026-09-26 01:17:58,086 INFO [Broadridge] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 01:17:59,708 INFO [Broadridge] 'Software Developer India': scraped=18, added=0, dupes=0, filtered=0
+2026-09-26 01:18:07,120 INFO [Cadence] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 01:18:12,011 INFO [Cadence] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 01:18:16,001 INFO [Equifax] 'Software Engineer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 01:18:18,266 INFO [Equifax] 'Software Developer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 01:18:24,254 INFO [Micron] 'Software Engineer India': scraped=41, added=0, dupes=0, filtered=1
+2026-09-26 01:18:25,527 INFO [Micron] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 01:18:39,135 INFO [Medtronic] 'Software Engineer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 01:18:43,531 INFO [Medtronic] 'Software Developer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 01:18:51,901 INFO [Kyndryl] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 01:18:57,184 INFO [Kyndryl] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 01:19:03,553 INFO [Blue Yonder] 'Software Engineer India': scraped=59, added=0, dupes=0, filtered=3
+2026-09-26 01:19:08,377 INFO [Blue Yonder] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=3
+2026-09-26 01:19:12,048 INFO [Ingram Micro] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 01:19:13,756 INFO [Ingram Micro] 'Software Developer India': scraped=17, added=0, dupes=0, filtered=0
+2026-09-26 01:19:17,619 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
+2026-09-26 01:19:19,334 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
+2026-09-26 01:19:19,340 INFO === Done. Total new jobs added: 0 ===
+2026-09-26 01:44:43,624 INFO === Workday search run started ===
+2026-09-26 01:44:46,997 INFO [Nationwide] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 01:44:48,570 INFO [Nationwide] 'Software Developer India': scraped=15, added=0, dupes=0, filtered=0
+2026-09-26 01:44:50,787 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 01:44:51,803 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 01:44:59,426 INFO [NVIDIA] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 01:45:04,457 INFO [NVIDIA] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 01:45:10,953 INFO [Visa] 'Software Engineer India': scraped=48, added=0, dupes=0, filtered=2
+2026-09-26 01:45:13,943 INFO [Visa] 'Software Developer India': scraped=22, added=0, dupes=0, filtered=0
+2026-09-26 01:45:16,344 INFO [Boeing] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:45:17,574 INFO [Boeing] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:45:24,211 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 01:45:29,620 INFO [Mastercard] 'Software Developer India': scraped=52, added=0, dupes=0, filtered=1
+2026-09-26 01:45:32,931 INFO [Salesforce] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=2
+2026-09-26 01:45:34,392 INFO [Salesforce] 'Software Developer India': scraped=8, added=0, dupes=0, filtered=1
+2026-09-26 01:45:36,687 INFO [Cisco] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 01:45:37,771 INFO [Cisco] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 01:45:41,168 INFO [PayPal] 'Software Engineer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 01:45:42,944 INFO [PayPal] 'Software Developer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 01:45:49,187 INFO [Philips] 'Software Engineer India': scraped=33, added=0, dupes=0, filtered=0
+2026-09-26 01:45:52,966 INFO [Philips] 'Software Developer India': scraped=29, added=0, dupes=0, filtered=0
+2026-09-26 01:45:54,371 WARNING [autodesk] facet discovery failed: 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 01:45:55,248 ERROR [Autodesk] search failed for 'Software Engineer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 01:45:56,353 ERROR [Autodesk] search failed for 'Software Developer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 01:46:01,263 INFO [Adobe] 'Software Engineer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 01:46:04,644 INFO [Adobe] 'Software Developer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 01:46:07,711 INFO [Qualcomm] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:46:09,286 INFO [Qualcomm] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:46:12,582 INFO [Morgan Stanley] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 01:46:14,034 INFO [Morgan Stanley] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 01:46:17,564 INFO [First Citizens Bank (SVB) India] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 01:46:18,876 INFO [First Citizens Bank (SVB) India] 'Software Developer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 01:46:21,136 INFO [Fiserv] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:46:23,261 INFO [Fiserv] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:46:28,383 INFO [Deutsche Bank] 'Software Engineer India': scraped=44, added=0, dupes=0, filtered=3
+2026-09-26 01:46:32,059 INFO [Deutsche Bank] 'Software Developer India': scraped=45, added=0, dupes=0, filtered=3
+2026-09-26 01:46:40,444 INFO [Wells Fargo] 'Software Engineer India': scraped=50, added=0, dupes=0, filtered=9
+2026-09-26 01:46:45,777 INFO [Wells Fargo] 'Software Developer India': scraped=46, added=0, dupes=0, filtered=7
+2026-09-26 01:46:49,034 INFO [Fidelity] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=1
+2026-09-26 01:46:50,545 INFO [Fidelity] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 01:46:57,239 INFO [LSEG] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 01:47:00,407 INFO [LSEG] 'Software Developer India': scraped=32, added=0, dupes=0, filtered=0
+2026-09-26 01:47:03,706 INFO [Broadridge] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 01:47:05,215 INFO [Broadridge] 'Software Developer India': scraped=18, added=0, dupes=0, filtered=0
+2026-09-26 01:47:11,161 INFO [Cadence] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 01:47:16,013 INFO [Cadence] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 01:47:19,823 INFO [Equifax] 'Software Engineer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 01:47:21,605 INFO [Equifax] 'Software Developer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 01:47:26,693 INFO [Micron] 'Software Engineer India': scraped=41, added=0, dupes=0, filtered=1
+2026-09-26 01:47:28,067 INFO [Micron] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 01:47:35,493 INFO [Medtronic] 'Software Engineer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 01:47:39,702 INFO [Medtronic] 'Software Developer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 01:47:47,565 INFO [Kyndryl] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 01:47:52,685 INFO [Kyndryl] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 01:47:58,294 INFO [Blue Yonder] 'Software Engineer India': scraped=59, added=0, dupes=0, filtered=3
+2026-09-26 01:48:03,138 INFO [Blue Yonder] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=3
+2026-09-26 01:48:06,379 INFO [Ingram Micro] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 01:48:07,828 INFO [Ingram Micro] 'Software Developer India': scraped=17, added=0, dupes=0, filtered=0
+2026-09-26 01:48:11,805 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
+2026-09-26 01:48:13,559 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
+2026-09-26 01:48:13,565 INFO === Done. Total new jobs added: 0 ===
+2026-09-26 02:14:45,183 INFO === Workday search run started ===
+2026-09-26 02:14:48,502 INFO [Nationwide] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 02:14:50,114 INFO [Nationwide] 'Software Developer India': scraped=15, added=0, dupes=0, filtered=0
+2026-09-26 02:14:52,511 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 02:14:53,582 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 02:15:01,412 INFO [NVIDIA] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 02:15:07,444 INFO [NVIDIA] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 02:15:14,191 INFO [Visa] 'Software Engineer India': scraped=48, added=0, dupes=0, filtered=2
+2026-09-26 02:15:17,459 INFO [Visa] 'Software Developer India': scraped=22, added=0, dupes=0, filtered=0
+2026-09-26 02:15:19,852 INFO [Boeing] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:15:20,973 INFO [Boeing] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:15:27,526 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 02:15:33,225 INFO [Mastercard] 'Software Developer India': scraped=52, added=0, dupes=0, filtered=1
+2026-09-26 02:15:36,506 INFO [Salesforce] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=2
+2026-09-26 02:15:37,981 INFO [Salesforce] 'Software Developer India': scraped=8, added=0, dupes=0, filtered=1
+2026-09-26 02:15:40,207 INFO [Cisco] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 02:15:41,443 INFO [Cisco] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 02:15:45,427 INFO [PayPal] 'Software Engineer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 02:15:47,243 INFO [PayPal] 'Software Developer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 02:15:53,311 INFO [Philips] 'Software Engineer India': scraped=33, added=0, dupes=0, filtered=0
+2026-09-26 02:15:56,920 INFO [Philips] 'Software Developer India': scraped=29, added=0, dupes=0, filtered=0
+2026-09-26 02:15:58,124 WARNING [autodesk] facet discovery failed: 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 02:15:59,079 ERROR [Autodesk] search failed for 'Software Engineer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 02:16:00,136 ERROR [Autodesk] search failed for 'Software Developer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 02:16:05,125 INFO [Adobe] 'Software Engineer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 02:16:08,020 INFO [Adobe] 'Software Developer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 02:16:10,833 INFO [Qualcomm] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:16:12,247 INFO [Qualcomm] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:16:16,593 INFO [Morgan Stanley] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 02:16:18,173 INFO [Morgan Stanley] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 02:16:21,453 INFO [First Citizens Bank (SVB) India] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 02:16:22,970 INFO [First Citizens Bank (SVB) India] 'Software Developer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 02:16:25,129 INFO [Fiserv] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:16:26,262 INFO [Fiserv] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:16:31,385 INFO [Deutsche Bank] 'Software Engineer India': scraped=44, added=0, dupes=0, filtered=3
+2026-09-26 02:16:35,279 INFO [Deutsche Bank] 'Software Developer India': scraped=45, added=0, dupes=0, filtered=3
+2026-09-26 02:16:43,071 INFO [Wells Fargo] 'Software Engineer India': scraped=50, added=0, dupes=0, filtered=9
+2026-09-26 02:16:48,578 INFO [Wells Fargo] 'Software Developer India': scraped=46, added=0, dupes=0, filtered=7
+2026-09-26 02:16:51,904 INFO [Fidelity] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=1
+2026-09-26 02:16:54,833 INFO [Fidelity] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:17:01,539 INFO [LSEG] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 02:17:04,704 INFO [LSEG] 'Software Developer India': scraped=32, added=0, dupes=0, filtered=0
+2026-09-26 02:17:07,728 INFO [Broadridge] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 02:17:09,436 INFO [Broadridge] 'Software Developer India': scraped=18, added=0, dupes=0, filtered=0
+2026-09-26 02:17:15,559 INFO [Cadence] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 02:17:20,240 INFO [Cadence] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 02:17:24,133 INFO [Equifax] 'Software Engineer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 02:17:26,025 INFO [Equifax] 'Software Developer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 02:17:30,810 INFO [Micron] 'Software Engineer India': scraped=41, added=0, dupes=0, filtered=1
+2026-09-26 02:17:32,007 INFO [Micron] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 02:17:39,129 INFO [Medtronic] 'Software Engineer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 02:17:43,147 INFO [Medtronic] 'Software Developer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 02:17:50,533 INFO [Kyndryl] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 02:17:55,547 INFO [Kyndryl] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 02:18:01,542 INFO [Blue Yonder] 'Software Engineer India': scraped=59, added=0, dupes=0, filtered=3
+2026-09-26 02:18:06,266 INFO [Blue Yonder] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=3
+2026-09-26 02:18:09,332 INFO [Ingram Micro] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 02:18:10,758 INFO [Ingram Micro] 'Software Developer India': scraped=17, added=0, dupes=0, filtered=0
+2026-09-26 02:18:14,040 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
+2026-09-26 02:18:15,621 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
+2026-09-26 02:18:15,628 INFO === Done. Total new jobs added: 0 ===
+2026-09-26 02:44:49,495 INFO === Workday search run started ===
+2026-09-26 02:44:52,969 INFO [Nationwide] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 02:44:54,625 INFO [Nationwide] 'Software Developer India': scraped=15, added=0, dupes=0, filtered=0
+2026-09-26 02:44:57,314 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 02:44:58,380 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 02:45:05,562 INFO [NVIDIA] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 02:45:10,608 INFO [NVIDIA] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 02:45:17,467 INFO [Visa] 'Software Engineer India': scraped=48, added=0, dupes=0, filtered=2
+2026-09-26 02:45:20,592 INFO [Visa] 'Software Developer India': scraped=22, added=0, dupes=0, filtered=0
+2026-09-26 02:45:22,998 INFO [Boeing] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:45:24,118 INFO [Boeing] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:45:30,488 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 02:45:36,616 INFO [Mastercard] 'Software Developer India': scraped=52, added=0, dupes=0, filtered=1
+2026-09-26 02:45:39,593 INFO [Salesforce] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=2
+2026-09-26 02:45:40,982 INFO [Salesforce] 'Software Developer India': scraped=8, added=0, dupes=0, filtered=1
+2026-09-26 02:45:43,228 INFO [Cisco] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 02:45:44,500 INFO [Cisco] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 02:45:48,478 INFO [PayPal] 'Software Engineer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 02:45:50,209 INFO [PayPal] 'Software Developer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 02:45:58,241 INFO [Philips] 'Software Engineer India': scraped=33, added=0, dupes=0, filtered=0
+2026-09-26 02:46:02,235 INFO [Philips] 'Software Developer India': scraped=29, added=0, dupes=0, filtered=0
+2026-09-26 02:46:03,159 WARNING [autodesk] facet discovery failed: 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 02:46:04,419 ERROR [Autodesk] search failed for 'Software Engineer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 02:46:05,473 ERROR [Autodesk] search failed for 'Software Developer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 02:46:09,819 INFO [Adobe] 'Software Engineer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 02:46:12,743 INFO [Adobe] 'Software Developer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 02:46:15,705 INFO [Qualcomm] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:46:17,117 INFO [Qualcomm] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:46:20,376 INFO [Morgan Stanley] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 02:46:22,139 INFO [Morgan Stanley] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 02:46:26,902 INFO [First Citizens Bank (SVB) India] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 02:46:28,901 INFO [First Citizens Bank (SVB) India] 'Software Developer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 02:46:31,246 INFO [Fiserv] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:46:32,396 INFO [Fiserv] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:46:38,528 INFO [Deutsche Bank] 'Software Engineer India': scraped=44, added=0, dupes=0, filtered=3
+2026-09-26 02:46:41,705 INFO [Deutsche Bank] 'Software Developer India': scraped=45, added=0, dupes=0, filtered=3
+2026-09-26 02:46:49,606 INFO [Wells Fargo] 'Software Engineer India': scraped=50, added=0, dupes=0, filtered=9
+2026-09-26 02:46:55,210 INFO [Wells Fargo] 'Software Developer India': scraped=46, added=0, dupes=0, filtered=7
+2026-09-26 02:46:58,230 INFO [Fidelity] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=1
+2026-09-26 02:46:59,617 INFO [Fidelity] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 02:47:05,280 INFO [LSEG] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 02:47:08,473 INFO [LSEG] 'Software Developer India': scraped=32, added=0, dupes=0, filtered=0
+2026-09-26 02:47:11,444 INFO [Broadridge] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 02:47:12,947 INFO [Broadridge] 'Software Developer India': scraped=18, added=0, dupes=0, filtered=0
+2026-09-26 02:47:18,928 INFO [Cadence] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 02:47:23,391 INFO [Cadence] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 02:47:26,931 INFO [Equifax] 'Software Engineer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 02:47:28,662 INFO [Equifax] 'Software Developer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 02:47:34,258 INFO [Micron] 'Software Engineer India': scraped=41, added=0, dupes=0, filtered=1
+2026-09-26 02:47:35,513 INFO [Micron] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 02:47:42,544 INFO [Medtronic] 'Software Engineer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 02:47:46,174 INFO [Medtronic] 'Software Developer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 02:47:52,928 INFO [Kyndryl] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 02:47:57,398 INFO [Kyndryl] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 02:48:03,536 INFO [Blue Yonder] 'Software Engineer India': scraped=59, added=0, dupes=0, filtered=3
+2026-09-26 02:48:08,162 INFO [Blue Yonder] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=3
+2026-09-26 02:48:11,053 INFO [Ingram Micro] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 02:48:12,436 INFO [Ingram Micro] 'Software Developer India': scraped=17, added=0, dupes=0, filtered=0
+2026-09-26 02:48:15,511 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
+2026-09-26 02:48:17,019 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
+2026-09-26 02:48:17,024 INFO === Done. Total new jobs added: 0 ===
