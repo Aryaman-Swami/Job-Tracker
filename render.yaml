@@ -36,20 +36,6 @@ services:
         sync: false # optional: a random 32+ char string, keeps login sessions valid across redeploys. If unset, every redeploy invalidates existing sessions (users just log in again).
       - key: PYTHON_BIN
         value: python3
-
-  # Runs the Workday scraper on a schedule and POSTs new jobs to the backend
-  # above; phone push still goes out via ntfy.sh from inside the script.
-  - type: cron
-    name: job-tracker-scraper
-    runtime: python
-    plan: starter
-    schedule: "*/30 * * * *"
-    buildCommand: pip install -r scraper/requirements.txt
-    startCommand: cd scraper && python3 workday_search.py
-    envVars:
-      - key: BACKEND_URL
-        sync: false # set to the backend's public Render URL, e.g. https://job-tracker-backend.onrender.com
-      - key: APP_USERNAME
-        fromService: { type: web, name: job-tracker-backend, envVarKey: APP_USERNAME }
-      - key: APP_PASSWORD
-        fromService: { type: web, name: job-tracker-backend, envVarKey: APP_PASSWORD }
+      # The backend itself runs the scraper every 30 minutes via an internal
+      # Spring @Scheduled task (see SyncService), so no separate cron service
+      # or GitHub Actions workflow is needed.

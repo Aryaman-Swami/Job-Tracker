@@ -1626,3 +1626,284 @@
 2026-09-26 02:48:15,511 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
 2026-09-26 02:48:17,019 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
 2026-09-26 02:48:17,024 INFO === Done. Total new jobs added: 0 ===
+2026-09-26 03:14:43,428 INFO === Workday search run started ===
+2026-09-26 03:14:47,410 INFO [Nationwide] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:14:48,971 INFO [Nationwide] 'Software Developer India': scraped=15, added=0, dupes=0, filtered=0
+2026-09-26 03:14:51,102 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 03:14:52,137 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 03:14:58,922 INFO [NVIDIA] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 03:15:03,612 INFO [NVIDIA] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 03:15:09,488 INFO [Visa] 'Software Engineer India': scraped=48, added=0, dupes=0, filtered=2
+2026-09-26 03:15:12,404 INFO [Visa] 'Software Developer India': scraped=22, added=0, dupes=0, filtered=0
+2026-09-26 03:15:14,957 INFO [Boeing] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:15:15,987 INFO [Boeing] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:15:22,893 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 03:15:27,803 INFO [Mastercard] 'Software Developer India': scraped=52, added=0, dupes=0, filtered=1
+2026-09-26 03:15:30,664 INFO [Salesforce] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=2
+2026-09-26 03:15:31,990 INFO [Salesforce] 'Software Developer India': scraped=8, added=0, dupes=0, filtered=1
+2026-09-26 03:15:35,464 INFO [Cisco] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:15:36,553 INFO [Cisco] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 03:15:39,682 INFO [PayPal] 'Software Engineer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 03:15:41,485 INFO [PayPal] 'Software Developer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 03:15:47,489 INFO [Philips] 'Software Engineer India': scraped=33, added=0, dupes=0, filtered=0
+2026-09-26 03:15:51,561 INFO [Philips] 'Software Developer India': scraped=29, added=0, dupes=0, filtered=0
+2026-09-26 03:15:52,527 WARNING [autodesk] facet discovery failed: 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 03:15:53,454 ERROR [Autodesk] search failed for 'Software Engineer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 03:15:54,335 ERROR [Autodesk] search failed for 'Software Developer India': 404 Client Error: Not Found for url: https://autodesk.wd1.myworkdayjobs.com/wday/cxs/autodesk/Ext/jobs
+2026-09-26 03:15:58,789 INFO [Adobe] 'Software Engineer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 03:16:01,764 INFO [Adobe] 'Software Developer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 03:16:04,545 INFO [Qualcomm] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:16:06,057 INFO [Qualcomm] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:16:09,177 INFO [Morgan Stanley] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 03:16:10,513 INFO [Morgan Stanley] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 03:16:15,029 INFO [First Citizens Bank (SVB) India] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 03:16:16,914 INFO [First Citizens Bank (SVB) India] 'Software Developer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 03:16:19,080 INFO [Fiserv] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:16:20,410 INFO [Fiserv] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:16:25,797 INFO [Deutsche Bank] 'Software Engineer India': scraped=44, added=0, dupes=0, filtered=3
+2026-09-26 03:16:29,574 INFO [Deutsche Bank] 'Software Developer India': scraped=45, added=0, dupes=0, filtered=3
+2026-09-26 03:16:38,416 INFO [Wells Fargo] 'Software Engineer India': scraped=50, added=0, dupes=0, filtered=9
+2026-09-26 03:16:43,581 INFO [Wells Fargo] 'Software Developer India': scraped=46, added=0, dupes=0, filtered=7
+2026-09-26 03:16:47,286 INFO [Fidelity] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=1
+2026-09-26 03:16:48,873 INFO [Fidelity] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:16:56,366 INFO [LSEG] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 03:16:59,216 INFO [LSEG] 'Software Developer India': scraped=32, added=0, dupes=0, filtered=0
+2026-09-26 03:17:02,061 INFO [Broadridge] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:17:03,559 INFO [Broadridge] 'Software Developer India': scraped=18, added=0, dupes=0, filtered=0
+2026-09-26 03:17:09,243 INFO [Cadence] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 03:17:14,399 INFO [Cadence] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 03:17:17,704 INFO [Equifax] 'Software Engineer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 03:17:19,400 INFO [Equifax] 'Software Developer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 03:17:23,949 INFO [Micron] 'Software Engineer India': scraped=41, added=0, dupes=0, filtered=1
+2026-09-26 03:17:25,062 INFO [Micron] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 03:17:33,040 INFO [Medtronic] 'Software Engineer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 03:17:36,990 INFO [Medtronic] 'Software Developer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 03:17:44,657 INFO [Kyndryl] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 03:17:49,681 INFO [Kyndryl] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 03:17:55,635 INFO [Blue Yonder] 'Software Engineer India': scraped=59, added=0, dupes=0, filtered=3
+2026-09-26 03:18:00,049 INFO [Blue Yonder] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=3
+2026-09-26 03:18:03,311 INFO [Ingram Micro] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:18:04,909 INFO [Ingram Micro] 'Software Developer India': scraped=17, added=0, dupes=0, filtered=0
+2026-09-26 03:18:09,158 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
+2026-09-26 03:18:11,024 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
+2026-09-26 03:18:11,030 INFO === Done. Total new jobs added: 0 ===
+2026-09-26 03:44:44,029 INFO === Workday search run started ===
+2026-09-26 03:44:47,347 INFO [Nationwide] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:44:48,692 INFO [Nationwide] 'Software Developer India': scraped=15, added=0, dupes=0, filtered=0
+2026-09-26 03:44:51,323 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 03:44:52,352 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 03:44:59,481 INFO [NVIDIA] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 03:45:04,196 INFO [NVIDIA] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 03:45:10,749 INFO [Visa] 'Software Engineer India': scraped=48, added=0, dupes=0, filtered=2
+2026-09-26 03:45:13,734 INFO [Visa] 'Software Developer India': scraped=22, added=0, dupes=0, filtered=0
+2026-09-26 03:45:16,315 INFO [Boeing] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:45:17,460 INFO [Boeing] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:45:24,452 INFO [Mastercard] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 03:45:29,215 INFO [Mastercard] 'Software Developer India': scraped=52, added=0, dupes=0, filtered=1
+2026-09-26 03:45:32,011 INFO [Salesforce] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=2
+2026-09-26 03:45:33,336 INFO [Salesforce] 'Software Developer India': scraped=8, added=0, dupes=0, filtered=1
+2026-09-26 03:45:36,183 INFO [Cisco] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:45:37,411 INFO [Cisco] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 03:45:41,118 INFO [PayPal] 'Software Engineer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 03:45:43,116 INFO [PayPal] 'Software Developer India': scraped=5, added=0, dupes=0, filtered=0
+2026-09-26 03:45:49,906 INFO [Philips] 'Software Engineer India': scraped=33, added=0, dupes=0, filtered=0
+2026-09-26 03:45:53,495 INFO [Philips] 'Software Developer India': scraped=29, added=0, dupes=0, filtered=0
+2026-09-26 03:45:57,436 INFO [Autodesk] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:45:59,117 INFO [Autodesk] 'Software Developer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:46:04,138 INFO [Adobe] 'Software Engineer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 03:46:07,725 INFO [Adobe] 'Software Developer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 03:46:11,096 INFO [Qualcomm] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:46:12,732 INFO [Qualcomm] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:46:15,828 INFO [Morgan Stanley] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 03:46:17,366 INFO [Morgan Stanley] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 03:46:21,176 INFO [First Citizens Bank (SVB) India] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 03:46:22,562 INFO [First Citizens Bank (SVB) India] 'Software Developer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 03:46:24,851 INFO [Fiserv] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:46:26,051 INFO [Fiserv] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:46:31,281 INFO [Deutsche Bank] 'Software Engineer India': scraped=44, added=0, dupes=0, filtered=3
+2026-09-26 03:46:34,696 INFO [Deutsche Bank] 'Software Developer India': scraped=45, added=0, dupes=0, filtered=3
+2026-09-26 03:46:41,968 INFO [Wells Fargo] 'Software Engineer India': scraped=50, added=0, dupes=0, filtered=9
+2026-09-26 03:46:49,541 INFO [Wells Fargo] 'Software Developer India': scraped=46, added=0, dupes=0, filtered=7
+2026-09-26 03:46:52,949 INFO [Fidelity] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=1
+2026-09-26 03:46:54,599 INFO [Fidelity] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 03:47:01,237 INFO [LSEG] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=1
+2026-09-26 03:47:04,068 INFO [LSEG] 'Software Developer India': scraped=32, added=0, dupes=0, filtered=0
+2026-09-26 03:47:07,521 INFO [Broadridge] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:47:09,936 INFO [Broadridge] 'Software Developer India': scraped=18, added=0, dupes=0, filtered=0
+2026-09-26 03:47:16,164 INFO [Cadence] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 03:47:21,989 INFO [Cadence] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 03:47:25,710 INFO [Equifax] 'Software Engineer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 03:47:27,907 INFO [Equifax] 'Software Developer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 03:47:35,379 INFO [Micron] 'Software Engineer India': scraped=41, added=0, dupes=0, filtered=1
+2026-09-26 03:47:36,617 INFO [Micron] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 03:47:44,194 INFO [Medtronic] 'Software Engineer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 03:47:48,825 INFO [Medtronic] 'Software Developer India': scraped=37, added=0, dupes=0, filtered=0
+2026-09-26 03:47:56,164 INFO [Kyndryl] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 03:48:01,194 INFO [Kyndryl] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=2
+2026-09-26 03:48:07,994 INFO [Blue Yonder] 'Software Engineer India': scraped=59, added=0, dupes=0, filtered=3
+2026-09-26 03:48:12,558 INFO [Blue Yonder] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=3
+2026-09-26 03:48:15,945 INFO [Ingram Micro] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 03:48:17,803 INFO [Ingram Micro] 'Software Developer India': scraped=17, added=0, dupes=0, filtered=0
+2026-09-26 03:48:21,865 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
+2026-09-26 03:48:23,789 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
+2026-09-26 03:48:23,843 INFO === Done. Total new jobs added: 0 ===
+2026-09-26 12:14:48,730 INFO === Workday search run started ===
+2026-09-26 12:14:54,449 WARNING [nationwide] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:14:56,101 ERROR [Nationwide] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:14:57,596 ERROR [Nationwide] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:14:59,475 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 12:15:00,392 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 12:15:05,258 WARNING [nvidia] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:06,876 ERROR [NVIDIA] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:08,452 ERROR [NVIDIA] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:10,135 WARNING [visa] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:11,734 ERROR [Visa] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:13,490 ERROR [Visa] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:15,319 WARNING [boeing] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:16,918 ERROR [Boeing] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:18,868 ERROR [Boeing] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:20,674 WARNING [mastercard] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:22,295 ERROR [Mastercard] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:23,992 ERROR [Mastercard] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:26,677 INFO [Salesforce] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=2
+2026-09-26 12:15:27,987 INFO [Salesforce] 'Software Developer India': scraped=8, added=0, dupes=0, filtered=1
+2026-09-26 12:15:29,761 WARNING [cisco] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:31,365 ERROR [Cisco] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:32,920 ERROR [Cisco] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:34,501 WARNING [paypal] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:37,389 ERROR [PayPal] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:39,023 ERROR [PayPal] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:40,668 WARNING [philips] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:47,574 ERROR [Philips] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:49,337 ERROR [Philips] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:51,172 WARNING [autodesk] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:53,023 ERROR [Autodesk] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:54,899 ERROR [Autodesk] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:57,011 WARNING [adobe] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:15:58,739 ERROR [Adobe] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:00,726 ERROR [Adobe] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:03,184 INFO [Qualcomm] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 12:16:04,544 INFO [Qualcomm] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 12:16:06,340 WARNING [ms] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:08,050 ERROR [Morgan Stanley] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:10,005 ERROR [Morgan Stanley] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:13,240 WARNING [svb] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:14,897 ERROR [First Citizens Bank (SVB) India] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:17,104 ERROR [First Citizens Bank (SVB) India] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:18,956 WARNING [fiserv] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:20,922 ERROR [Fiserv] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:22,761 ERROR [Fiserv] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:25,208 WARNING [db] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:27,094 ERROR [Deutsche Bank] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:33,646 ERROR [Deutsche Bank] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:35,262 WARNING [wf] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:36,828 ERROR [Wells Fargo] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:41,513 ERROR [Wells Fargo] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:43,123 WARNING [fmr] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:44,642 ERROR [Fidelity] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:46,276 ERROR [Fidelity] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:47,754 WARNING [lseg] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:49,061 ERROR [LSEG] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:50,581 ERROR [LSEG] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:52,291 WARNING [broadridge] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:54,082 ERROR [Broadridge] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:55,888 ERROR [Broadridge] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:57,623 WARNING [cadence] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:16:59,334 ERROR [Cadence] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:00,915 ERROR [Cadence] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:02,534 WARNING [equifax] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:07,240 ERROR [Equifax] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:08,903 ERROR [Equifax] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:10,543 WARNING [micron] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:12,109 ERROR [Micron] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:13,622 ERROR [Micron] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:15,261 WARNING [medtronic] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:16,840 ERROR [Medtronic] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:19,341 ERROR [Medtronic] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:21,004 WARNING [kyndryl] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:22,664 ERROR [Kyndryl] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:24,504 ERROR [Kyndryl] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:27,205 WARNING [jda] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:29,120 ERROR [Blue Yonder] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:30,830 ERROR [Blue Yonder] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:32,525 WARNING [ingrammicro] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:34,189 ERROR [Ingram Micro] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:35,952 ERROR [Ingram Micro] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:37,604 WARNING [synnex] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:39,241 ERROR [TD SYNNEX] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:40,842 ERROR [TD SYNNEX] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:17:40,849 INFO === Done. Total new jobs added: 0 ===
+2026-09-26 12:44:44,507 INFO === Workday search run started ===
+2026-09-26 12:44:46,193 WARNING [nationwide] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:44:47,765 ERROR [Nationwide] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:44:49,331 ERROR [Nationwide] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:44:51,206 INFO [Capital One] 'Software Engineer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 12:44:52,113 INFO [Capital One] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 12:44:58,545 INFO [NVIDIA] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 12:45:03,876 INFO [NVIDIA] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 12:45:20,164 INFO [Visa] 'Software Engineer India': scraped=48, added=0, dupes=0, filtered=0
+2026-09-26 12:45:23,143 INFO [Visa] 'Software Developer India': scraped=22, added=0, dupes=0, filtered=0
+2026-09-26 12:45:24,889 WARNING [boeing] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:26,738 ERROR [Boeing] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:28,526 ERROR [Boeing] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:30,268 WARNING [mastercard] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:31,843 ERROR [Mastercard] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:34,749 ERROR [Mastercard] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:41,658 INFO [Salesforce] 'Software Engineer India': scraped=17, added=0, dupes=0, filtered=0
+2026-09-26 12:45:43,175 INFO [Salesforce] 'Software Developer India': scraped=8, added=0, dupes=0, filtered=0
+2026-09-26 12:45:45,497 INFO [Cisco] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 12:45:46,577 INFO [Cisco] 'Software Developer India': scraped=3, added=0, dupes=0, filtered=0
+2026-09-26 12:45:48,379 WARNING [paypal] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:50,023 ERROR [PayPal] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:51,752 ERROR [PayPal] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:53,612 WARNING [philips] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:56,666 ERROR [Philips] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:45:58,339 ERROR [Philips] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:46:00,876 WARNING [autodesk] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:46:03,491 ERROR [Autodesk] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:46:05,730 ERROR [Autodesk] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:46:12,450 INFO [Adobe] 'Software Engineer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 12:46:18,415 INFO [Adobe] 'Software Developer India': scraped=38, added=0, dupes=0, filtered=0
+2026-09-26 12:46:26,359 INFO [Qualcomm] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 12:46:28,029 INFO [Qualcomm] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 12:46:33,181 INFO [Morgan Stanley] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 12:46:40,437 INFO [Morgan Stanley] 'Software Developer India': scraped=4, added=0, dupes=0, filtered=0
+2026-09-26 12:46:46,901 INFO [First Citizens Bank (SVB) India] 'Software Engineer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 12:46:50,741 INFO [First Citizens Bank (SVB) India] 'Software Developer India': scraped=13, added=0, dupes=0, filtered=0
+2026-09-26 12:46:58,180 INFO [Fiserv] 'Software Engineer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 12:46:59,441 INFO [Fiserv] 'Software Developer India': scraped=0, added=0, dupes=0, filtered=0
+2026-09-26 12:47:00,877 WARNING [db] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:02,779 ERROR [Deutsche Bank] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:04,223 ERROR [Deutsche Bank] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:06,010 WARNING [wf] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:08,775 ERROR [Wells Fargo] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:10,359 ERROR [Wells Fargo] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:12,110 WARNING [fmr] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:13,663 ERROR [Fidelity] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:15,392 ERROR [Fidelity] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:16,863 WARNING [lseg] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:19,949 ERROR [LSEG] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:19,955 INFO [LSEG] 'Software Engineer India': scraped=20, added=0, dupes=0, filtered=0
+2026-09-26 12:47:21,484 ERROR [LSEG] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:24,768 INFO [Broadridge] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 12:47:26,247 INFO [Broadridge] 'Software Developer India': scraped=18, added=0, dupes=0, filtered=0
+2026-09-26 12:47:27,912 WARNING [cadence] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:29,526 ERROR [Cadence] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:31,217 ERROR [Cadence] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:34,397 INFO [Equifax] 'Software Engineer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 12:47:36,080 INFO [Equifax] 'Software Developer India': scraped=2, added=0, dupes=0, filtered=0
+2026-09-26 12:47:37,802 WARNING [micron] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:39,427 ERROR [Micron] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:41,114 ERROR [Micron] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:43,018 WARNING [medtronic] facet discovery failed: Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:44,594 ERROR [Medtronic] search failed for 'Software Engineer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:46,375 ERROR [Medtronic] search failed for 'Software Developer India': Expecting value: line 1 column 1 (char 0)
+2026-09-26 12:47:53,801 INFO [Kyndryl] 'Software Engineer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 12:47:58,631 INFO [Kyndryl] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 12:48:06,484 INFO [Blue Yonder] 'Software Engineer India': scraped=59, added=0, dupes=0, filtered=0
+2026-09-26 12:48:11,063 INFO [Blue Yonder] 'Software Developer India': scraped=60, added=0, dupes=0, filtered=0
+2026-09-26 12:48:16,246 INFO [Ingram Micro] 'Software Engineer India': scraped=16, added=0, dupes=0, filtered=0
+2026-09-26 12:48:30,799 INFO [Ingram Micro] 'Software Developer India': scraped=17, added=0, dupes=0, filtered=0
+2026-09-26 12:48:33,658 INFO [TD SYNNEX] 'Software Engineer India': scraped=10, added=0, dupes=0, filtered=0
+2026-09-26 12:48:34,935 INFO [TD SYNNEX] 'Software Developer India': scraped=14, added=0, dupes=0, filtered=0
+2026-09-26 12:48:34,943 INFO === Done. Total new jobs added: 0 ===

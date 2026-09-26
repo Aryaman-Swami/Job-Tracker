@@ -3,27 +3,29 @@ const fs = require('fs');
 const { chromium } = require('playwright');
 
 const { getJob, ensureTailoredLatex, renderPdf } = require('./backend');
-const { handleAccountGate, startApplication, runWizard } = require('./workday');
 const { pause } = require('./human');
+const { findAdapter } = require('./adapters');
 
 function domainOf(url) {
   return new URL(url).hostname;
 }
 
-async function runApply(jobId, log = console.log) {
-  const email = process.env.WORKDAY_EMAIL;
-  const password = process.env.WORKDAY_PASSWORD;
-  if (!email || !password) {
-    throw new Error('Set WORKDAY_EMAIL and WORKDAY_PASSWORD in apply-bot/.env first.');
-  }
+function splitName(fullName) {
+  if (!fullName) return { firstName: undefined, lastName: undefined };
+  const parts = fullName.trim().split(/\s+/);
+  return { firstName: parts[0], lastName: parts.slice(1).join(' ') || undefined };
+}
 
+async function runApply(jobId, log = console.log) {
   const job = await getJob(jobId);
   if (!job.job_url) {
     throw new Error(`Job ${jobId} has no job_url to apply to.`);
   }
 
+  const adapter = findAdapter(job.job_url);
   log(`Applying to: ${job.role} @ ${job.company}`);
   log(`URL: ${job.job_url}`);
+  log(`Using adapter: ${adapter.name}`);
 
   const latex = await ensureTailoredLatex(jobId);
   const pdfBytes = await renderPdf(latex, `${job.company}_${job.role}`.replace(/[^a-z0-9]+/gi, '_'));
@@ -43,21 +45,35 @@ async function runApply(jobId, log = console.log) {
 
   // Headed, real Chrome — not headless, not the bundled Chromium — because a
   // visible, real-browser session is indistinguishable from you browsing
-  // manually. No stealth/fingerprint-spoofing plugins: if a tenant challenges
+  // manually. No stealth/fingerprint-spoofing plugins: if a site challenges
   // with a CAPTCHA, the script pauses and you solve it in this same window.
   const browser = await chromium.launch({ channel: 'chrome', headless: false });
   const context = await browser.newContext(hasSession ? { storageState: statePath } : {});
   const page = await context.newPage();
 
+  const { firstName, lastName } = splitName(process.env.CANDIDATE_FULL_NAME);
+  const ctx = {
+    resumePath,
+    // Only Workday gets real credentials — the other adapters either need no
+    // account (Greenhouse/Lever) or pause for you to log in by hand (Naukri/
+    // LinkedIn/Indeed/Wellfound), see each adapter file for why.
+    email: process.env.WORKDAY_EMAIL,
+    password: process.env.WORKDAY_PASSWORD,
+    fullName: process.env.CANDIDATE_FULL_NAME,
+    firstName,
+    lastName,
+    phone: process.env.CANDIDATE_PHONE,
+    onSessionReady: () => context.storageState({ path: statePath }),
+  };
+  // Non-Workday adapters use your own contact email, not the Workday login.
+  if (adapter.name !== 'workday') ctx.email = process.env.CANDIDATE_EMAIL;
+
   try {
     await page.goto(job.job_url, { waitUntil: 'domcontentloaded' });
     await pause(1000, 2000);
 
-    await startApplication(page);
-    await handleAccountGate(page, email, password);
-    await context.storageState({ path: statePath });
-
-    const outcome = await runWizard(page, { resumePath });
+    const outcome = await adapter.run(page, ctx);
+    await context.storageState({ path: statePath }).catch(() => {});
     log(`Done — outcome: ${outcome}. Browser stays open for you to finish/submit.`);
     return outcome;
   } catch (err) {

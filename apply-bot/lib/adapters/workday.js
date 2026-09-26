@@ -1,4 +1,4 @@
-const { pause, typeLikeHuman, waitForEnter } = require('./human');
+const { pause, typeLikeHuman, waitForEnter } = require('../human');
 
 // Workday's own frontend reuses the same `data-automation-id` values across
 // almost every company's tenant (they're all built from the same Workday
@@ -166,4 +166,17 @@ async function runWizard(page, { resumePath, maxSteps = 25 }) {
   return 'incomplete';
 }
 
-module.exports = { handleAccountGate, startApplication, runWizard };
+function matches(host) {
+  return /myworkdayjobs\.com$/i.test(host) || /workday/i.test(host);
+}
+
+// Enterprise ATS, per-company throwaway candidate account — safe to automate
+// the login/sign-up step here (unlike the consumer-platform adapters).
+async function run(page, ctx) {
+  await startApplication(page);
+  await handleAccountGate(page, ctx.email, ctx.password);
+  if (ctx.onSessionReady) await ctx.onSessionReady();
+  return runWizard(page, { resumePath: ctx.resumePath });
+}
+
+module.exports = { name: 'workday', matches, run, handleAccountGate, startApplication, runWizard };

@@ -27,9 +27,9 @@ export default function TailorSection({ latex, note, tailoring, onTailor, onGene
           className="btn-referral"
           onClick={onAutoApply}
           disabled={applying}
-          title="Opens a real Chrome window, fills the Workday application with this tailored resume, and stops at the Review step for you to submit."
+          title="Opens a real Chrome window and fills this job's application (Workday, Naukri, LinkedIn, Indeed, Greenhouse, Lever, Wellfound, or best-effort for anything else) with the tailored resume — always stops before the final submit for you to review."
         >
-          {applying ? '⏳ Launching Chrome…' : '🚀 Auto-Apply (Workday)'}
+          {applying ? '⏳ Launching Chrome…' : '🚀 Auto-Apply'}
         </button>
       )}
       {open && latex && (

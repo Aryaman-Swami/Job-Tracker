@@ -16,6 +16,7 @@ C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\JobTracker
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\rubric\HackerRankRubric.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\ClaudeCliService.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\LatexPdfService.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\SyncService.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\util\JobRowMapper.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\util\JsonColumns.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\util\LatexUtils.java
