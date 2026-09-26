@@ -36,6 +36,6 @@ services:
         sync: false # optional: a random 32+ char string, keeps login sessions valid across redeploys. If unset, every redeploy invalidates existing sessions (users just log in again).
       - key: PYTHON_BIN
         value: python3
-      # The backend itself runs the scraper every 30 minutes via an internal
-      # Spring @Scheduled task (see SyncService), so no separate cron service
-      # or GitHub Actions workflow is needed.
+      - key: SYNC_CRON_TOKEN
+        generateValue: true # shared secret for GET /api/sync/cron?token=... — put this value in your
+        # external pinger's URL (e.g. cron-job.org) so it can trigger the scraper without a JWT.

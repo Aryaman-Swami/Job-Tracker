@@ -34,7 +34,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(unauthorized))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/healthz", "/api/auth/login").permitAll()
+                        .requestMatchers("/healthz", "/api/auth/login", "/api/sync/cron").permitAll()
                         .requestMatchers("/api/**").authenticated()
                         .anyRequest().permitAll())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
