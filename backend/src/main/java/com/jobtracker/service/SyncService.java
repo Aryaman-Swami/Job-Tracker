@@ -17,6 +17,7 @@ public class SyncService {
 
     private static final Logger log = LoggerFactory.getLogger(SyncService.class);
     private static final Path SCRAPER_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "run_scraper.py").normalize();
+    private static final Path WORKDAY_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "workday_search.py").normalize();
     private static final int MAX_MESSAGE_LEN = 500;
 
     private final JdbcTemplate jdbc;
@@ -51,24 +52,30 @@ public class SyncService {
                   AND status IN ('to_ask', 'declined', 'not_interested')
                 """);
 
+        Map<String, Object> jobspyResult = runScript(SCRAPER_SCRIPT);
+        Map<String, Object> workdayResult = runScript(WORKDAY_SCRIPT);
+
+        boolean ok = Boolean.TRUE.equals(jobspyResult.get("ok")) && Boolean.TRUE.equals(workdayResult.get("ok"));
+        String message = "jobspy: " + jobspyResult.get("message") + "\nworkday: " + workdayResult.get("message");
+        return Map.of("ok", ok, "message", tail(message));
+    }
+
+    private Map<String, Object> runScript(Path script) {
         try {
             String pythonBin = System.getenv().getOrDefault("PYTHON_BIN",
                     System.getProperty("os.name", "").toLowerCase().contains("win") ? "python" : "python3");
-            Process proc = new ProcessBuilder(pythonBin, SCRAPER_SCRIPT.toString())
+            Process proc = new ProcessBuilder(pythonBin, script.toString())
                     .redirectErrorStream(true).start();
             String out = new String(proc.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
             boolean finished = proc.waitFor(300, TimeUnit.SECONDS);
-            log.info("Scraper output:\n{}", out);
+            log.info("{} output:\n{}", script.getFileName(), out);
             if (!finished) {
                 proc.destroyForcibly();
-                return Map.of("ok", false, "message", "Scraper timed out");
+                return Map.of("ok", false, "message", "Timed out");
             }
-            if (proc.exitValue() == 0) {
-                return Map.of("ok", true, "message", tail(out));
-            }
-            return Map.of("ok", false, "message", tail(out));
+            return Map.of("ok", proc.exitValue() == 0, "message", tail(out));
         } catch (IOException | InterruptedException e) {
-            return Map.of("ok", false, "message", e.getMessage());
+            return Map.of("ok", false, "message", String.valueOf(e.getMessage()));
         }
     }
 

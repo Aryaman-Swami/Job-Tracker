@@ -249,6 +249,7 @@ def search_company(company: dict, search_text: str):
 
         try:
             r = requests.post(BACKEND, json=payload, headers=get_auth_header(BASE_URL), timeout=5)
+            r.raise_for_status()
             if r.json().get("skipped"):
                 skipped += 1
             else:

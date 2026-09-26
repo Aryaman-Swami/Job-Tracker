@@ -215,6 +215,7 @@ def run_search(search_term, location, results_wanted):
 
         try:
             resp = requests.post(BACKEND, json=payload, headers=get_auth_header(BASE_URL), timeout=5)
+            resp.raise_for_status()
             if resp.json().get("skipped"):
                 skipped += 1
             else:
@@ -308,6 +309,7 @@ def run_adzuna_search(app_id, app_key, search_term, location, results_wanted, ma
 
         try:
             resp2 = requests.post(BACKEND, json=payload, headers=get_auth_header(BASE_URL), timeout=5)
+            resp2.raise_for_status()
             if resp2.json().get("skipped"):
                 skipped += 1
             else:
