@@ -170,6 +170,15 @@ function matches(host) {
   return /myworkdayjobs\.com$/i.test(host) || /workday/i.test(host);
 }
 
+// Used by the remote/headless flow after you approve the review screenshot.
+async function submit(page) {
+  const btn = page.locator(SEL.submitButton).first();
+  if (!(await btn.isVisible({ timeout: 5000 }).catch(() => false))) return false;
+  await btn.click();
+  await pause(1000, 2000);
+  return true;
+}
+
 // Enterprise ATS, per-company throwaway candidate account — safe to automate
 // the login/sign-up step here (unlike the consumer-platform adapters).
 async function run(page, ctx) {
@@ -179,4 +188,4 @@ async function run(page, ctx) {
   return runWizard(page, { resumePath: ctx.resumePath });
 }
 
-module.exports = { name: 'workday', matches, run, handleAccountGate, startApplication, runWizard };
+module.exports = { name: 'workday', matches, run, submit, canRemoteSubmit: true, handleAccountGate, startApplication, runWizard };

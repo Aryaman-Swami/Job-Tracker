@@ -65,4 +65,13 @@ async function run(page, ctx) {
   return runWizard(page, ctx.resumePath);
 }
 
-module.exports = { name: 'indeed', matches, run };
+// Used by the remote/headless flow after you approve the review screenshot.
+async function submit(page) {
+  const btn = page.locator('button:has-text("Submit your application"), button[aria-label*="Submit your application" i]').first();
+  if (!(await btn.isVisible({ timeout: 5000 }).catch(() => false))) return false;
+  await btn.click();
+  await pause(1000, 2000);
+  return true;
+}
+
+module.exports = { name: 'indeed', matches, run, submit, canRemoteSubmit: true };

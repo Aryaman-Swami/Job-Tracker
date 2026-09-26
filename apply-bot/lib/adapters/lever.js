@@ -27,4 +27,13 @@ async function run(page, ctx) {
   return 'review';
 }
 
-module.exports = { name: 'lever', matches, run };
+// Used by the remote/headless flow after you approve the review screenshot.
+async function submit(page) {
+  const btn = page.locator('button[type="submit"]:has-text("Submit Application"), button[type="submit"]').first();
+  if (!(await btn.isVisible({ timeout: 5000 }).catch(() => false))) return false;
+  await btn.click();
+  await pause(1000, 2000);
+  return true;
+}
+
+module.exports = { name: 'lever', matches, run, submit, canRemoteSubmit: true };

@@ -18,6 +18,14 @@ async function typeLikeHuman(locator, text) {
 }
 
 async function waitForEnter(promptText) {
+  // The remote/headless flow (remote-server.js) sets this — there's no TTY
+  // on a server to press Enter on, so blocking here would hang the request
+  // forever. Log it and move on; whatever's incomplete will show up in the
+  // review screenshot for you to judge before approving remote submit.
+  if (process.env.APPLY_BOT_HEADLESS === '1') {
+    console.log(`>>> [headless, skipping] ${promptText}`);
+    return;
+  }
   console.log(`\n>>> ${promptText}\n>>> Press Enter in this terminal once done...`);
   await new Promise((resolve) => {
     process.stdin.resume();
