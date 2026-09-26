@@ -2,12 +2,13 @@ import { getToken, logout } from './auth.js';
 
 const JOBS = '/api/jobs';
 
-// Claude-CLI-backed endpoints (tailor, ATS score, HackerRank score) can run
-// well past Netlify's ~26s proxy-redirect timeout (LLM call + LaTeX compile),
-// which returns a 504 to the browser even though the Render backend is still
-// working. Call the Render backend directly for these — CORS already allows
-// it via FRONTEND_ORIGIN (see backend WebConfig) — instead of going through
-// the Netlify /api/* redirect in netlify.toml.
+// Endpoints that call the Claude CLI (tailor, ATS score, HackerRank score) or
+// run a LaTeX compile (pdf) can take well past Netlify's ~26s proxy-redirect
+// timeout, especially after a Render free-tier cold start, which returns a
+// 504 to the browser even though the Render backend is still working. Call
+// the Render backend directly for these — CORS already allows it via
+// FRONTEND_ORIGIN (see backend WebConfig) — instead of going through the
+// Netlify /api/* redirect in netlify.toml.
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://job-tracker-g8bx.onrender.com';
 
 async function authFetch(url, options = {}) {
@@ -72,7 +73,7 @@ export const api = {
     return authFetch(`${BACKEND_URL}/api/hackerrank-score/${id}`, { method: 'POST' }).then(json);
   },
   generatePdf(latex, filename) {
-    return authFetch('/api/pdf', {
+    return authFetch(`${BACKEND_URL}/api/pdf`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ latex, filename }),
