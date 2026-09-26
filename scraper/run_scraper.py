@@ -172,6 +172,10 @@ def run_search(search_term, location, results_wanted):
             jobs += search_linkedin(search_term, location, results_wanted=results_wanted, hours_old=24)
         except Exception as e:
             logging.error(f"[linkedin] Scrape failed for '{search_term}': {e}")
+    # Naukri is deliberately not in SITES — its search API 406s with
+    # "recaptcha required" on unauthenticated/automated traffic (confirmed
+    # live; see job_sources.search_naukri's docstring). Not something to
+    # route around.
 
     added, skipped, filtered = 0, 0, 0
     added_jobs = []

@@ -1,10 +1,12 @@
-"""In-house Indeed + LinkedIn job search, replacing the python-jobspy dependency.
+"""In-house Indeed + LinkedIn + Naukri job search, replacing the
+python-jobspy dependency.
 
-Both sites are queried the same way jobspy did it under the hood -- Indeed's
-mobile-app GraphQL API and LinkedIn's public "guest" job-search endpoint --
-just reimplemented directly here so we control the request/retry behavior and
-don't pull in jobspy's much larger dependency tree (pandas, etc.) for two
-HTTP calls.
+Indeed and LinkedIn are queried the same way jobspy did it under the hood --
+Indeed's mobile-app GraphQL API and LinkedIn's public "guest" job-search
+endpoint. jobspy's bundled Naukri scraper hit a 406 recaptcha wall (see the
+commit that dropped jobspy) — this one goes through Naukri's own site-search
+JSON API (the same one naukri.com's own search page calls) with the specific
+headers that API expects, instead of whatever jobspy was doing.
 
 Every function returns a list of plain dicts with a common shape:
   title, company, location, job_url, description, date_posted, job_id
@@ -242,5 +244,101 @@ def search_linkedin(
 
         start += len(cards)
         time.sleep(1.5)  # be polite — this endpoint rate-limits aggressively
+
+    return jobs[:results_wanted]
+
+
+# --- Naukri ------------------------------------------------------------
+#
+# NOT wired into run_scraper.py's SITES — confirmed live (2026-09-26) that
+# this endpoint 406s with {"message": "recaptcha required"} on
+# unauthenticated/automated requests, no matter the headers. This is the
+# same wall that got Naukri dropped from the old python-jobspy setup. Kept
+# here, unused, in case a legitimate path (an official Naukri partner/API
+# product, if one exists) becomes available later — not for working around
+# the reCAPTCHA.
+
+NAUKRI_SEARCH_URL = "https://www.naukri.com/jobapi/v3/search"
+NAUKRI_HEADERS = {
+    "authority": "www.naukri.com",
+    "accept": "application/json",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    # These two are what naukri.com's own frontend sends on every search
+    # call — the API 403s without them.
+    "appid": "109",
+    "systemid": "Naukri",
+    "referer": "https://www.naukri.com/",
+}
+
+
+def _naukri_placeholder(placeholders: list[dict], type_: str) -> str:
+    for p in placeholders or []:
+        if p.get("type") == type_:
+            return p.get("label", "")
+    return ""
+
+
+def search_naukri(search_term: str, location: str = "India", results_wanted: int = 50, hours_old: int = 24) -> list[dict]:
+    jobs = []
+    page = 1
+    max_pages = 3  # 20/page by default — plenty for results_wanted values used here
+
+    while len(jobs) < results_wanted and page <= max_pages:
+        params = {
+            "noOfResults": 20,
+            "urlType": "search_by_keyword",
+            "searchType": "adv",
+            "keyword": search_term,
+            "location": location if location.lower() != "india" else "",
+            "pageNo": page,
+            "k": search_term,
+            "seoKey": f"{search_term.replace(' ', '-').lower()}-jobs",
+            "src": "jobsearchDesk",
+            "latLong": "",
+        }
+        try:
+            resp = requests.get(NAUKRI_SEARCH_URL, headers=NAUKRI_HEADERS, params=params, timeout=15)
+            resp.raise_for_status()
+            data = resp.json()
+            results = data.get("jobDetails") or []
+        except Exception as e:
+            logger.error(f"[naukri] search failed for '{search_term}' (page {page}): {e}")
+            break
+
+        if not results:
+            break
+
+        for job in results:
+            job_id = job.get("jobId")
+            if not job_id:
+                continue
+            url = job.get("jdURL") or job.get("staticUrl") or ""
+            if url and not url.startswith("http"):
+                url = f"https://www.naukri.com{url}"
+
+            created = job.get("createdDate") or job.get("footerPlaceholderLabel")
+            date_posted = None
+            if isinstance(created, (int, float)):
+                try:
+                    date_posted = datetime.fromtimestamp(created / 1000, tz=timezone.utc).strftime("%Y-%m-%d")
+                except Exception:
+                    date_posted = None
+
+            placeholders = job.get("placeholders") or []
+            jobs.append({
+                "title": job.get("title") or "Unknown",
+                "company": job.get("companyName") or "Unknown",
+                "location": _naukri_placeholder(placeholders, "location"),
+                "job_url": url,
+                "job_id": f"nk-{job_id}",
+                "description": job.get("jobDescription") or "",
+                "date_posted": date_posted,
+            })
+
+            if len(jobs) >= results_wanted:
+                break
+
+        page += 1
+        time.sleep(1.5)  # be polite — same reason as the LinkedIn sleep above
 
     return jobs[:results_wanted]
