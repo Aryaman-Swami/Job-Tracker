@@ -1,5 +1,7 @@
 package com.jobtracker.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,9 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class SyncService {
 
+    private static final Logger log = LoggerFactory.getLogger(SyncService.class);
     private static final Path SCRAPER_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "run_scraper.py").normalize();
+    private static final int MAX_MESSAGE_LEN = 500;
 
     private final JdbcTemplate jdbc;
 
@@ -33,16 +37,24 @@ public class SyncService {
                     .redirectErrorStream(true).start();
             String out = new String(proc.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
             boolean finished = proc.waitFor(300, TimeUnit.SECONDS);
+            log.info("Scraper output:\n{}", out);
             if (!finished) {
                 proc.destroyForcibly();
                 return Map.of("ok", false, "message", "Scraper timed out");
             }
             if (proc.exitValue() == 0) {
-                return Map.of("ok", true, "message", out.trim());
+                return Map.of("ok", true, "message", tail(out));
             }
-            return Map.of("ok", false, "message", out.trim());
+            return Map.of("ok", false, "message", tail(out));
         } catch (IOException | InterruptedException e) {
             return Map.of("ok", false, "message", e.getMessage());
         }
+    }
+
+    private static String tail(String out) {
+        String trimmed = out.trim();
+        return trimmed.length() <= MAX_MESSAGE_LEN
+                ? trimmed
+                : trimmed.substring(trimmed.length() - MAX_MESSAGE_LEN);
     }
 }
