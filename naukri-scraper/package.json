@@ -1,0 +1,16 @@
+{
+  "name": "naukri-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-only Naukri job scraper. Naukri's search API 406s on unauthenticated requests, and headless Chrome gets an outright Akamai Access Denied — only a real, visible browser on a real desktop session gets through. Must run on a machine with an actual display (e.g. via Windows Task Scheduler set to \"Run only when user is logged on\"), never headless, never on a headless server.",
+  "type": "commonjs",
+  "main": "scrape.js",
+  "scripts": {
+    "scrape": "node scrape.js",
+    "postinstall": "playwright install chrome"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.48.0"
+  }
+}

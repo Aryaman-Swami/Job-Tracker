@@ -7,3 +7,5 @@ apply-bot/node_modules/
 apply-bot/.env
 apply-bot/sessions/
 apply-bot/tmp/
+naukri-scraper/node_modules/
+naukri-scraper/.env
