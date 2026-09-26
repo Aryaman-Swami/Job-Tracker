@@ -26,6 +26,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && npm install -g @anthropic-ai/claude-code \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Scraper lives at /scraper so SyncService's "<app cwd>/../scraper" path
+# resolves the same way it does in local dev (backend/ and scraper/ as siblings).
+COPY scraper /scraper
+RUN pip3 install --no-cache-dir -r /scraper/requirements.txt
+
 COPY --from=build /app/target/job-tracker-backend.jar ./app.jar
 EXPOSE 3000
 ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.2", "-jar", "app.jar"]
