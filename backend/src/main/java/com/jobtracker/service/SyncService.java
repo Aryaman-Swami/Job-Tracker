@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Service
 public class SyncService {
@@ -19,9 +20,29 @@ public class SyncService {
     private static final int MAX_MESSAGE_LEN = 500;
 
     private final JdbcTemplate jdbc;
+    private final AtomicBoolean running = new AtomicBoolean(false);
 
     public SyncService(JdbcTemplate jdbc) {
         this.jdbc = jdbc;
+    }
+
+    /**
+     * Kicks off the scraper on a background thread and returns immediately, since the
+     * scraper takes several minutes and external cron pingers time out long before that.
+     */
+    public Map<String, Object> runSyncAsync() {
+        if (!running.compareAndSet(false, true)) {
+            return Map.of("ok", true, "message", "Sync already in progress");
+        }
+        Thread.ofVirtual().name("scraper-sync").start(() -> {
+            try {
+                Map<String, Object> result = runSync();
+                log.info("Async scraper sync finished: {}", result.get("message"));
+            } finally {
+                running.set(false);
+            }
+        });
+        return Map.of("ok", true, "message", "Scraper started");
     }
 
     public Map<String, Object> runSync() {

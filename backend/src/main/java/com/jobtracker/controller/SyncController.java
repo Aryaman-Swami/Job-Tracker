@@ -30,14 +30,12 @@ public class SyncController {
 
     /**
      * Unauthenticated GET for an external cron pinger (e.g. cron-job.org) to hit on a
-     * schedule, since it can't hold a JWT that expires daily.
+     * schedule, since it can't hold a JWT that expires daily. Starts the scraper in the
+     * background and returns immediately — the scraper takes several minutes, far longer
+     * than a pinger's request timeout.
      */
     @GetMapping("/cron")
     public ResponseEntity<Map<String, Object>> cronSync() {
-        Map<String, Object> result = syncService.runSync();
-        if (Boolean.TRUE.equals(result.get("ok"))) {
-            return ResponseEntity.ok(result);
-        }
-        return ResponseEntity.status(500).body(result);
+        return ResponseEntity.accepted().body(syncService.runSyncAsync());
     }
 }
