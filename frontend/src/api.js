@@ -2,6 +2,14 @@ import { getToken, logout } from './auth.js';
 
 const JOBS = '/api/jobs';
 
+// Claude-CLI-backed endpoints (tailor, ATS score, HackerRank score) can run
+// well past Netlify's ~26s proxy-redirect timeout (LLM call + LaTeX compile),
+// which returns a 504 to the browser even though the Render backend is still
+// working. Call the Render backend directly for these — CORS already allows
+// it via FRONTEND_ORIGIN (see backend WebConfig) — instead of going through
+// the Netlify /api/* redirect in netlify.toml.
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://job-tracker-g8bx.onrender.com';
+
 async function authFetch(url, options = {}) {
   const token = getToken();
   if (!token) {
@@ -41,7 +49,7 @@ export const api = {
     return authFetch('/api/resume', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content }) }).then(json);
   },
   tailor(id, atsFeedback) {
-    return authFetch(`/api/tailor/${id}`, {
+    return authFetch(`${BACKEND_URL}/api/tailor/${id}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(atsFeedback ? { atsFeedback } : {}),
@@ -55,13 +63,13 @@ export const api = {
     }).then(json);
   },
   runAtsScore(id) {
-    return authFetch(`/api/ats-score/${id}`, { method: 'POST' }).then(json);
+    return authFetch(`${BACKEND_URL}/api/ats-score/${id}`, { method: 'POST' }).then(json);
   },
   getPersistedAtsScore(id) {
     return authFetch(`/api/ats-score/${id}`).then(json);
   },
   runHackerRankScore(id) {
-    return authFetch(`/api/hackerrank-score/${id}`, { method: 'POST' }).then(json);
+    return authFetch(`${BACKEND_URL}/api/hackerrank-score/${id}`, { method: 'POST' }).then(json);
   },
   generatePdf(latex, filename) {
     return authFetch('/api/pdf', {
