@@ -16,11 +16,13 @@ RUN mvn -B -q package -DskipTests
 FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
-# Node.js (for the Claude Code CLI), TeX Live (for pdflatex), and python3
-# (used by the optional /api/sync "run scraper now" button).
+# Node.js (for the Claude Code CLI), TeX Live (for pdflatex, incl. the Lato
+# font package used by resume.tex), and python3 (used by the optional
+# /api/sync "run scraper now" button).
 RUN apt-get update && apt-get install -y --no-install-recommends \
       curl gnupg python3 python3-pip \
-      texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended \
+      texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+      texlive-fonts-recommended texlive-fonts-extra \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && npm install -g @anthropic-ai/claude-code \
@@ -32,5 +34,13 @@ COPY scraper /scraper
 RUN pip3 install --no-cache-dir -r /scraper/requirements.txt
 
 COPY --from=build /app/target/job-tracker-backend.jar ./app.jar
+
+# claude CLI refuses --dangerously-skip-permissions when running as root, so
+# the app must run as an unprivileged user.
+RUN useradd --create-home --home-dir /home/appuser --shell /bin/bash appuser \
+    && chown -R appuser:appuser /app /scraper
+USER appuser
+ENV HOME=/home/appuser
+
 EXPOSE 3000
 ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.2", "-jar", "app.jar"]
