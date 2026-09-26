@@ -69,7 +69,10 @@ logger.addHandler(_stream_handler)
 # (and log to the wrong file) every workday_search message twice.
 logger.propagate = False
 
-BASE_URL = os.environ.get("BACKEND_URL", "http://localhost:3000")
+# Render assigns the actual listening port via PORT (Spring's own
+# server.port=${PORT:3000} resolves it the same way) — mirror that here so
+# this self-call lands on the right port instead of a hardcoded 3000.
+BASE_URL = os.environ.get("BACKEND_URL", f"http://localhost:{os.environ.get('PORT', '3000')}")
 BACKEND = BASE_URL + "/api/jobs"
 COMPANIES_PATH = str(SCRIPT_DIR / "workday_companies.json")
 

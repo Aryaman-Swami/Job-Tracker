@@ -25,7 +25,10 @@ _stream_handler = logging.StreamHandler()
 _stream_handler.setFormatter(_file_formatter)
 logging.basicConfig(level=logging.INFO, handlers=[_file_handler, _stream_handler])
 
-BASE_URL = os.environ.get("BACKEND_URL", "http://localhost:3000")
+# Render assigns the actual listening port via PORT (Spring's own
+# server.port=${PORT:3000} resolves it the same way) — mirror that here so
+# this self-call lands on the right port instead of a hardcoded 3000.
+BASE_URL = os.environ.get("BACKEND_URL", f"http://localhost:{os.environ.get('PORT', '3000')}")
 BACKEND = BASE_URL + "/api/jobs"
 
 ADZUNA_CONFIG_PATH = str(SCRIPT_DIR / "adzuna_config.json")
