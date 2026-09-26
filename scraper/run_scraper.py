@@ -7,7 +7,7 @@ import requests
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
-from jobspy import scrape_jobs
+from job_sources import search_indeed, search_linkedin
 from auth_client import get_auth_header
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -147,24 +147,21 @@ def clean(val, default=None):
 
 def run_search(search_term, location, results_wanted):
     logging.info(f"Searching: '{search_term}' in {location}")
-    try:
-        jobs_df = scrape_jobs(
-            site_name=SITES,
-            search_term=search_term,
-            location=location,
-            results_wanted=results_wanted,
-            hours_old=24,
-            job_type="fulltime",
-            country_indeed="India",
-            linkedin_fetch_description=False,
-        )
-    except Exception as e:
-        logging.error(f"Scrape failed for '{search_term}': {e}")
-        return 0, 0, 0
+    jobs = []
+    if "indeed" in SITES:
+        try:
+            jobs += search_indeed(search_term, location, results_wanted=results_wanted, hours_old=24)
+        except Exception as e:
+            logging.error(f"[indeed] Scrape failed for '{search_term}': {e}")
+    if "linkedin" in SITES:
+        try:
+            jobs += search_linkedin(search_term, location, results_wanted=results_wanted, hours_old=24)
+        except Exception as e:
+            logging.error(f"[linkedin] Scrape failed for '{search_term}': {e}")
 
     added, skipped, filtered = 0, 0, 0
 
-    for _, job in jobs_df.iterrows():
+    for job in jobs:
         title = clean(job.get("title"), "Unknown")
         desc = clean(job.get("description"), "")
         combined = f"{title} {desc}"
@@ -205,7 +202,7 @@ def run_search(search_term, location, results_wanted):
             "company":     company_name or "Unknown",
             "role":        title,
             "job_url":     clean(job.get("job_url")),
-            "job_ref_id":  clean(job.get("id")),
+            "job_ref_id":  clean(job.get("job_id")),
             "status":      "to_ask",
             "source":      "n8n",
             "notes":       f"Auto-fetched · {location_str}".strip(" ·"),
@@ -223,7 +220,7 @@ def run_search(search_term, location, results_wanted):
         except Exception as e:
             logging.warning(f"Failed to post job: {e}")
 
-    logging.info(f"  scraped={len(jobs_df)}, added={added}, dupes={skipped}, filtered={filtered}")
+    logging.info(f"  scraped={len(jobs)}, added={added}, dupes={skipped}, filtered={filtered}")
     return added, skipped, filtered
 
 
