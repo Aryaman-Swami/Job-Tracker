@@ -9,3 +9,7 @@ apply-bot/sessions/
 apply-bot/tmp/
 naukri-scraper/node_modules/
 naukri-scraper/.env
+naukri-scraper/tmp/
+naukri-scraper/sessions/
+naukri-scraper/seen_jobs.json
+naukri-scraper/scrape_run.log

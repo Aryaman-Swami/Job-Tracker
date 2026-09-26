@@ -1,11 +1,17 @@
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 const { chromium } = require('playwright');
-const { postJob } = require('./lib/backend');
 const { notifyNewJobs } = require('./lib/notify');
 const { passesFilters } = require('./lib/filters');
+const { ensureLoggedIn, updateProfileResume, pause } = require('./lib/naukri-account');
+const seen = require('./lib/seen');
 
-// Same search terms as scraper/run_scraper.py's SEARCHES — kept in sync by
-// hand, no shared source between the Python and Node scrapers.
+const SESSION_PATH = path.join(__dirname, 'sessions', 'naukri.json');
+
+// Java terms (same as scraper/run_scraper.py) plus Node.js-worded terms —
+// broadening MUST_CONTAIN in filters.js to accept Node roles doesn't surface
+// any if nothing here ever searches for them.
 const SEARCH_TERMS = [
   'java developer 2 years experience',
   'java developer 1 year experience',
@@ -20,13 +26,12 @@ const SEARCH_TERMS = [
   'java microservices developer',
   'java backend engineer',
   'java rest api developer',
+  'node js developer 2 years experience',
+  'node js backend developer',
+  'nodejs developer',
 ];
 
 const MAX_PAGES_PER_TERM = 2; // politeness — this is a real, watched browser, not a firehose
-
-function pause(minMs, maxMs) {
-  return new Promise((r) => setTimeout(r, minMs + Math.random() * (maxMs - minMs)));
-}
 
 function searchUrl(term, page) {
   const q = encodeURIComponent(term);
@@ -54,11 +59,6 @@ async function scrapeCards(page) {
   });
 }
 
-function jobRefId(url) {
-  const m = /-(\d+)$/.exec((url || '').split('?')[0]);
-  return m ? `nk-${m[1]}` : null;
-}
-
 async function main() {
   console.log(`=== Naukri scrape started ${new Date().toISOString()} ===`);
 
@@ -67,12 +67,16 @@ async function main() {
   // (Task Scheduler: "Run only when user is logged on", not "whether logged
   // on or not" — the latter has no display either).
   const browser = await chromium.launch({ channel: 'chrome', headless: false });
-  const page = await browser.newPage();
+  fs.mkdirSync(path.dirname(SESSION_PATH), { recursive: true });
+  const hasSession = fs.existsSync(SESSION_PATH);
+  const context = await browser.newContext(hasSession ? { storageState: SESSION_PATH } : {});
+  const page = await context.newPage();
 
-  const allAdded = [];
+  const seenUrls = seen.load();
+  const newQualifying = [];
   let totalScraped = 0;
   let totalFiltered = 0;
-  let totalSkipped = 0;
+  let totalAlreadySeen = 0;
 
   for (const term of SEARCH_TERMS) {
     for (let p = 1; p <= MAX_PAGES_PER_TERM; p++) {
@@ -89,23 +93,12 @@ async function main() {
             totalFiltered++;
             continue;
           }
-          const job = {
-            company: card.company || 'Unknown',
-            role: card.title,
-            job_url: card.job_url,
-            job_ref_id: jobRefId(card.job_url),
-            status: 'to_ask',
-            source: 'n8n',
-            notes: `Auto-fetched · Naukri · ${card.location}`.replace(/ · $/, ''),
-            description: card.description || null,
-          };
-          try {
-            const added = await postJob(job);
-            if (added) allAdded.push(job);
-            else totalSkipped++;
-          } catch (e) {
-            console.warn(`Failed to post job: ${e.message}`);
+          if (seenUrls.has(card.job_url)) {
+            totalAlreadySeen++;
+            continue;
           }
+          seenUrls.add(card.job_url);
+          newQualifying.push({ company: card.company || 'Unknown', role: card.title, job_url: card.job_url, location: card.location });
         }
       } catch (e) {
         console.error(`[naukri] page load failed for '${term}' page ${p}: ${e.message}`);
@@ -116,11 +109,22 @@ async function main() {
     await pause(3000, 6000); // between search terms
   }
 
-  console.log(`scraped=${totalScraped}, added=${allAdded.length}, dupes=${totalSkipped}, filtered=${totalFiltered}`);
-  await notifyNewJobs(allAdded.map((j) => ({ company: j.company, role: j.role, job_url: j.job_url })));
+  console.log(`scraped=${totalScraped}, new_qualifying=${newQualifying.length}, already_seen=${totalAlreadySeen}, filtered=${totalFiltered}`);
+
+  if (newQualifying.length > 0) {
+    // Getting these "ready to apply" means: your account is logged in (or
+    // you're asked to, right here, right now) and your profile resume is
+    // current — the Apply click itself stays yours, since Naukri submits
+    // immediately with no review step to safely automate past.
+    await ensureLoggedIn(page);
+    await context.storageState({ path: SESSION_PATH });
+    await updateProfileResume(page);
+    await notifyNewJobs(newQualifying);
+    seen.save(seenUrls);
+  }
 
   await browser.close();
-  console.log(`=== Done. ${allAdded.length} new jobs added. ===`);
+  console.log(`=== Done. ${newQualifying.length} job(s) ready for you to apply to on Naukri. ===`);
 }
 
 main().catch((e) => {

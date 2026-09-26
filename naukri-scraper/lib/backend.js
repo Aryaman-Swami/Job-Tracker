@@ -18,18 +18,27 @@ async function login() {
   return cachedToken;
 }
 
-// Mirrors JobController's insert shape and its ON CONFLICT DO NOTHING dedup
-// on job_url — same as scraper/run_scraper.py's post-and-check-skipped.
-async function postJob(job) {
+// Naukri's Apply flow uses whatever's on your profile, not a per-application
+// upload — so this pipeline keeps your PROFILE resume current using your
+// saved base resume, rather than tailoring one per job like apply-bot does
+// for sites with a real per-application upload step.
+async function getBaseResumePdf() {
   const token = await login();
-  const res = await fetch(`${BACKEND_URL}/api/jobs`, {
+  const res = await fetch(`${BACKEND_URL}/api/resume`, { headers: { Authorization: `Bearer ${token}` } });
+  if (!res.ok) throw new Error(`GET /api/resume failed: ${res.status}`);
+  const { content } = await res.json();
+  if (!content || !content.trim()) throw new Error('No base resume saved in Job Tracker yet.');
+
+  const pdfRes = await fetch(`${BACKEND_URL}/api/pdf`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify(job),
+    body: JSON.stringify({ latex: content, filename: 'naukri_profile_resume' }),
   });
-  if (!res.ok) throw new Error(`POST /api/jobs failed: ${res.status}`);
-  const data = await res.json();
-  return !data.skipped;
+  if (!pdfRes.ok) {
+    const err = await pdfRes.json().catch(() => ({}));
+    throw new Error(`PDF generation failed: ${err.error || pdfRes.status}`);
+  }
+  return Buffer.from(await pdfRes.arrayBuffer());
 }
 
-module.exports = { postJob };
+module.exports = { getBaseResumePdf };

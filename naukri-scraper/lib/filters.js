@@ -1,11 +1,8 @@
-// Ported from scraper/run_scraper.py's TITLE_EXCLUDE / MUST_CONTAIN /
-// LOCATION_EXCLUDE / COMPANY_EXCLUDE. Naukri gives structured min/max
-// experience directly (see parseExperience below) instead of needing the
-// EXP_INCLUDE/EXP_EXCLUDE text regexes that file uses for Indeed/LinkedIn's
-// free-text descriptions — that's actually more reliable here.
-//
-// KEEP THESE IN SYNC BY HAND with run_scraper.py's lists — there's no shared
-// source between the Python and Node scrapers.
+// This pipeline's own filter spec — diverged from scraper/run_scraper.py's
+// on purpose (Node.js roles are wanted here, unlike the Java-only Indeed/
+// LinkedIn pipeline; locations are an include-list, not run_scraper.py's
+// exclude-list, and Hyderabad is wanted here despite being excluded there).
+// Not a port anymore — don't try to keep this in sync with run_scraper.py.
 
 const TITLE_EXCLUDE = [
   /\bfront[\s-]?end\b/i,
@@ -16,9 +13,8 @@ const TITLE_EXCLUDE = [
   /\breact\.?js?\s*(developer|engineer|dev)?\b/i,
   /\bangular\s+(developer|engineer|dev)\b/i,
   /\bvue\s+(developer|engineer|dev)\b/i,
-  /\bjavascript\s+(developer|engineer|dev)\b/i,
+  /\bjavascript\s+(developer|engineer|dev)\b/i, // plain-JS/frontend roles, not Node backend
   /\bweb\s+(developer|designer)\b/i,
-  /\bnode\.?js\b/i,
   /\bSDE[-\s]?[3-9]\b/i,
   /\bSD[-\s]?[3-9]\b/i,
   /\bL[4-9]\b/,
@@ -31,20 +27,25 @@ const TITLE_EXCLUDE = [
   /\bstaff\b/i,
   /\bprincipal\b/i,
   /\blead\b/i,
-  /\b[3-9]\+/,
+  /\b[5-9]\+/, // "5+ years" etc in the title — 2+ is our floor, not ceiling, so only block clearly-senior N+
   /\b1[0-9]\+/,
 ];
 
-const MUST_CONTAIN = [/\bjava\b/i];
+// Java OR Node.js — not AND, either stack qualifies.
+const MUST_CONTAIN = [/\bjava\b/i, /\bnode(\.?js)?\b/i];
 
-const LOCATION_EXCLUDE = [
-  /\bchennai\b/i,
-  /\btamil\s*nadu\b/i,
-  /\bkochi\b/i,
-  /\bkerala\b/i,
+// Include-list, not an exclude-list: only these cities pass. Deliberately
+// covers both spellings of Bangalore and plain "Noida" or "Greater Noida".
+const LOCATION_INCLUDE = [
+  /\bpune\b/i,
+  /\b(bangalore|bengaluru)\b/i,
+  /\bnoida\b/i,
   /\bhyderabad\b/i,
-  /\btelangana\b/i,
 ];
+
+// Explicit per your instruction, even though they'd already fail the
+// include-list above — keeps the exclusion visible/intentional in the code.
+const LOCATION_EXCLUDE = [/\bchennai\b/i, /\bkochi\b/i];
 
 const COMPANY_EXCLUDE = [
   /\bcapgemini\b/i,
@@ -71,10 +72,10 @@ function matchesAny(patterns, text) {
   return patterns.some((p) => p.test(text || ''));
 }
 
-// Naukri's own "X-Y Yrs" range, e.g. "5-9 Yrs", "0-2 Yrs". Target band is
-// 1-2 years, same as EXP_INCLUDE/EXP_EXCLUDE's intent in run_scraper.py:
-// accept if the range's lower bound is 0-2 (covers fresher/junior through
-// exactly 2 years), reject anything whose lower bound is 3+.
+// Naukri's own "X-Y Yrs" range, e.g. "5-9 Yrs", "0-2 Yrs". "2+ years" is
+// read as open-ended upward: accept any range that reaches at least 2 (so
+// "2-5", "1-3", "3-6" all pass), reject only ranges that top out below 2
+// (pure-fresher "0-1" postings).
 function parseExperience(text) {
   const m = /(\d+)\s*-\s*(\d+)\s*yrs?/i.exec(text || '');
   if (!m) return null;
@@ -89,9 +90,10 @@ function passesFilters(job) {
   if (matchesAny(TITLE_EXCLUDE, title)) return false;
   if (!matchesAny(MUST_CONTAIN, combined)) return false;
   if (matchesAny(LOCATION_EXCLUDE, job.location)) return false;
+  if (!matchesAny(LOCATION_INCLUDE, job.location)) return false;
 
   const exp = parseExperience(job.experience);
-  if (exp && exp.min > 2) return false;
+  if (exp && exp.max < 2) return false;
 
   return true;
 }
