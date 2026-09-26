@@ -9,6 +9,7 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from job_sources import search_indeed, search_linkedin
 from auth_client import get_auth_header
+from notify import notify_new_jobs
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -168,6 +169,7 @@ def run_search(search_term, location, results_wanted):
             logging.error(f"[linkedin] Scrape failed for '{search_term}': {e}")
 
     added, skipped, filtered = 0, 0, 0
+    added_jobs = []
 
     for job in jobs:
         title = clean(job.get("title"), "Unknown")
@@ -206,10 +208,11 @@ def run_search(search_term, location, results_wanted):
             filtered += 1
             continue
 
+        job_url = clean(job.get("job_url"))
         payload = {
             "company":     company_name or "Unknown",
             "role":        title,
-            "job_url":     clean(job.get("job_url")),
+            "job_url":     job_url,
             "job_ref_id":  clean(job.get("job_id")),
             "status":      "to_ask",
             "source":      "n8n",
@@ -225,11 +228,12 @@ def run_search(search_term, location, results_wanted):
                 skipped += 1
             else:
                 added += 1
+                added_jobs.append({"company": payload["company"], "role": payload["role"], "job_url": job_url})
         except Exception as e:
             logging.warning(f"Failed to post job: {e}")
 
     logging.info(f"  scraped={len(jobs)}, added={added}, dupes={skipped}, filtered={filtered}")
-    return added, skipped, filtered
+    return added, skipped, filtered, added_jobs
 
 
 def load_adzuna_credentials():
@@ -265,6 +269,7 @@ def run_adzuna_search(app_id, app_key, search_term, location, results_wanted, ma
         return 0, 0, 0
 
     added, skipped, filtered = 0, 0, 0
+    added_jobs = []
 
     for job in results:
         title = clean(job.get("title"), "Unknown")
@@ -300,10 +305,11 @@ def run_adzuna_search(app_id, app_key, search_term, location, results_wanted, ma
         posted = clean(job.get("created"), "")
         notes = f"Auto-fetched via Adzuna · {location_str}".strip(" ·")
 
+        job_url = clean(job.get("redirect_url"))
         payload = {
             "company":     company_name or "Unknown",
             "role":        title,
-            "job_url":     clean(job.get("redirect_url")),
+            "job_url":     job_url,
             "job_ref_id":  clean(job.get("id")),
             "status":      "to_ask",
             "source":      "n8n",
@@ -319,27 +325,35 @@ def run_adzuna_search(app_id, app_key, search_term, location, results_wanted, ma
                 skipped += 1
             else:
                 added += 1
+                added_jobs.append({"company": payload["company"], "role": payload["role"], "job_url": job_url})
         except Exception as e:
             logging.warning(f"[adzuna] Failed to post job: {e}")
 
     logging.info(f"  [adzuna] scraped={len(results)}, added={added}, dupes={skipped}, filtered={filtered}")
-    return added, skipped, filtered
+    return added, skipped, filtered, added_jobs
 
 
 if __name__ == "__main__":
     logging.info("=== Scraper run started ===")
     total_added = 0
+    all_added_jobs = []
     for s in SEARCHES:
-        a, _, _ = run_search(s["search_term"], s["location"], s["results_wanted"])
+        a, _, _, added_jobs = run_search(s["search_term"], s["location"], s["results_wanted"])
         total_added += a
+        all_added_jobs.extend(added_jobs)
 
     adzuna_app_id, adzuna_app_key = load_adzuna_credentials()
     if adzuna_app_id and adzuna_app_key:
         for s in SEARCHES:
-            a, _, _ = run_adzuna_search(adzuna_app_id, adzuna_app_key, s["search_term"], s["location"], s["results_wanted"])
+            a, _, _, added_jobs = run_adzuna_search(adzuna_app_id, adzuna_app_key, s["search_term"], s["location"], s["results_wanted"])
             total_added += a
+            all_added_jobs.extend(added_jobs)
     else:
         logging.info(f"[adzuna] Skipped — no credentials in {ADZUNA_CONFIG_PATH}")
+
+    # Same ntfy push notify.py already gives workday_search.py — this scraper
+    # just never wired it up, so real jobs were being added silently.
+    notify_new_jobs([j for j in all_added_jobs if j.get("job_url")], source_label="Indeed/LinkedIn/Adzuna")
 
     logging.info(f"=== Done. Total new jobs added: {total_added} ===")
     print(f"[{datetime.now():%Y-%m-%d %H:%M}] Done. {total_added} new jobs added.")
