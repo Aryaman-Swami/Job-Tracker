@@ -46,18 +46,28 @@ from auth_client import get_auth_header
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
+_formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
 _handler = RotatingFileHandler(
     str(SCRIPT_DIR / "workday_search.log"),
     maxBytes=1_000_000,
     backupCount=3,
 )
-_handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+_handler.setFormatter(_formatter)
+# Also log to stdout so this shows up in `render logs` — SyncService only
+# captures the subprocess's stdout/stderr, not this file.
+_stream_handler = logging.StreamHandler()
+_stream_handler.setFormatter(_formatter)
 # Dedicated logger, not the root logger -- importing run_scraper runs its own
 # logging.basicConfig() at import time, which would otherwise silently claim
 # the root logger first and send these messages to scraper.log instead.
 logger = logging.getLogger("workday_search")
 logger.setLevel(logging.INFO)
 logger.addHandler(_handler)
+logger.addHandler(_stream_handler)
+# Don't also hand messages up to the root logger — importing run_scraper
+# gives it its own stdout/scraper.log handlers, which would otherwise print
+# (and log to the wrong file) every workday_search message twice.
+logger.propagate = False
 
 BASE_URL = os.environ.get("BACKEND_URL", "http://localhost:3000")
 BACKEND = BASE_URL + "/api/jobs"

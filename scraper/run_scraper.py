@@ -12,13 +12,18 @@ from auth_client import get_auth_header
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
-_handler = RotatingFileHandler(
+_file_formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+_file_handler = RotatingFileHandler(
     str(SCRIPT_DIR / "scraper.log"),
     maxBytes=1_000_000,
     backupCount=3,
 )
-_handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
-logging.basicConfig(level=logging.INFO, handlers=[_handler])
+_file_handler.setFormatter(_file_formatter)
+# Also log to stdout so this shows up in `render logs` — SyncService only
+# captures the subprocess's stdout/stderr, not this file.
+_stream_handler = logging.StreamHandler()
+_stream_handler.setFormatter(_file_formatter)
+logging.basicConfig(level=logging.INFO, handlers=[_file_handler, _stream_handler])
 
 BASE_URL = os.environ.get("BACKEND_URL", "http://localhost:3000")
 BACKEND = BASE_URL + "/api/jobs"
