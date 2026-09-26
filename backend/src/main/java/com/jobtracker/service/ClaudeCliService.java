@@ -24,6 +24,12 @@ public class ClaudeCliService {
         }
 
         ProcessBuilder pb = new ProcessBuilder(cmd);
+        // A pasted-from-terminal token in Render's env var UI can carry an invisible
+        // trailing newline/whitespace, which silently breaks the Authorization header
+        // and shows up as a 401 "Invalid bearer token" — trim defensively here so a
+        // dashboard paste mistake can't reproduce that.
+        trimIfPresent(pb.environment(), "CLAUDE_CODE_OAUTH_TOKEN");
+        trimIfPresent(pb.environment(), "ANTHROPIC_API_KEY");
         Process proc = pb.start();
 
         Thread writer = new Thread(() -> {
@@ -50,6 +56,11 @@ public class ClaudeCliService {
         }
 
         return new ClaudeResult(proc.exitValue(), out.toString(), err.toString());
+    }
+
+    private static void trimIfPresent(java.util.Map<String, String> env, String key) {
+        String value = env.get(key);
+        if (value != null) env.put(key, value.trim());
     }
 
     private static void readInto(java.io.InputStream in, StringBuilder sb) {
