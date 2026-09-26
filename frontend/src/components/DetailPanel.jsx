@@ -28,6 +28,14 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
   const [tailorNote, setTailorNote] = useState(null);
   const [applying, setApplying] = useState(false);
   const [remoteApplying, setRemoteApplying] = useState(false);
+  const [descCopyLabel, setDescCopyLabel] = useState('Copy');
+
+  function copyDescription() {
+    navigator.clipboard.writeText(job.description).then(() => {
+      setDescCopyLabel('Copied!');
+      setTimeout(() => setDescCopyLabel('Copy'), 2000);
+    });
+  }
 
   const [atsResult, setAtsResult] = useState(null);
   const [atsLoading, setAtsLoading] = useState(false);
@@ -185,6 +193,16 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
             </div>
           ))}
         </div>
+
+        {job.description && (
+          <div className="referral-box">
+            <div className="referral-header">
+              <span>Job Description</span>
+              <button className={`copy-btn${descCopyLabel === 'Copied!' ? ' copied' : ''}`} onClick={copyDescription}>{descCopyLabel}</button>
+            </div>
+            <pre className="template-text" style={{ maxHeight: 400, overflowY: 'auto' }}>{job.description}</pre>
+          </div>
+        )}
 
         <ReferralMessageSection job={job} />
         <LinkedinHelperSection job={job} />
