@@ -1,35 +1,34 @@
 package com.jobtracker.controller;
 
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/resume")
 public class ResumeController {
 
-    // Same file the LaTeX skills tailor/compile — kept at the project root
-    // so `resume.tex` continues to be the single base resume everything reads from.
-    private static final Path RESUME_PATH = Path.of(System.getProperty("user.dir"), "..", "resume.tex").normalize();
+    private final JdbcTemplate jdbc;
+
+    public ResumeController(JdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
 
     @GetMapping
     public Map<String, Object> get() {
-        try {
-            String content = Files.readString(RESUME_PATH, StandardCharsets.UTF_8);
-            return Map.of("content", content);
-        } catch (IOException e) {
-            return Map.of("content", "");
-        }
+        String content = jdbc.query("SELECT value FROM settings WHERE key = 'base_resume'",
+                rs -> rs.next() ? rs.getString("value") : "");
+        return Map.of("content", content == null ? "" : content);
     }
 
     @PostMapping
-    public Map<String, Object> save(@RequestBody Map<String, Object> body) throws IOException {
+    public Map<String, Object> save(@RequestBody Map<String, Object> body) {
         String content = body.get("content") == null ? "" : String.valueOf(body.get("content"));
-        Files.writeString(RESUME_PATH, content, StandardCharsets.UTF_8);
+        jdbc.update("""
+                INSERT INTO settings (key, value) VALUES ('base_resume', ?)
+                ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value
+                """, content);
         return Map.of("ok", true);
     }
 }

@@ -35,6 +35,11 @@ RUN pip3 install --no-cache-dir -r /scraper/requirements.txt
 
 COPY --from=build /app/target/job-tracker-backend.jar ./app.jar
 
+# One-time seed for the base-resume DB migration (DbInitializer copies this
+# into the settings table on first boot if it's empty); the app reads/writes
+# the DB from then on, not this file.
+COPY resume.tex /resume.tex
+
 # claude CLI refuses --dangerously-skip-permissions when running as root, so
 # the app must run as an unprivileged user.
 RUN useradd --create-home --home-dir /home/appuser --shell /bin/bash appuser \

@@ -5,6 +5,10 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 /**
  * Runs the same incremental-migration pattern the original Express app used
  * (CREATE TABLE IF NOT EXISTS + ALTER TABLE ADD COLUMN IF NOT EXISTS on every
@@ -78,5 +82,32 @@ public class DbInitializer implements ApplicationRunner {
             DELETE FROM jobs WHERE created_at < NOW() - INTERVAL '30 days'
               AND status IN ('to_ask', 'declined', 'not_interested')
             """);
+
+        // Base resume, persisted in the DB instead of the container's (ephemeral,
+        // on Render) filesystem so it survives restarts/redeploys.
+        jdbc.execute("""
+            CREATE TABLE IF NOT EXISTS settings (
+              key VARCHAR(50) PRIMARY KEY,
+              value TEXT
+            )
+            """);
+        seedBaseResumeFromRepoFileIfEmpty();
+    }
+
+    // One-time migration: the base resume used to live at ../resume.tex. If the
+    // settings table has never been populated but that file is present in the
+    // image (repo checkout), seed the DB with it so existing users don't lose
+    // their saved resume when this switched over from file to DB storage.
+    private void seedBaseResumeFromRepoFileIfEmpty() {
+        Integer count = jdbc.queryForObject("SELECT COUNT(*) FROM settings WHERE key = 'base_resume'", Integer.class);
+        if (count != null && count > 0) return;
+
+        Path legacyPath = Path.of(System.getProperty("user.dir"), "..", "resume.tex").normalize();
+        try {
+            String content = Files.readString(legacyPath, StandardCharsets.UTF_8);
+            jdbc.update("INSERT INTO settings (key, value) VALUES ('base_resume', ?)", content);
+        } catch (java.io.IOException ignored) {
+            // No legacy file to migrate from; base resume starts empty until saved via the UI.
+        }
     }
 }

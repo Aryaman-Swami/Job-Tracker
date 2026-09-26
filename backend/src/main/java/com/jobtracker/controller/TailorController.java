@@ -9,18 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/tailor")
 public class TailorController {
-
-    private static final Path RESUME_PATH = Path.of(System.getProperty("user.dir"), "..", "resume.tex").normalize();
 
     private final JdbcTemplate jdbc;
     private final ClaudeCliService claude;
@@ -42,13 +36,10 @@ public class TailorController {
 
         String resume = (String) job.get("tailored_resume_latex");
         if (resume == null) {
-            try {
-                resume = Files.readString(RESUME_PATH, StandardCharsets.UTF_8);
-            } catch (IOException e) {
-                return ResponseEntity.badRequest().body(Map.of("error", "No resume saved. Please save your resume first."));
-            }
+            resume = jdbc.query("SELECT value FROM settings WHERE key = 'base_resume'",
+                    rs -> rs.next() ? rs.getString("value") : null);
         }
-        if (resume.isBlank()) {
+        if (resume == null || resume.isBlank()) {
             return ResponseEntity.badRequest().body(Map.of("error", "Resume is empty. Please save your resume first."));
         }
 
