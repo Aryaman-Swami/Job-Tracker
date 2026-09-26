@@ -80,4 +80,17 @@ export const api = {
     const base = import.meta.env.VITE_APPLY_BOT_URL || 'http://localhost:5055';
     return fetch(`${base}/apply/${id}`, { method: 'POST' }).then(json);
   },
+  // Headless apply-bot deployed on Render (apply-bot-remote) — fills the
+  // form there and pushes a screenshot to your phone via ntfy for you to
+  // approve, instead of opening a browser window on this device. Reuses your
+  // existing Job Tracker login as proof-of-you; the service forwards it back
+  // to this same backend to check it's real, rather than needing its own login.
+  remoteAutoApply(id) {
+    const base = import.meta.env.VITE_APPLY_BOT_REMOTE_URL || 'https://apply-bot-remote.onrender.com';
+    const token = getToken();
+    return fetch(`${base}/apply/${id}`, {
+      method: 'POST',
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    }).then(json);
+  },
 };

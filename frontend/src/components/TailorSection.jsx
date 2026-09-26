@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function TailorSection({ latex, note, tailoring, onTailor, onGeneratePdf, onAutoApply, applying, canApply }) {
+export default function TailorSection({ latex, note, tailoring, onTailor, onGeneratePdf, onAutoApply, applying, onRemoteApply, remoteApplying, canApply }) {
   const [open, setOpen] = useState(!!latex);
   const [copyLabel, setCopyLabel] = useState('Copy');
 
@@ -30,6 +30,16 @@ export default function TailorSection({ latex, note, tailoring, onTailor, onGene
           title="Opens a real Chrome window and fills this job's application (Workday, Naukri, LinkedIn, Indeed, Greenhouse, Lever, Wellfound, or best-effort for anything else) with the tailored resume — always stops before the final submit for you to review."
         >
           {applying ? '⏳ Launching Chrome…' : '🚀 Auto-Apply'}
+        </button>
+      )}
+      {canApply && (
+        <button
+          className="btn-referral"
+          onClick={onRemoteApply}
+          disabled={remoteApplying}
+          title="Fills the application headlessly on Render (no browser opens here) and sends a screenshot to your phone via ntfy — approve or discard from a link in that notification. Only Workday/LinkedIn/Indeed/Greenhouse/Lever support the remote-submit step; other sites just get filled/checked and you finish them yourself."
+        >
+          {remoteApplying ? '⏳ Sending to Render…' : '📱 Auto-Apply (Remote)'}
         </button>
       )}
       {open && latex && (

@@ -27,6 +27,7 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
   const [tailoring, setTailoring] = useState(false);
   const [tailorNote, setTailorNote] = useState(null);
   const [applying, setApplying] = useState(false);
+  const [remoteApplying, setRemoteApplying] = useState(false);
 
   const [atsResult, setAtsResult] = useState(null);
   const [atsLoading, setAtsLoading] = useState(false);
@@ -88,6 +89,21 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
       alert('Could not reach the apply-bot helper on your machine. Start it with "npm run serve" in the apply-bot folder, then try again.');
     }
     setApplying(false);
+  }
+
+  async function runRemoteApply() {
+    setRemoteApplying(true);
+    try {
+      const data = await api.remoteAutoApply(job.id);
+      if (data.ok) {
+        alert(data.message || 'Filling the application on Render — check your phone for a notification to review it.');
+      } else {
+        alert(data.error || 'Remote auto-apply failed to start.');
+      }
+    } catch {
+      alert('Could not reach the remote apply-bot service. It may be sleeping (Render free tier) — try again in a few seconds.');
+    }
+    setRemoteApplying(false);
   }
 
   async function runAtsScore() {
@@ -180,6 +196,8 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
           onGeneratePdf={handleGeneratePdf}
           onAutoApply={runAutoApply}
           applying={applying}
+          onRemoteApply={runRemoteApply}
+          remoteApplying={remoteApplying}
           canApply={!!job.job_url}
         />
         <AtsSection
