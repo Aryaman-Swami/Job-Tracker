@@ -77,12 +77,17 @@ TITLE_EXCLUDE = [
     r"\bE[4-9]\b",
     r"\bIC[3-9]\b",
     r"\bP[4-9]\b",
+    # same level codes spelled as roman numerals (Engineer III, SDE-III, …) —
+    # II is fine (that's our target level), III and up is not.
+    r"\b(SDE|SD|engineer|developer|dev|analyst)[-\s]*(III|IV|V|VI|VII|VIII|IX|X)\b",
     # seniority words
     r"\bsenior\b",
     r"\bsr\.?\b",
     r"\bstaff\b",
     r"\bprincipal\b",
-    r"\blead\s+(engineer|developer|dev)\b",
+    # "lead" alone, not just "lead engineer/developer" — titles are usually
+    # "Lead Software Engineer", "Lead Java Developer" etc, word not adjacent.
+    r"\blead\b",
     # any N+ in title
     r"\b[3-9]\+",
     r"\b1[0-9]\+",
@@ -139,7 +144,7 @@ EXP_EXCLUDE = [
     r"\bsenior\b",
     r"\bstaff\b",
     r"\bprincipal\b",
-    r"\blead\s+(engineer|developer|dev)\b",
+    r"\blead\b",
     r"\bminimum\s+[3-9]",
     r"\bat\s+least\s+[3-9]",
 ]
