@@ -484,6 +484,22 @@ header h1 {
   margin: 10px 18px 0;
 }
 
+.collapse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.collapse-caret {
+  display: inline-block;
+  font-size: 0.7em;
+  transition: transform 0.15s ease;
+}
+
+.collapse-caret.open { transform: rotate(90deg); }
+
 .skills-match-list {
   display: flex;
   flex-wrap: wrap;

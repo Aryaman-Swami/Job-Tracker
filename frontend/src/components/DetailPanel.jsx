@@ -29,6 +29,7 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
   const [applying, setApplying] = useState(false);
   const [remoteApplying, setRemoteApplying] = useState(false);
   const [descCopyLabel, setDescCopyLabel] = useState('Copy');
+  const [descOpen, setDescOpen] = useState(true);
 
   function copyDescription() {
     navigator.clipboard.writeText(job.description).then(() => {
@@ -197,10 +198,18 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
         {job.description && (
           <div className="referral-box">
             <div className="referral-header">
-              <span>Job Description</span>
+              <span
+                className="collapse-toggle"
+                onClick={() => setDescOpen(o => !o)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setDescOpen(o => !o)}
+              >
+                <span className={`collapse-caret${descOpen ? ' open' : ''}`}>&#9656;</span> Job Description
+              </span>
               <button className={`copy-btn${descCopyLabel === 'Copied!' ? ' copied' : ''}`} onClick={copyDescription}>{descCopyLabel}</button>
             </div>
-            <pre className="template-text" style={{ maxHeight: 400, overflowY: 'auto' }}>{job.description}</pre>
+            {descOpen && <pre className="template-text" style={{ maxHeight: 400, overflowY: 'auto' }}>{job.description}</pre>}
           </div>
         )}
 
