@@ -2,6 +2,7 @@
   base = "frontend"
   command = "npm run build -- --outDir dist --emptyOutDir"
   publish = "dist"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- frontend/ netlify.toml"
 
 # Proxies /api/* to the Render backend so the frontend can keep using plain
 # relative fetch('/api/...') calls with no CORS handling needed (Netlify
