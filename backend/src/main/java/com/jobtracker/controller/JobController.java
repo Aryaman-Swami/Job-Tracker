@@ -38,7 +38,14 @@ public class JobController {
             conditions.add("status != ?");
             params.add("not_interested");
         }
-        if (source != null) {
+        if ("n8n".equals(source)) {
+            // "Auto-fetched" tab: any non-manual source (n8n, google-search,
+            // workday, adzuna, ...), not just the literal historical "n8n"
+            // value — new scraper sources shouldn't need a frontend change
+            // to show up here.
+            conditions.add("source != ?");
+            params.add("manual");
+        } else if (source != null) {
             conditions.add("source = ?");
             params.add(source);
         }
