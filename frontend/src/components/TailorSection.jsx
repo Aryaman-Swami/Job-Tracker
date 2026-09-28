@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function TailorSection({ latex, note, tailoring, onTailor, onGeneratePdf, onAutoApply, applying, onRemoteApply, remoteApplying, canApply }) {
+export default function TailorSection({ latex, skillsMatch, note, tailoring, onTailor, onGeneratePdf, onAutoApply, applying, onRemoteApply, remoteApplying, canApply }) {
   const [open, setOpen] = useState(!!latex);
   const [copyLabel, setCopyLabel] = useState('Copy');
 
@@ -53,6 +53,18 @@ export default function TailorSection({ latex, note, tailoring, onTailor, onGene
           </div>
           {note && <div className="tailor-note">&#9888; {note}</div>}
           <pre className="template-text tailor-text">{latex}</pre>
+        </div>
+      )}
+      {open && Array.isArray(skillsMatch) && skillsMatch.length > 0 && (
+        <div className="referral-box">
+          <div className="referral-header">
+            <span>Key Skills Match</span>
+          </div>
+          <div className="skills-match-list">
+            {skillsMatch.map((skill, i) => (
+              <span className="skills-match-pill" key={i}>{skill}</span>
+            ))}
+          </div>
         </div>
       )}
     </>

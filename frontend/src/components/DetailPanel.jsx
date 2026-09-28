@@ -73,7 +73,7 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
     try {
       const data = await api.tailor(job.id, atsFeedback);
       if (data.ok) {
-        onJobUpdated(job.id, { tailored_resume_latex: data.latex });
+        onJobUpdated(job.id, { tailored_resume_latex: data.latex, tailored_skills_match: data.skillsMatch });
         setTailorNote(data.note || null);
       } else {
         alert(data.error || 'Tailoring failed.');
@@ -208,6 +208,7 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
         <LinkedinHelperSection job={job} />
         <TailorSection
           latex={job.tailored_resume_latex}
+          skillsMatch={job.tailored_skills_match}
           note={tailorNote}
           tailoring={tailoring}
           onTailor={runTailor}

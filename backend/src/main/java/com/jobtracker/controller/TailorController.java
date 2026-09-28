@@ -69,23 +69,23 @@ public class TailorController {
                 You are tailoring a candidate's LaTeX resume for a specific job.
 
                 STRICT RULES:
-                1. Keep the total word count within ±5%% of the original, EXCLUDING the new "Key Skills Match" section described in rule 7. Do NOT add new bullet points, or expand existing sections.
+                1. Keep the total word count within ±5%% of the original. Do NOT add new bullet points, sections, or expand existing ones.
                 2. Only rewrite existing bullet points to better match the job description's language and keywords — do not invent new content, achievements, or skills that aren't already present in some form.
                 3. Before rewriting, find every skill, tool, or concept the job description mentions or clearly implies that is ALSO already true of the candidate somewhere in the resume (Skills section, Projects, or other Experience bullets) — including synonyms and close equivalents (e.g. JD "containerization" matches resume "Docker"; JD "unit testing" matches resume "unit-tested REST endpoints"). For every such match, make sure the JD's own wording appears at least once in the tailored bullets or summary, even if that means rephrasing an existing bullet rather than leaving it untouched. Do not skip a true, relevant keyword just because rewording takes effort — but never fabricate one that has no basis anywhere in the resume.
                 4. Reorder or re-emphasize bullets within existing sections if it helps relevance — don't restructure the document.
-                5. Keep all LaTeX structure, commands, packages, and formatting identical to the source. Only the text content of bullets/summary changes, plus the one addition in rule 7.
+                5. Keep all LaTeX structure, commands, packages, and formatting identical to the source. Only the text content of bullets/summary changes.
                 6. Replace the job-title phrase in the Professional Summary. It opens with a bolded title phrase, e.g. \\textbf{Software Engineer} — replace just that phrase's inner text with the target role "%s". If that text is long or awkward inside the sentence, use a concise, natural equivalent instead of pasting it verbatim. Keep the \\textbf{} command itself — only the text inside it changes. Do this on every pass, even if the sentence still reads fine with the old title.
-                7. Add exactly one new section titled "Key Skills Match", placed immediately after the existing Skills section, formatted the same way as the Skills section (same \\section{}, itemize/leftmargin/label pattern, \\small, \\textbf{} for emphasis). List every major skill, tool, or technology the job description names — using the job description's own wording verbatim for each — and include a skill in this list whenever the candidate's resume reasonably supports it, using a generous, real-world notion of "supports":
+
+                OUTPUT FORMAT:
+                First output the complete tailored LaTeX document, starting at \\documentclass and ending at \\end{document}. No markdown code fences, no commentary before or after it.
+                Then, on a new line after \\end{document}, output exactly the marker "=== SKILLS MATCH ===" followed by a JSON array of strings — the major skills/tools/technologies the job description names, each copied verbatim in the JD's own wording, and included whenever the candidate's resume reasonably supports it, using a generous, real-world notion of "supports":
                    - Exact matches and close synonyms (per rule 3).
                    - Version/variant specifics of something the resume already shows (JD "Java 17" or "Java 8" matches resume "Java"; JD "React 18" matches resume "React").
                    - Standard ecosystem tooling that goes with a listed technology even if not separately named (JD "Maven" or "Gradle" matches resume "Java"/"Spring Boot"; JD "npm" matches resume "Node.js").
                    - Practices and methodologies clearly implied by the candidate's described work (JD "Agile" or "Scrum" matches a candidate who has shipped iteratively across sprints/features in a team; JD "CI/CD" matches resume "CI/CD" or a pipeline description).
                    - Domain terms implied by what the candidate actually built (JD "payments" or "fintech" matches resume work on a Payment Operations Portal, transactions, settlements, or onboarding/verification flows).
                    - Closely adjacent tools in the same category as something the candidate has used (JD "Angular" matches resume "React" as an equivalent frontend framework — name it as the JD's term, don't relabel it).
-                   Only skip a JD skill if it belongs to a genuinely different, unrelated domain the resume gives no real basis for (e.g. don't claim "Salesforce" or "SAP" from a Java/Spring background with no CRM/ERP work). When in doubt between a reasonable inference and a stretch, include it — this section is meant to read generously, not conservatively. Do not paraphrase the JD's terms here — copy them as written in the job description.
-
-                OUTPUT FORMAT:
-                Return ONLY the complete tailored LaTeX document, starting at \\documentclass and ending at \\end{document} — nothing else. No markdown code fences, no commentary before or after.
+                   Only skip a JD skill if it belongs to a genuinely different, unrelated domain the resume gives no real basis for (e.g. don't claim "Salesforce" or "SAP" from a Java/Spring background with no CRM/ERP work). When in doubt between a reasonable inference and a stretch, include it — this list is meant to read generously, not conservatively. Do not paraphrase the JD's terms — copy them as written in the job description. Example: === SKILLS MATCH ===\n["Java 17", "Maven", "Agile", "Payments"]
                 %s%s
                 === JOB ===
                 Role: %s
@@ -116,13 +116,29 @@ public class TailorController {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("ok", false, "error", msg));
             }
 
-            jdbc.update("UPDATE jobs SET tailored_resume_latex = ?, updated_at = NOW() WHERE id = ?", onePage.latex(), id);
+            List<String> skillsMatch = List.of();
+            int markerIdx = out.indexOf("=== SKILLS MATCH ===", docEnd);
+            if (markerIdx != -1) {
+                java.util.regex.Matcher m = java.util.regex.Pattern.compile("\\[[\\s\\S]*]")
+                        .matcher(out.substring(markerIdx));
+                if (m.find()) {
+                    try {
+                        skillsMatch = new com.fasterxml.jackson.databind.ObjectMapper()
+                                .readValue(m.group(), new com.fasterxml.jackson.core.type.TypeReference<List<String>>() {});
+                    } catch (Exception ignored) {}
+                }
+            }
+            String skillsMatchJson = com.jobtracker.util.JsonColumns.toJson(skillsMatch);
+
+            jdbc.update("UPDATE jobs SET tailored_resume_latex = ?, tailored_skills_match = ?::jsonb, updated_at = NOW() WHERE id = ?",
+                    onePage.latex(), skillsMatchJson, id);
 
             Map<String, Object> response = new java.util.LinkedHashMap<>();
             response.put("ok", true);
             response.put("latex", onePage.latex());
             response.put("pages", onePage.pages());
             response.put("note", onePage.note());
+            response.put("skillsMatch", skillsMatch);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("ok", false, "error", "Claude returned an unexpected response."));

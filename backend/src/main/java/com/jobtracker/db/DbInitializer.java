@@ -68,6 +68,7 @@ public class DbInitializer implements ApplicationRunner {
         jdbc.execute("ALTER TABLE jobs ADD COLUMN IF NOT EXISTS needs_referral BOOLEAN NOT NULL DEFAULT false");
         jdbc.execute("ALTER TABLE jobs ADD COLUMN IF NOT EXISTS linkedin_profile_url TEXT");
         jdbc.execute("ALTER TABLE jobs ADD COLUMN IF NOT EXISTS tailored_resume_latex TEXT");
+        jdbc.execute("ALTER TABLE jobs ADD COLUMN IF NOT EXISTS tailored_skills_match JSONB");
         jdbc.execute("ALTER TABLE jobs ADD COLUMN IF NOT EXISTS date_posted TIMESTAMP");
 
         // ATS score persistence: last score per job, shown as a card without recomputing.

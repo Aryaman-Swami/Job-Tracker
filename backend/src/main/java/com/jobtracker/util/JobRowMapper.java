@@ -28,6 +28,7 @@ public class JobRowMapper implements RowMapper<Map<String, Object>> {
         row.put("needs_referral", rs.getBoolean("needs_referral"));
         row.put("linkedin_profile_url", rs.getString("linkedin_profile_url"));
         row.put("tailored_resume_latex", rs.getString("tailored_resume_latex"));
+        row.put("tailored_skills_match", JsonColumns.readJson(rs, "tailored_skills_match"));
         row.put("date_posted", toIso(rs.getTimestamp("date_posted")));
         row.put("created_at", toIso(rs.getTimestamp("created_at")));
         row.put("updated_at", toIso(rs.getTimestamp("updated_at")));
