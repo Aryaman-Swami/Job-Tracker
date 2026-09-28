@@ -78,14 +78,14 @@ public class TailorController {
 
                 OUTPUT FORMAT:
                 First output the complete tailored LaTeX document, starting at \\documentclass and ending at \\end{document}. No markdown code fences, no commentary before or after it.
-                Then, on a new line after \\end{document}, output exactly the marker "=== SKILLS MATCH ===" followed by a JSON array of AT MOST 2 strings — pick only the top 2 major skills/tools/technologies the job description names, each copied verbatim in the JD's own wording, and each one included only if the candidate's resume reasonably supports it, using a generous, real-world notion of "supports":
+                Then, on a new line after \\end{document}, output exactly the marker "=== SKILLS MATCH ===" followed by a JSON array of AT MOST 20 strings — pick only the top 20 major skills/tools/technologies the job description names, each copied verbatim in the JD's own wording, and each one included only if the candidate's resume reasonably supports it, using a generous, real-world notion of "supports":
                    - Exact matches and close synonyms (per rule 3).
                    - Version/variant specifics of something the resume already shows (JD "Java 17" or "Java 8" matches resume "Java"; JD "React 18" matches resume "React").
                    - Standard ecosystem tooling that goes with a listed technology even if not separately named (JD "Maven" or "Gradle" matches resume "Java"/"Spring Boot"; JD "npm" matches resume "Node.js").
                    - Practices and methodologies clearly implied by the candidate's described work (JD "Agile" or "Scrum" matches a candidate who has shipped iteratively across sprints/features in a team; JD "CI/CD" matches resume "CI/CD" or a pipeline description).
                    - Domain terms implied by what the candidate actually built (JD "payments" or "fintech" matches resume work on a Payment Operations Portal, transactions, settlements, or onboarding/verification flows).
                    - Closely adjacent tools in the same category as something the candidate has used (JD "Angular" matches resume "React" as an equivalent frontend framework — name it as the JD's term, don't relabel it).
-                   Never include a JD skill that belongs to a genuinely different, unrelated domain the resume gives no real basis for (e.g. don't claim "Salesforce" or "SAP" from a Java/Spring background with no CRM/ERP work). Among the JD skills that do genuinely match, pick the 2 most prominent/important ones in the JD — never output more than 2, and output fewer (or an empty array) if fewer than 2 genuinely match. Do not paraphrase the JD's terms — copy them as written in the job description. Example: === SKILLS MATCH ===\n["Java 17", "Maven"]
+                   Never include a JD skill that belongs to a genuinely different, unrelated domain the resume gives no real basis for (e.g. don't claim "Salesforce" or "SAP" from a Java/Spring background with no CRM/ERP work). Among the JD skills that do genuinely match, pick up to the 20 most prominent/important ones in the JD — never output more than 20, and output fewer (or an empty array) if fewer than 20 genuinely match. Do not paraphrase the JD's terms — copy them as written in the job description. Example: === SKILLS MATCH ===\n["Java 17", "Maven", "Agile", "Payments"]
                 %s%s
                 === JOB ===
                 Role: %s
@@ -128,7 +128,7 @@ public class TailorController {
                     } catch (Exception ignored) {}
                 }
             }
-            if (skillsMatch.size() > 2) skillsMatch = skillsMatch.subList(0, 2);
+            if (skillsMatch.size() > 20) skillsMatch = skillsMatch.subList(0, 20);
             String skillsMatchJson = com.jobtracker.util.JsonColumns.toJson(skillsMatch);
 
             jdbc.update("UPDATE jobs SET tailored_resume_latex = ?, tailored_skills_match = ?::jsonb, updated_at = NOW() WHERE id = ?",
