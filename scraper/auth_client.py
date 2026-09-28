@@ -15,7 +15,7 @@ def get_auth_header(base_url: str) -> dict:
         return _cached_header
 
     username = os.environ.get("APP_USERNAME", "admin")
-    password = os.environ.get("APP_PASSWORD", "")
+    password = os.environ.get("APP_PASSWORD", "admin")
     resp = requests.post(
         f"{base_url}/api/auth/login",
         json={"username": username, "password": password},
