@@ -58,12 +58,18 @@ public class LatexPdfService {
         Path logPath = tmpDir.resolve(tmpName + ".log");
         Path pdfPath = tmpDir.resolve(tmpName + ".pdf");
 
+        Process proc = null;
         try {
             Files.writeString(texPath, latex, StandardCharsets.UTF_8);
-            Process proc = new ProcessBuilder(latexBin, "-interaction=nonstopmode", "-output-directory", tmpDir.toString(), texPath.toString())
+            proc = new ProcessBuilder(latexBin, "-interaction=nonstopmode", "-output-directory", tmpDir.toString(), texPath.toString())
                     .redirectErrorStream(true).start();
+            proc.getOutputStream().close(); // stdin unused — close so a kpathsea prompt can't block waiting on it
             proc.getInputStream().readAllBytes();
-            proc.waitFor(60, TimeUnit.SECONDS);
+            if (!proc.waitFor(60, TimeUnit.SECONDS)) {
+                proc.destroyForcibly();
+                proc.waitFor(5, TimeUnit.SECONDS);
+                return new CompileResult(null, true, false, "pdflatex timed out after 60s", null, null);
+            }
 
             Integer pages = null;
             String errorLine = null;
@@ -86,6 +92,7 @@ public class LatexPdfService {
         } catch (Exception e) {
             return new CompileResult(null, true, false, e.getMessage(), null, null);
         } finally {
+            if (proc != null && proc.isAlive()) proc.destroyForcibly();
             for (String ext : new String[]{"tex", "pdf", "aux", "log", "out"}) {
                 try { Files.deleteIfExists(tmpDir.resolve(tmpName + "." + ext)); } catch (IOException ignored) {}
             }
@@ -132,12 +139,18 @@ public class LatexPdfService {
         Path logPath = tmpDir.resolve(tmpName + ".log");
         Path auxPath = tmpDir.resolve(tmpName + ".aux");
 
+        Process proc = null;
         try {
             Files.writeString(texPath, latex, StandardCharsets.UTF_8);
-            Process proc = new ProcessBuilder(latexBin, "-interaction=nonstopmode", "-output-directory", tmpDir.toString(), texPath.toString())
+            proc = new ProcessBuilder(latexBin, "-interaction=nonstopmode", "-output-directory", tmpDir.toString(), texPath.toString())
                     .redirectErrorStream(true).start();
+            proc.getOutputStream().close(); // stdin unused — close so a kpathsea prompt can't block waiting on it
             String log = new String(proc.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-            proc.waitFor(60, TimeUnit.SECONDS);
+            if (!proc.waitFor(60, TimeUnit.SECONDS)) {
+                proc.destroyForcibly();
+                proc.waitFor(5, TimeUnit.SECONDS);
+                return new CompileResult(null, true, false, "pdflatex timed out after 60s", null, log);
+            }
 
             if (proc.exitValue() == 0 && Files.exists(pdfPath)) {
                 byte[] pdf = Files.readAllBytes(pdfPath);
@@ -148,6 +161,7 @@ public class LatexPdfService {
         } catch (Exception e) {
             return new CompileResult(null, true, false, e.getMessage(), null, null);
         } finally {
+            if (proc != null && proc.isAlive()) proc.destroyForcibly();
             for (Path p : new Path[]{texPath, pdfPath, logPath, auxPath}) {
                 try { Files.deleteIfExists(p); } catch (IOException ignored) {}
             }
