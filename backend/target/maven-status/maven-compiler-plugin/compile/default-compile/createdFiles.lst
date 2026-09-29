@@ -17,6 +17,7 @@ com\jobtracker\service\SyncService.class
 com\jobtracker\util\LatexUtils$Block.class
 com\jobtracker\rubric\HackerRankRubric$Category.class
 com\jobtracker\controller\SyncController.class
+com\jobtracker\controller\TailorController$1.class
 com\jobtracker\service\ClaudeCliService$ClaudeResult.class
 com\jobtracker\controller\JobController.class
 com\jobtracker\config\SecurityConfig.class
