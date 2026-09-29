@@ -47,6 +47,40 @@ const LOCATION_INCLUDE = [
 // include-list above — keeps the exclusion visible/intentional in the code.
 const LOCATION_EXCLUDE = [/\bchennai\b/i, /\bkochi\b/i];
 
+// Defense-in-depth against non-India postings slipping through: Naukri's
+// location field is sometimes multi-site ("Bangalore, Dubai") or the client
+// site is abroad while the listing tags an Indian city as the recruiter's
+// base — so also reject on any clear abroad marker, checked against BOTH
+// the location field and the full description (title alone rarely says it).
+const ABROAD_EXCLUDE = [
+  /\bdubai\b/i,
+  /\b(u\.?a\.?e\.?|united\s+arab\s+emirates)\b/i,
+  /\bsingapore\b/i,
+  /\bsaudi(\s+arabia)?\b/i,
+  /\bqatar\b/i,
+  /\bkuwait\b/i,
+  /\bbahrain\b/i,
+  /\boman\b/i,
+  /\bgulf\b/i,
+  /\b(usa|u\.?s\.?a\.?|united\s+states)\b/i,
+  /\b(uk|u\.?k\.?|united\s+kingdom)\b/i,
+  /\blondon\b/i,
+  /\bcanada\b/i,
+  /\baustralia\b/i,
+  /\bgermany\b/i,
+  /\bnetherlands\b/i,
+  /\bireland\b/i,
+  /\bmalaysia\b/i,
+  /\bphilippines\b/i,
+  /\bvietnam\b/i,
+  /\bindonesia\b/i,
+  /\bjapan\b/i,
+  /\bhong\s+kong\b/i,
+  /\beurope\b/i,
+  /\boverseas\b/i,
+  /\binternational\s+location\b/i,
+];
+
 const COMPANY_EXCLUDE = [
   /\bcapgemini\b/i,
   /\btata\s+consultancy\b/i,
@@ -91,6 +125,7 @@ function passesFilters(job) {
   if (!matchesAny(MUST_CONTAIN, combined)) return false;
   if (matchesAny(LOCATION_EXCLUDE, job.location)) return false;
   if (!matchesAny(LOCATION_INCLUDE, job.location)) return false;
+  if (matchesAny(ABROAD_EXCLUDE, job.location) || matchesAny(ABROAD_EXCLUDE, job.description)) return false;
 
   const exp = parseExperience(job.experience);
   if (exp && exp.max < 2) return false;

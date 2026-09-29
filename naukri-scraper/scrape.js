@@ -38,6 +38,32 @@ function searchUrl(term, page) {
   return `https://www.naukri.com/${term.replace(/\s+/g, '-').toLowerCase()}-jobs-in-india?k=${q}&pageNo=${page}`;
 }
 
+// Card descriptions are a short truncated snippet (often empty) — not
+// enough to trust for the java/node MUST_CONTAIN check or to catch an
+// abroad posting whose location field lists an Indian city but whose JD
+// body says otherwise. Fetch the full JD from the job's own page before
+// any job is accepted as qualifying.
+async function fetchFullDescription(context, url) {
+  const detail = await context.newPage();
+  try {
+    await detail.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
+    await pause(1200, 2000);
+    return await detail.evaluate(() => {
+      const el =
+        document.querySelector('.styles_JDC__dang-inner-html') ||
+        document.querySelector('[class*="dang-inner-html"]') ||
+        document.querySelector('[class*="job-desc"]') ||
+        document.querySelector('.job-desc');
+      return el?.textContent?.trim() || '';
+    });
+  } catch (e) {
+    console.error(`[naukri] full description fetch failed for ${url}: ${e.message}`);
+    return '';
+  } finally {
+    await detail.close();
+  }
+}
+
 async function scrapeCards(page) {
   return page.evaluate(() => {
     const cards = Array.from(document.querySelectorAll('.cust-job-tuple'));
@@ -97,6 +123,17 @@ async function main() {
             totalAlreadySeen++;
             continue;
           }
+
+          // Confirm against the full JD before accepting — the card-level
+          // snippet already passed, but a full description can still reveal
+          // an abroad posting or fail the java/node check on closer look.
+          card.description = await fetchFullDescription(context, card.job_url);
+          await pause(800, 1500);
+          if (!passesFilters(card)) {
+            totalFiltered++;
+            continue;
+          }
+
           seenUrls.add(card.job_url);
           newQualifying.push({ company: card.company || 'Unknown', role: card.title, job_url: card.job_url, location: card.location });
         }

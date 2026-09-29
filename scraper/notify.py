@@ -29,7 +29,12 @@ def _topic():
 
 
 def notify_new_jobs(jobs: list[dict], source_label: str):
-    """jobs: list of {"company", "role", "job_url"} dicts that were newly added."""
+    """jobs: list of {"company", "role", "job_url"} dicts that were newly added.
+
+    Sends one notification per job (not batched) so each posting gets its
+    own tap-through — unlike the naukri-scraper pipeline's notify.js, which
+    deliberately stays batched.
+    """
     if not jobs:
         return
     topic = _topic()
@@ -37,27 +42,20 @@ def notify_new_jobs(jobs: list[dict], source_label: str):
         logger.warning("notify skipped: no ntfy_topic configured in notify_config.json")
         return
 
-    if len(jobs) == 1:
-        title = f"{source_label}: 1 new job"
-    else:
-        title = f"{source_label}: {len(jobs)} new jobs"
-
-    lines = [f"{j['company']} — {j['role']}" for j in jobs[:10]]
-    if len(jobs) > 10:
-        lines.append(f"...and {len(jobs) - 10} more")
-    message = "\n".join(lines)
-
-    try:
-        resp = requests.post(
-            f"https://ntfy.sh/{topic}",
-            data=message.encode("utf-8"),
-            headers={
-                "Title": title.encode("utf-8"),
-                "Tags": "briefcase",
-                "Click": jobs[0]["job_url"],
-            },
-            timeout=10,
-        )
-        resp.raise_for_status()
-    except Exception as e:
-        logger.warning(f"ntfy notification failed: {e}")
+    for j in jobs:
+        title = f"{source_label}: {j['company']}"
+        message = j["role"]
+        try:
+            resp = requests.post(
+                f"https://ntfy.sh/{topic}",
+                data=message.encode("utf-8"),
+                headers={
+                    "Title": title.encode("utf-8"),
+                    "Tags": "briefcase",
+                    "Click": j["job_url"],
+                },
+                timeout=10,
+            )
+            resp.raise_for_status()
+        except Exception as e:
+            logger.warning(f"ntfy notification failed for {j.get('job_url')}: {e}")
