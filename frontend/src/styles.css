@@ -407,6 +407,38 @@ header h1 {
 
 .detail-value { color: var(--text); line-height: 1.4; }
 .detail-value a { color: var(--accent); text-decoration: none; }
+
+.detail-panel-backdrop { display: none; }
+
+/* On mobile, .main-layout collapses to a single column (see the
+   max-width:860px rule above), which would otherwise leave the detail
+   panel — and everything in it, including "Tailor Resume with Claude" —
+   stacked in normal document flow below the *entire* job list instead of
+   appearing right where the selected card was. Turn it into a bottom
+   sheet instead, so it shows up immediately under the tapped card. */
+@media (max-width: 860px) {
+  .detail-panel { display: none; }
+  .detail-panel.detail-panel--open {
+    display: block;
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 88vh;
+    border-radius: 16px 16px 0 0;
+    z-index: 1001;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+  }
+  .detail-panel-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+  }
+}
 .detail-value a:hover { text-decoration: underline; }
 
 .btn-referral {

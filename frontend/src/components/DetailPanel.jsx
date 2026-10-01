@@ -176,7 +176,9 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
   }
 
   return (
-    <aside className="detail-panel">
+    <>
+      <div className="detail-panel-backdrop" onClick={onClose} />
+      <aside className="detail-panel detail-panel--open">
       <div className="panel-content">
         <div className="panel-header">
           <div className="panel-heading">
@@ -236,6 +238,7 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
         />
         <HackerRankSection result={hrResult} loading={hrLoading} onRun={runHackerRankScore} />
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }
