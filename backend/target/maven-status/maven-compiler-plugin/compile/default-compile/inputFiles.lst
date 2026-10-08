@@ -2,6 +2,7 @@ C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\Jwt
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\JwtService.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\SecurityConfig.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\config\WebConfig.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\AsyncTaskController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\AtsScoreController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\AuthController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\HackerRankController.java

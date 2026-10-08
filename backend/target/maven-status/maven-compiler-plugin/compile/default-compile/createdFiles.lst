@@ -8,6 +8,7 @@ com\jobtracker\controller\AuthController.class
 com\jobtracker\controller\ResumeController.class
 com\jobtracker\controller\AuthController$LoginRequest.class
 com\jobtracker\config\JwtService.class
+com\jobtracker\controller\AsyncTaskController$Task.class
 com\jobtracker\db\DbInitializer.class
 com\jobtracker\util\LatexUtils.class
 com\jobtracker\service\LatexPdfService.class
@@ -15,6 +16,7 @@ com\jobtracker\service\LatexPdfService$CompileResult.class
 com\jobtracker\controller\HealthController.class
 com\jobtracker\service\SyncService.class
 com\jobtracker\util\LatexUtils$Block.class
+com\jobtracker\controller\AsyncTaskController.class
 com\jobtracker\rubric\HackerRankRubric$Category.class
 com\jobtracker\controller\SyncController.class
 com\jobtracker\controller\TailorController$1.class

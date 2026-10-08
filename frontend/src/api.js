@@ -26,6 +26,50 @@ async function authFetch(url, options = {}) {
   return res;
 }
 
+// Starts a long Claude-backed job on the backend and polls for the result,
+// instead of holding one HTTP connection open for minutes. Mobile browsers
+// drop that connection when the screen turns off; polling survives it
+// (failed polls are just retried, and we poll immediately on wake-up).
+async function runAsync(path, body) {
+  const startRes = await authFetch(`${BACKEND_URL}/api/async/${path}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body || {}),
+  });
+  const { taskId } = await startRes.json();
+  const deadline = Date.now() + 10 * 60 * 1000;
+
+  return new Promise((resolve, reject) => {
+    let timer;
+    let polling = false;
+    const cleanup = () => {
+      clearTimeout(timer);
+      document.removeEventListener('visibilitychange', onVisible);
+    };
+    const poll = async () => {
+      if (polling) return;
+      polling = true;
+      clearTimeout(timer);
+      try {
+        const res = await authFetch(`${BACKEND_URL}/api/async/task/${taskId}`);
+        if (res.status === 404) { cleanup(); return reject(new Error('Task expired')); }
+        const data = await res.json();
+        if (data.done) { cleanup(); return resolve(data.body); }
+      } catch (e) {
+        if (e.message === 'Session expired' || e.message === 'Not logged in') { cleanup(); return reject(e); }
+        // network blip (e.g. screen was off) — keep trying
+      } finally {
+        polling = false;
+      }
+      if (Date.now() > deadline) { cleanup(); return reject(new Error('Timed out waiting for result')); }
+      timer = setTimeout(poll, 3000);
+    };
+    const onVisible = () => { if (document.visibilityState === 'visible') poll(); };
+    document.addEventListener('visibilitychange', onVisible);
+    poll();
+  });
+}
+
 async function json(res) {
   return res.json();
 }
@@ -50,11 +94,7 @@ export const api = {
     return authFetch('/api/resume', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content }) }).then(json);
   },
   tailor(id, atsFeedback) {
-    return authFetch(`${BACKEND_URL}/api/tailor/${id}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(atsFeedback ? { atsFeedback } : {}),
-    }).then(json);
+    return runAsync(`tailor/${id}`, atsFeedback ? { atsFeedback } : {});
   },
   saveTailoredLatex(id, latex) {
     return authFetch(`/api/tailor/${id}/latex`, {
@@ -64,13 +104,13 @@ export const api = {
     }).then(json);
   },
   runAtsScore(id) {
-    return authFetch(`${BACKEND_URL}/api/ats-score/${id}`, { method: 'POST' }).then(json);
+    return runAsync(`ats-score/${id}`);
   },
   getPersistedAtsScore(id) {
     return authFetch(`/api/ats-score/${id}`).then(json);
   },
   runHackerRankScore(id) {
-    return authFetch(`${BACKEND_URL}/api/hackerrank-score/${id}`, { method: 'POST' }).then(json);
+    return runAsync(`hackerrank-score/${id}`);
   },
   generatePdf(latex, filename) {
     return authFetch(`${BACKEND_URL}/api/pdf`, {

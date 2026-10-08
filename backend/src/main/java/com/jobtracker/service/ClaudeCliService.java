@@ -46,13 +46,13 @@ public class ClaudeCliService {
         stdoutReader.start();
         stderrReader.start();
 
-        boolean finished = proc.waitFor(180, TimeUnit.SECONDS);
+        boolean finished = proc.waitFor(300, TimeUnit.SECONDS);
         writer.join(1000);
         stdoutReader.join(2000);
         stderrReader.join(2000);
         if (!finished) {
             proc.destroyForcibly();
-            return new ClaudeResult(-1, out.toString(), "Claude CLI timed out after 180s");
+            return new ClaudeResult(-1, out.toString(), "Claude CLI timed out after 300s");
         }
 
         return new ClaudeResult(proc.exitValue(), out.toString(), err.toString());
