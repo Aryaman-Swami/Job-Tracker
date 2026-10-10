@@ -2,7 +2,7 @@ import { getToken, logout } from './auth.js';
 
 const JOBS = '/api/jobs';
 
-// Endpoints that call the Claude CLI (tailor, ATS score, HackerRank score) or
+// Endpoints that call the Claude CLI (tailor, ATS score) or
 // run a LaTeX compile (pdf) can take well past Netlify's ~26s proxy-redirect
 // timeout, especially after a Render free-tier cold start, which returns a
 // 504 to the browser even though the Render backend is still working. Call
@@ -109,9 +109,6 @@ export const api = {
   getPersistedAtsScore(id) {
     return authFetch(`/api/ats-score/${id}`).then(json);
   },
-  runHackerRankScore(id) {
-    return runAsync(`hackerrank-score/${id}`);
-  },
   generatePdf(latex, filename) {
     return authFetch(`${BACKEND_URL}/api/pdf`, {
       method: 'POST',
@@ -121,25 +118,5 @@ export const api = {
   },
   sync() {
     return authFetch('/api/sync', { method: 'POST' }).then(json);
-  },
-  // Goes straight to the local apply-bot helper (server.js) running on your
-  // own machine, NOT through the Netlify/Render proxy — Chrome has to open
-  // where you can see and submit it, and Render has no display or browser.
-  autoApply(id) {
-    const base = import.meta.env.VITE_APPLY_BOT_URL || 'http://localhost:5055';
-    return fetch(`${base}/apply/${id}`, { method: 'POST' }).then(json);
-  },
-  // Headless apply-bot deployed on Render (apply-bot-remote) — fills the
-  // form there and pushes a screenshot to your phone via ntfy for you to
-  // approve, instead of opening a browser window on this device. Reuses your
-  // existing Job Tracker login as proof-of-you; the service forwards it back
-  // to this same backend to check it's real, rather than needing its own login.
-  remoteAutoApply(id) {
-    const base = import.meta.env.VITE_APPLY_BOT_REMOTE_URL || 'https://apply-bot-remote.onrender.com';
-    const token = getToken();
-    return fetch(`${base}/apply/${id}`, {
-      method: 'POST',
-      headers: token ? { Authorization: `Bearer ${token}` } : {},
-    }).then(json);
   },
 };

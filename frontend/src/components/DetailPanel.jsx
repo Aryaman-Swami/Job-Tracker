@@ -4,7 +4,6 @@ import { SOURCE, STATUS_LABELS } from '../utils.js';
 import { ReferralMessageSection, LinkedinHelperSection } from './ReferralSection.jsx';
 import TailorSection from './TailorSection.jsx';
 import AtsSection from './AtsSection.jsx';
-import HackerRankSection from './HackerRankSection.jsx';
 
 function buildDetailRows(job) {
   const rows = [
@@ -26,8 +25,6 @@ function buildDetailRows(job) {
 export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPreview }) {
   const [tailoring, setTailoring] = useState(false);
   const [tailorNote, setTailorNote] = useState(null);
-  const [applying, setApplying] = useState(false);
-  const [remoteApplying, setRemoteApplying] = useState(false);
   const [descCopyLabel, setDescCopyLabel] = useState('Copy');
   const [descOpen, setDescOpen] = useState(true);
 
@@ -41,12 +38,9 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
   const [atsResult, setAtsResult] = useState(null);
   const [atsLoading, setAtsLoading] = useState(false);
 
-  const [hrResult, setHrResult] = useState(null);
-  const [hrLoading, setHrLoading] = useState(false);
 
   useEffect(() => {
     setTailorNote(null);
-    setHrResult(null);
     setAtsResult(null);
     if (!job) return;
 
@@ -85,36 +79,6 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
     setTailoring(false);
   }
 
-  async function runAutoApply() {
-    setApplying(true);
-    try {
-      const data = await api.autoApply(job.id);
-      if (data.ok) {
-        alert(data.message || 'Chrome is launching — review and submit the application in that window.');
-      } else {
-        alert(data.error || 'Auto-apply failed to launch.');
-      }
-    } catch {
-      alert('Could not reach the apply-bot helper on your machine. Start it with "npm run serve" in the apply-bot folder, then try again.');
-    }
-    setApplying(false);
-  }
-
-  async function runRemoteApply() {
-    setRemoteApplying(true);
-    try {
-      const data = await api.remoteAutoApply(job.id);
-      if (data.ok) {
-        alert(data.message || 'Filling the application on Render — check your phone for a notification to review it.');
-      } else {
-        alert(data.error || 'Remote auto-apply failed to start.');
-      }
-    } catch {
-      alert('Could not reach the remote apply-bot service. It may be sleeping (Render free tier) — try again in a few seconds.');
-    }
-    setRemoteApplying(false);
-  }
-
   async function runAtsScore() {
     setAtsLoading(true);
     try {
@@ -138,18 +102,6 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
       alert('Request failed.');
     }
     setAtsLoading(false);
-  }
-
-  async function runHackerRankScore() {
-    setHrLoading(true);
-    try {
-      const data = await api.runHackerRankScore(job.id);
-      if (data.ok) setHrResult(data);
-      else alert(data.error || 'HackerRank scoring failed.');
-    } catch {
-      alert('Request failed.');
-    }
-    setHrLoading(false);
   }
 
   async function handleGeneratePdf(latex) {
@@ -224,11 +176,6 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
           tailoring={tailoring}
           onTailor={runTailor}
           onGeneratePdf={handleGeneratePdf}
-          onAutoApply={runAutoApply}
-          applying={applying}
-          onRemoteApply={runRemoteApply}
-          remoteApplying={remoteApplying}
-          canApply={!!job.job_url}
         />
         <AtsSection
           atsResult={atsResult}
@@ -236,7 +183,6 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
           onRun={runAtsScore}
           onApplyGaps={runTailor}
         />
-        <HackerRankSection result={hrResult} loading={hrLoading} onRun={runHackerRankScore} />
       </div>
       </aside>
     </>
