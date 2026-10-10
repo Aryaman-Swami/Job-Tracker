@@ -10,7 +10,7 @@ export default function HackerRankScoreCard({ total, max_final_score, breakdown,
   return (
     <>
       <div className="ats-score-ring">
-        <div className="ats-score-circle" style={{ background: `conic-gradient(${color} ${deg}deg,#f0f0f0 0deg)` }}>
+        <div className="ats-score-circle" style={{ background: `conic-gradient(${color} ${deg}deg,var(--ring-track) 0deg)` }}>
           <div className="ats-score-inner">
             <span className="ats-score-num" style={{ color }}>{total}</span>
             <span className="ats-score-denom">/{max_final_score}</span>

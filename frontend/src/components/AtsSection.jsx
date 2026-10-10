@@ -41,7 +41,7 @@ export default function AtsSection({ atsResult, loading, onRun, onApplyGaps }) {
             </div>
           </div>
           <div className="ats-content">
-            {atsResult ? <AtsScoreCard {...atsResult} /> : <div style={{ color: '#999', fontSize: '0.82rem' }}>No score yet — click Re-run to analyze.</div>}
+            {atsResult ? <AtsScoreCard {...atsResult} /> : <div style={{ color: 'var(--text-3)', fontSize: '0.82rem' }}>No score yet — click Re-run to analyze.</div>}
           </div>
           <div className="ats-extra-prompt-wrap" style={{ padding: '0 16px 16px' }}>
             <label className="resume-section-label">Additional instructions (optional, used when applying gaps)</label>

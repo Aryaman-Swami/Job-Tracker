@@ -24,7 +24,7 @@ export default function HackerRankSection({ result, loading, onRun }) {
             </div>
           </div>
           <div className="ats-content">
-            {result ? <HackerRankScoreCard {...result} /> : <div style={{ color: '#999', fontSize: '0.82rem' }}>No score yet — click Re-run to analyze.</div>}
+            {result ? <HackerRankScoreCard {...result} /> : <div style={{ color: 'var(--text-3)', fontSize: '0.82rem' }}>No score yet — click Re-run to analyze.</div>}
           </div>
         </div>
       )}

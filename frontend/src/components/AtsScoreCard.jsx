@@ -9,7 +9,7 @@ export default function AtsScoreCard({ score, breakdown, matched_keywords, missi
   return (
     <>
       <div className="ats-score-ring">
-        <div className="ats-score-circle" style={{ background: `conic-gradient(${color} ${deg}deg,#f0f0f0 0deg)` }}>
+        <div className="ats-score-circle" style={{ background: `conic-gradient(${color} ${deg}deg,var(--ring-track) 0deg)` }}>
           <div className="ats-score-inner">
             <span className="ats-score-num" style={{ color }}>{score}</span>
             <span className="ats-score-denom">/100</span>
