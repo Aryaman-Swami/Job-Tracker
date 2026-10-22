@@ -6,6 +6,8 @@ const { notifyNewJobs } = require('./lib/notify');
 const { passesFilters } = require('./lib/filters');
 const { ensureLoggedIn, updateProfileResume, pause } = require('./lib/naukri-account');
 const seen = require('./lib/seen');
+const autoApply = require('./lib/auto-apply');
+const applyStore = require('./lib/apply-store');
 
 const SESSION_PATH = path.join(__dirname, 'sessions', 'naukri.json');
 
@@ -100,6 +102,10 @@ async function main() {
 
   const seenUrls = seen.load();
   const newQualifying = [];
+  const applyCandidates = new Map(); // url -> job; every qualifying job, new or previously seen
+  const applyLedger = applyStore.load();
+  const botOn = await autoApply.botActive();
+  console.log(`auto-apply: ${botOn ? 'ON (local apply-bot detected)' : 'off (apply-bot not running)'}`);
   let totalScraped = 0;
   let totalFiltered = 0;
   let totalAlreadySeen = 0;
@@ -121,6 +127,10 @@ async function main() {
           }
           if (seenUrls.has(card.job_url)) {
             totalAlreadySeen++;
+            // Seen != applied: still attempt anything the ledger hasn't finished.
+            if (botOn && applyStore.needsAttempt(applyLedger, card.job_url)) {
+              applyCandidates.set(card.job_url, { company: card.company || 'Unknown', role: card.title, job_url: card.job_url, location: card.location });
+            }
             continue;
           }
 
@@ -135,7 +145,9 @@ async function main() {
           }
 
           seenUrls.add(card.job_url);
-          newQualifying.push({ company: card.company || 'Unknown', role: card.title, job_url: card.job_url, location: card.location });
+          const job = { company: card.company || 'Unknown', role: card.title, job_url: card.job_url, location: card.location };
+          newQualifying.push(job);
+          applyCandidates.set(card.job_url, job);
         }
       } catch (e) {
         console.error(`[naukri] page load failed for '${term}' page ${p}: ${e.message}`);
@@ -148,7 +160,7 @@ async function main() {
 
   console.log(`scraped=${totalScraped}, new_qualifying=${newQualifying.length}, already_seen=${totalAlreadySeen}, filtered=${totalFiltered}`);
 
-  if (newQualifying.length > 0) {
+  if (newQualifying.length > 0 || (botOn && applyCandidates.size > 0)) {
     // Getting these "ready to apply" means: your account is logged in (or
     // you're asked to, right here, right now) and your profile resume is
     // current — the Apply click itself stays yours, since Naukri submits
@@ -158,6 +170,11 @@ async function main() {
     await updateProfileResume(page);
     await notifyNewJobs(newQualifying);
     seen.save(seenUrls);
+    if (botOn) {
+      const summary = await autoApply.applyAll(page, Array.from(applyCandidates.values()), context);
+      console.log('auto-apply summary:', JSON.stringify(summary));
+      await context.storageState({ path: SESSION_PATH }).catch(() => {});
+    }
   }
 
   await browser.close();

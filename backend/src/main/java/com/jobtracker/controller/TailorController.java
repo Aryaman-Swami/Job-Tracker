@@ -68,13 +68,19 @@ public class TailorController {
         String prompt = """
                 You are tailoring a candidate's LaTeX resume for a specific job.
 
+                STEP 0 - KEYWORD EXTRACTION (do this silently before writing anything):
+                Read the job description and list EVERY ATS keyword in it: hard skills, languages, frameworks, tools, platforms, cloud services, databases, methodologies (Agile, Scrum, TDD, CI/CD), domain terms, job titles, certifications, degrees, and recurring soft-skill phrases (e.g. "cross-functional collaboration"). Record each one EXACTLY as the JD writes it (spelling, casing, hyphenation). When the JD gives an acronym, its expansion, or both, plan to use both forms together on first use, e.g. "CI/CD (Continuous Integration/Continuous Delivery)", "RBAC (Role-Based Access Control)". For each keyword decide: PLACE (true of the candidate directly, or by a close/adjacent equivalent) or GAP (no honest basis anywhere in the resume).
+
                 STRICT RULES:
-                1. Keep the total word count within ±5%% of the original. Do NOT add new bullet points, sections, or expand existing ones.
-                2. Only rewrite existing bullet points to better match the job description's language and keywords — do not invent new content, achievements, or skills that aren't already present in some form.
-                3. Before rewriting, find every skill, tool, or concept the job description mentions or clearly implies that is ALSO already true of the candidate somewhere in the resume (Skills section, Projects, or other Experience bullets) — including synonyms and close equivalents (e.g. JD "containerization" matches resume "Docker"; JD "unit testing" matches resume "unit-tested REST endpoints"). For every such match, make sure the JD's own wording appears at least once in the tailored bullets or summary, even if that means rephrasing an existing bullet rather than leaving it untouched. Do not skip a true, relevant keyword just because rewording takes effort — but never fabricate one that has no basis anywhere in the resume.
-                4. Reorder or re-emphasize bullets within existing sections if it helps relevance — don't restructure the document.
-                5. Keep all LaTeX structure, commands, packages, and formatting identical to the source. Only the text content of bullets/summary changes.
-                6. Replace the job-title phrase in the Professional Summary. It opens with a bolded title phrase, e.g. \\textbf{Software Engineer} — replace just that phrase's inner text with the target role "%s". If that text is long or awkward inside the sentence, use a concise, natural equivalent instead of pasting it verbatim. Keep the \\textbf{} command itself — only the text inside it changes. Do this on every pass, even if the sentence still reads fine with the old title.
+                1. HARD CONSTRAINT: the result must still fit on ONE page with identical LaTeX structure. Do NOT add sections or new bullet points. You may lengthen or shorten existing bullets as needed to fit keywords, but keep each bullet to at most about 1.15x its original length and the total word count within about +8%% of the original, trimming filler words elsewhere to compensate. Never drop a metric or fact to make room for a keyword; trim connective filler instead.
+                2. HONESTY: never invent experience, employers, metrics, dates, titles, degrees, certifications, or tools the candidate has no basis for. Every change must stay true. A keyword with no honest basis is a GAP: do not insert it anywhere, report it instead.
+                3. MAXIMISE VERBATIM KEYWORD USE. For every PLACE keyword, the JD's exact wording (its spelling and casing, not a synonym) must appear at least once in the resume (summary, bullets, or skills). Put the highest-priority keywords (in the title, in the requirements, or repeated in the JD) in both the summary and a bullet. Where the candidate used a close equivalent, use the JD's term when it is truthfully the same thing (resume "Docker" with JD "containerization" -> "containerization with Docker"; resume "unit-tested endpoints" with JD "unit testing" -> "unit testing"). Keep the candidate's real tool name next to the JD term when they differ.
+                4. SKILLS SECTION: rewrite the Skills lines so they list EVERY JD tool, language, framework, platform, and methodology the candidate plausibly has or has working familiarity with (same ecosystem, same category, or standard companion tooling: JD "Maven", "Gradle", "JUnit" with a Java/Spring candidate; "npm" with Node.js; "Jenkins" or "GitHub Actions" with CI/CD; "Agile" or "Scrum" with team sprint delivery; "microservices", "REST", "SQL" with the existing backend work). Use the JD's exact spelling and the acronym + expanded form. Keep existing skills the JD does not mention only if space allows, dropping the least relevant first. Keep one \\item per category line; you may rename category labels to the JD's terms. Do not list skills from an unrelated domain with no basis.
+                5. ADJACENT TECHNOLOGY: when the JD names a technology adjacent to one the candidate used, use accurate phrasing that still carries the JD keyword, and never claim the specific unused product. Generic category terms from the JD are fair game when the candidate used a member of the category (JD "message brokers" or "event streaming" with Kafka/Azure Service Bus; JD "NoSQL" with MongoDB; JD "relational databases" with PostgreSQL/Oracle; JD "cloud-native" with Kubernetes/Azure). Do not claim RabbitMQ, Angular, Terraform, etc. unless the resume shows them.
+                6. SUMMARY: rewrite the Professional Summary (single paragraph, about the same length) so it contains the JD's top 6-10 keywords and the JD's job-title phrase. It opens with a bolded title phrase, e.g. \\textbf{Software Engineer}: replace just that phrase's inner text with the target role "%s", or a concise natural equivalent if it is long or awkward. Keep the \\textbf{} command. Do this on every pass.
+                7. Reorder bullets within a section, or items within a Skills line, to put the most JD-relevant first. Do not restructure the document.
+                8. Keep all LaTeX structure, commands, packages, and formatting identical to the source. Only text (summary, bullets, skills items, project tech lists) changes. No tables, columns, icons, arrows, em/en dashes, or other non-ASCII symbols; plain ASCII only.
+                9. COVERAGE LOOP: after drafting, check every PLACE keyword against your draft by exact string match. If coverage of PLACE keywords is below 90%% or any top-priority keyword is missing, revise the draft to insert the missed keywords truthfully and re-check. Repeat up to 3 times. Then re-confirm the one-page and no-fabrication constraints.
 
                 OUTPUT FORMAT:
                 First output the complete tailored LaTeX document, starting at \\documentclass and ending at \\end{document}. No markdown code fences, no commentary before or after it.
@@ -86,6 +92,7 @@ public class TailorController {
                    - Domain terms implied by what the candidate actually built (JD "payments" or "fintech" matches resume work on a Payment Operations Portal, transactions, settlements, or onboarding/verification flows).
                    - Closely adjacent tools in the same category as something the candidate has used (JD "Angular" matches resume "React" as an equivalent frontend framework — name it as the JD's term, don't relabel it).
                    Never include a JD skill that belongs to a genuinely different, unrelated domain the resume gives no real basis for (e.g. don't claim "Salesforce" or "SAP" from a Java/Spring background with no CRM/ERP work). Among the JD skills that do genuinely match, pick the 15 to 20 most prominent/important ones in the JD, reading the "supports" bullets above generously so you reach at least 15 whenever the JD names enough skills — never output more than 20. Only output fewer than 15 if the JD itself names fewer than 15 skills, or the remainder belong to a genuinely unrelated domain. Do not paraphrase the JD's terms — copy them as written in the job description. Example: === SKILLS MATCH ===\n["Java 17", "Maven", "Agile", "Payments"]
+                Finally, on a new line after the skills JSON, output exactly the marker "=== KEYWORD COVERAGE ===" followed by one JSON object: {"total": <number of JD keywords you extracted>, "placed": [<keywords used verbatim in your resume>], "gaps": [<keywords with no honest basis, NOT inserted>], "coverage_pct": <integer: placed divided by (placed + gaps), times 100>}. Be accurate, this is checked against the resume text.
                 %s%s
                 === JOB ===
                 Role: %s
@@ -128,6 +135,36 @@ public class TailorController {
                     } catch (Exception ignored) {}
                 }
             }
+            // Keyword coverage report: Claude self-reports placed/gaps; we re-verify the
+            // "placed" list against the final LaTeX text so the number can't be inflated.
+            Map<String, Object> coverage = new java.util.LinkedHashMap<>();
+            int covIdx = out.indexOf("=== KEYWORD COVERAGE ===", docEnd);
+            if (covIdx != -1) {
+                java.util.regex.Matcher cm = java.util.regex.Pattern.compile("\\{[\\s\\S]*}")
+                        .matcher(out.substring(covIdx));
+                if (cm.find()) {
+                    try {
+                        Map<String, Object> parsed = new com.fasterxml.jackson.databind.ObjectMapper()
+                                .readValue(cm.group(), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
+                        List<String> placed = parsed.get("placed") instanceof List<?> pl
+                                ? pl.stream().map(String::valueOf).toList() : List.of();
+                        List<String> gaps = parsed.get("gaps") instanceof List<?> gl
+                                ? gl.stream().map(String::valueOf).toList() : List.of();
+                        String hay = onePage.latex().replace("\\textbf{", "").replace("\\mbox{", "")
+                                .replace("}", "").toLowerCase();
+                        List<String> verified = new java.util.ArrayList<>();
+                        List<String> missed = new java.util.ArrayList<>();
+                        for (String k : placed) {
+                            (hay.contains(k.toLowerCase()) ? verified : missed).add(k);
+                        }
+                        int denom = verified.size() + missed.size() + gaps.size();
+                        coverage.put("placed", verified);
+                        coverage.put("claimedButNotFound", missed);
+                        coverage.put("gaps", gaps);
+                        coverage.put("coveragePct", denom == 0 ? 0 : Math.round(100f * verified.size() / denom));
+                    } catch (Exception ignored) {}
+                }
+            }
             if (skillsMatch.size() > 20) skillsMatch = skillsMatch.subList(0, 20);
             String skillsMatchJson = com.jobtracker.util.JsonColumns.toJson(skillsMatch);
 
@@ -140,6 +177,7 @@ public class TailorController {
             response.put("pages", onePage.pages());
             response.put("note", onePage.note());
             response.put("skillsMatch", skillsMatch);
+            if (!coverage.isEmpty()) response.put("keywordCoverage", coverage);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("ok", false, "error", "Claude returned an unexpected response."));

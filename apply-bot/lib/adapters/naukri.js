@@ -1,4 +1,5 @@
 const { pause, waitForEnter } = require('../human');
+const { applyOnJobPage } = require('../naukri-apply');
 
 function matches(host) {
   return /(^|\.)naukri\.com$/i.test(host);
@@ -30,16 +31,23 @@ async function updateProfileResume(page, resumePath) {
   await pause(1000, 1500);
 }
 
-// Naukri's "Apply" is almost always a single, immediate submit — there is no
-// intermediate review screen to safely stop at like Workday/LinkedIn/Indeed.
-// So the bot never touches that button: it only makes sure your tailored
-// resume is attached to your profile, then hands off entirely.
+// Updates the profile resume (Naukri applies with whatever is on the profile),
+// then actually applies: handles the chatbot questionnaire, detects
+// already-applied / "Apply on company site" (external) / expired jobs.
+// Returns the outcome string from lib/naukri-apply.js.
 async function run(page, ctx) {
   await ensureLoggedIn(page);
   await updateProfileResume(page, ctx.resumePath);
-  console.log('\nYour profile resume is updated. Naukri\'s Apply button submits immediately on click,');
-  console.log('so please open the job and click Apply yourself when ready.');
-  return 'handoff';
+  let outcome = await applyOnJobPage(page, console.log);
+  if (outcome === 'session_expired') {
+    await waitForEnter('Naukri session expired. Log in in this window, then continue.');
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    outcome = await applyOnJobPage(page, console.log);
+  }
+  if (outcome === 'needs_input') {
+    console.log('The chatbot asked something with no configured answer — add a rule to apply-bot/naukri-answers.json or finish it by hand.');
+  }
+  return outcome;
 }
 
 module.exports = { name: 'naukri', matches, run };

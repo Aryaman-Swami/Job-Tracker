@@ -94,10 +94,12 @@ public class AtsScoreController {
                     "experience": <integer 0-100>,
                     "title_alignment": <integer 0-100>
                   },
-                  "matched_keywords": [<up to 10 keyword strings found in both resume and JD>],
-                  "missing_keywords": [<up to 10 important JD keywords absent from resume>],
+                  "matched_keywords": [<up to 15 keyword strings found in both resume and JD, copied verbatim in the JD's wording>],
+                  "missing_keywords": [<up to 15 important JD keywords absent from resume, most important first, copied verbatim in the JD's wording>],
                   "suggestions": [<3-4 short actionable improvement strings>]
                 }
+
+                Keyword method (same as the resume tailoring step, so scores and tailoring agree): first extract every hard skill, tool, language, framework, methodology, job title, certification and soft-skill phrase from the JD. A keyword counts as matched only if its exact wording (case-insensitive; an acronym or its expansion both count) appears in the resume text. A keyword that is only implied or a synonym counts as missing, because ATS filters match strings. In "suggestions", for each missing keyword the candidate could truthfully claim, say where to insert it; never suggest fabricating experience.
 
                 === JOB ===
                 Role: %s

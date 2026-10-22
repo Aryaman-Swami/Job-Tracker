@@ -70,4 +70,14 @@ async function renderPdf(latex, filename) {
   return Buffer.from(await res.arrayBuffer());
 }
 
-module.exports = { getJob, ensureTailoredLatex, renderPdf };
+async function updateJob(id, fields) {
+  const res = await authedFetch(`/api/jobs/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(fields),
+  });
+  if (!res.ok) throw new Error(`Failed to update job ${id}: ${res.status}`);
+  return res.json();
+}
+
+module.exports = { updateJob, getJob, ensureTailoredLatex, renderPdf };

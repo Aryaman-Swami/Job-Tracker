@@ -1,0 +1,9 @@
+{
+  "rules": [
+    { "match": "notice period", "answer": "Immediate" },
+    { "match": "current ctc|current salary", "answer": "6" },
+    { "match": "expected ctc|expected salary", "answer": "10" },
+    { "match": "years of experience|total experience", "answer": "2" },
+    { "match": "current (city|location)", "answer": "Pune" }
+  ]
+}

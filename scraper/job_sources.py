@@ -16,6 +16,7 @@ so callers can filter/post them identically regardless of source.
 from __future__ import annotations
 
 import logging
+import random
 import re
 import time
 from datetime import datetime, timezone
@@ -160,17 +161,47 @@ def _linkedin_job_id(href: str) -> str | None:
     return m.group(1) if m else None
 
 
-def _fetch_linkedin_description(job_id: str, session: requests.Session) -> str:
-    try:
-        resp = session.get(f"https://www.linkedin.com/jobs/view/{job_id}", timeout=10)
-        resp.raise_for_status()
-    except Exception:
-        return ""
-    if "linkedin.com/signup" in resp.url:
-        return ""
-    soup = BeautifulSoup(resp.text, "html.parser")
-    div = soup.find("div", class_=lambda c: c and "show-more-less-html__markup" in c)
-    return div.get_text(separator=" ", strip=True) if div else ""
+LINKEDIN_DETAIL_URLS = (
+    "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{id}",  # light guest endpoint, rarely 429s
+    "https://www.linkedin.com/jobs/view/{id}",
+)
+
+
+def _li_get(session: requests.Session, url: str, params: dict | None = None, retries: int = 4):
+    """GET with exponential backoff on 429/5xx/network errors. Returns the
+    Response, or None if every attempt failed (callers must treat None as
+    "unknown", not "empty")."""
+    for attempt in range(retries):
+        try:
+            resp = session.get(url, params=params, timeout=15)
+            if resp.status_code == 429 or resp.status_code >= 500:
+                wait = 5 * (2 ** attempt) + random.uniform(0, 2)
+                logger.warning(f"[linkedin] HTTP {resp.status_code} for {url.split('?')[0][-60:]}; retry {attempt + 1}/{retries} in {wait:.0f}s")
+                time.sleep(wait)
+                continue
+            return resp
+        except requests.RequestException as e:
+            wait = 3 * (2 ** attempt)
+            logger.warning(f"[linkedin] request error {e!r}; retry {attempt + 1}/{retries} in {wait}s")
+            time.sleep(wait)
+    return None
+
+
+def fetch_linkedin_description(job_id: str, session: requests.Session | None = None) -> str:
+    """Full job description for a LinkedIn job id (numeric, no 'li-' prefix).
+    Returns "" if it could not be fetched."""
+    session = session or requests.Session()
+    if not session.headers.get("user-agent"):
+        session.headers.update(LINKEDIN_HEADERS)
+    for tmpl in LINKEDIN_DETAIL_URLS:
+        resp = _li_get(session, tmpl.format(id=job_id), retries=3)
+        if resp is None or resp.status_code != 200 or "linkedin.com/signup" in resp.url:
+            continue
+        soup = BeautifulSoup(resp.text, "html.parser")
+        div = soup.find("div", class_=lambda c: c and "show-more-less-html__markup" in c)
+        if div:
+            return div.get_text(separator=" ", strip=True)
+    return ""
 
 
 def search_linkedin(
@@ -179,6 +210,7 @@ def search_linkedin(
     results_wanted: int = 50,
     hours_old: int = 24,
     fetch_description: bool = False,
+    extra_params: dict | None = None,
 ) -> list[dict]:
     session = requests.Session()
     session.headers.update(LINKEDIN_HEADERS)
@@ -186,25 +218,26 @@ def search_linkedin(
     jobs = []
     seen_ids = set()
     start = 0
-    max_requests = 6  # 25/page
+    # The guest endpoint returns ~10 cards/page and refuses start >= ~1000.
+    max_requests = min(40, results_wanted // 10 + 3)
+    empty_pages = 0
 
     for _ in range(max_requests):
-        if len(jobs) >= results_wanted:
+        if len(jobs) >= results_wanted or start >= 1000:
             break
         params = {
             "keywords": search_term,
             "location": location,
             "start": start,
             "f_TPR": f"r{hours_old * 3600}",
+            **(extra_params or {}),
         }
-        try:
-            resp = session.get(LINKEDIN_SEARCH_URL, params=params, timeout=15)
-            if resp.status_code == 429:
-                logger.warning("[linkedin] 429 — blocked for too many requests")
-                break
-            resp.raise_for_status()
-        except Exception as e:
-            logger.error(f"[linkedin] search failed for '{search_term}': {e}")
+        resp = _li_get(session, LINKEDIN_SEARCH_URL, params=params)
+        if resp is None:
+            logger.error(f"[linkedin] giving up on '{search_term}' / {location} at start={start} (rate limited or network)")
+            break
+        if resp.status_code != 200:
+            logger.error(f"[linkedin] HTTP {resp.status_code} for '{search_term}' / {location} at start={start}")
             break
 
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -212,6 +245,7 @@ def search_linkedin(
         if not cards:
             break
 
+        new_in_page = 0
         for card in cards:
             href_tag = card.find("a", class_="base-card__full-link")
             if not href_tag or "href" not in href_tag.attrs:
@@ -220,6 +254,7 @@ def search_linkedin(
             if not job_id or job_id in seen_ids:
                 continue
             seen_ids.add(job_id)
+            new_in_page += 1
 
             title_tag = card.find("span", class_="sr-only")
             company_tag = card.find("h4", class_="base-search-card__subtitle")
@@ -227,7 +262,7 @@ def search_linkedin(
             location_tag = metadata.find("span", class_="job-search-card__location") if metadata else None
             date_tag = metadata.find("time", class_="job-search-card__listdate") if metadata else None
 
-            description = _fetch_linkedin_description(job_id, session) if fetch_description else ""
+            description = fetch_linkedin_description(job_id, session) if fetch_description else ""
 
             jobs.append({
                 "title": title_tag.get_text(strip=True) if title_tag else "Unknown",
@@ -241,6 +276,11 @@ def search_linkedin(
 
             if len(jobs) >= results_wanted:
                 break
+
+        # Pages that only repeat already-seen jobs mean paging has run dry.
+        empty_pages = empty_pages + 1 if new_in_page == 0 else 0
+        if empty_pages >= 2:
+            break
 
         start += len(cards)
         time.sleep(1.5)  # be polite — this endpoint rate-limits aggressively

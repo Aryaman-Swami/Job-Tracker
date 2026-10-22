@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
 
   if (req.method === 'GET' && req.url === '/health') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    return res.end(JSON.stringify({ ok: true }));
+    return res.end(JSON.stringify({ ok: true, active: true, running: [...running] }));
   }
 
   const match = req.url.match(/^\/apply\/(\d+)$/);

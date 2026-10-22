@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const { chromium } = require('playwright');
 
-const { getJob, ensureTailoredLatex, renderPdf } = require('./backend');
+const { getJob, updateJob, ensureTailoredLatex, renderPdf } = require('./backend');
 const { pause } = require('./human');
 const { findAdapter } = require('./adapters');
 const sessions = require('./sessions');
@@ -80,6 +80,11 @@ async function runApply(jobId, log = console.log) {
 
     const outcome = await adapter.run(page, ctx);
     await context.storageState({ path: statePath }).catch(() => {});
+    if (adapter.name === 'naukri') {
+      const status = { applied: 'applied', already_applied: 'applied' }[outcome];
+      const notes = { external: 'Naukri: apply on company site (external) - not auto-applied', expired: 'Naukri: posting expired', needs_input: 'Naukri: chatbot needs manual answers', session_expired: 'Naukri: session expired', limit_reached: 'Naukri: daily limit reached' }[outcome];
+      await updateJob(jobId, status ? { status } : notes ? { notes } : {}).catch((e) => log(`Status write-back failed: ${e.message}`));
+    }
     log(`Done — outcome: ${outcome}. Browser stays open for you to finish/submit.`);
     return outcome;
   } catch (err) {

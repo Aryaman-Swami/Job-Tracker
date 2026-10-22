@@ -26,6 +26,7 @@ async function waitForEnter(promptText) {
 async function ensureLoggedIn(page) {
   const loginBtn = page.locator('#login_Layer, a:has-text("Login")').first();
   if (await loginBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+    if (!process.stdin.isTTY) throw new Error('Naukri session expired and no terminal attached (scheduled run) - run `npm run scrape` interactively once to log in.');
     await waitForEnter('Naukri needs you to log in. Please sign in manually in this window, then continue.');
   }
 }

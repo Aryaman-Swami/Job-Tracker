@@ -7,7 +7,6 @@
  \usepackage[default]{lato}
 \usepackage[T1]{fontenc}
 \usepackage[expansion=false]{microtype}
-\renewcommand{\familydefault}{\sfdefault}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -15,7 +14,7 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks,pdftitle={Aryaman Swami - Resume},pdfauthor={Aryaman Swami},pdfsubject={Resume},pdfkeywords={Software Engineer, Java, Spring Boot}]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
@@ -38,22 +37,24 @@
   \vspace{-13pt}\bfseries\raggedright\large
 }{}{0em}{}[\color{black}{\titlerule[0.8pt]}\vspace{-6pt}]
 \pdfgentounicode=1
+\pdfglyphtounicode{bullet}{2022}
 \newcommand{\resumeItem}[1]{
   \item\small{{\small #1 \vspace{-3pt}}}
 }
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} \textit{\small{- #3}} & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \begin{minipage}[t]{0.97\textwidth}
+      \textbf{#1} \textit{\small{- #3}} \hfill #2
+    \end{minipage}\vspace{-7pt}
 }
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small #1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \begin{minipage}[t]{0.97\textwidth}
+      \small #1 \hfill #2
+    \end{minipage}\vspace{-7pt}
 }
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+\renewcommand\labelitemi{\textbullet}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
@@ -77,16 +78,14 @@
 \small{Software Engineer building event-driven \textbf{Spring Boot}/\textbf{Node.js} systems and \textbf{AI-integrated} full-stack products. Experienced across backend services, cloud deployments, and modern frontend interfaces, with a focus on scalable, production-ready solutions.}
 %-----------SKILLS-----------
 \section{Skills}
-\begin{itemize}[leftmargin=0.15in, label={}]
-  \small{\item{
-    \textbf{Languages:} Java, JavaScript, \mbox{TypeScript} \\
-    \textbf{Backend:} Spring Boot, Spring Security, \mbox{Hibernate/JPA}, Node.js, \mbox{Express.js}, NestJS \\
-    \textbf{Frontend:} React, TailwindCSS, HTML, CSS \\
-    \textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, \mbox{CI/CD} \\
-    \textbf{Data \& Messaging:} PostgreSQL, Oracle, MongoDB, Apache Kafka, ASB, Redis \\
-    \textbf{AI \& Tools:} Claude Code, GitHub Copilot, Git \\
-    \textbf{Core CS \& Others:} DSA, OOP, System Design, API Gateway, ELK Stack, Grafana
-  }}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, parsep=0pt, topsep=0pt]
+  \item[] \small{\textbf{Languages:} Java, JavaScript, \mbox{TypeScript}}
+  \item[] \small{\textbf{Backend:} Spring Boot, Spring Security, \mbox{Hibernate/JPA}, Node.js, \mbox{Express.js}, NestJS}
+  \item[] \small{\textbf{Frontend:} React, TailwindCSS, HTML, CSS}
+  \item[] \small{\textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, \mbox{CI/CD}}
+  \item[] \small{\textbf{Data \& Messaging:} PostgreSQL, Oracle, MongoDB, Apache Kafka, ASB, Redis}
+  \item[] \small{\textbf{AI \& Tools:} Claude Code, GitHub Copilot, Git}
+  \item[] \small{\textbf{Core CS \& Others:} DSA, OOP, System Design, API Gateway, ELK Stack, Grafana}
 \end{itemize}
 %-----------EXPERIENCE-----------
 \section{Experience}
@@ -116,7 +115,7 @@
     \resumeProjectHeading
       {\textbf{Shopper Assist} $|$ \emph{React, Node.js, Express, Supabase (Postgres), pgvector, Gemini API}}{\href{https://github.com/Aryaman-Swami/Shopper-assist}{GitHub}}
       \resumeItemListStart
-        \resumeItem{Built an AI shopping assistant that turns a photo/text list into an optimal in-store route: \textbf{Gemini} vision extraction $\rightarrow$ semantic SKU matching $\rightarrow$ shortest-path aisle routing, behind one orchestrated \texttt{/plan} API.}
+        \resumeItem{Built an AI shopping assistant that turns a photo/text list into an optimal in-store route: \textbf{Gemini} vision extraction, then semantic SKU matching, then shortest-path aisle routing, behind one orchestrated /plan API.}
         \resumeItem{Implemented hybrid item matching (\textbf{pgvector} cosine similarity over Gemini embeddings + \textbf{pg\_trgm} lexical fallback) against a 200+ SKU catalog on \textbf{Supabase}, and modeled the store as a weighted graph for shortest-path route ordering.}
       \resumeItemListEnd
     \resumeProjectHeading
