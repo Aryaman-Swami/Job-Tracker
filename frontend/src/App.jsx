@@ -46,6 +46,7 @@ function AuthedApp({ onLogout }) {
   const [pdfPreview, setPdfPreview] = useState(null); // { blob, latex, filename, jobId, company }
   const [syncLabel, setSyncLabel] = useState('⟳ Sync');
   const [syncing, setSyncing] = useState(false);
+  const [tailoringIds, setTailoringIds] = useState(() => new Set()); // job ids with a tailor call in flight
 
   const loadJobs = useCallback(async () => {
     const params = { source };
@@ -120,6 +121,27 @@ function AuthedApp({ onLogout }) {
     setAllJobs(jobs => jobs.map(j => j.id === id ? { ...j, ...patch } : j));
   }
 
+  // Tailoring state lives here (keyed by job id), not in DetailPanel, so several jobs
+  // can be tailored at once and switching the selected job doesn't lose or block a run.
+  async function handleTailor(jobId, atsFeedback) {
+    setTailoringIds(ids => new Set(ids).add(jobId));
+    try {
+      const data = await api.tailor(jobId, atsFeedback);
+      if (data.ok) {
+        handleJobUpdated(jobId, {
+          tailored_resume_latex: data.latex,
+          tailored_skills_match: data.skillsMatch,
+          _tailor_note: data.note || null,
+        });
+      } else {
+        alert(data.error || 'Tailoring failed.');
+      }
+    } catch {
+      alert('Request failed.');
+    }
+    setTailoringIds(ids => { const n = new Set(ids); n.delete(jobId); return n; });
+  }
+
   function handleOpenPdfPreview(blob, filename, latex, jobId, company) {
     setPdfPreview({ blob, filename, latex, jobId, company });
   }
@@ -167,6 +189,8 @@ function AuthedApp({ onLogout }) {
           job={selectedJob}
           onClose={() => setSelectedJobId(null)}
           onJobUpdated={handleJobUpdated}
+          tailoring={selectedJob ? tailoringIds.has(selectedJob.id) : false}
+          onTailor={handleTailor}
           onOpenPdfPreview={handleOpenPdfPreview}
         />
       </div>

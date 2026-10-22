@@ -1,0 +1,26 @@
+2026-10-22 21:13:06,232 INFO === Wellfound search run started ===
+2026-10-22 21:13:10,920 WARNING Failed to post job 4867061: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-10-22 21:13:10,922 INFO [software-engineer p1] listings=37
+2026-10-22 21:13:19,126 INFO [software-engineer p2] listings=34
+2026-10-22 21:13:23,911 INFO [backend-engineer p1] listings=33
+2026-10-22 21:13:31,870 INFO [backend-engineer p2] listings=32
+2026-10-22 21:13:39,237 INFO [java-developer p1] listings=28
+2026-10-22 21:13:47,737 WARNING Failed to post job 4855185: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-10-22 21:13:47,742 INFO [java-developer p2] listings=24
+2026-10-22 21:13:58,621 WARNING Failed to post job 4866983: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-10-22 21:13:58,636 INFO [full-stack-engineer p1] listings=28
+2026-10-22 21:14:06,480 INFO [full-stack-engineer p2] listings=24
+2026-10-22 21:14:06,481 INFO === Done. added=0 dupes=0 filtered=237 ===
+2026-10-22 22:14:05,575 INFO === Wellfound search run started ===
+2026-10-22 22:14:10,320 WARNING Failed to post job 4867061: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-10-22 22:14:10,326 INFO [software-engineer p1] listings=37
+2026-10-22 22:14:14,619 INFO [software-engineer p2] listings=34
+2026-10-22 22:14:22,408 INFO [backend-engineer p1] listings=33
+2026-10-22 22:14:28,524 INFO [backend-engineer p2] listings=32
+2026-10-22 22:14:33,297 INFO [java-developer p1] listings=28
+2026-10-22 22:14:41,782 WARNING Failed to post job 4855185: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-10-22 22:14:41,793 INFO [java-developer p2] listings=24
+2026-10-22 22:14:53,876 WARNING Failed to post job 4866983: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-10-22 22:14:53,903 INFO [full-stack-engineer p1] listings=28
+2026-10-22 22:15:01,412 INFO [full-stack-engineer p2] listings=24
+2026-10-22 22:15:01,414 INFO === Done. added=0 dupes=0 filtered=237 ===

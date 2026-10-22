@@ -68,7 +68,7 @@ public class TailorController {
         String prompt = """
                 You are tailoring a candidate's LaTeX resume for a specific job.
 
-                STEP 0 - KEYWORD EXTRACTION (do this silently before writing anything):
+                STEP 0 - KEYWORD EXTRACTION (do this silently and briefly, no written output):
                 Read the job description and list EVERY ATS keyword in it: hard skills, languages, frameworks, tools, platforms, cloud services, databases, methodologies (Agile, Scrum, TDD, CI/CD), domain terms, job titles, certifications, degrees, and recurring soft-skill phrases (e.g. "cross-functional collaboration"). Record each one EXACTLY as the JD writes it (spelling, casing, hyphenation). When the JD gives an acronym, its expansion, or both, plan to use both forms together on first use, e.g. "CI/CD (Continuous Integration/Continuous Delivery)", "RBAC (Role-Based Access Control)". For each keyword decide: PLACE (true of the candidate directly, or by a close/adjacent equivalent) or GAP (no honest basis anywhere in the resume).
 
                 STRICT RULES:
@@ -80,9 +80,9 @@ public class TailorController {
                 6. SUMMARY: rewrite the Professional Summary (single paragraph, about the same length) so it contains the JD's top 6-10 keywords and the JD's job-title phrase. It opens with a bolded title phrase, e.g. \\textbf{Software Engineer}: replace just that phrase's inner text with the target role "%s", or a concise natural equivalent if it is long or awkward. Keep the \\textbf{} command. Do this on every pass.
                 7. Reorder bullets within a section, or items within a Skills line, to put the most JD-relevant first. Do not restructure the document.
                 8. Keep all LaTeX structure, commands, packages, and formatting identical to the source. Only text (summary, bullets, skills items, project tech lists) changes. No tables, columns, icons, arrows, em/en dashes, or other non-ASCII symbols; plain ASCII only.
-                9. COVERAGE LOOP: after drafting, check every PLACE keyword against your draft by exact string match. If coverage of PLACE keywords is below 90%% or any top-priority keyword is missing, revise the draft to insert the missed keywords truthfully and re-check. Repeat up to 3 times. Then re-confirm the one-page and no-fabrication constraints.
+                9. Do ONE quick self-check at the end: every PLACE keyword appears verbatim and the length limits hold. Fix any miss in the same pass. Do not draft the document more than once and do not write out your analysis.
 
-                OUTPUT FORMAT:
+OUTPUT FORMAT:
                 First output the complete tailored LaTeX document, starting at \\documentclass and ending at \\end{document}. No markdown code fences, no commentary before or after it.
                 Then, on a new line after \\end{document}, output exactly the marker "=== SKILLS MATCH ===" followed by a JSON array of 15 to 20 strings — pick the 15 to 20 most prominent skills/tools/technologies the job description names (aim for at least 15 whenever the job description names that many), each copied verbatim in the JD's own wording, and each one included only if the candidate's resume reasonably supports it, using a generous, real-world notion of "supports":
                    - Exact matches and close synonyms (per rule 3).

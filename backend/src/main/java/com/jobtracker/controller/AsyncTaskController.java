@@ -28,7 +28,11 @@ public class AsyncTaskController {
     private record Task(long createdAt, boolean done, int status, Map<String, Object> body) {}
 
     private final Map<String, Task> tasks = new ConcurrentHashMap<>();
-    private final ExecutorService pool = Executors.newFixedThreadPool(4);
+    // Claude CLI runs are heavy (a node process each), so they get their own pool: several
+    // tailor/ATS calls run at once and extras queue instead of starving. Raise
+    // CLAUDE_CONCURRENCY on a bigger instance; the free tier's 512MB fits about 3.
+    private final ExecutorService pool = Executors.newFixedThreadPool(
+            Integer.parseInt(System.getenv().getOrDefault("CLAUDE_CONCURRENCY", "3")));
 
     private final TailorController tailor;
     private final AtsScoreController ats;

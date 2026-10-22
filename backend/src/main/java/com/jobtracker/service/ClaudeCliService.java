@@ -17,7 +17,8 @@ public class ClaudeCliService {
     public ClaudeResult run(String prompt, String appendSystemPrompt) throws IOException, InterruptedException {
         List<String> cmd = new ArrayList<>(List.of(
                 "claude", "--print", "--dangerously-skip-permissions", "--disable-slash-commands",
-                "--safe-mode", "--tools", "", "--model", "sonnet", "--no-session-persistence"));
+                "--safe-mode", "--tools", "", "--model", "sonnet", "--no-session-persistence",
+                "--effort", System.getenv().getOrDefault("CLAUDE_EFFORT", "medium")));
         if (appendSystemPrompt != null) {
             cmd.add("--append-system-prompt");
             cmd.add(appendSystemPrompt);

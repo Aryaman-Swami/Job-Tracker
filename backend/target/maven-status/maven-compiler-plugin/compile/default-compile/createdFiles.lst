@@ -7,6 +7,7 @@ com\jobtracker\rubric\HackerRankRubric.class
 com\jobtracker\controller\AuthController.class
 com\jobtracker\controller\ResumeController.class
 com\jobtracker\controller\AuthController$LoginRequest.class
+com\jobtracker\controller\TailorController$2.class
 com\jobtracker\config\JwtService.class
 com\jobtracker\controller\AsyncTaskController$Task.class
 com\jobtracker\db\DbInitializer.class

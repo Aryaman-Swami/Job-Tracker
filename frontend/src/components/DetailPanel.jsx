@@ -22,9 +22,7 @@ function buildDetailRows(job) {
   return rows;
 }
 
-export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPreview }) {
-  const [tailoring, setTailoring] = useState(false);
-  const [tailorNote, setTailorNote] = useState(null);
+export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPreview, tailoring, onTailor }) {
   const [descCopyLabel, setDescCopyLabel] = useState('Copy');
   const [descOpen, setDescOpen] = useState(true);
 
@@ -40,7 +38,6 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
 
 
   useEffect(() => {
-    setTailorNote(null);
     setAtsResult(null);
     if (!job) return;
 
@@ -63,21 +60,7 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
     );
   }
 
-  async function runTailor(atsFeedback) {
-    setTailoring(true);
-    try {
-      const data = await api.tailor(job.id, atsFeedback);
-      if (data.ok) {
-        onJobUpdated(job.id, { tailored_resume_latex: data.latex, tailored_skills_match: data.skillsMatch });
-        setTailorNote(data.note || null);
-      } else {
-        alert(data.error || 'Tailoring failed.');
-      }
-    } catch {
-      alert('Request failed.');
-    }
-    setTailoring(false);
-  }
+  const runTailor = atsFeedback => onTailor(job.id, atsFeedback);
 
   async function runAtsScore() {
     setAtsLoading(true);
@@ -172,7 +155,7 @@ export default function DetailPanel({ job, onClose, onJobUpdated, onOpenPdfPrevi
         <TailorSection
           latex={job.tailored_resume_latex}
           skillsMatch={job.tailored_skills_match}
-          note={tailorNote}
+          note={job._tailor_note}
           tailoring={tailoring}
           onTailor={runTailor}
           onGeneratePdf={handleGeneratePdf}
