@@ -5,6 +5,9 @@
 // Not a port anymore — don't try to keep this in sync with run_scraper.py.
 
 const TITLE_EXCLUDE = [
+  /\bintern(s|ship|ships)?\b/i, // interns / trainees / apprentices are not full-time roles
+  /\btrainee\b/i,
+  /\bapprentice(ship)?\b/i,
   /\bfront[\s-]?end\b/i,
   /\bfrontend\b/i,
   /\bui\s+(developer|engineer|dev)\b/i,

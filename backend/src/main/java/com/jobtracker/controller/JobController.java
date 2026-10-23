@@ -15,6 +15,9 @@ import java.util.*;
 @RequestMapping("/api/jobs")
 public class JobController {
 
+    private static final java.util.regex.Pattern NON_FULLTIME_TITLE = java.util.regex.Pattern.compile(
+            "\\b(intern|interns|internship|internships|trainee|apprentice|apprenticeship)\\b", java.util.regex.Pattern.CASE_INSENSITIVE);
+
     private final JdbcTemplate jdbc;
     private final JobRowMapper rowMapper = new JobRowMapper();
 
@@ -64,6 +67,12 @@ public class JobController {
         String role = str(body.get("role"));
         if (isBlank(company) || isBlank(role)) {
             return ResponseEntity.badRequest().body(Map.of("error", "company and role are required"));
+        }
+
+        // Last line of defence for every scraper (incl. external n8n flows): interns,
+        // trainees and apprentices are never wanted. Manual adds are left alone.
+        if (!"manual".equals(orDefault(str(body.get("source")), "manual")) && NON_FULLTIME_TITLE.matcher(role).find()) {
+            return ResponseEntity.ok(Map.of("skipped", true, "reason", "intern/trainee role"));
         }
 
         try {

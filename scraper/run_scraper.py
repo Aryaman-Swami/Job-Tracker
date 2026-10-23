@@ -75,6 +75,10 @@ SITES = ["linkedin", "indeed"]
 
 # Checked against job title always — before any description check
 TITLE_EXCLUDE = [
+    # interns / trainees / apprentices — not full-time roles
+    r"\bintern(s|ship|ships)?\b",
+    r"\btrainee\b",
+    r"\bapprentice(ship)?\b",
     # frontend / UI
     r"\bfront[\s-]?end\b",
     r"\bfrontend\b",
