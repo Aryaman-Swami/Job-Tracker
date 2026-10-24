@@ -44,9 +44,19 @@ public final class LatexUtils {
     // Normalize those to plain ASCII before compiling/saving.
     public static String sanitizeForAts(String text) {
         return text
-                .replaceAll("[‒–—―−]", "-")
-                .replaceAll("→", " to ")
-                .replaceAll("-{2,}", "-");
+                // Model-written LaTeX comments ("% tailored by ...") never reach the PDF but sit in the
+                // saved/copied source; drop them. An escaped percent sign is kept.
+                .replaceAll("(?m)(?<!\\\\)%.*$", "")
+                // Invisible/zero-width characters, soft hyphens and non-breaking spaces some models emit.
+                .replaceAll("[\\u200B-\\u200F\\u2060-\\u2064\\uFEFF\\u00AD]", "")
+                .replace('\u00A0', ' ')
+                .replaceAll("[\\u2018\\u2019]", "'")
+                .replaceAll("[\\u201C\\u201D]", "\"")
+                .replace("\u2026", "...")
+                .replaceAll("[\\u2012-\\u2015\\u2212]", "-")
+                .replace("\u2192", " to ")
+                .replaceAll("-{2,}", "-")
+                .replaceAll("(?m)[ \\t]+$", "");
     }
 
     public record RemovalResult(String latex, boolean removed, int remaining) {}
