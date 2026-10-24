@@ -44,7 +44,7 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
     \begin{minipage}[t]{0.97\textwidth}
-      \textbf{#1} \textit{\small{- #3}} \hfill #2
+      \textbf{#1} \textit{\footnotesize{- #3, #4}} \hfill #2
     \end{minipage}\vspace{-7pt}
 }
 \newcommand{\resumeProjectHeading}[2]{
@@ -75,7 +75,7 @@
 \end{center}
 %-----------SUMMARY-----------
 \section{Professional Summary}
-\small{Software Engineer building event-driven \textbf{Spring Boot}/\textbf{Node.js} systems and \textbf{AI-integrated} full-stack products. Experienced across backend services, cloud deployments, and modern frontend interfaces, with a focus on scalable, production-ready solutions.}
+\small{Software Engineer with 2+ years of experience building event-driven \textbf{Spring Boot}/\textbf{Node.js} systems and \textbf{AI-integrated} full-stack products. Experienced across backend services, cloud deployments, and modern frontend interfaces, with a focus on scalable, production-ready solutions.}
 %-----------SKILLS-----------
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, parsep=0pt, topsep=0pt]
@@ -83,7 +83,7 @@
   \item[] \small{\textbf{Backend:} Spring Boot, Spring Security, \mbox{Hibernate/JPA}, Node.js, \mbox{Express.js}, NestJS}
   \item[] \small{\textbf{Frontend:} React, TailwindCSS, HTML, CSS}
   \item[] \small{\textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, \mbox{CI/CD}}
-  \item[] \small{\textbf{Data \& Messaging:} PostgreSQL, Oracle, MongoDB, Apache Kafka, ASB, Redis}
+  \item[] \small{\textbf{Data \& Messaging:} PostgreSQL, Oracle, MongoDB, Apache Kafka, Azure Service Bus, Redis}
   \item[] \small{\textbf{AI \& Tools:} Claude Code, GitHub Copilot, Git}
   \item[] \small{\textbf{Core CS \& Others:} DSA, OOP, System Design, API Gateway, ELK Stack, Grafana}
 \end{itemize}
@@ -94,9 +94,9 @@
       {Bajaj Finserv Health Ltd}{September 2025 - Present}
       {Software Development Engineer}{Pune, India}
       \resumeItemListStart
-\resumeItem{Re-architected the Hospital Event Listener onto an event-driven \textbf{Apache Kafka} pipeline, boosting throughput \textbf{3x} to handle \textbf{100K+ events/day} decoupled from the Claim Processing System.}
-\resumeItem{Built \textbf{SAML 2.0 SSO} federation for \textbf{15+ Fortune 500 partners} (Google, Accenture, AON, Wipro) via a multi-tenant \textbf{Spring Security SAML2} + \textbf{Okta} setup, removing per-user credential overhead.}
-\resumeItem{Designed a storage abstraction spanning \textbf{Azure Blob Storage} and \mbox{NAS/Kubernetes} for a company-wide file microservice, sustaining \textbf{150K+ daily transactions} at sub-100ms p99 across \textbf{15+ portals}.}
+\resumeItem{Re-architected the Hospital Event Listener onto an event-driven \textbf{Apache Kafka} pipeline, boosting throughput \textbf{3x} to \textbf{1,000 TPM}, decoupled from the Claim Processing System.}
+\resumeItem{Built \textbf{SAML 2.0 SSO} federation for \textbf{15+ enterprise partners} (Google, Accenture, AON, Wipro) via a multi-tenant \textbf{Spring Security SAML2} + \textbf{Okta} setup, removing per-user credential overhead.}
+\resumeItem{Designed a storage abstraction spanning \textbf{Azure Blob Storage} and \mbox{NAS/Kubernetes} for a company-wide file microservice, sustaining \textbf{200K+ daily transactions} at sub-100ms p99 across \textbf{15+ portals}.}
 \resumeItem{Built a \textbf{Claude}-prompted migration framework mapping \textbf{50+ JSP pages} to \textbf{40+ REST APIs}, leading legacy Java Struts apps to Java 25 from inventory through deployment.}
 \resumeItem{Added signed, time-bound \textbf{SAS URLs} and portal-scoped \textbf{RBAC} plus a full CRUD API to the file platform, now the standard file layer across \textbf{15+ internal portals}.}
 \resumeItemListEnd
@@ -105,8 +105,8 @@
       {Associate Software Development Engineer}{Pune, India}
       \resumeItemListStart
         \resumeItem{Built a centralized \textbf{JWT + RBAC} authentication microservice with Kafka-driven employee sync, cutting authentication latency \textbf{80\%} (1,000ms to 200ms) at peak load.}
-        \resumeItem{Set up an async \textbf{Penny Drop Verification} pipeline on Azure Service Bus, cutting verification time \textbf{90\%} (20min to 2-3min) and unblocking \textbf{500+ daily onboarding requests}.}
-        \resumeItem{Shipped a Payment Operations Portal end-to-end (React, Spring Boot) for orders, settlements, and transactions, replacing \textbf{3-4 hours} of daily manual reconciliation.}
+        \resumeItem{Set up an async \textbf{Penny Drop Verification} pipeline on Azure Service Bus, cutting verification time \textbf{85\%+} (20min to under 3min) and unblocking \textbf{500+ daily onboarding requests}.}
+        \resumeItem{Shipped a Payment Operations Portal end-to-end (React, Spring Boot) for orders, settlements, and transactions, replacing \textbf{3-4 hours} of daily manual reconciliation for the ops team.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 %-----------PROJECTS-----------
@@ -129,7 +129,7 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {University Institute of Technology, Bhopal}{Nov 2020 - May 2024}
-      {B.Tech - Computer Science and Engineering}{CGPA: 8.3}
+      {University Institute of Technology, Bhopal}{Aug 2020 - May 2024}
+      {B.Tech - Computer Science \& Engineering}{CGPA: 8.3/10}
   \resumeSubHeadingListEnd
 \end{document}
