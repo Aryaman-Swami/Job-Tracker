@@ -49,8 +49,9 @@ public class SyncService {
 
     public Map<String, Object> runSync() {
         jdbc.execute("""
-                DELETE FROM jobs WHERE created_at < NOW() - INTERVAL '30 days'
+                DELETE FROM jobs WHERE created_at < NOW() - INTERVAL '15 days'
                   AND status IN ('to_ask', 'declined', 'not_interested')
+                  AND (tailored_resume_latex IS NULL OR BTRIM(tailored_resume_latex) = '')
                 """);
 
         Map<String, Object> jobspyResult = runScript(SCRAPER_SCRIPT);
