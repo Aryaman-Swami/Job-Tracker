@@ -19,6 +19,7 @@ public class SyncService {
     private static final Path SCRAPER_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "run_scraper.py").normalize();
     private static final Path WORKDAY_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "workday_search.py").normalize();
     private static final Path WELLFOUND_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "wellfound_search.py").normalize();
+    private static final Path HIRINGCAFE_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "hiringcafe_search.py").normalize();
     private static final int MAX_MESSAGE_LEN = 500;
 
     private final JdbcTemplate jdbc;
@@ -57,9 +58,10 @@ public class SyncService {
         Map<String, Object> jobspyResult = runScript(SCRAPER_SCRIPT);
         Map<String, Object> workdayResult = runScript(WORKDAY_SCRIPT);
         Map<String, Object> wellfoundResult = runScript(WELLFOUND_SCRIPT);
+        Map<String, Object> hiringcafeResult = runScript(HIRINGCAFE_SCRIPT);
 
         boolean ok = Boolean.TRUE.equals(jobspyResult.get("ok")) && Boolean.TRUE.equals(workdayResult.get("ok"))
-                && Boolean.TRUE.equals(wellfoundResult.get("ok"));
+                && Boolean.TRUE.equals(wellfoundResult.get("ok")) && Boolean.TRUE.equals(hiringcafeResult.get("ok"));
         String message = "jobspy: " + jobspyResult.get("message") + "\nworkday: " + workdayResult.get("message")
                 + "\nwellfound: " + wellfoundResult.get("message");
         return Map.of("ok", ok, "message", tail(message));
