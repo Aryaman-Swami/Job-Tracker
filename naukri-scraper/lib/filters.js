@@ -5,6 +5,9 @@
 // Not a port anymore — don't try to keep this in sync with run_scraper.py.
 
 const TITLE_EXCLUDE = [
+  /\bandroid\b/i,
+  /\bios\b/i,
+  /\bmobile\s+(app|application|developer|engineer|dev|sdk)\b/i,
   /\bintern(s|ship|ships)?\b/i, // interns / trainees / apprentices are not full-time roles
   /\btrainee\b/i,
   /\bapprentice(ship)?\b/i,

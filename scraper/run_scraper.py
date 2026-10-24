@@ -75,6 +75,10 @@ SITES = ["linkedin", "indeed"]
 
 # Checked against job title always — before any description check
 TITLE_EXCLUDE = [
+    # mobile roles
+    r"\bandroid\b",
+    r"\bios\b",
+    r"\bmobile\s+(app|application|developer|engineer|dev|sdk)\b",
     # interns / trainees / apprentices — not full-time roles
     r"\bintern(s|ship|ships)?\b",
     r"\btrainee\b",
