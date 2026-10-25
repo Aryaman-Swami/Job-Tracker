@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +21,7 @@ public class SyncService {
     private static final Path WORKDAY_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "workday_search.py").normalize();
     private static final Path WELLFOUND_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "wellfound_search.py").normalize();
     private static final Path HIRINGCAFE_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "hiringcafe_search.py").normalize();
+    private static final long SCRIPT_TIMEOUT_SECONDS = 300;
     private static final int MAX_MESSAGE_LEN = 500;
 
     private final JdbcTemplate jdbc;
@@ -71,16 +73,24 @@ public class SyncService {
         try {
             String pythonBin = System.getenv().getOrDefault("PYTHON_BIN",
                     System.getProperty("os.name", "").toLowerCase().contains("win") ? "python" : "python3");
-            Process proc = new ProcessBuilder(pythonBin, script.toString())
-                    .redirectErrorStream(true).start();
-            String out = new String(proc.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-            boolean finished = proc.waitFor(300, TimeUnit.SECONDS);
-            log.info("{} output:\n{}", script.getFileName(), out);
-            if (!finished) {
-                proc.destroyForcibly();
-                return Map.of("ok", false, "message", "Timed out");
+            Path outFile = Files.createTempFile("scraper-", ".log");
+            try {
+                Process proc = new ProcessBuilder(pythonBin, script.toString())
+                        .redirectErrorStream(true).redirectOutput(outFile.toFile()).start();
+                boolean finished = proc.waitFor(SCRIPT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+                if (!finished) {
+                    proc.descendants().forEach(ProcessHandle::destroyForcibly);
+                    proc.destroyForcibly();
+                }
+                String out = Files.readString(outFile, StandardCharsets.UTF_8);
+                log.info("{} output{}:\n{}", script.getFileName(), finished ? "" : " (timed out)", out);
+                if (!finished) {
+                    return Map.of("ok", false, "message", "Timed out: " + tail(out));
+                }
+                return Map.of("ok", proc.exitValue() == 0, "message", tail(out));
+            } finally {
+                Files.deleteIfExists(outFile);
             }
-            return Map.of("ok", proc.exitValue() == 0, "message", tail(out));
         } catch (IOException | InterruptedException e) {
             return Map.of("ok", false, "message", String.valueOf(e.getMessage()));
         }
