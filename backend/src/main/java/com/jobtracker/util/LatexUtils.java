@@ -64,6 +64,24 @@ public final class LatexUtils {
     // Removes the last \resumeSubItem{...} bullet from the Achievements section
     // (and any \vspace{} directly preceding it), so a tailored resume that
     // overflows to a second page can be trimmed back down to one.
+    /** Cuts the Professional Summary down to its first sentence; returns the input unchanged if it is already one sentence. */
+    public static String shortenSummaryToFirstSentence(String latex) {
+        int sectionStart = latex.indexOf("\\section{Professional Summary}");
+        if (sectionStart == -1) return latex;
+        int nextSection = latex.indexOf("\\section{", sectionStart + 1);
+        int sectionEnd = nextSection == -1 ? latex.length() : nextSection;
+        String section = latex.substring(sectionStart, sectionEnd);
+        int open = section.indexOf("\\small{");
+        int close = section.lastIndexOf('}');
+        if (open == -1 || close <= open) return latex;
+        String inner = section.substring(open + "\\small{".length(), close);
+        Matcher m = Pattern.compile("[a-z0-9)}]\\.\\s+(?=[A-Z])").matcher(inner);
+        if (!m.find()) return latex;
+        String first = inner.substring(0, m.start() + 2);
+        return latex.substring(0, sectionStart) + section.substring(0, open + "\\small{".length())
+                + first + section.substring(close) + latex.substring(sectionEnd);
+    }
+
     public static RemovalResult removeLastAchievement(String latex) {
         int sectionStart = latex.indexOf("\\section{Achievements}");
         if (sectionStart == -1) return new RemovalResult(latex, false, 0);

@@ -112,6 +112,14 @@ public class LatexPdfService {
         }
 
         String current = latex;
+        String shortened = LatexUtils.shortenSummaryToFirstSentence(current);
+        if (!shortened.equals(current)) {
+            current = shortened;
+            result = compilePdfAndCountPages(current);
+            if (result.pages() != null && result.pages() <= 1) {
+                return new OnePageResult(current, result.pages(), "Shortened the summary to one sentence to keep the resume to one page.", false, null);
+            }
+        }
         for (int attempt = 1; attempt <= 2; attempt++) {
             LatexUtils.RemovalResult trimmed = LatexUtils.removeLastAchievement(current);
             if (!trimmed.removed()) break;
