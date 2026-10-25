@@ -57,8 +57,8 @@ _INDIA_TERMS = [
 ]
 # Per-city searches: a plain "India" query is capped by LinkedIn's ranking and
 # mostly returns the same top results for every term, so the long tail in each
-# city was never reached. (Chennai/Hyderabad/Kochi are in LOCATION_EXCLUDE.)
-_CITIES = ["Bengaluru", "Pune", "Mumbai", "Delhi NCR", "Noida", "Gurugram", "Ahmedabad"]
+# city was never reached. (Chennai/Kochi/Kerala/Tamil Nadu are in LOCATION_EXCLUDE.)
+_CITIES = ["Bengaluru", "Pune", "Mumbai", "Delhi NCR", "Noida", "Gurugram", "Ahmedabad", "Hyderabad"]
 _CITY_TERMS = ["java developer", "java backend developer"]
 
 SEARCHES = (
@@ -138,8 +138,6 @@ LOCATION_EXCLUDE = [
     r"\btamil\s*nadu\b",
     r"\bkochi\b",
     r"\bkerala\b",
-    r"\bhyderabad\b",
-    r"\btelangana\b",
 ]
 
 COMPANY_EXCLUDE = [
@@ -436,6 +434,7 @@ if __name__ == "__main__":
     for s in SEARCHES:
         a, _, _, added_jobs = run_search(s["search_term"], s["location"], s["results_wanted"],
                                          sites=s.get("sites"), linkedin_params=s.get("linkedin_params"))
+        _save_seen()  # persist incrementally so a timeout kill doesn't lose the SEEN cache
         total_added += a
         all_added_jobs.extend(added_jobs)
 

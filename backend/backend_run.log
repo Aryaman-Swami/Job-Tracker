@@ -8,26 +8,26 @@
 
  :: Spring Boot ::                (v3.3.4)
 
-2026-09-26T16:38:27.668+05:30  INFO 36164 --- [           main] com.jobtracker.JobTrackerApplication     : Starting JobTrackerApplication v1.0.0 using Java 21.0.10 with PID 36164 (C:\Users\hp\Projects\Job Tracker\backend\target\job-tracker-backend.jar started by hp in C:\Users\hp\Projects\Job Tracker\backend)
-2026-09-26T16:38:27.687+05:30  INFO 36164 --- [           main] com.jobtracker.JobTrackerApplication     : No active profile set, falling back to 1 default profile: "default"
-2026-09-26T16:38:36.657+05:30  INFO 36164 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3000 (http)
-2026-09-26T16:38:36.728+05:30  INFO 36164 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-09-26T16:38:36.729+05:30  INFO 36164 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2026-09-26T16:38:37.012+05:30  INFO 36164 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-09-26T16:38:37.020+05:30  INFO 36164 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8843 ms
-2026-09-26T16:38:41.152+05:30  WARN 36164 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+2026-10-25T15:11:49.987+05:30  INFO 37972 --- [           main] com.jobtracker.JobTrackerApplication     : Starting JobTrackerApplication v1.0.0 using Java 21.0.10 with PID 37972 (C:\Users\hp\Projects\Job Tracker\backend\target\job-tracker-backend.jar started by hp in C:\Users\hp\Projects\Job Tracker\backend)
+2026-10-25T15:11:50.003+05:30  INFO 37972 --- [           main] com.jobtracker.JobTrackerApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-10-25T15:11:53.883+05:30  INFO 37972 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3000 (http)
+2026-10-25T15:11:53.922+05:30  INFO 37972 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-25T15:11:53.923+05:30  INFO 37972 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-10-25T15:11:54.035+05:30  INFO 37972 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-25T15:11:54.039+05:30  INFO 37972 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3745 ms
+2026-10-25T15:11:54.940+05:30  WARN 37972 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: ca5854c5-3da4-487a-af1e-0f8784f2ca36
+Using generated security password: 3fa99d37-e23a-4aa1-8b49-203014c4c737
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2026-09-26T16:38:41.283+05:30  INFO 36164 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-09-26T16:38:42.559+05:30  INFO 36164 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-09-26T16:38:45.896+05:30  INFO 36164 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3000 (http) with context path '/'
-2026-09-26T16:38:46.146+05:30  INFO 36164 --- [           main] com.jobtracker.JobTrackerApplication     : Started JobTrackerApplication in 22.05 seconds (process running for 26.729)
-2026-09-26T16:38:46.214+05:30  INFO 36164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-09-26T16:38:48.358+05:30  INFO 36164 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@20440c6c
-2026-09-26T16:38:48.403+05:30  INFO 36164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-09-26T16:39:03.938+05:30  INFO 36164 --- [nio-3000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-26T16:39:03.939+05:30  INFO 36164 --- [nio-3000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-09-26T16:39:03.942+05:30  INFO 36164 --- [nio-3000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-10-25T15:11:54.971+05:30  INFO 37972 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-25T15:11:55.295+05:30  INFO 37972 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-10-25T15:11:56.527+05:30  INFO 37972 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3000 (http) with context path '/'
+2026-10-25T15:11:56.587+05:30  INFO 37972 --- [           main] com.jobtracker.JobTrackerApplication     : Started JobTrackerApplication in 8.107 seconds (process running for 9.542)
+2026-10-25T15:11:56.619+05:30  INFO 37972 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-25T15:11:56.845+05:30  INFO 37972 --- [nio-3000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-25T15:11:56.847+05:30  INFO 37972 --- [nio-3000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-25T15:11:56.851+05:30  INFO 37972 --- [nio-3000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-10-25T15:11:57.747+05:30  INFO 37972 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b5aa65b
+2026-10-25T15:11:57.753+05:30  INFO 37972 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

@@ -51,7 +51,7 @@ const LOCATION_INCLUDE = [
 
 // Explicit per your instruction, even though they'd already fail the
 // include-list above — keeps the exclusion visible/intentional in the code.
-const LOCATION_EXCLUDE = [/\bchennai\b/i, /\bkochi\b/i];
+const LOCATION_EXCLUDE = [/\bchennai\b/i, /\bkochi\b/i, /\bkerala\b/i, /\btamil\s*nadu\b/i];
 
 // Defense-in-depth against non-India postings slipping through: Naukri's
 // location field is sometimes multi-site ("Bangalore, Dubai") or the client
@@ -130,7 +130,6 @@ function passesFilters(job) {
   if (matchesAny(TITLE_EXCLUDE, title)) return false;
   if (!matchesAny(MUST_CONTAIN, combined)) return false;
   if (matchesAny(LOCATION_EXCLUDE, job.location)) return false;
-  if (!matchesAny(LOCATION_INCLUDE, job.location)) return false;
   if (matchesAny(ABROAD_EXCLUDE, job.location) || matchesAny(ABROAD_EXCLUDE, job.description)) return false;
 
   const exp = parseExperience(job.experience);

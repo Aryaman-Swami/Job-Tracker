@@ -20,8 +20,9 @@ public class SyncService {
     private static final Path SCRAPER_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "run_scraper.py").normalize();
     private static final Path WORKDAY_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "workday_search.py").normalize();
     private static final Path WELLFOUND_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "wellfound_search.py").normalize();
-    private static final Path HIRINGCAFE_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "hiringcafe_search.py").normalize();
-    private static final long SCRIPT_TIMEOUT_SECONDS = 300;
+    private static final Path GREENHOUSE_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "greenhouse_search.py").normalize();
+    private static final long DEFAULT_TIMEOUT_SECONDS = 300;
+    private static final long LONG_TIMEOUT_SECONDS = 900;
     private static final int MAX_MESSAGE_LEN = 500;
 
     private final JdbcTemplate jdbc;
@@ -57,27 +58,45 @@ public class SyncService {
                   AND (tailored_resume_latex IS NULL OR BTRIM(tailored_resume_latex) = '')
                 """);
 
-        Map<String, Object> jobspyResult = runScript(SCRAPER_SCRIPT);
-        Map<String, Object> workdayResult = runScript(WORKDAY_SCRIPT);
-        Map<String, Object> wellfoundResult = runScript(WELLFOUND_SCRIPT);
-        Map<String, Object> hiringcafeResult = runScript(HIRINGCAFE_SCRIPT);
+        // hiring.cafe is intentionally not run here: Cloudflare blocks Render, so it runs locally only.
+        Map<String, Object> jobspyResult = runScript(SCRAPER_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_JOBSPY_SECONDS", LONG_TIMEOUT_SECONDS));
+        Map<String, Object> workdayResult = runScript(WORKDAY_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_WORKDAY_SECONDS", LONG_TIMEOUT_SECONDS));
+        Map<String, Object> wellfoundResult = runScript(WELLFOUND_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_WELLFOUND_SECONDS", DEFAULT_TIMEOUT_SECONDS));
+        Map<String, Object> greenhouseResult = runScript(GREENHOUSE_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_GREENHOUSE_SECONDS", DEFAULT_TIMEOUT_SECONDS));
 
         boolean ok = Boolean.TRUE.equals(jobspyResult.get("ok")) && Boolean.TRUE.equals(workdayResult.get("ok"))
-                && Boolean.TRUE.equals(wellfoundResult.get("ok")) && Boolean.TRUE.equals(hiringcafeResult.get("ok"));
+                && Boolean.TRUE.equals(wellfoundResult.get("ok")) && Boolean.TRUE.equals(greenhouseResult.get("ok"));
         String message = "jobspy: " + jobspyResult.get("message") + "\nworkday: " + workdayResult.get("message")
-                + "\nwellfound: " + wellfoundResult.get("message");
+                + "\nwellfound: " + wellfoundResult.get("message") + "\ngreenhouse: " + greenhouseResult.get("message");
         return Map.of("ok", ok, "message", tail(message));
     }
 
-    private Map<String, Object> runScript(Path script) {
+    private static long timeoutSeconds(String envName, long def) {
+        String v = System.getenv(envName);
+        if (v != null && !v.isBlank()) {
+            try {
+                long n = Long.parseLong(v.trim());
+                if (n > 0) return n;
+            } catch (NumberFormatException ignored) {
+                log.warn("Ignoring invalid {}={}", envName, v);
+            }
+        }
+        return def;
+    }
+
+    private Map<String, Object> runScript(Path script, long timeoutSeconds) {
         try {
             String pythonBin = System.getenv().getOrDefault("PYTHON_BIN",
                     System.getProperty("os.name", "").toLowerCase().contains("win") ? "python" : "python3");
             Path outFile = Files.createTempFile("scraper-", ".log");
             try {
-                Process proc = new ProcessBuilder(pythonBin, script.toString())
-                        .redirectErrorStream(true).redirectOutput(outFile.toFile()).start();
-                boolean finished = proc.waitFor(SCRIPT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+                ProcessBuilder pb = new ProcessBuilder(pythonBin, "-u", script.toString())
+                        .redirectErrorStream(true).redirectOutput(outFile.toFile());
+                // Unbuffered stdout so partial output survives a timeout kill.
+                pb.environment().put("PYTHONUNBUFFERED", "1");
+                log.info("Starting {} (timeout {}s)", script.getFileName(), timeoutSeconds);
+                Process proc = pb.start();
+                boolean finished = proc.waitFor(timeoutSeconds, TimeUnit.SECONDS);
                 if (!finished) {
                     proc.descendants().forEach(ProcessHandle::destroyForcibly);
                     proc.destroyForcibly();

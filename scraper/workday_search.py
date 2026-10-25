@@ -34,6 +34,7 @@ and add {"name", "tenant", "wd", "site"} to workday_companies.json.
 import json
 import logging
 import os
+from concurrent.futures import ThreadPoolExecutor
 import re
 import requests
 from datetime import datetime
@@ -172,7 +173,7 @@ def search_company(company: dict, search_text: str):
     if any(re.search(p, company["name"], re.I) for p in COMPANY_EXCLUDE):
         return 0, 0, 0, []
 
-    facet_ids = get_family_facet_ids(tenant, wd, site)
+    facet_ids = [] if company.get("no_family_filter") else get_family_facet_ids(tenant, wd, site)
     applied_facets = {"jobFamilyGroup": facet_ids} if facet_ids else {}
 
     postings = []
@@ -194,7 +195,7 @@ def search_company(company: dict, search_text: str):
         if not postings:
             return 0, 0, 0, []
 
-    added, skipped, filtered = 0, 0, 0
+    added, skipped, filtered, stale = 0, 0, 0, 0
     added_jobs = []
 
     for job in postings:
@@ -202,6 +203,7 @@ def search_company(company: dict, search_text: str):
         posted_on = clean(job.get("postedOn"), "")
 
         if not is_fresh(posted_on):
+            stale += 1
             continue
         if any(re.search(p, title, re.I) for p in TITLE_EXCLUDE):
             filtered += 1
@@ -273,7 +275,7 @@ def search_company(company: dict, search_text: str):
 
     logger.info(
         f"[{company['name']}] '{search_text}': scraped={len(postings)}, "
-        f"added={added}, dupes={skipped}, filtered={filtered}"
+        f"added={added}, dupes={skipped}, filtered={filtered}, not_fresh={stale}"
     )
     return added, skipped, filtered, added_jobs
 
@@ -282,11 +284,23 @@ if __name__ == "__main__":
     logger.info("=== Workday search run started ===")
     total_added = 0
     all_added_jobs = []
-    for company in load_companies():
+    # Each company is independent and the work is network-bound, so fan out
+    # across companies (terms stay sequential per company to share the facet cache).
+    def _run_company(company):
+        out = []
         for term in SEARCH_TERMS:
-            a, _, _, jobs = search_company(company, term)
-            total_added += a
-            all_added_jobs.extend(jobs)
+            try:
+                out.append(search_company(company, term))
+            except Exception as e:
+                logger.error(f"[{company['name']}] unexpected error for '{term}': {e}")
+        return out
+
+    workers = int(os.environ.get("WORKDAY_WORKERS", "6"))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for results in pool.map(_run_company, load_companies()):
+            for a, _, _, jobs in results:
+                total_added += a
+                all_added_jobs.extend(jobs)
     notify_new_jobs(all_added_jobs, source_label="Workday")
     logger.info(f"=== Done. Total new jobs added: {total_added} ===")
     print(f"[{datetime.now():%Y-%m-%d %H:%M}] Workday search done. {total_added} new jobs added.")

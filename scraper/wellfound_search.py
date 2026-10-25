@@ -22,6 +22,7 @@ import logging
 import os
 import random
 import re
+import sys
 import time
 from datetime import datetime, timezone
 from logging.handlers import RotatingFileHandler
@@ -52,7 +53,7 @@ BACKEND = BASE_URL + "/api/jobs"
 ROLES = ["software-engineer", "backend-engineer", "java-developer", "full-stack-engineer"]
 LOCATION = "india"
 PAGES = 2
-MAX_AGE_DAYS = 14
+MAX_AGE_DAYS = 30
 DELAY = (4, 8)
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -127,12 +128,37 @@ def location_ok(job):
     return bool(job.get("remote")) and not (job.get("acceptedRemoteLocationNames") or [])
 
 
+def reject_reason(job, company, title, combined, started, now):
+    """Return a short reason string if the listing should be filtered, else None."""
+    if started and now - started > MAX_AGE_DAYS * 86400:
+        return "too_old"
+    if any(re.search(p, company, re.I) for p in COMPANY_EXCLUDE):
+        return "company_excluded"
+    if any(re.search(p, title, re.I) for p in _TITLE_EXCLUDE):
+        return "title_excluded"
+    if not any(re.search(p, title, re.I) for p in TITLE_INCLUDE):
+        return "title_not_included"
+    if SENIOR_WORDS.search(title):
+        return "senior_title"
+    if not location_ok(job):
+        return "location"
+    if not any(re.search(p, combined, re.I) for p in TECH_INCLUDE):
+        return "no_tech_match"
+    if not years_ok(job, combined):
+        return "years"
+    return None
+
+
+DRY_RUN = "--dry-run" in sys.argv
+
+
 def main():
     logger.info("=== Wellfound search run started ===")
     session = requests.Session()
     session.headers.update({"User-Agent": UA, "Accept": "text/html,application/xhtml+xml",
                             "Accept-Language": "en-US,en;q=0.9"})
     added, skipped, filtered, seen = 0, 0, 0, set()
+    reasons, rejected_samples, passed_samples = {}, [], []
     added_jobs = []
     now = time.time()
     first = True
@@ -155,18 +181,14 @@ def main():
                     desc = md_to_text(job.get("description"))
                     combined = f"{title} {desc}"
                     started = job.get("liveStartAt")
-                    rejected = (
-                        (started and now - started > MAX_AGE_DAYS * 86400)
-                        or any(re.search(p, company, re.I) for p in COMPANY_EXCLUDE)
-                        or any(re.search(p, title, re.I) for p in _TITLE_EXCLUDE)
-                        or not any(re.search(p, title, re.I) for p in TITLE_INCLUDE)
-                        or SENIOR_WORDS.search(title)
-                        or not location_ok(job)
-                        or not any(re.search(p, combined, re.I) for p in TECH_INCLUDE)
-                        or not years_ok(job, combined)
-                    )
-                    if rejected:
+                    reason = reject_reason(job, company, title, combined, started, now)
+                    if reason:
                         filtered += 1
+                        reasons[reason] = reasons.get(reason, 0) + 1
+                        rejected_samples.append((title, "; ".join((job.get("locationNames") or []) + (job.get("acceptedRemoteLocationNames") or [])[:3]) or ("remote" if job.get("remote") else "-"), reason))
+                        continue
+                    if DRY_RUN:
+                        passed_samples.append((company, title, job.get("locationNames"), job.get("yearsExperienceMin"), job.get("yearsExperienceMax")))
                         continue
                     job_url = f"https://wellfound.com/jobs/{jid}-{job.get('slug') or 'job'}"
                     locs = ", ".join(job.get("locationNames") or []) or ("Remote" if job.get("remote") else "")
@@ -194,6 +216,16 @@ def main():
         logger.error(f"BLOCKED, aborting run (no retries): {e}")
     except Exception as e:
         logger.error(f"Run aborted: {e}")
+    if DRY_RUN:
+        logger.info(f"DRY-RUN reasons: {json.dumps(reasons)} passed={len(passed_samples)}")
+        print("REASONS:", json.dumps(reasons, indent=1))
+        print(f"PASSED ({len(passed_samples)}):")
+        for p in passed_samples:
+            print("  P", p)
+        print("REJECTED SAMPLES:")
+        for s in random.sample(rejected_samples, min(40, len(rejected_samples))):
+            print("  R", s)
+        return
     notify_new_jobs(added_jobs, source_label="Wellfound")
     logger.info(f"=== Done. added={added} dupes={skipped} filtered={filtered} ===")
     print(f"[{datetime.now():%Y-%m-%d %H:%M}] Wellfound search done. {added} new jobs added.")

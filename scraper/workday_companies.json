@@ -67,5 +67,7 @@
   {"name": "Coca-Cola", "tenant": "coke", "wd": "wd1", "site": "coca-cola-careers"},
   {"name": "Kimberly-Clark", "tenant": "kimberlyclark", "wd": "wd1", "site": "GLOBAL"},
   {"name": "Stryker", "tenant": "stryker", "wd": "wd1", "site": "StrykerCareers"},
-  {"name": "Baxter", "tenant": "baxter", "wd": "wd1", "site": "baxter"}
+  {"name": "Baxter", "tenant": "baxter", "wd": "wd1", "site": "baxter"},
+  {"name": "Michelin", "tenant": "michelinhr", "wd": "wd3", "site": "Michelin", "no_family_filter": true},
+  {"name": "First American", "tenant": "firstam", "wd": "wd1", "site": "faicareers"}
 ]

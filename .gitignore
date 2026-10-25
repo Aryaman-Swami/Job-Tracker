@@ -13,3 +13,6 @@ naukri-scraper/tmp/
 naukri-scraper/sessions/
 naukri-scraper/seen_jobs.json
 naukri-scraper/scrape_run.log
+scraper/local.env
+scraper/hiringcafe_local.log
+backend/backend_run*.log
