@@ -26,10 +26,14 @@ public class JobController {
     }
 
     @GetMapping
-    public List<Map<String, Object>> list(
+    public ResponseEntity<List<Map<String, Object>>> list(
             @RequestParam(required = false) String status,
             @RequestParam(required = false) String source,
-            @RequestParam(name = "needs_referral", required = false) String needsReferral) {
+            @RequestParam(name = "needs_referral", required = false) String needsReferral,
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer size,
+            @RequestParam(required = false) String from,
+            @RequestParam(required = false) String to) {
 
         List<String> conditions = new ArrayList<>();
         List<Object> params = new ArrayList<>();
@@ -57,8 +61,47 @@ public class JobController {
             params.add(true);
         }
 
+        // Date filter (inclusive, yyyy-MM-dd) on the posting date, falling back to
+        // when we first saw the job for sources that don't report one.
+        try {
+            if (from != null && !from.isBlank()) {
+                conditions.add("COALESCE(date_posted, created_at) >= ?");
+                params.add(Timestamp.valueOf(java.time.LocalDate.parse(from.trim()).atStartOfDay()));
+            }
+            if (to != null && !to.isBlank()) {
+                conditions.add("COALESCE(date_posted, created_at) < ?");
+                params.add(Timestamp.valueOf(java.time.LocalDate.parse(to.trim()).plusDays(1).atStartOfDay()));
+            }
+        } catch (java.time.format.DateTimeParseException e) {
+            return ResponseEntity.badRequest().build();
+        }
+
         String where = conditions.isEmpty() ? "" : "WHERE " + String.join(" AND ", conditions);
-        return jdbc.query("SELECT * FROM jobs " + where + " ORDER BY created_at DESC", rowMapper, params.toArray());
+        String order = " ORDER BY created_at DESC, id DESC";
+
+        // Unpaginated callers (the existing frontend) still get the full list.
+        if (page == null && size == null) {
+            return ResponseEntity.ok(jdbc.query("SELECT * FROM jobs " + where + order, rowMapper, params.toArray()));
+        }
+
+        int pageSize = Math.min(Math.max(size == null ? 50 : size, 1), 200);
+        int pageNum = Math.max(page == null ? 1 : page, 1);
+        Long total = jdbc.queryForObject("SELECT COUNT(*) FROM jobs " + where, Long.class, params.toArray());
+
+        List<Object> pageParams = new ArrayList<>(params);
+        pageParams.add(pageSize);
+        pageParams.add((long) (pageNum - 1) * pageSize);
+        List<Map<String, Object>> rows = jdbc.query(
+                "SELECT * FROM jobs " + where + order + " LIMIT ? OFFSET ?", rowMapper, pageParams.toArray());
+
+        long totalCount = total == null ? 0 : total;
+        return ResponseEntity.ok()
+                .header("X-Total-Count", String.valueOf(totalCount))
+                .header("X-Page", String.valueOf(pageNum))
+                .header("X-Page-Size", String.valueOf(pageSize))
+                .header("X-Total-Pages", String.valueOf((totalCount + pageSize - 1) / pageSize))
+                .header("Access-Control-Expose-Headers", "X-Total-Count, X-Page, X-Page-Size, X-Total-Pages")
+                .body(rows);
     }
 
     @PostMapping

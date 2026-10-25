@@ -65,7 +65,7 @@ BOARDS = {
 
 MAX_AGE_DAYS = 30
 MIN_YEARS, MAX_YEARS = 2, 6
-WORKERS = 6
+WORKERS = 3
 REQUEST_TIMEOUT = 30
 DEADLINE_SECONDS = 240
 
@@ -142,10 +142,20 @@ def reject_reason(company, title, desc, ts, now):
 
 
 def fetch_board(token):
-    url = f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true"
+    url = f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs"
     r = requests.get(url, headers={"User-Agent": UA}, timeout=REQUEST_TIMEOUT)
     r.raise_for_status()
     return r.json().get("jobs", [])
+
+
+def fetch_job_content(token, job_id):
+    """Description for one job. The board listing is fetched WITHOUT content
+    (content=true for 37 boards blew past Render's 512MB limit), so only jobs
+    that survive the cheap filters pay for a detail request."""
+    url = f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs/{job_id}"
+    r = requests.get(url, headers={"User-Agent": UA}, timeout=REQUEST_TIMEOUT)
+    r.raise_for_status()
+    return r.json().get("content")
 
 
 def process_board(token, now):
@@ -169,7 +179,11 @@ def process_board(token, now):
         if reason:
             rej(reason, title, loc)
             continue
-        desc = html_to_text(job.get("content"))
+        try:
+            desc = html_to_text(fetch_job_content(token, job.get("id")))
+        except Exception:
+            rej("detail_fetch_failed", title, loc)
+            continue
         combined = f"{title} {desc}"
         if not any(re.search(p, combined, re.I) for p in TECH_INCLUDE):
             rej("no_tech_match", title, loc)
