@@ -11,6 +11,8 @@ import ResumeModal from './components/ResumeModal.jsx';
 import PdfPreviewModal from './components/PdfPreviewModal.jsx';
 import Login from './components/Login.jsx';
 
+const DAYS_PER_PAGE = 3;
+
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(isLoggedIn());
 
@@ -48,15 +50,46 @@ function AuthedApp({ onLogout }) {
   const [syncing, setSyncing] = useState(false);
   const [tailoringIds, setTailoringIds] = useState(() => new Set()); // job ids with a tailor call in flight
 
-  const loadJobs = useCallback(async () => {
-    const params = { source };
+  const [hasMore, setHasMore] = useState(false);
+  const [nextBefore, setNextBefore] = useState(null);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const baseParams = useCallback(() => {
+    const params = { source, days: String(DAYS_PER_PAGE) };
     if (status !== 'all') params.status = status;
     if (needsReferral) params.needs_referral = 'true';
-    const jobs = await api.listJobs(params);
-    setAllJobs(jobs);
-  }, [source, status, needsReferral]);
+    if (search) params.search = search;
+    return params;
+  }, [source, status, needsReferral, search]);
 
-  useEffect(() => { loadJobs(); }, [loadJobs]);
+  // Loads the newest page of days, replacing whatever was loaded.
+  const loadJobs = useCallback(async () => {
+    const page = await api.listJobsPage(baseParams());
+    setAllJobs(page.jobs);
+    setHasMore(page.hasMore);
+    setNextBefore(page.nextBefore);
+    setLoading(false);
+  }, [baseParams]);
+
+  // Debounced so typing in the search box doesn't fire a request per keystroke.
+  useEffect(() => {
+    const t = setTimeout(() => { loadJobs(); }, search ? 300 : 0);
+    return () => clearTimeout(t);
+  }, [loadJobs, search]);
+
+  async function loadMore() {
+    if (!hasMore || loadingMore) return;
+    setLoadingMore(true);
+    try {
+      const page = await api.listJobsPage({ ...baseParams(), before: nextBefore });
+      setAllJobs(jobs => [...jobs, ...page.jobs]);
+      setHasMore(page.hasMore);
+      setNextBefore(page.nextBefore);
+    } finally {
+      setLoadingMore(false);
+    }
+  }
 
   const selectedJob = allJobs.find(j => j.id === selectedJobId) || null;
 
@@ -176,8 +209,11 @@ function AuthedApp({ onLogout }) {
       <div className="main-layout">
         <JobList
           jobs={allJobs}
-          search={search}
           sort={sort}
+          loading={loading}
+          hasMore={hasMore}
+          loadingMore={loadingMore}
+          onLoadMore={loadMore}
           selectedJobId={selectedJobId}
           onSelect={handleSelect}
           onEdit={openEditModal}

@@ -33,7 +33,10 @@ public class JobController {
             @RequestParam(required = false) Integer page,
             @RequestParam(required = false) Integer size,
             @RequestParam(required = false) String from,
-            @RequestParam(required = false) String to) {
+            @RequestParam(required = false) String to,
+            @RequestParam(required = false) String search,
+            @RequestParam(required = false) Integer days,
+            @RequestParam(required = false) String before) {
 
         List<String> conditions = new ArrayList<>();
         List<Object> params = new ArrayList<>();
@@ -55,6 +58,10 @@ public class JobController {
         } else if (source != null) {
             conditions.add("source = ?");
             params.add(source);
+        }
+        if (search != null && !search.isBlank()) {
+            conditions.add("LOWER(company) LIKE ?");
+            params.add("%" + search.trim().toLowerCase() + "%");
         }
         if ("true".equals(needsReferral)) {
             conditions.add("needs_referral = ?");
@@ -79,7 +86,50 @@ public class JobController {
         String where = conditions.isEmpty() ? "" : "WHERE " + String.join(" AND ", conditions);
         String order = " ORDER BY created_at DESC, id DESC";
 
-        // Unpaginated callers (the existing frontend) still get the full list.
+        // Day-wise pagination: return the newest `days` distinct days (by created_at) older than
+        // the `before` cursor. X-Next-Before is the cursor for the next (older) page.
+        if (days != null) {
+            List<Object> dayParams = new ArrayList<>(params);
+            String dayWhere = where;
+            try {
+                if (before != null && !before.isBlank()) {
+                    dayWhere += (dayWhere.isEmpty() ? "WHERE " : " AND ") + "created_at < ?";
+                    dayParams.add(Timestamp.valueOf(java.time.LocalDateTime.parse(before.trim())));
+                }
+            } catch (java.time.format.DateTimeParseException e) {
+                return ResponseEntity.badRequest().build();
+            }
+            int dayCount = Math.min(Math.max(days, 1), 31);
+            List<Object> minParams = new ArrayList<>(dayParams);
+            minParams.add(dayCount);
+            java.sql.Date minDay = jdbc.queryForObject(
+                    "SELECT MIN(d) FROM (SELECT DISTINCT created_at::date AS d FROM jobs " + dayWhere
+                            + " ORDER BY d DESC LIMIT ?) t", java.sql.Date.class, minParams.toArray());
+            if (minDay == null) {
+                return ResponseEntity.ok()
+                        .header("X-Has-More", "false")
+                        .header("Access-Control-Expose-Headers", "X-Has-More, X-Next-Before")
+                        .body(List.of());
+            }
+            Timestamp start = Timestamp.valueOf(minDay.toLocalDate().atStartOfDay());
+            List<Object> rowParams = new ArrayList<>(dayParams);
+            rowParams.add(start);
+            List<Map<String, Object>> rows = jdbc.query(
+                    "SELECT * FROM jobs " + dayWhere + (dayWhere.isEmpty() ? "WHERE" : " AND") + " created_at >= ?" + order,
+                    rowMapper, rowParams.toArray());
+            List<Object> moreParams = new ArrayList<>(params);
+            moreParams.add(start);
+            Boolean hasMore = jdbc.queryForObject(
+                    "SELECT EXISTS (SELECT 1 FROM jobs " + where + (where.isEmpty() ? "WHERE" : " AND") + " created_at < ?)",
+                    Boolean.class, moreParams.toArray());
+            return ResponseEntity.ok()
+                    .header("X-Has-More", String.valueOf(Boolean.TRUE.equals(hasMore)))
+                    .header("X-Next-Before", start.toLocalDateTime().toString())
+                    .header("Access-Control-Expose-Headers", "X-Has-More, X-Next-Before")
+                    .body(rows);
+        }
+
+        // Unpaginated callers still get the full list.
         if (page == null && size == null) {
             return ResponseEntity.ok(jdbc.query("SELECT * FROM jobs " + where + order, rowMapper, params.toArray()));
         }

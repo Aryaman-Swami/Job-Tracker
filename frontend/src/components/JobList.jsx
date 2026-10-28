@@ -1,13 +1,22 @@
 import JobCard from './JobCard.jsx';
 import { dayKey, postedTime } from '../utils.js';
 
-export default function JobList({ jobs, search, sort, selectedJobId, onSelect, onEdit, onDelete, onStatusChange }) {
-  let filtered = search
-    ? jobs.filter(j => j.company.toLowerCase().includes(search))
-    : jobs;
+export default function JobList({ jobs, sort, loading, hasMore, loadingMore, onLoadMore, selectedJobId, onSelect, onEdit, onDelete, onStatusChange }) {
+  let filtered = jobs;
+
+  const loadMoreButton = hasMore && (
+    <button className="filter-btn" style={{ margin: '16px auto', display: 'block' }} disabled={loadingMore} onClick={onLoadMore}>
+      {loadingMore ? 'Loading…' : 'Load older days'}
+    </button>
+  );
 
   if (!filtered.length) {
-    return <div className="job-list"><div className="empty">No jobs here yet.</div></div>;
+    return (
+      <div className="job-list">
+        <div className="empty">{loading ? 'Loading…' : 'No jobs here yet.'}</div>
+        {loadMoreButton}
+      </div>
+    );
   }
 
   if (sort === 'posted_desc') {
@@ -32,6 +41,7 @@ export default function JobList({ jobs, search, sort, selectedJobId, onSelect, o
         <div className="month-group">
           {filtered.map(job => <JobCard {...cardProps(job)} />)}
         </div>
+        {loadMoreButton}
       </div>
     );
   }
@@ -54,6 +64,7 @@ export default function JobList({ jobs, search, sort, selectedJobId, onSelect, o
           </div>
         </div>
       ))}
+      {loadMoreButton}
     </div>
   );
 }

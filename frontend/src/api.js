@@ -78,6 +78,15 @@ export const api = {
   listJobs(params) {
     return authFetch(`${JOBS}?${new URLSearchParams(params)}`).then(json);
   },
+  // One page of jobs covering `days` distinct days; returns { jobs, hasMore, nextBefore }.
+  async listJobsPage(params) {
+    const res = await authFetch(`${JOBS}?${new URLSearchParams(params)}`);
+    return {
+      jobs: await res.json(),
+      hasMore: res.headers.get('X-Has-More') === 'true',
+      nextBefore: res.headers.get('X-Next-Before'),
+    };
+  },
   createJob(body) {
     return authFetch(JOBS, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(json);
   },
