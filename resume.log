@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  25 OCT 2026 13:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  25 OCT 2026 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -380,8 +380,7 @@ x)
 .def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count303
-)
-No file resume.aux.
+) (resume.aux)
 \openout1 = `resume.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -422,6 +421,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lato-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count306
@@ -437,6 +437,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 \everyMPtoPDFconversion=\toks30
 )
 Package hyperref Info: Link coloring OFF on input line 66.
+ (resume.out) (resume.out)
 \@outlinefile=\write3
 \openout3 = `resume.out'.
 
@@ -490,21 +491,14 @@ ata/Local/Programs/MiKTeX/fonts/enc/dvips/lato/a_cl4kdn.enc}] (resume.aux)
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-Package rerunfilecheck Warning: File `resume.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `resume.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  B18ED02EC4B59E2F3EDC02868911D2C8;483.
+Package rerunfilecheck Info: File `resume.out' has not changed.
+(rerunfilecheck)             Checksum: B18ED02EC4B59E2F3EDC02868911D2C8;483.
  ) 
 Here is how much of TeX's memory you used:
- 13554 strings out of 467871
- 221355 string characters out of 5419828
- 701504 words of memory out of 5000000
- 42240 multiletter control sequences out of 15000+600000
+ 13568 strings out of 467871
+ 221633 string characters out of 5419828
+ 701414 words of memory out of 5000000
+ 42248 multiletter control sequences out of 15000+600000
  831471 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,11n,79p,1005b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -514,9 +508,9 @@ d.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/typoland/lato/Lato
 o/Lato-Regular.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmsy6.pfb>
-Output written on resume.pdf (1 page, 117959 bytes).
+Output written on resume.pdf (1 page, 119332 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)
- 6677 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6717 words of extra memory for PDF output out of 10000 (max. 10000000)
 

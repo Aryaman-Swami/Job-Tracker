@@ -193,3 +193,42 @@
 2026-10-25 15:41:10,060 INFO [zscaler] listings=352 passed=0
 2026-10-25 15:41:10,061 INFO [stripe] listings=719 passed=0
 2026-10-25 15:41:10,062 INFO DRY-RUN reasons: {"location": 7290, "title_not_included": 146, "title_excluded": 464, "too_old": 145, "no_tech_match": 9, "years": 2} passed=10
+2026-10-25 16:12:16,061 INFO === Greenhouse search run started (dry-run) ===
+2026-10-25 16:12:24,639 INFO [gitlab] listings=239 passed=0
+2026-10-25 16:12:24,641 INFO [anthropic] listings=682 passed=0
+2026-10-25 16:12:24,642 INFO [zuora] listings=32 passed=0
+2026-10-25 16:12:24,643 INFO [rubrik] listings=148 passed=1
+2026-10-25 16:12:24,644 INFO [databricks] listings=897 passed=1
+2026-10-25 16:12:24,645 INFO [figma] listings=138 passed=0
+2026-10-25 16:12:24,646 INFO [flexport] listings=190 passed=0
+2026-10-25 16:12:24,647 INFO [zscaler] listings=352 passed=0
+2026-10-25 16:12:24,648 INFO [scaleai] listings=171 passed=0
+2026-10-25 16:12:24,650 INFO [stripe] listings=719 passed=0
+2026-10-25 16:12:24,652 INFO [anaplan] listings=142 passed=0
+2026-10-25 16:12:24,653 INFO [netskope] listings=128 passed=0
+2026-10-25 16:12:24,655 INFO [druva] listings=31 passed=0
+2026-10-25 16:12:24,656 INFO [twilio] listings=134 passed=0
+2026-10-25 16:12:24,658 INFO [agoda] listings=316 passed=0
+2026-10-25 16:12:24,659 INFO [newrelic] listings=55 passed=0
+2026-10-25 16:12:24,660 INFO [toast] listings=321 passed=0
+2026-10-25 16:12:24,661 INFO [zenoti] listings=57 passed=0
+2026-10-25 16:12:24,661 INFO [datadog] listings=433 passed=0
+2026-10-25 16:12:24,662 INFO [fivetran] listings=171 passed=0
+2026-10-25 16:12:24,663 INFO [grafanalabs] listings=145 passed=0
+2026-10-25 16:12:24,665 INFO [elastic] listings=402 passed=0
+2026-10-25 16:12:24,666 INFO [vercel] listings=95 passed=0
+2026-10-25 16:12:24,667 INFO [commvault] listings=55 passed=0
+2026-10-25 16:12:24,668 INFO [cockroachlabs] listings=15 passed=0
+2026-10-25 16:12:24,669 INFO [okta] listings=390 passed=0
+2026-10-25 16:12:24,670 INFO [sumologic] listings=12 passed=0
+2026-10-25 16:12:24,671 INFO [hackerrank] listings=30 passed=1
+2026-10-25 16:12:24,672 INFO [samsara] listings=284 passed=0
+2026-10-25 16:12:24,673 INFO [mixpanel] listings=46 passed=0
+2026-10-25 16:12:24,673 INFO [yugabyte] listings=14 passed=0
+2026-10-25 16:12:24,675 INFO [airbnb] listings=191 passed=0
+2026-10-25 16:12:24,676 INFO [appsflyer] listings=49 passed=0
+2026-10-25 16:12:24,677 INFO [purestorage] listings=364 passed=0
+2026-10-25 16:12:24,678 INFO [coinbase] listings=227 passed=1
+2026-10-25 16:12:24,679 INFO [groww] listings=10 passed=0
+2026-10-25 16:12:24,680 INFO [mongodb] listings=381 passed=6
+2026-10-25 16:12:24,681 INFO DRY-RUN reasons: {"location": 7263, "title_excluded": 480, "title_not_included": 145, "no_tech_match": 9, "too_old": 158, "years": 1} passed=10
