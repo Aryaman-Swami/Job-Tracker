@@ -105,7 +105,7 @@ async function main() {
   const applyCandidates = new Map(); // url -> job; every qualifying job, new or previously seen
   const applyLedger = applyStore.load();
   const botOn = await autoApply.botActive();
-  console.log(`auto-apply: ${botOn ? 'ON (local apply-bot detected)' : 'off (apply-bot not running)'}`);
+  console.log(`auto-apply: ${botOn ? 'ON' : 'off (NAUKRI_AUTO_APPLY=0)'}`);
   let totalScraped = 0;
   let totalFiltered = 0;
   let totalAlreadySeen = 0;

@@ -1,5 +1,4 @@
-// Auto-apply for every job the Naukri search returned, when the local
-// apply-bot is running. Reuses the page-level apply logic from apply-bot.
+// Auto-apply for every job the Naukri search returned. Reuses the page-level apply logic from apply-bot.
 const path = require('path');
 const { applyToUrl, isLoggedIn } = require('../../apply-bot/lib/naukri-apply');
 const store = require('./apply-store');
@@ -9,19 +8,10 @@ const { pause } = require('./naukri-account');
 const BOT_PORT = process.env.APPLY_BOT_PORT || 5055;
 const DAILY_CAP = Number(process.env.NAUKRI_DAILY_CAP) || 40;
 
-// NAUKRI_AUTO_APPLY: "0" force off, "1" force on, unset = on iff the local
-// apply-bot answers /health.
+// Applying uses apply-bot's page-level logic directly (no server needed), so
+// it is on by default. Set NAUKRI_AUTO_APPLY=0 to fall back to notify-only.
 async function botActive() {
-  const flag = process.env.NAUKRI_AUTO_APPLY;
-  if (flag === '0') return false;
-  if (flag === '1') return true;
-  try {
-    const res = await fetch(`http://127.0.0.1:${BOT_PORT}/health`, { signal: AbortSignal.timeout(2000) });
-    const j = await res.json();
-    return !!(res.ok && j.ok && j.active !== false);
-  } catch {
-    return false;
-  }
+  return process.env.NAUKRI_AUTO_APPLY !== '0';
 }
 
 async function notify(title, body) {
