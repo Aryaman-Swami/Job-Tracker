@@ -94,7 +94,7 @@
   \item[] \small{\textbf{Languages:} Java, SQL, JavaScript, \mbox{TypeScript}}
   \item[] \small{\textbf{Backend:} Microservices, \mbox{REST APIs}, Spring Boot, Spring Security, \mbox{OAuth2/OIDC}, SAML 2.0, JWT, \mbox{Hibernate/JPA}, Node.js, \mbox{Express.js}, NestJS, Maven}
   \item[] \small{\textbf{Frontend:} React, TailwindCSS, HTML, CSS}
-  \item[] \small{\textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, Jenkins, \mbox{CI/CD}}
+  \item[] \small{\textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, \mbox{CI/CD}}
   \item[] \small{\textbf{Data \& Messaging:} PostgreSQL, Oracle, MongoDB, Apache Kafka, Azure Service Bus, Redis}
   \item[] \small{\textbf{AI \& Tools:} Claude Code, GitHub Copilot, Git}
   \item[] \small{\textbf{Core CS \& Others:} DSA, OOP, Design Patterns, Multithreading/Concurrency, System Design, Agile/Scrum, API Gateway, ELK Stack, Grafana}
@@ -106,12 +106,13 @@
     \resumeRoleHeading{Software Development Engineer}{Sep 2025 - Present}
       \resumeItemListStart
 \resumeItem{Increased Hospital Event Listener throughput \textbf{3x} to \textbf{1,000 TPM} by re-architecting it onto an event-driven \textbf{Apache Kafka} pipeline, decoupled from the Claim Processing System.}
-\resumeItem{Onboarded \textbf{15+ enterprise partners} (Google, Accenture, AON, Wipro) onto \textbf{SAML 2.0 SSO}, removing per-user credential overhead, by building a multi-tenant \textbf{Spring Security SAML2} + \textbf{Okta} federation.}
-\resumeItem{Sustained \textbf{200K+ daily transactions} at sub-100ms p99 across \textbf{15+ portals} by designing a storage abstraction over \textbf{Azure Blob Storage} and \mbox{NAS/Kubernetes} for a company-wide file microservice.}
+\resumeItem{Spearheaded enterprise auth flows, onboarding \textbf{15+ partners} (Google, Accenture, AON, Wipro) onto \textbf{SAML 2.0 SSO}, removing per-user credential overhead, with a multi-tenant \textbf{Spring Security SAML2} + \textbf{Okta} federation.}
+\resumeItem{Owned the company-wide file management microservice, sustaining \textbf{200K+ daily transactions} at sub-100ms p99 across \textbf{15+ portals} via a storage abstraction over \textbf{Azure Blob Storage} and \mbox{NAS/Kubernetes}.}
+\resumeItem{Modernized \textbf{4 legacy portals} from \textbf{Java 8} to \textbf{Java 25}, then cut heap memory \textbf{60\%} (3 GB to 1.2 GB) by sending file transfers straight to \textbf{Azure Blob} via \textbf{SAS URLs}.}
 \resumeItemListEnd
     \resumeRoleHeading{Associate Software Development Engineer}{Jun 2024 - Sep 2025}
       \resumeItemListStart
-        \resumeItem{Cut authentication latency \textbf{80\%} (1,000ms to 200ms) at peak load by building a centralized \textbf{JWT + RBAC} authentication microservice with Kafka-driven employee sync.}
+        \resumeItem{Drove authentication end to end, cutting latency \textbf{80\%} (1,000ms to 200ms) at peak load by building a centralized \textbf{JWT + RBAC} authentication microservice with Kafka-driven employee sync.}
         \resumeItem{Cut verification time \textbf{85\%+} (20min to under 3min), unblocking \textbf{500+ daily onboarding requests}, by setting up an async \textbf{Penny Drop Verification} pipeline on Azure Service Bus.}
         \resumeItem{Eliminated \textbf{3-4 hours} of daily manual reconciliation for the ops team by shipping a Payment Operations Portal end-to-end (React, Spring Boot) for orders, settlements, and transactions.}
       \resumeItemListEnd
