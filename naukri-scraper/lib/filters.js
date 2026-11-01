@@ -112,8 +112,8 @@ function matchesAny(patterns, text) {
   return patterns.some((p) => p.test(text || ''));
 }
 
-// "X-Y Yrs" range, e.g. "2-5 Yrs". Wanted: roles whose required minimum is
-// 2 or 3 years (MIN_EXP..MAX_EXP). Postings with no parseable range pass.
+// "X-Y Yrs" range, e.g. "2-5 Yrs". Wanted: the whole range must sit within
+// MIN_EXP..MAX_EXP (2-3 years). Postings with no parseable range pass.
 const MIN_EXP = 2;
 const MAX_EXP = 3;
 function parseExperience(text) {
@@ -133,7 +133,7 @@ function passesFilters(job) {
   if (matchesAny(ABROAD_EXCLUDE, job.location) || matchesAny(ABROAD_EXCLUDE, job.description)) return false;
 
   const exp = parseExperience(job.experience);
-  if (exp && (exp.min < MIN_EXP || exp.min > MAX_EXP)) return false;
+  if (exp && (exp.min < MIN_EXP || exp.max > MAX_EXP)) return false;
 
   return true;
 }
