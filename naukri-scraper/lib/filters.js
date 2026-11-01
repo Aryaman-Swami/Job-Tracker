@@ -112,10 +112,10 @@ function matchesAny(patterns, text) {
   return patterns.some((p) => p.test(text || ''));
 }
 
-// Naukri's own "X-Y Yrs" range, e.g. "5-9 Yrs", "0-2 Yrs". "2+ years" is
-// read as open-ended upward: accept any range that reaches at least 2 (so
-// "2-5", "1-3", "3-6" all pass), reject only ranges that top out below 2
-// (pure-fresher "0-1" postings).
+// "X-Y Yrs" range, e.g. "2-5 Yrs". Wanted: roles whose required minimum is
+// 2 or 3 years (MIN_EXP..MAX_EXP). Postings with no parseable range pass.
+const MIN_EXP = 2;
+const MAX_EXP = 3;
 function parseExperience(text) {
   const m = /(\d+)\s*-\s*(\d+)\s*yrs?/i.exec(text || '');
   if (!m) return null;
@@ -133,7 +133,7 @@ function passesFilters(job) {
   if (matchesAny(ABROAD_EXCLUDE, job.location) || matchesAny(ABROAD_EXCLUDE, job.description)) return false;
 
   const exp = parseExperience(job.experience);
-  if (exp && exp.max < 2) return false;
+  if (exp && (exp.min < MIN_EXP || exp.min > MAX_EXP)) return false;
 
   return true;
 }

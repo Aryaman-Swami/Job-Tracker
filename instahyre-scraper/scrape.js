@@ -2,7 +2,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
-const { passesFilters, parseExperience } = require('../naukri-scraper/lib/filters');
+const { passesFilters } = require('../naukri-scraper/lib/filters');
 const { notifyNewJobs } = require('../naukri-scraper/lib/notify');
 const store = require('./lib/apply-store');
 const { recordApplication } = require('./lib/backend');
@@ -12,7 +12,6 @@ const OPPS = 'https://www.instahyre.com/candidate/opportunities/?matching=true';
 const SKILLS = ['Java', 'Spring Boot', 'Microservices', 'Node.js'];
 const PAGES_PER_SKILL = 3; // 35 jobs per page
 const DAILY_CAP = Number(process.env.INSTAHYRE_DAILY_CAP) || 30;
-const MAX_EXP_MIN = 5; // skip roles asking for more than 5 years minimum
 // Locations Instahyre lists as "Bangalore,Chennai,Mumbai"; Chennai/Kochi etc. are unwanted.
 const BAD_CITY = /chennai|kochi|kerala|tamil\s*nadu/i;
 
@@ -55,8 +54,6 @@ function passes(job, experience = '') {
   const cities = job.location.split(/[,/]/).map((s) => s.trim()).filter(Boolean);
   const okCities = cities.filter((c) => !BAD_CITY.test(c));
   if (cities.length && !okCities.length) return false;
-  const exp = parseExperience(experience);
-  if (exp && exp.min > MAX_EXP_MIN) return false;
   return passesFilters({ title: job.role, company: job.company, location: okCities.join(', '), experience, description: job.keywords });
 }
 
