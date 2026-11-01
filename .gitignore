@@ -16,3 +16,8 @@ naukri-scraper/scrape_run.log
 scraper/local.env
 scraper/hiringcafe_local.log
 backend/backend_run*.log
+instahyre-scraper/node_modules/
+instahyre-scraper/.env
+instahyre-scraper/sessions/
+instahyre-scraper/applied_jobs.json
+instahyre-scraper/*.log

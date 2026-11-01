@@ -1,0 +1,10 @@
+{
+  "name": "instahyre-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-only Instahyre auto-apply. Opens a real Chrome window with a saved login session, reads the matched opportunities, and applies to those passing the filters.",
+  "type": "commonjs",
+  "main": "scrape.js",
+  "scripts": { "scrape": "node scrape.js", "login": "node login.js" },
+  "dependencies": { "dotenv": "^16.4.5", "playwright": "^1.48.0" }
+}
