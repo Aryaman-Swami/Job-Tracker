@@ -67,7 +67,7 @@ async function recordApplication(job, outcome) {
     headers,
     body: JSON.stringify({ job_ref_id: refId, company: job.company, role: job.role, job_url: job.job_url, status, source: 'naukri', notes }),
   });
-  if (!res.ok) throw new Error(`POST /api/jobs ${res.status}`);
+  if (!res.ok) throw new Error(`POST /api/jobs ${res.status}: ${(await res.text()).slice(0, 300)}`);
   const body = await res.json();
   if (!body.skipped) return;
 
