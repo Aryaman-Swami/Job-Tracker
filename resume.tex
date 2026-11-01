@@ -47,6 +47,18 @@
       \textbf{#1} \textit{\footnotesize{- #3, #4}} \hfill #2
     \end{minipage}\vspace{-7pt}
 }
+\newcommand{\resumeCompanyHeading}[2]{
+  \vspace{-1pt}\item
+    \begin{minipage}[t]{0.97\textwidth}
+      \textbf{#1} \hfill #2
+    \end{minipage}\vspace{-7pt}
+}
+\newcommand{\resumeRoleHeading}[2]{
+  \item
+    \begin{minipage}[t]{0.97\textwidth}
+      \textit{\small #1} \hfill \small #2
+    \end{minipage}\vspace{-7pt}
+}
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{minipage}[t]{0.97\textwidth}
@@ -79,30 +91,25 @@
 %-----------SKILLS-----------
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, parsep=0pt, topsep=0pt]
-  \item[] \small{\textbf{Languages:} Java, JavaScript, \mbox{TypeScript}}
-  \item[] \small{\textbf{Backend:} Spring Boot, Spring Security, \mbox{Hibernate/JPA}, Node.js, \mbox{Express.js}, NestJS}
+  \item[] \small{\textbf{Languages:} Java, SQL, JavaScript, \mbox{TypeScript}}
+  \item[] \small{\textbf{Backend:} Microservices, \mbox{REST APIs}, Spring Boot, Spring Security, \mbox{OAuth2/OIDC}, SAML 2.0, JWT, \mbox{Hibernate/JPA}, Node.js, \mbox{Express.js}, NestJS, Maven}
   \item[] \small{\textbf{Frontend:} React, TailwindCSS, HTML, CSS}
-  \item[] \small{\textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, \mbox{CI/CD}}
+  \item[] \small{\textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, Jenkins, \mbox{CI/CD}}
   \item[] \small{\textbf{Data \& Messaging:} PostgreSQL, Oracle, MongoDB, Apache Kafka, Azure Service Bus, Redis}
   \item[] \small{\textbf{AI \& Tools:} Claude Code, GitHub Copilot, Git}
-  \item[] \small{\textbf{Core CS \& Others:} DSA, OOP, System Design, API Gateway, ELK Stack, Grafana}
+  \item[] \small{\textbf{Core CS \& Others:} DSA, OOP, Design Patterns, Multithreading/Concurrency, System Design, Agile/Scrum, API Gateway, ELK Stack, Grafana}
 \end{itemize}
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {Bajaj Finserv Health Ltd}{Sep 2025 - Present}
-      {Software Development Engineer}{Pune, India}
+    \resumeCompanyHeading{Bajaj Finserv Health Ltd}{Pune, India}
+    \resumeRoleHeading{Software Development Engineer}{Sep 2025 - Present}
       \resumeItemListStart
 \resumeItem{Increased Hospital Event Listener throughput \textbf{3x} to \textbf{1,000 TPM} by re-architecting it onto an event-driven \textbf{Apache Kafka} pipeline, decoupled from the Claim Processing System.}
 \resumeItem{Onboarded \textbf{15+ enterprise partners} (Google, Accenture, AON, Wipro) onto \textbf{SAML 2.0 SSO}, removing per-user credential overhead, by building a multi-tenant \textbf{Spring Security SAML2} + \textbf{Okta} federation.}
 \resumeItem{Sustained \textbf{200K+ daily transactions} at sub-100ms p99 across \textbf{15+ portals} by designing a storage abstraction over \textbf{Azure Blob Storage} and \mbox{NAS/Kubernetes} for a company-wide file microservice.}
-\resumeItem{Migrated \textbf{50+ JSP pages} to \textbf{40+ REST APIs} and moved legacy Java Struts apps to Java 25 by building a \textbf{Claude}-prompted migration framework, leading it from inventory through deployment.}
-\resumeItem{Made the file platform the standard file layer across \textbf{15+ internal portals} by adding signed, time-bound \textbf{SAS URLs}, portal-scoped \textbf{RBAC}, and a full CRUD API.}
 \resumeItemListEnd
-    \resumeSubheading
-      {Bajaj Finserv Health Ltd}{Jun 2024 - Sep 2025}
-      {Associate Software Development Engineer}{Pune, India}
+    \resumeRoleHeading{Associate Software Development Engineer}{Jun 2024 - Sep 2025}
       \resumeItemListStart
         \resumeItem{Cut authentication latency \textbf{80\%} (1,000ms to 200ms) at peak load by building a centralized \textbf{JWT + RBAC} authentication microservice with Kafka-driven employee sync.}
         \resumeItem{Cut verification time \textbf{85\%+} (20min to under 3min), unblocking \textbf{500+ daily onboarding requests}, by setting up an async \textbf{Penny Drop Verification} pipeline on Azure Service Bus.}
