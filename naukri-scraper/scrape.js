@@ -2,11 +2,12 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
-const { notifyNewJobs } = require('./lib/notify');
+const { notifyNewJobs, notifyRunSummary } = require('./lib/notify');
 const { passesFilters } = require('./lib/filters');
 const { ensureLoggedIn, updateProfileResume, pause } = require('./lib/naukri-account');
 const seen = require('./lib/seen');
 const autoApply = require('./lib/auto-apply');
+const { scrapeRecommended } = require('./lib/recommended');
 const applyStore = require('./lib/apply-store');
 
 const SESSION_PATH = path.join(__dirname, 'sessions', 'naukri.json');
@@ -158,6 +159,25 @@ async function main() {
     await pause(3000, 6000); // between search terms
   }
 
+  // Recommended jobs: same filters, same apply queue. Needs a logged-in session.
+  try {
+    const recs = await scrapeRecommended(page);
+    let recQualifying = 0;
+    for (const card of recs) {
+      if (!passesFilters(card)) { totalFiltered++; continue; }
+      const job = { company: card.company || 'Unknown', role: card.title, job_url: card.job_url, location: card.location };
+      if (!seenUrls.has(card.job_url)) {
+        seenUrls.add(card.job_url);
+        newQualifying.push(job);
+      }
+      if (botOn && applyStore.needsAttempt(applyLedger, card.job_url)) applyCandidates.set(card.job_url, job);
+      recQualifying++;
+    }
+    console.log(`recommended: scraped=${recs.length}, qualifying=${recQualifying}`);
+  } catch (e) {
+    console.error(`[naukri] recommended jobs failed: ${e.message}`);
+  }
+
   console.log(`scraped=${totalScraped}, new_qualifying=${newQualifying.length}, already_seen=${totalAlreadySeen}, filtered=${totalFiltered}`);
 
   if (newQualifying.length > 0 || (botOn && applyCandidates.size > 0)) {
@@ -178,10 +198,12 @@ async function main() {
   }
 
   await browser.close();
+  await notifyRunSummary(`scraped ${totalScraped}, new ${newQualifying.length}, already seen ${totalAlreadySeen}, filtered ${totalFiltered}`);
   console.log(`=== Done. ${newQualifying.length} job(s) ready for you to apply to on Naukri. ===`);
 }
 
 main().catch((e) => {
   console.error('Naukri scrape failed:', e);
   process.exitCode = 1;
+  return notifyRunSummary(String(e && e.message || e).slice(0, 300), { failed: true });
 });

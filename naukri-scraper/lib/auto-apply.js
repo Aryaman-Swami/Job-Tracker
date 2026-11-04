@@ -1,6 +1,6 @@
 // Auto-apply for every job the Naukri search returned. Reuses the page-level apply logic from apply-bot.
 const path = require('path');
-const { applyToUrl, isLoggedIn } = require('../../apply-bot/lib/naukri-apply');
+const { applyToUrl, isLoggedIn, unanswered } = require('../../apply-bot/lib/naukri-apply');
 const store = require('./apply-store');
 const { recordApplication } = require('./backend');
 const { pause } = require('./naukri-account');
@@ -52,6 +52,7 @@ async function applyAll(page, jobs, context) {
     summary[outcome] = (summary[outcome] || 0) + 1;
     store.record(ledger, job.job_url, { company: job.company, role: job.role }, outcome);
     store.save(ledger);
+    dumpUnanswered();
     await recordApplication(job, outcome).catch((e) => console.warn(`[auto-apply] backend write-back failed: ${e.message}`));
 
     if (outcome === 'session_expired') {
@@ -62,6 +63,16 @@ async function applyAll(page, jobs, context) {
     await pause(20000, 45000); // human-like gap between applications
   }
   return summary;
+}
+
+// Questions the chatbot asked that have no configured answer, written out so
+// they can be added to apply-bot/naukri-answers.json.
+function dumpUnanswered() {
+  if (!unanswered.size) return;
+  const fs = require('fs');
+  const out = Array.from(unanswered, ([question, options]) => ({ question, options }));
+  fs.writeFileSync(path.join(__dirname, '..', 'unanswered_questions.json'), JSON.stringify(out, null, 1));
+  console.log(`[auto-apply] ${out.length} unanswered question(s) saved to unanswered_questions.json`);
 }
 
 module.exports = { botActive, applyAll };

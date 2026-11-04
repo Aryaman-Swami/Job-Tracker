@@ -1,0 +1,57 @@
+[
+ {
+  "question": "How many years of experience do you have in Groovy?",
+  "options": []
+ },
+ {
+  "question": "What is your Notice Period?",
+  "options": [
+   "Available now",
+   "1 week",
+   "2 weeks",
+   "3 weeks",
+   "1 month",
+   "1.5 month",
+   "2 months",
+   "3 months"
+  ]
+ },
+ {
+  "question": "How many years of experience do you have in Java Fullstack?",
+  "options": []
+ },
+ {
+  "question": "Are you currently living in Hyderabad ?",
+  "options": [
+   "Yes",
+   "No"
+  ]
+ },
+ {
+  "question": "How many years of experience do you have in Java Spring Boot?",
+  "options": []
+ },
+ {
+  "question": "Total IT experience?",
+  "options": []
+ },
+ {
+  "question": "This is for Infosys. Are you ok?",
+  "options": [
+   "Yes",
+   "No"
+  ]
+ },
+ {
+  "question": "How many years of experience do you have in Postgresql?",
+  "options": []
+ },
+ {
+  "question": "How many years of experience do you have in Migration?",
+  "options": []
+ },
+ {
+  "question": "How many years of experience do you have in Fullstack Development?",
+  "options": []
+ }
+]

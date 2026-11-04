@@ -57,6 +57,12 @@ function loadAnswers() {
   return [...custom, ...defaults]; // user rules take precedence
 }
 
+// Questions the chatbot asked that no rule answered (for the user to configure).
+const unanswered = new Map(); // question -> options[]
+function noteUnanswered(q, options = []) {
+  if (q) unanswered.set(q.slice(0, 300), options);
+}
+
 function answerFor(question, rules) {
   for (const r of rules) {
     try {
@@ -148,6 +154,7 @@ async function runChatbot(page, log, maxSteps = 25) {
     if (chipCount > 0 && !hasInput) {
       // single/multi choice
       if (answer === null) {
+        noteUnanswered(q, await chips.allInnerTexts().catch(() => []));
         log(`no configured answer for choice question: "${q.slice(0, 100)}"`);
         return 'needs_input';
       }
@@ -161,11 +168,13 @@ async function runChatbot(page, log, maxSteps = 25) {
         }
       }
       if (!clicked) {
+        noteUnanswered(q, await chips.allInnerTexts().catch(() => []));
         log(`answer "${answer}" not among options for: "${q.slice(0, 100)}"`);
         return 'needs_input';
       }
     } else if (hasInput) {
       if (answer === null || answer === '') {
+        noteUnanswered(q);
         log(`no configured answer for question: "${q.slice(0, 100)}"`);
         return 'needs_input';
       }
@@ -247,4 +256,4 @@ async function isLoggedIn(page) {
   return !(await visible(page, '#login_Layer', 1500));
 }
 
-module.exports = { applyOnJobPage, applyToUrl, isLoggedIn, loadAnswers, answerFor };
+module.exports = { applyOnJobPage, applyToUrl, isLoggedIn, loadAnswers, answerFor, unanswered };
