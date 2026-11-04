@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  25 OCT 2026 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  4 NOV 2026 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
 \c@section=\count276
@@ -23,8 +23,8 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
 )
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/cmap\cmap.sty
-Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/lato\lato.sty
 Package: lato 2019/06/20 Style file for Lato.
@@ -60,17 +60,6 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@depth=\count283
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )))
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
-Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+lato-TLF on input li
-ne 116.
-
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/lato\t1lato-tlf.fd
-File: T1lato-TLF.fd 2019/06/24 Font definitions for T1/lato-TLF.
-)
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 116.
-<<t1.cmap>>)
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
 
@@ -106,12 +95,6 @@ File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
 )
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\latexsym.sty
-Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
-\symlasy=\mathgroup4
-LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
-)
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/preprint\fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip52
@@ -128,36 +111,12 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidthlast=\dimen153
 \titlewidthfirst=\dimen154
 )
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/marvosym\marvosym.sty
-Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
-)
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
-
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
-
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
-)
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
-File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-)
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
-Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks22
-\verbatim@line=\toks23
-\verbatim@in@stream=\read2
-)
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
-\enitkv@toks@=\toks24
+\enitkv@toks@=\toks22
 \labelindent=\skip55
 \enit@outerparindent=\dimen155
-\enit@toks=\toks25
+\enit@toks=\toks23
 \enit@inbox=\box55
 \enit@count@id=\count287
 \enitdp@description=\count288
@@ -303,7 +262,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthL=\skip68
 \f@nch@widthC=\skip69
 \f@nch@widthR=\skip70
-\@temptokenb=\toks26
+\@temptokenb=\toks24
 )
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
@@ -327,7 +286,7 @@ on input line 2101.
 \l@unhyphenated=\language79
 
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
-\bbl@readstream=\read3
+\bbl@readstream=\read2
 \bbl@dirlevel=\count301
 Package babel Info: Configuration files are deprecated, as
 (babel)             they can break document portability.
@@ -361,7 +320,7 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen161
 \ar@mcellbox=\box56
 \extrarowheight=\dimen162
-\NC@list=\toks27
+\NC@list=\toks25
 \extratabsurround=\skip71
 \backup@length=\skip72
 \ar@cellbox=\box57
@@ -372,10 +331,18 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \TX@target=\dimen166
 \TX@delta=\dimen167
 \TX@cols=\count302
-\TX@ftn=\toks28
+\TX@ftn=\toks26
 )
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/generic/pdftex\glyphtounicode.te
 x)
+LaTeX Font Info:    Trying to load font information for T1+lato-TLF on input li
+ne 117.
+ (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/lato\t1lato-tlf.fd
+File: T1lato-TLF.fd 2019/06/24 Font definitions for T1/lato-TLF.
+)
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 117.
+
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex
 .def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
@@ -383,33 +350,33 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (resume.aux)
 \openout1 = `resume.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
 \c@mv@tabular=\count304
 \c@mv@boldtabular=\count305
-LaTeX Info: Redefining \microtypecontext on input line 66.
-Package microtype Info: Applying patch `item' on input line 66.
-Package microtype Info: Applying patch `toc' on input line 66.
-Package microtype Info: Applying patch `eqnum' on input line 66.
-Package microtype Info: Applying patch `footnote' on input line 66.
-Package microtype Info: Applying patch `verbatim' on input line 66.
-LaTeX Info: Redefining \microtypesetup on input line 66.
+LaTeX Info: Redefining \microtypecontext on input line 117.
+Package microtype Info: Applying patch `item' on input line 117.
+Package microtype Info: Applying patch `toc' on input line 117.
+Package microtype Info: Applying patch `eqnum' on input line 117.
+Package microtype Info: Applying patch `footnote' on input line 117.
+Package microtype Info: Applying patch `verbatim' on input line 117.
+LaTeX Info: Redefining \microtypesetup on input line 117.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -421,67 +388,45 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lato-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count306
-\scratchdimen=\dimen168
-\scratchbox=\box58
-\nofMPsegments=\count307
-\nofMParguments=\count308
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count309
-\MPscratchDim=\dimen169
-\MPnumerator=\count310
-\makeMPintoPDFobject=\count311
-\everyMPtoPDFconversion=\toks30
-)
-Package hyperref Info: Link coloring OFF on input line 66.
+Package hyperref Info: Link coloring OFF on input line 117.
  (resume.out) (resume.out)
 \@outlinefile=\write3
 \openout3 = `resume.out'.
 
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 69.
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 69.
 LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 70.
-<<ot1.cmap>>
+(Font)              scaled to size 24.88pt on input line 122.
+LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
+(Font)              scaled to size 24.88pt on input line 122.
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 123.
+
 (C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
-)<<oml.cmap>><<oms.cmap>>
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 71.
-<<omx.cmap>>
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 71.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 71.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 71
-.
-
-(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 77.
-LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 78.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 95.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 95.
-LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 97.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 97.
+(Font)              <9> on input line 124.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 124.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 124.
+LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 137.
+LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 137.
+LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
+(Font)              scaled to size 9.0pt on input line 142.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 201.
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 204.
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 204.
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 4.35004pt, for example:
-(fancyhdr)                \setlength{\footskip}{4.35004pt}.
+(fancyhdr)                Make it at least 3.60004pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
 [1
 
@@ -492,25 +437,24 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `resume.out' has not changed.
-(rerunfilecheck)             Checksum: B18ED02EC4B59E2F3EDC02868911D2C8;483.
+(rerunfilecheck)             Checksum: 1A8D568F0A97B6119BB06308E7AF0858;536.
  ) 
 Here is how much of TeX's memory you used:
- 13568 strings out of 467871
- 221633 string characters out of 5419828
- 701414 words of memory out of 5000000
- 42248 multiletter control sequences out of 15000+600000
- 831471 words of font info for 69 fonts, out of 8000000 for 9000
+ 12413 strings out of 467871
+ 205308 string characters out of 5419828
+ 690454 words of memory out of 5000000
+ 41159 multiletter control sequences out of 15000+600000
+ 830973 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1005b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,1005b,504s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/typoland/lato/Lato-Bol
 d.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/typoland/lato/Lato
 -Italic.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/typoland/lat
 o/Lato-Regular.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy6.pfb>
-Output written on resume.pdf (1 page, 119332 bytes).
+c/amsfonts/cm/cmsy9.pfb>
+Output written on resume.pdf (1 page, 111689 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 60 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)
- 6717 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

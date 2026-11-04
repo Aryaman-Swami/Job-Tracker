@@ -1,143 +1,337 @@
+
 %-------------------------
-% Resume in LaTeX
-% Author: Aryaman Swami
+% Resume - Aryaman Swami
+% Target: SDE-2 / Backend Engineer
 %-------------------------
-\documentclass[letterpaper,12pt]{article}
-\usepackage{cmap}
- \usepackage[default]{lato}
+
+\documentclass[letterpaper,10pt]{article}
+
 \usepackage[T1]{fontenc}
+\usepackage[default]{lato}
 \usepackage[expansion=false]{microtype}
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks,pdftitle={Aryaman Swami - Resume},pdfauthor={Aryaman Swami},pdfsubject={Resume},pdfkeywords={Software Engineer, Java, Spring Boot}]{hyperref}
+\usepackage[hidelinks,
+    pdftitle={Aryaman Swami - Software Engineer Resume},
+    pdfauthor={Aryaman Swami},
+    pdfsubject={SDE-2 Backend Engineer Resume},
+    pdfkeywords={Software Engineer, Backend Engineer, Java,
+    Spring Boot, Microservices, Kafka, Distributed Systems}
+]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
+
+%----------PAGE CONFIGURATION----------
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\addtolength{\oddsidemargin}{-0.7in}
-\addtolength{\evensidemargin}{-0.7in}
-\addtolength{\textwidth}{1.4in}
-\addtolength{\topmargin}{-.9in}
-\addtolength{\textheight}{1.7in}
+
+\addtolength{\oddsidemargin}{-0.45in}
+\addtolength{\evensidemargin}{-0.45in}
+\addtolength{\textwidth}{0.9in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.1in}
+
 \urlstyle{same}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
-\titleformat{\section}{
-  \vspace{-13pt}\bfseries\raggedright\large
-}{}{0em}{}[\color{black}{\titlerule[0.8pt]}\vspace{-6pt}]
+
+%----------SECTION FORMATTING----------
+
+\titleformat{\section}
+  {\vspace{-5pt}\bfseries\raggedright\large}
+  {}{0em}{}[\titlerule\vspace{-5pt}]
+
 \pdfgentounicode=1
-\pdfglyphtounicode{bullet}{2022}
+
+%----------CUSTOM COMMANDS----------
+
 \newcommand{\resumeItem}[1]{
-  \item\small{{\small #1 \vspace{-3pt}}}
+  \item{#1 \vspace{-2pt}}
 }
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{minipage}[t]{0.97\textwidth}
-      \textbf{#1} \textit{\footnotesize{- #3, #4}} \hfill #2
-    \end{minipage}\vspace{-7pt}
-}
+
 \newcommand{\resumeCompanyHeading}[2]{
-  \vspace{-1pt}\item
-    \begin{minipage}[t]{0.97\textwidth}
-      \textbf{#1} \hfill #2
-    \end{minipage}\vspace{-7pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}[t]
+    {l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \small #2
+  \end{tabular*}
+  \vspace{-5pt}
 }
+
 \newcommand{\resumeRoleHeading}[2]{
   \item
-    \begin{minipage}[t]{0.97\textwidth}
-      \textit{\small #1} \hfill \small #2
-    \end{minipage}\vspace{-7pt}
+  \begin{tabular*}{0.97\textwidth}[t]
+    {l@{\extracolsep{\fill}}r}
+    \textit{\small #1} & \textit{\small #2}
+  \end{tabular*}
+  \vspace{-5pt}
 }
+
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{minipage}[t]{0.97\textwidth}
-      \small #1 \hfill #2
-    \end{minipage}\vspace{-7pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}[t]
+    {l@{\extracolsep{\fill}}r}
+    \small #1 & \small #2
+  \end{tabular*}
+  \vspace{-5pt}
 }
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
-\renewcommand\labelitemi{\textbullet}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-%-----------EMAIL (pick one, comment out the other)-----------
-\newcommand{\resumeEmail}{swamiaryaman21.as@gmail.com}
-% \newcommand{\resumeEmail}{aryamanswami21@gmail.com}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+  \begin{tabular*}{0.97\textwidth}[t]
+    {l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \small #2 \\
+    \textit{\small #3} & \textit{\small #4}
+  \end{tabular*}
+  \vspace{-5pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in,label={},itemsep=2pt,topsep=2pt]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[leftmargin=0.2in,itemsep=2pt,topsep=3pt]
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-4pt}
+}
+
+\newcommand{\resumeEmail}{aryamanswami21@gmail.com}
+
+%================ DOCUMENT =================
+
 \begin{document}
-%----------HEADING----------
+
+%----------HEADER----------
+
 \begin{center}
-    \textbf{\Huge Aryaman Swami} \\ \vspace{2pt}
+    {\Huge \textbf{Aryaman Swami}} \\ \vspace{3pt}
     \small
     +91 9617949056 $|$
     \href{mailto:\resumeEmail}{\resumeEmail} $|$
-    \href{https://linkedin.com/in/aryaman-swami}{linkedin.com/in/aryaman-swami} $|$
-    {Pune, India}
+    \href{https://linkedin.com/in/aryaman-swami}
+    {LinkedIn} $|$
+    \href{https://github.com/Aryaman-Swami}
+    {GitHub} $|$
+    Pune, India
 \end{center}
-%-----------SUMMARY-----------
+
+\vspace{-8pt}
+
+%----------SUMMARY----------
+
 \section{Professional Summary}
-\small{Software Engineer with 2+ years of experience building event-driven \textbf{Spring Boot}/\textbf{Node.js} systems and \textbf{AI-integrated} full-stack products on Azure and Kubernetes. Delivered \textbf{Apache Kafka} pipelines, multi-tenant \textbf{SAML 2.0 SSO}, and a company-wide file microservice serving 15+ portals at 200K+ daily transactions.}
-%-----------SKILLS-----------
-\section{Skills}
-\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, parsep=0pt, topsep=0pt]
-  \item[] \small{\textbf{Languages:} Java, SQL, JavaScript, \mbox{TypeScript}}
-  \item[] \small{\textbf{Backend:} Microservices, \mbox{REST APIs}, Spring Boot, Spring Security, \mbox{OAuth2/OIDC}, SAML 2.0, JWT, \mbox{Hibernate/JPA}, Node.js, \mbox{Express.js}, NestJS, Maven}
-  \item[] \small{\textbf{Frontend:} React, TailwindCSS, HTML, CSS}
-  \item[] \small{\textbf{Cloud \& DevOps:} Azure, AWS, Docker, Kubernetes, Helm, \mbox{CI/CD}}
-  \item[] \small{\textbf{Data \& Messaging:} PostgreSQL, Oracle, MongoDB, Apache Kafka, Azure Service Bus, Redis}
-  \item[] \small{\textbf{AI \& Tools:} Claude Code, GitHub Copilot, Git}
-  \item[] \small{\textbf{Core CS \& Others:} DSA, OOP, Design Patterns, Multithreading/Concurrency, System Design, Agile/Scrum, API Gateway, ELK Stack, Grafana}
+
+{\small
+Software Engineer with 2+ years of experience designing and
+developing scalable, distributed microservices using
+\textbf{Java, Spring Boot, and Node.js}. Experienced in building
+event-driven architectures with \textbf{Apache Kafka}, enterprise
+authentication systems using \textbf{Spring Security and SAML 2.0 SSO},
+and high-throughput file management services. Hands-on experience
+with \textbf{Azure, Kubernetes, and cloud-native application deployment}.
+}
+
+%----------SKILLS----------
+
+\section{Technical Skills}
+
+\begin{itemize}[
+    leftmargin=0.15in,
+    label={},
+    itemsep=1pt,
+    parsep=0pt,
+    topsep=2pt
+]
+
+\item \small{
+\textbf{Languages:} Java (8/11/17), SQL, TypeScript, JavaScript
+}
+
+\item \small{
+\textbf{Backend:} Spring Boot, Spring MVC, Spring Security, Spring Data JPA,
+Hibernate, REST, Microservices, Node.js, Express.js, NestJS,
+OAuth2/OIDC
+}
+
+\item \small{
+\textbf{Data \& Messaging:} PostgreSQL, MongoDB, Redis,
+Elasticsearch, Apache Kafka, Azure Service Bus
+}
+
+\item \small{
+\textbf{Cloud \& DevOps:} Azure, Docker, Kubernetes, Helm,
+Git, Maven, Gradle, CI/CD
+}
+
+\item \small{
+\textbf{Testing \& Observability:} JUnit 5, Mockito, TDD,
+SonarQube, Swagger/OpenAPI, ELK/Kibana, Grafana
+}
+
+\item \small{
+\textbf{Frontend:} React, HTML, CSS, TailwindCSS
+}
+
 \end{itemize}
-%-----------EXPERIENCE-----------
+
+\vspace{-5pt}
+
+%----------EXPERIENCE----------
+
 \section{Experience}
-  \resumeSubHeadingListStart
-    \resumeCompanyHeading{Bajaj Finserv Health Ltd}{Pune, India}
-    \resumeRoleHeading{Software Development Engineer}{Sep 2025 - Present}
-      \resumeItemListStart
-\resumeItem{Increased Hospital Event Listener throughput \textbf{3x} to \textbf{1,000 TPM} by re-architecting it onto an event-driven \textbf{Apache Kafka} pipeline, decoupled from the Claim Processing System.}
-\resumeItem{Spearheaded enterprise auth flows, onboarding \textbf{15+ partners} (Google, Accenture, AON, Wipro) onto \textbf{SAML 2.0 SSO}, removing per-user credential overhead, with a multi-tenant \textbf{Spring Security SAML2} + \textbf{Okta} federation.}
-\resumeItem{Owned the company-wide file management microservice, sustaining \textbf{200K+ daily transactions} at sub-100ms p99 across \textbf{15+ portals} via a storage abstraction over \textbf{Azure Blob Storage} and \mbox{NAS/Kubernetes}.}
-\resumeItem{Modernized \textbf{4 legacy portals} from \textbf{Java 8} to \textbf{Java 25}, then cut heap memory \textbf{60\%} (3 GB to 1.2 GB) by sending file transfers straight to \textbf{Azure Blob} via \textbf{SAS URLs}.}
+
+\resumeSubHeadingListStart
+
+\resumeCompanyHeading
+    {Bajaj Finserv Health Ltd.}{Pune, India}
+
+\resumeRoleHeading
+    {Software Development Engineer}{Sep 2025 -- Present}
+
+\resumeItemListStart
+
+\resumeItem{
+Increased Hospital Event Listener throughput by \textbf{3x to
+1,000 TPM} by redesigning the processing pipeline using
+\textbf{Apache Kafka}, decoupling event ingestion from the
+Claim Processing System.
+}
+
+\resumeItem{
+Designed and implemented a multi-tenant enterprise SSO platform
+using \textbf{Spring Security SAML2 and Okta}, onboarding
+\textbf{15+ enterprise partners} including Google, Accenture,
+AON, and Wipro while eliminating individual credential management.
+}
+
+\resumeItem{
+Architected and owned a centralized file management microservice
+serving \textbf{15+ portals}, handling \textbf{200K+ daily
+transactions} with \textbf{sub-100ms p99 latency} through a unified
+storage abstraction over \textbf{Azure Blob Storage and NAS}.
+}
+
+\resumeItem{
+Modernized \textbf{4 legacy portals} from \textbf{Java 8 to Java 25}
+and reduced application heap usage by \textbf{60\% (3 GB to 1.2 GB)}
+by offloading file transfers directly to Azure Blob Storage using
+\textbf{SAS URLs}.
+}
+
 \resumeItemListEnd
-    \resumeRoleHeading{Associate Software Development Engineer}{Jun 2024 - Sep 2025}
-      \resumeItemListStart
-        \resumeItem{Drove authentication end to end, cutting latency \textbf{80\%} (1,000ms to 200ms) at peak load by building a centralized \textbf{JWT + RBAC} authentication microservice with Kafka-driven employee sync.}
-        \resumeItem{Cut verification time \textbf{85\%+} (20min to under 3min), unblocking \textbf{500+ daily onboarding requests}, by setting up an async \textbf{Penny Drop Verification} pipeline on Azure Service Bus.}
-        \resumeItem{Eliminated \textbf{3-4 hours} of daily manual reconciliation for the ops team by shipping a Payment Operations Portal end-to-end (React, Spring Boot) for orders, settlements, and transactions.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-%-----------PROJECTS-----------
+
+\resumeRoleHeading
+    {Associate Software Development Engineer}{Jun 2024 -- Sep 2025}
+
+\resumeItemListStart
+
+\resumeItem{
+Built a centralized \textbf{JWT and RBAC authentication
+microservice} with Kafka-driven employee synchronization,
+reducing authentication latency by \textbf{80\% (1,000ms to 200ms)}
+under peak load.
+}
+
+\resumeItem{
+Designed an asynchronous \textbf{Penny Drop Verification}
+pipeline using \textbf{Azure Service Bus}, reducing verification
+time by \textbf{85\%+ (20 minutes to under 3 minutes)} and enabling
+\textbf{500+ daily onboarding requests}.
+}
+
+\resumeItem{
+Developed an end-to-end \textbf{Payment Operations Portal} using
+React and Spring Boot for orders, settlements, and transactions,
+eliminating \textbf{3--4 hours of daily manual reconciliation}
+for the operations team.
+}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------PROJECTS----------
+
 \section{Projects}
-  \resumeSubHeadingListStart
-    \resumeProjectHeading
-      {\textbf{Shopper Assist} $|$ \emph{React, Node.js, Express, Supabase (Postgres), pgvector, Gemini API}}{\href{https://github.com/Aryaman-Swami/Shopper-assist}{GitHub}}
-      \resumeItemListStart
-        \resumeItem{Built an AI shopping assistant that turns a photo/text list into an optimal in-store route: \textbf{Gemini} vision extraction, then semantic SKU matching, then shortest-path aisle routing, behind one orchestrated /plan API.}
-        \resumeItem{Implemented hybrid item matching (\textbf{pgvector} cosine similarity over Gemini embeddings + \textbf{pg\_trgm} lexical fallback) against a 200+ SKU catalog on \textbf{Supabase}, and modeled the store as a weighted graph for shortest-path route ordering.}
-      \resumeItemListEnd
-    \resumeProjectHeading
-      {\textbf{Job Tracker} $|$ \emph{React, Java, Spring Boot, PostgreSQL, Claude API}}{\href{https://github.com/Aryaman-Swami/Job-Tracker}{GitHub}}
-      \resumeItemListStart
-        \resumeItem{Built a full-stack job application tracker (\textbf{React} frontend, \textbf{Spring Boot} REST API) that uses the \textbf{Claude API} to parse job descriptions, score them against my resume, and persist ATS match scores in \textbf{PostgreSQL} to rank openings.}
-        \resumeItem{Wired a scraper-side notifier that pushes newly discovered, high-match job postings straight to my phone in real time via \textbf{ntfy} push notifications, no app polling required.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-%-----------EDUCATION-----------
+
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+    {\textbf{Shopper Assist} $|$
+    \emph{React, Node.js, Express, Supabase, PostgreSQL,
+    pgvector, Gemini API}}
+    {\href{https://github.com/Aryaman-Swami/Shopper-assist}{GitHub}}
+
+\resumeItemListStart
+
+\resumeItem{
+Developed an AI-powered shopping assistant that converts
+image/text shopping lists into optimized in-store routes using
+\textbf{Gemini Vision}, semantic SKU matching, and graph-based
+shortest-path algorithms.
+}
+
+\resumeItem{
+Implemented hybrid item matching using \textbf{pgvector}
+cosine similarity over Gemini embeddings and \textbf{pg\_trgm}
+lexical fallback against a \textbf{200+ SKU catalog} on Supabase;
+modeled store layouts as weighted graphs for shortest-path routing.
+}
+
+\resumeItemListEnd
+
+\resumeProjectHeading
+    {\textbf{Job Tracker} $|$
+    \emph{React, Java, Spring Boot, PostgreSQL, Claude API}}
+    {\href{https://github.com/Aryaman-Swami/Job-Tracker}{GitHub}}
+
+\resumeItemListStart
+
+\resumeItem{
+Built a full-stack job application tracking platform using
+\textbf{React, Spring Boot, and PostgreSQL}, integrating Claude API
+to extract job requirements, calculate resume-job compatibility
+scores, and rank opportunities.
+}
+
+\resumeItem{
+Implemented a scraper-side notification service that delivers
+newly discovered, high-match job postings through real-time
+\textbf{ntfy push notifications}, eliminating the need for
+application polling.
+}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------EDUCATION----------
+
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University Institute of Technology, Bhopal}{Aug 2020 - May 2024}
-      {B.Tech - Computer Science \& Engineering}{CGPA: 8.3/10}
-  \resumeSubHeadingListEnd
+
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {University Institute of Technology, Bhopal}
+    {Aug 2020 -- May 2024}
+    {B.Tech -- Computer Science \& Engineering}
+    {CGPA: 8.3/10}
+
+\resumeSubHeadingListEnd
+
 \end{document}

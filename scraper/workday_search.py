@@ -42,7 +42,7 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 from run_scraper import TITLE_EXCLUDE, LOCATION_EXCLUDE, COMPANY_EXCLUDE, clean
-from notify import notify_new_jobs
+from notify import notify_new_jobs, notify_run_summary
 from auth_client import get_auth_header
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -302,5 +302,6 @@ if __name__ == "__main__":
                 total_added += a
                 all_added_jobs.extend(jobs)
     notify_new_jobs(all_added_jobs, source_label="Workday")
+    notify_run_summary(f"{total_added} new jobs added", "Workday")
     logger.info(f"=== Done. Total new jobs added: {total_added} ===")
     print(f"[{datetime.now():%Y-%m-%d %H:%M}] Workday search done. {total_added} new jobs added.")

@@ -36,4 +36,24 @@ async function notifyNewJobs(jobs) {
   }
 }
 
-module.exports = { notifyNewJobs };
+// One message per run, even when nothing is new, so a silent phone means the
+// scheduled check did not run (not "no jobs").
+async function notifyRunSummary(text, { failed = false } = {}) {
+  const t = topic();
+  if (!t) return;
+  try {
+    await fetch(`https://ntfy.sh/${t}`, {
+      method: 'POST',
+      body: text,
+      headers: {
+        Title: failed ? 'Naukri check FAILED' : 'Naukri check done',
+        Tags: failed ? 'warning' : 'white_check_mark',
+        Priority: failed ? '4' : '2',
+      },
+    });
+  } catch (e) {
+    console.warn('ntfy run-summary failed:', e.message);
+  }
+}
+
+module.exports = { notifyNewJobs, notifyRunSummary };

@@ -11,7 +11,7 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from job_sources import search_indeed, search_linkedin, fetch_linkedin_description
 from auth_client import get_auth_header
-from notify import notify_new_jobs
+from notify import notify_new_jobs, notify_run_summary
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -453,6 +453,7 @@ if __name__ == "__main__":
     # Same ntfy push notify.py already gives workday_search.py — this scraper
     # just never wired it up, so real jobs were being added silently.
     notify_new_jobs([j for j in all_added_jobs if j.get("job_url")], source_label="Indeed/LinkedIn/Adzuna")
+    notify_run_summary(f"{total_added} new jobs added", "LinkedIn/Indeed")
 
     logging.info(f"=== Done. Total new jobs added: {total_added} ===")
     print(f"[{datetime.now():%Y-%m-%d %H:%M}] Done. {total_added} new jobs added.")

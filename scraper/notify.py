@@ -59,3 +59,24 @@ def notify_new_jobs(jobs: list[dict], source_label: str):
             resp.raise_for_status()
         except Exception as e:
             logger.warning(f"ntfy notification failed for {j.get('job_url')}: {e}")
+
+
+def notify_run_summary(text: str, source_label: str, failed: bool = False):
+    """One message per run even when nothing is new, so silence means the
+    scheduled check did not run rather than 'no jobs'."""
+    topic = _topic()
+    if not topic:
+        return
+    try:
+        requests.post(
+            f"https://ntfy.sh/{topic}",
+            data=text.encode("utf-8"),
+            headers={
+                "Title": f"{source_label} check {'FAILED' if failed else 'done'}".encode("utf-8"),
+                "Tags": "warning" if failed else "white_check_mark",
+                "Priority": "4" if failed else "2",
+            },
+            timeout=10,
+        ).raise_for_status()
+    except Exception as e:
+        logger.warning(f"ntfy run-summary failed: {e}")
