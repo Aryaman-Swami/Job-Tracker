@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "product-mark-svg",
+      "kind": "icon",
+      "status": "ready",
+      "purpose": "The Job Tracker product mark, a tick above two ledger rules. It appears at the top of the sidebar, in the phone top bar and on the login card, and the evolved PWA icons are drawn from it.",
+      "requirements": [
+        "Reference as /mark.svg or inline it, at 20px in the sidebar and top bar and 32px on login",
+        "Stroke stays #1d5fbf at 1.5px with no fill and no letter in a square",
+        "Build redraws frontend/public/icon.svg and icon-maskable.svg from this mark on a #f2f4f7 or white ground, and sets theme_color and background_color in the manifest to #f2f4f7",
+        "Keep aria-label 'Job Tracker', or set aria-hidden when the product name text sits beside it"
+      ],
+      "role": "logo",
+      "sectionIds": [
+        "shell",
+        "login"
+      ],
+      "aspectRatio": "1:1",
+      "composition": "20x20 viewBox, transparent background, centred optical weight, round caps: a check in the upper half (5,6.2 to 8,9 to 14.5,2.8), a full rule at y=13 from x 3 to 17, and a shorter rule at y=17 from x 3 to 12",
+      "source": {
+        "kind": "project",
+        "reference": "frontend/public/mark.svg",
+        "license": "Original mark drawn for this project"
+      },
+      "destination": "frontend/public/mark.svg"
+    },
+    {
+      "id": "font-geist-variable",
+      "kind": "font",
+      "status": "ready",
+      "purpose": "Geist, the interface face for all text and figures, used at weights 400, 500 and 700",
+      "requirements": [
+        "Declare @font-face with family 'Geist', src url('/fonts/Geist-Variable.ttf') format('truetype'), font-weight 100 900, font-style normal, font-display swap",
+        "Use only weights 400, 500 and 700",
+        "Remove the Inter Google Fonts link from index.html",
+        "After document.fonts.ready, verify that document.fonts.check('500 14px Geist') is true and that tabular-nums changes digit widths",
+        "Ship frontend/public/fonts/Geist-OFL.txt beside the font. It is the SIL OFL 1.1 text downloaded from https://github.com/google/fonts/blob/main/ofl/geist/OFL.txt and served as text/plain",
+        "Verified: TrueType magic bytes 00 01 00 00, variable wght axis, 169,056 bytes"
+      ],
+      "role": "font",
+      "sectionIds": [
+        "shell",
+        "page-header",
+        "pipeline-strip",
+        "job-list-toolbar",
+        "job-list",
+        "job-detail-header",
+        "ats-match",
+        "referral",
+        "tailored-resume",
+        "job-form",
+        "resume-editor",
+        "pdf-preview",
+        "login"
+      ],
+      "source": {
+        "kind": "external",
+        "reference": "https://github.com/google/fonts/blob/main/ofl/geist/Geist%5Bwght%5D.ttf",
+        "license": "SIL Open Font License 1.1, Copyright 2024 The Geist Project Authors; license text at frontend/public/fonts/Geist-OFL.txt",
+        "contentType": "application/octet-stream"
+      },
+      "destination": "frontend/public/fonts/Geist-Variable.ttf"
+    },
+    {
+      "id": "font-geist-mono-variable",
+      "kind": "font",
+      "status": "ready",
+      "purpose": "Geist Mono, used only for job IDs, external job keys, resume filenames and the LaTeX source text areas",
+      "requirements": [
+        "Declare @font-face with family 'Geist Mono', src url('/fonts/GeistMono-Variable.ttf') format('truetype'), font-weight 100 900, font-style normal, font-display swap",
+        "Use weight 400 only",
+        "Never apply to labels, axis text or body copy",
+        "Ship frontend/public/fonts/GeistMono-OFL.txt beside the font. It is the SIL OFL 1.1 text downloaded from https://github.com/google/fonts/blob/main/ofl/geistmono/OFL.txt and served as text/plain",
+        "Verified: TrueType magic bytes 00 01 00 00, variable wght axis, 171,948 bytes"
+      ],
+      "role": "font",
+      "sectionIds": [
+        "job-list",
+        "job-detail-header",
+        "job-form",
+        "resume-editor",
+        "pdf-preview"
+      ],
+      "source": {
+        "kind": "external",
+        "reference": "https://github.com/google/fonts/blob/main/ofl/geistmono/GeistMono%5Bwght%5D.ttf",
+        "license": "SIL Open Font License 1.1, Copyright 2024 The Geist Project Authors; license text at frontend/public/fonts/GeistMono-OFL.txt",
+        "contentType": "application/octet-stream"
+      },
+      "destination": "frontend/public/fonts/GeistMono-Variable.ttf"
+    }
+  ]
+}

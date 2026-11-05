@@ -1,0 +1,336 @@
+{
+  "version": 1,
+  "foundation": {
+    "strategy": "extend",
+    "existingAssets": [
+      "frontend/public/icon.svg",
+      "frontend/public/icon-maskable.svg",
+      "frontend/public/manifest.webmanifest",
+      "frontend/index.html",
+      "frontend/src/styles.css",
+      "frontend/src/utils.js"
+    ],
+    "assetActions": [
+      {
+        "asset": "frontend/public/icon.svg",
+        "action": "evolve",
+        "reason": "The current icon is an indigo #4f46e5 rounded square with a white 'JT' in Arial, which is the generic letter-in-a-square mark. Redraw it as the product mark: two short ledger rules with a tick above them, stroked in #1d5fbf on a white or transparent ground."
+      },
+      {
+        "asset": "frontend/public/icon-maskable.svg",
+        "action": "evolve",
+        "reason": "Must match the new mark so the installed PWA icon matches the shell."
+      },
+      {
+        "asset": "frontend/public/manifest.webmanifest",
+        "action": "evolve",
+        "reason": "theme_color and background_color are the old dark #0e1015. Move them to the new ground #f2f4f7."
+      },
+      {
+        "asset": "frontend/index.html",
+        "action": "evolve",
+        "reason": "It loads Inter 400-800 from Google Fonts. Replace that with Geist 400/500/700 and Geist Mono 400, served as local files once Assets acquires them."
+      },
+      {
+        "asset": "frontend/src/styles.css",
+        "action": "evolve",
+        "reason": "The :root tokens are the old dark indigo theme with 8/12/16 radii and shadows. Replace them with the ledger tokens below and keep the class names the components already use."
+      },
+      {
+        "asset": "frontend/src/utils.js STATUS_LABELS",
+        "action": "protect",
+        "reason": "The six real statuses (To Ask, Asked, Applied, Responded, Declined, Not Interested) and source keys are app data. Pills map onto them, and the labels only change to sentence case in display."
+      },
+      {
+        "asset": "Product name 'Job Tracker'",
+        "action": "preserve",
+        "reason": "Verified in index.html title, the manifest and the Header h1."
+      }
+    ],
+    "lockedDecisions": [
+      "Product name stays 'Job Tracker'",
+      "Existing React behaviour, state, API calls and component structure stay unchanged; only styling and markup classes change",
+      "Status set is fixed: to_ask, asked, applied, responded, declined, not_interested",
+      "Sources shown are the real ones: auto (n8n scrapers: LinkedIn, Workday, Naukri, Instahyre) and manual",
+      "Responsive from 360px; touch targets at least 44px on phones",
+      "Every text colour at 4.5:1 or better on its surface, status pills included"
+    ],
+    "assumptions": [
+      "The user asked to 'fix the color theme' and delegated creative control. The dealt sheet is the light Achromatic ledger, so the old dark indigo theme is retired rather than kept. This replaces the brief's earlier dark-base assumption, and no light/dark toggle is added.",
+      "Inter is not a locked brand face because the user asked for the theme to be fixed. Geist from the sheet replaces it.",
+      "Face chosen: the blue-grey ledger ground #f2f4f7 in place of #f8f8f8, because a job tracker is a ledger of applications.",
+      "Workspace pattern used is the sheet's inbox triage (sidebar, fixed job list, open job with details), which matches the existing JobList + DetailPanel structure.",
+      "'Applied' gets a pale tint of the chart hue as its pill so the stage the user most cares about reads apart from the grey stages. This is the only hued pill besides positive, negative and warning."
+    ]
+  },
+  "creativeDirection": {
+    "summary": "Achromatic ledger with a blue-grey ground (#f2f4f7): the job search set like an account book. White cards sit on a cool off-white page, all chrome is in ink, and the one blue (#1d5fbf) goes only on the main data: the selected pipeline stage and the ATS match score.",
+    "traits": [
+      {
+        "quality": "Calm and dense like a ledger: rows on rules, figures in tabular columns",
+        "boundary": "not a template dashboard with KPI tiles, icons in tinted circles or sparklines"
+      },
+      {
+        "quality": "Clear about what to do next: one near-black primary per view (Tailor resume in the detail, Add job in the list)",
+        "boundary": "not a screen where every button is a grey pill"
+      },
+      {
+        "quality": "Honest about state: zero counts print as 0 in grey, a missing ATS score is a grey dash, an empty day keeps its frame",
+        "boundary": "not placeholder copy or invented progress"
+      }
+    ],
+    "productiveTension": "Almost no colour against the need to see where each application stands at a glance. Ink carries the structure, and pale status pills plus the single blue data mark carry meaning without decorating the chrome.",
+    "signatureDevice": {
+      "description": "The application pipeline strip: one divided strip at the top of the job list counting jobs in each stage (To ask · Asked · Applied · Responded · Declined), each a 12px grey label over a 30px tabular count, split by 1px dividers. The stage the status filter has selected gets a 2px #1d5fbf underline and its count in the hue, and clicking a stage sets the existing status filter. The same blue marks the ATS match score bar in the open job.",
+      "status": "candidate",
+      "invariants": [
+        "The counts come from the loaded jobs and are never invented; a zero prints as 0 in grey",
+        "One strip, one card, 1px dividers, no icons, no deltas, no sparklines",
+        "Only the selected stage uses #1d5fbf; the rest stay ink and grey",
+        "It drives the existing status filter state rather than adding a parallel filter",
+        "On a phone it scrolls horizontally in one row with 16px margins"
+      ]
+    },
+    "restraint": "Under 1% coloured pixels. No brand colour in the sidebar, buttons or headers. Bold (700) is used only for the pipeline counts and the ATS score figure. No shadows at rest, and shadows only on menus, the mobile nav sheet and modals.",
+    "avoid": [
+      "Indigo or any brand-coloured primary button",
+      "Dark or tinted sidebar",
+      "Tinted cards or KPI tiles",
+      "Gradients, glows, glass, emoji",
+      "Uppercase tracked labels",
+      "Zebra rows or header bands",
+      "A letter in a filled square as the logo",
+      "A second accent family"
+    ]
+  },
+  "colorPalette": [
+    {
+      "name": "ground",
+      "value": "#f2f4f7",
+      "usage": "Page and sidebar ground. A blue-grey one level off white, replacing the sheet's #f8f8f8 for the ledger face (low chroma)."
+    },
+    {
+      "name": "surface",
+      "value": "#ffffff",
+      "usage": "Job list column, job cards, detail panel, modals, inputs"
+    },
+    {
+      "name": "raised",
+      "value": "#eeeeee",
+      "usage": "Active nav pill, selected job row fill, hover fill on rows and ghost controls"
+    },
+    {
+      "name": "border",
+      "value": "#e6e6e6",
+      "usage": "Card and panel edges, the 1px hairline between sidebar and canvas, pipeline strip dividers"
+    },
+    {
+      "name": "rule",
+      "value": "#f0f0f0",
+      "usage": "Row rules between jobs inside a day group and key-value rows in the detail panel"
+    },
+    {
+      "name": "control",
+      "value": "#d4d4d4",
+      "usage": "1px borders on inputs, selects, the secondary button and the referral toggle track"
+    },
+    {
+      "name": "text",
+      "value": "#0a0a0a",
+      "usage": "Primary ink: company names, titles, values, headings (about 19:1 on white)"
+    },
+    {
+      "name": "muted",
+      "value": "#6b6b6b",
+      "usage": "Labels, meta (location, time in words, source), placeholders, zero counts. 5.3:1 on white and about 4.8:1 on #f2f4f7."
+    },
+    {
+      "name": "accent",
+      "value": "#141414",
+      "usage": "Near-black fill of the one primary button and focus ink; the chrome's only emphasis"
+    },
+    {
+      "name": "positive",
+      "value": "#2e7d32",
+      "usage": "Text for a good change, e.g. a higher ATS score after tailoring (5.1:1 on white)"
+    },
+    {
+      "name": "negative",
+      "value": "#c4242a",
+      "usage": "Destructive text (Delete job), error messages, failed sync (5.3:1 on white)"
+    },
+    {
+      "name": "warning",
+      "value": "#92400e",
+      "usage": "Notice text, e.g. referral needed or session expiring (7:1 on white)"
+    },
+    {
+      "name": "chart-1",
+      "value": "#141414",
+      "usage": "Ink series: ATS score track filled portion's label and any secondary figure in ink"
+    },
+    {
+      "name": "chart-2",
+      "value": "#8a8a8a",
+      "usage": "Comparison in grey: previous ATS score marker, the unmatched part of a keyword bar"
+    },
+    {
+      "name": "chart-3",
+      "value": "#1d5fbf",
+      "usage": "The one data hue: selected pipeline stage underline and count, the ATS match score bar, and the product mark's stroke. 6.1:1 on white."
+    },
+    {
+      "name": "pill-positive-bg",
+      "value": "#dcfae5",
+      "usage": "Responded status pill fill"
+    },
+    {
+      "name": "pill-positive-ink",
+      "value": "#04250e",
+      "usage": "Responded status pill text"
+    },
+    {
+      "name": "pill-negative-bg",
+      "value": "#ffedea",
+      "usage": "Declined status pill fill"
+    },
+    {
+      "name": "pill-negative-ink",
+      "value": "#831c1e",
+      "usage": "Declined status pill text"
+    },
+    {
+      "name": "pill-warning-bg",
+      "value": "#fffbeb",
+      "usage": "Asked status pill fill (waiting on a referral) and the needs-referral notice strip, with a #fde68a border on the strip"
+    },
+    {
+      "name": "pill-warning-ink",
+      "value": "#92400e",
+      "usage": "Asked status pill text and referral notice text"
+    },
+    {
+      "name": "pill-neutral-bg",
+      "value": "#eeeeee",
+      "usage": "To ask and Not interested pills, source chips (LinkedIn, Workday, Naukri, Instahyre, Manual)"
+    },
+    {
+      "name": "pill-neutral-ink",
+      "value": "#3d3d3d",
+      "usage": "Neutral pill text (10:1 on #eeeeee); Not interested may use muted #6b6b6b on white instead"
+    },
+    {
+      "name": "pill-applied-bg",
+      "value": "#e8effa",
+      "usage": "Applied status pill: a pale tint of the chart hue, added because Applied is the stage the screen tracks"
+    },
+    {
+      "name": "pill-applied-ink",
+      "value": "#123a75",
+      "usage": "Applied pill text (about 10:1 on #e8effa)"
+    }
+  ],
+  "typefaces": [
+    {
+      "family": "Geist",
+      "source": "Google Fonts",
+      "roles": [
+        "interface",
+        "headings",
+        "body",
+        "figures"
+      ],
+      "weights": [
+        400,
+        500,
+        700
+      ]
+    },
+    {
+      "family": "Geist Mono",
+      "source": "Google Fonts",
+      "roles": [
+        "job IDs, external job keys and resume filenames only"
+      ],
+      "weights": [
+        400
+      ]
+    }
+  ],
+  "interfaceDirection": "Open-plane shell on the #f2f4f7 ground. A 240px labelled sidebar sits on the ground with one 1px #e6e6e6 hairline and no top bar. At its top: the product mark (tick over two ledger rules in #1d5fbf) and 'Job Tracker' at 14/500, with the user's name in grey under it. Primary nav on a 34px pitch with 32px rows and 16px outline icons at 1.5px stroke: Scraped jobs (auto), Added by me (manual), Resume. Under a 12px grey 'Filters' group label: Needs a referral (toggle). Sync and Log out sit at the bottom, and Sync shows its live label ('Syncing…', 'Synced 2 min ago'). The active item is a #eeeeee pill at radius 6, inset 8px.\n\nThe canvas follows the inbox triage pattern. The page header sits 32px from the top: 'Scraped jobs' at 24/500 with the count in grey after it, and Add job as the one near-black primary at the right. Under it is the pipeline strip (the signature device). Then a fixed 384px job list column with its own toolbar (32px search, sort select, count) and job rows grouped under day labels in 12px grey sentence case ('Today', 'Yesterday', 'Mon 3 Nov'). Rows are two-line, 64-72px: company at 14/500 in ink with the posted time in words right-aligned in grey, and the title and location on line 2 in 13px grey. A status pill and a source chip sit in fixed right-aligned slots. A tailoring-in-progress row shows 'Tailoring…' in grey with a 12px spinner in the status slot. The selected row takes the #eeeeee fill plus a 2px #1d5fbf bar inside its left edge.\n\nThe open job fills the remaining width. Its header has company, title and a status select, with Tailor resume (primary) and Edit/Delete (secondary/ghost; Delete in negative text). Below are the ATS score card (score as a 30/700 tabular figure, a bullet bar in #1d5fbf on a #f0f0f0 track, a grey marker for the previous score), the ATS keyword section, the referral section and the tailor section. Sections are split by 1px rules, with key-value rows on a 32px pitch. Load more is a secondary button at the list's end. The loading state shows skeleton rows of #f0f0f0 bars that keep the row heights, and the empty state is plain words in the frame.\n\nDensity is sparse with one 12px gap and 24px pad. Desktop controls are 36px high, rows 44px minimum, and phone targets 44px. Labels are 12-14px, sentence case, grey #6b6b6b, never tracked capitals. Status pill pairs: To ask neutral, Asked warning, Applied applied-blue tint, Responded positive, Declined negative, Not interested neutral in grey ink. Pills are 20px tall, 12px text, radius 999.\n\nControl states: hover adds a #eeeeee fill (on primary, #2a2a2a). Focus is a 2px #1d5fbf ring offset 2px. Pressed darkens by one step. Disabled drops to 40% opacity with no pointer. Selected uses aria-selected with the raised fill.\n\nOn a phone (<768px) the sidebar folds into a 48px top bar holding the mark, the current view's name and a menu button. The menu opens a full-screen sheet with nav, the referral filter, Sync and Log out. Add job sits as the one action in the bar. The pipeline strip scrolls horizontally. The list fills the screen with 16px margins. Choosing a job pushes the detail as a full-screen view with a 'Back to jobs' control that returns to the same scroll position. Modals (job form, resume, PDF preview) become full-screen sheets with a sticky header (title and close) and a sticky footer for Save.\n\nLogin is a centred 360px white card on the ground with the mark, 'Sign in to Job Tracker' at 24/500, 40px inputs and a full-width near-black Sign in button.",
+  "designTokens": {
+    "typeScale": {
+      "display": "24px",
+      "h1": "24px",
+      "h2": "16px",
+      "h3": "30px",
+      "body": "14px",
+      "small": "12px",
+      "label": "12px"
+    },
+    "radius": {
+      "scale": [
+        "6px",
+        "8px"
+      ],
+      "pill": "999px"
+    },
+    "spacing": {
+      "section": "24px",
+      "gutter": "12px",
+      "stack": "12px"
+    },
+    "buttons": {
+      "primary": "Near-black #141414 fill, white 14/500 label, 36px high (44px on phones), 14px horizontal padding, 6px radius, no shadow. Hover #2a2a2a, focus ring 2px #1d5fbf offset 2px. Exactly one per view: Add job in the list header, Tailor resume in the open job, Sign in on login, Save in a form.",
+      "secondary": "White #ffffff surface fill, 1px #d4d4d4 control border, #0a0a0a 14/500 label, 36px high (44px on phones), 6px radius. Hover fills #eeeeee. Used for Edit, Load more, Download PDF, Cancel. Destructive Delete uses the secondary form with #c4242a text."
+    },
+    "surfaces": "Ground #f2f4f7 for page and sidebar. White #ffffff surfaces for the job list column, detail panel, pipeline strip, modals and login card, each with a 1px #e6e6e6 border and 8px radius. Rows are split by 1px #f0f0f0 rules with no zebra striping. A border or a fill step, never both with a shadow. Nothing casts a shadow at rest; only floating layers (select menus, the mobile nav sheet, modals) take 0 8px 24px rgba(0,0,0,.08), with a rgba(10,10,10,.32) scrim behind modals."
+  },
+  "imageDirection": {
+    "summary": "The product shows no photography or illustration. Its only imagery is functional: the product mark, company initials, and the tailored resume PDF itself in the preview modal.",
+    "subjects": [
+      "Company initials in a 24px circle on a pale tint of a stable per-company hue (hues at least 60 degrees apart for neighbouring rows), ink letter, used only in the open job header",
+      "The tailored resume PDF rendered in the preview modal at true page proportions on a #f2f4f7 backdrop",
+      "The product mark: a tick above two ledger rules, stroked 1.5px in #1d5fbf"
+    ],
+    "treatment": "Initials tints stay pale (about 92-95% lightness) and never enter status or data colour. The PDF preview has a 1px #e6e6e6 page edge and no shadow. Icons are outline, 16px in nav and 14px inline, grey #6b6b6b.",
+    "avoid": [
+      "Stock photography",
+      "Illustrations or empty-state mascots",
+      "Company logos fetched from third parties",
+      "Icons in tinted squares or circles",
+      "Decorative backgrounds"
+    ]
+  },
+  "motionDirection": {
+    "summary": "Feedback only, with one shared pair across the app: 180ms with ease-out cubic-bezier(0.2, 0, 0, 1). Nothing performs an entrance, and data refreshes never replay animation. Under prefers-reduced-motion every transition is instant with the same final state.",
+    "principles": [
+      "Confirm a press or hover: background and border colour on buttons, rows and nav items change when pointer or keyboard engages them; 120ms; ease-out",
+      "Show which source view is active: the raised nav pill and the pipeline stage's 2px #1d5fbf underline slide to the newly selected item when the user switches view or stage; 180ms; strong ease-out, interruptible on rapid clicks",
+      "Keep row identity through a filter, search or sort change: rows that remain move to their new positions with a transform, and rows that leave fade out when the status, referral filter, search or sort changes; 180ms; ease-out; row heights and the count update immediately",
+      "Open and close the job on a phone: the detail view slides in from the right over the list when a job is chosen and slides back on Back or Escape, with focus moving to the detail heading and returning to the chosen row; 220ms; strong ease-out",
+      "Open overlays: modals and the mobile nav sheet fade the scrim and lift the panel 8px into place on open, reverse on Escape or close, and return focus to the trigger; 180ms; ease-out",
+      "Report background work: the Sync label and a tailoring row's spinner change with the real request state, and the spinner rotates only while a request is in flight; label swap 120ms ease-out, spinner linear 800ms per turn",
+      "Update the ATS score: the bullet bar's fill width moves from the previous score to the new one when a fresh ATS result arrives, with the figure set to its final value at once; 250ms; ease-out"
+    ],
+    "avoid": [
+      "Entrance or scroll-reveal animations",
+      "Count-up numbers",
+      "Staggered card cascades on load",
+      "Perpetual pulsing or shimmer beyond a plain loading skeleton",
+      "Bouncy or spring overshoot easing",
+      "Animating every data refresh"
+    ]
+  },
+  "voice": {
+    "summary": "Plain words of a job search, written for the one person running it. Labels name the real thing (Company, Role, Posted, Referral contact, Match score, Tailored resume). Statuses read as stages in sentence case (To ask, Asked for referral, Applied, Heard back, Declined, Not interested). Empty and status states say what is true and what to do next: 'No jobs posted today', 'Nothing to ask for yet: every job here has a referral', 'No match score yet. Run ATS check', 'Tailoring your resume for Stripe…', 'Synced 2 min ago', 'Sync failed: scraper didn't respond. Try again'. Times are in words ('9 min', 'Yesterday', 'Mon 3 Nov').",
+    "avoid": [
+      "Generic nouns like Items, Records, Entries, Data",
+      "'Welcome back' greetings or emoji",
+      "Exclamation marks and hype ('Awesome!', 'Boost your career')",
+      "Uppercase labels",
+      "Invented metrics or success rates",
+      "Lorem ipsum or sample company names not from the user's data"
+    ]
+  }
+}

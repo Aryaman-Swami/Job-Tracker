@@ -1,0 +1,769 @@
+{
+  "version": 1,
+  "page": {
+    "title": "Scraped jobs",
+    "route": "/",
+    "description": "The Job Tracker workspace: one person's job search as a ledger. A sidebar names the product and its views. The default view lists scraped jobs grouped by the day they were posted, with a pipeline strip that counts and filters each stage, and the open job beside the list with its status, match score, referral message and tailored resume. Login, the job form, the resume editor and the PDF preview are separate states of the same shell."
+  },
+  "architecture": {
+    "contract": "This screen answers: which job should I act on next, and what stage is each application at? Face: the blue-grey ledger ground #f2f4f7, with the one blue #1d5fbf on the selected pipeline stage and the ATS match bar. Signature element: the application pipeline strip.",
+    "mode": "operate_monitor",
+    "novelty": "medium",
+    "grid": "At 1440 wide: sidebar 240px with a 1px hairline, leaving a 1200px canvas with 24px pad on each side, so content is 1152px. The page header and pipeline strip span 1152. Below, two regions share one 12px gutter: a fixed 384px job list column, then the open job at 756px (384 + 12 + 756 = 1152). Inside the open job, the details column is a fixed 306px beside a 438px main column (438 + 12 + 306 = 756). Every card's left edge sits on the canvas's 24px line and its right edge on the 1416px line. Header, strip and list share one top-to-bottom left edge.",
+    "signatureRule": "No brand colour in the chrome. The one primary per view is near-black #141414, with secondaries in white plus a 1px #d4d4d4 border. The main data element takes #1d5fbf: the selected pipeline stage's underline and count, the ATS match bar, and the selected row's 2px left bar. Everything else is ink and grey, zero counts print in grey, and the only other hue is a short green or red number where a match score changed after tailoring.",
+    "rhythm": "Sparse. One 12px gap horizontally and vertically, 24px canvas pad and 20px card padding. Job rows are two-line on a 68px pitch, nav on a 34px pitch, and detail key-value rows on a 32px pitch. Body is 14px, meta 12-13px, card titles 16/500, h1 24/500, and the pipeline counts and ATS score 30/700 in tabular figures. Controls are 36px on desktop and 44px on phones."
+  },
+  "navigation": [
+    {
+      "label": "Scraped jobs",
+      "target": "#/jobs/scraped"
+    },
+    {
+      "label": "Added by me",
+      "target": "#/jobs/manual"
+    },
+    {
+      "label": "Resume",
+      "target": "#/resume"
+    }
+  ],
+  "navigationDesign": {
+    "layoutCase": "app-shell",
+    "layout": "Open-plane sidebar, 240px, on the #f2f4f7 ground with one 1px #e6e6e6 hairline on its right edge and no top bar. Top: the product mark (a tick over two ledger rules, 1.5px #1d5fbf stroke, 20px) and 'Job Tracker' at 14/500, with 'Personal workspace' in 12px grey under it as the scope. Primary nav on a 34px pitch with 32px rows and 16px outline icons: Scraped jobs (count of loaded scraped jobs in grey right-aligned only when a referral ask is pending, written as 'To ask 6'), Added by me, and Resume. Then a 12px grey 'Filters' group label 28px below with one switch row: Needs a referral. Pushed to the bottom: the Sync row showing its live label ('Sync jobs', 'Syncing…', 'Synced 2 min ago', 'Sync failed. Try again') and Log out. Active item is a #eeeeee pill, radius 6, inset 8px, with the label unchanged in ink.",
+    "behavior": [
+      "Scraped jobs and Added by me set the existing source state (SOURCE.AUTO / SOURCE.MANUAL) and update the hash route; the h1 changes to the view's name",
+      "Resume opens the existing ResumeModal; closing returns the hash to the previous jobs view and focus to the Resume nav item",
+      "Needs a referral toggles the existing needsReferral state; role='switch' with aria-checked",
+      "Sync calls the existing onSync; disabled with aria-busy while syncing, and the label is the existing syncLabel",
+      "Log out calls the existing onLogout",
+      "The active pill slides between nav items on view change in 180ms ease-out, and switches instantly under reduced motion",
+      "Keyboard: Tab through items, Enter or Space activates, visible 2px #1d5fbf focus ring offset 2px"
+    ],
+    "transformation": {
+      "compact": "Under 641px the sidebar becomes a 48px top bar on the ground with a bottom hairline: the mark, the current view's name at 16/500, Add job as the one action (a 36px near-black button labelled 'Add'), and a 44px menu button. The menu opens a full-screen sheet (scrim fade, panel lifts 8px, 180ms) holding the nav, the Needs a referral switch, Sync and Log out at 44px rows. Escape or Close returns focus to the menu button, and choosing a destination closes the sheet.",
+      "medium": "From 641-1100px, the same 48px top bar and full-screen menu sheet as compact. The canvas uses 24px margins, and Add job keeps its full label.",
+      "expanded": "Above 1100px, the 240px labelled sidebar described above sits on the ground and is always visible; there is no top bar."
+    }
+  },
+  "sections": [
+    {
+      "id": "shell",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "open-plane"
+      ],
+      "purpose": "Name the product and scope, hold navigation, the referral filter and the background-work controls that used to live in the header.",
+      "userQuestion": "Where am I, which jobs am I looking at, and is my job feed up to date?",
+      "stage": "orient",
+      "dependencies": [],
+      "evidence": [
+        "Header.jsx renders title, Resume, Sync with syncLabel, Add Job and Log out",
+        "Toolbar.jsx renders the Auto-fetched / Manually Added source tabs and the Needs Referral toggle"
+      ],
+      "copy": {
+        "heading": "Job Tracker",
+        "body": [
+          "Personal workspace",
+          "Scraped jobs · Added by me · Resume",
+          "Filters: Needs a referral",
+          "Synced 2 min ago (Sample data label shown only in the static preview harness)"
+        ],
+        "callsToAction": [
+          {
+            "label": "Sync jobs",
+            "target": "action:sync"
+          },
+          {
+            "label": "Log out",
+            "target": "action:logout"
+          }
+        ]
+      },
+      "layout": "Fixed 240px column, full viewport height, sticky, on the ground. Items as described in navigationDesign. States: Sync idle, busy (12px spinner plus 'Syncing…', aria-busy, disabled), done ('Synced 2 min ago'), failed ('Sync failed. Try again' in #c4242a text, button re-enabled). Hover fills rows #eeeeee, focus ring 2px #1d5fbf, and disabled is 40% opacity.",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "state_change",
+        "behavior": "The active nav pill moves to the chosen item; the Sync label cross-fades between states; the spinner rotates only while a request is in flight.",
+        "durationMs": 180,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Pill and label change instantly; the spinner is replaced by static 'Syncing…' text."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "product-mark-svg"
+      ],
+      "transformation": {
+        "compact": "48px top bar with mark, view name, Add and a menu button; full-screen nav sheet.",
+        "medium": "Same 48px top bar and sheet with 24px margins.",
+        "expanded": "240px labelled sidebar with hairline."
+      }
+    },
+    {
+      "id": "page-header",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "inbox-triage"
+      ],
+      "purpose": "State the view, its size and the one finding, beside the most frequent creation job.",
+      "userQuestion": "How many jobs are in this view and what needs me first?",
+      "stage": "orient",
+      "dependencies": [
+        "shell"
+      ],
+      "evidence": [
+        "App.jsx holds allJobs, source, status and needsReferral state",
+        "Header.jsx Add Job opens JobFormModal"
+      ],
+      "copy": {
+        "heading": "Scraped jobs",
+        "body": [
+          "Sample data: 18 jobs from the last 3 days",
+          "6 jobs still to ask for a referral, oldest posted 3 days ago"
+        ],
+        "callsToAction": [
+          {
+            "label": "Add job",
+            "target": "action:open-job-form"
+          },
+          {
+            "label": "Show to ask",
+            "target": "action:filter-status-to_ask"
+          }
+        ]
+      },
+      "layout": "Full 1152px row, 32px from the canvas top. Left: h1 'Scraped jobs' (or 'Added by me') at 24/500 with the loaded count in grey 24/400 after it ('18'). Under it, one 14px grey sentence computed from the loaded rows: '{n} jobs still to ask for a referral, oldest posted {age}'. The words '{n} jobs still to ask' are a text link that sets the status filter to to_ask. When n is 0 the line reads 'Every job here has been asked or applied to'. Right: Add job, the one near-black primary, 36px. Loading: the title and button show at once with a 14px grey bar in place of the count and finding. Error: the finding line becomes 'Couldn't load jobs. Last loaded {time}.' with a Retry text button.",
+      "motion": {
+        "purpose": "none",
+        "trigger": "none",
+        "behavior": "Static reading region; the count and sentence update in place with no animation.",
+        "durationMs": 0,
+        "easing": "linear",
+        "reducedMotion": "No change."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "The title moves into the 48px top bar as the view name and Add job becomes the bar's one action. The finding line sits 16px under the bar at 14px with 16px margins.",
+        "medium": "h1 at 22px with Add job on the right; the finding line under it.",
+        "expanded": "As described, h1 24px on the 1152 row."
+      }
+    },
+    {
+      "id": "pipeline-strip",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "inbox-triage"
+      ],
+      "purpose": "Signature element: count jobs by application stage and act as the status filter.",
+      "userQuestion": "Where does each application stand, and how many are at each stage?",
+      "stage": "evaluate",
+      "dependencies": [
+        "page-header"
+      ],
+      "evidence": [
+        "Toolbar.jsx STATUS_FILTERS: All, To Ask, Asked, Applied, Responded, Declined",
+        "utils.js STATUS_LABELS includes not_interested"
+      ],
+      "copy": {
+        "heading": "Pipeline",
+        "body": [
+          "Sample data: All 18 · To ask 6 · Asked 4 · Applied 5 · Heard back 2 · Declined 1",
+          "Not interested counts only in All and is reachable from the status select"
+        ],
+        "callsToAction": [
+          {
+            "label": "All",
+            "target": "action:filter-status-all"
+          },
+          {
+            "label": "To ask",
+            "target": "action:filter-status-to_ask"
+          },
+          {
+            "label": "Asked",
+            "target": "action:filter-status-asked"
+          },
+          {
+            "label": "Applied",
+            "target": "action:filter-status-applied"
+          },
+          {
+            "label": "Heard back",
+            "target": "action:filter-status-responded"
+          },
+          {
+            "label": "Declined",
+            "target": "action:filter-status-declined"
+          }
+        ]
+      },
+      "layout": "One white card, 1152px wide, 88px tall, 1px #e6e6e6 border, radius 8, split by 1px dividers into six equal cells of about 190px (6 x 190 + 5 x 1 = 1145, plus the 1px borders and remainder distributed by grid 1fr). Each cell is a button with role='tab' in a tablist labelled 'Application stage': a 12px grey sentence-case label above a 30/700 tabular count. The selected cell carries a 2px #1d5fbf rule at its bottom edge and its count in #1d5fbf, with aria-selected='true'. Other counts are in ink, and a zero prints as '0' in grey. Counts are computed from the rows currently loaded in the view. Because the API filters by status, when a stage is selected only All and that stage show counts and the other cells show a grey 12px dash with title 'Select All to count this stage'. This replaces the old .filters status buttons. States: hover fills #f7f7f7; focus is a 2px #1d5fbf inset ring; loading shows a 30px-tall #f0f0f0 bar per count with labels visible; on error the counts show grey dashes.",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "press",
+        "behavior": "The 2px blue underline slides to the newly selected cell and the hue moves to its count; rapid clicks retarget mid-flight.",
+        "durationMs": 180,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Underline and hue jump to the selected cell instantly."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "One row that scrolls sideways inside its own frame with 16px margins. Cells are 96px wide and 72px tall, counts 24/700, and the selected cell scrolls into view. Arrow keys move between tabs.",
+        "medium": "Six cells across the full width at 80px tall with counts 26/700.",
+        "expanded": "Six equal cells across 1152px, 88px tall, counts 30/700."
+      }
+    },
+    {
+      "id": "job-list-toolbar",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "inbox-triage"
+      ],
+      "purpose": "Narrow and order the list without leaving it.",
+      "userQuestion": "Can I find a company fast and see the newest or oldest postings first?",
+      "stage": "qualify",
+      "dependencies": [
+        "pipeline-strip"
+      ],
+      "evidence": [
+        "Toolbar.jsx search input 'Search by company…' and sort select with added_desc, posted_desc, posted_asc"
+      ],
+      "copy": {
+        "heading": "Find a job",
+        "body": [
+          "Search by company",
+          "Sort: Newest added · Recently posted · Oldest posted",
+          "Sample data: 18 shown"
+        ],
+        "callsToAction": [
+          {
+            "label": "Clear search",
+            "target": "action:clear-search"
+          }
+        ]
+      },
+      "layout": "Sits at the top inside the 384px list card, 20px padding and a 1px #f0f0f0 rule beneath. One row: a 32px search input (white, 1px #d4d4d4, radius 6, 14px text, #6b6b6b placeholder 'Search by company', clear button once text is present) taking the remaining width, then a 32px sort select labelled 'Sort' with options 'Newest added', 'Recently posted', 'Oldest posted'. A 12px grey count line under it reads '18 shown' and becomes '3 match \"north\"' when searching. States: focus ring 2px #1d5fbf; disabled during initial load.",
+      "motion": {
+        "purpose": "feedback",
+        "trigger": "hover",
+        "behavior": "Border and fill feedback on hover and focus.",
+        "durationMs": 120,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Instant colour change."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Full width with 16px margins. Search and sort share one row at 44px height, the sort select shrinks to a 44px icon-labelled select with an accessible name 'Sort jobs', and the count line sits under it.",
+        "medium": "Same as expanded inside the list column, or full width when the list is the only region.",
+        "expanded": "Inside the 384px list card header."
+      }
+    },
+    {
+      "id": "job-list",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "inbox-triage"
+      ],
+      "purpose": "Show every loaded job, grouped by posting day, as two-line rows to pick from.",
+      "userQuestion": "Which job do I open next?",
+      "stage": "evaluate",
+      "dependencies": [
+        "job-list-toolbar"
+      ],
+      "evidence": [
+        "JobList.jsx month-group / month-heading / month-count groups and Load more via hasMore",
+        "JobCard.jsx fields: company, job_ref_id, role, contact_name, contact_email, job_url, linkedin_profile_url, notes, ats_score, posted info, needs_referral, source, status select, Apply, Edit, Delete",
+        "tailoringIds set marks rows with a tailor call in flight"
+      ],
+      "copy": {
+        "heading": "Jobs",
+        "body": [
+          "Sample data: Today 7 · Yesterday 6 · Mon 3 Nov 5",
+          "Example row: Northwind Payments · 9 min · Backend Engineer, Bengaluru · To ask · LinkedIn · Match 72",
+          "Example row: Kestrel Health · Yesterday · Senior Java Developer, Pune · Applied · Workday · Match 81",
+          "Tailoring row: Larkspur Logistics · Tailoring your resume…"
+        ],
+        "callsToAction": [
+          {
+            "label": "Load 3 more days",
+            "target": "action:load-more"
+          },
+          {
+            "label": "Apply",
+            "target": "external:job_url"
+          }
+        ]
+      },
+      "layout": "White card, 384px wide, 1px #e6e6e6 border, radius 8, starting 12px under the pipeline strip and running to the viewport bottom minus 24px, scrolling internally. Groups have a 12px grey sentence-case day label ('Today', 'Yesterday', 'Mon 3 Nov') with the group count right-aligned in grey, on a 32px row. Rows are two-line on a 68px pitch, split by 1px #f0f0f0 rules, with 20px side padding. Line 1: company at 14/500 ink, job_ref_id after it in 12px Geist Mono grey, and the posted time in words right-aligned in 12px grey. Line 2: role and location in 13px grey truncated with an ellipsis, then fixed right-aligned slots: status pill (20px, 12px text, radius 999, pairs per brand), source chip ('LinkedIn', 'Manual') and ATS mini figure 'Match 72' in 12px tabular grey or a grey dash when absent. A 'Referral' pale warning pill shows only when needs_referral. Edit, Delete, Apply and the inline status select move to the open job and appear on row hover only as a 28px Apply text link on desktop, so rows stay calm. The row is a button with aria-selected; the selected row takes a #eeeeee fill plus a 2px #1d5fbf bar inside its left edge. A tailoring row replaces the status slot with a 12px spinner and 'Tailoring…' in grey. The list ends with a full-width secondary 'Load 3 more days' button, then '-' and the words 'All loaded jobs shown' when hasMore is false. Empty: the frame stays with one sentence spanning the card: 'No jobs in this view. Try All stages or clear the search.' or, for Needs a referral, 'Nothing to ask for: every job here has a referral.' Loading: 6 skeleton rows at 68px with #f0f0f0 bars at text size, no shimmer. Error: 'Couldn't load jobs. Last loaded {time}.' with Retry. Hover fills #f7f7f7, focus ring 2px #1d5fbf inset, disabled rows do not exist.",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "state_change",
+        "behavior": "When the stage, referral filter, search or sort changes, remaining rows translate to their new positions (FLIP), removed rows fade out, and keys stay the job id. Rows loaded by Load more appear in place without animation.",
+        "durationMs": 180,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Rows re-render in their final order instantly."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "The list fills the screen with 16px margins and no card border at the edges; rows are 72px with 44px minimum tap height. Tapping a row pushes the open job as a full-screen view. Back returns to the same scroll position with focus on that row.",
+        "medium": "641-899px: the list is the only region at full width, and the open job pushes as on compact. 900-1100px: the list is 340px beside the open job.",
+        "expanded": "Fixed 384px column beside the open job."
+      }
+    },
+    {
+      "id": "job-detail-header",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "inbox-triage"
+      ],
+      "purpose": "Show the open job's identity, change its stage and reach its main actions.",
+      "userQuestion": "What is this job, and what do I do with it now?",
+      "stage": "act",
+      "dependencies": [
+        "job-list"
+      ],
+      "evidence": [
+        "DetailPanel.jsx panel-header, panel-title, panel-subtitle, close-panel, detail-rows with detail-label / detail-value",
+        "JobCard.jsx status select, Apply link, Edit and Delete buttons"
+      ],
+      "copy": {
+        "heading": "Northwind Payments",
+        "body": [
+          "Sample data: Backend Engineer · Bengaluru · Posted 9 min ago on LinkedIn · Job ID NWP-4471",
+          "Contact: Priya Raman · priya.raman@northwind.example",
+          "Referral needed"
+        ],
+        "callsToAction": [
+          {
+            "label": "Tailor resume",
+            "target": "action:tailor"
+          },
+          {
+            "label": "Open posting",
+            "target": "external:job_url"
+          },
+          {
+            "label": "Edit",
+            "target": "action:edit-job"
+          },
+          {
+            "label": "Delete job",
+            "target": "action:delete-job"
+          }
+        ]
+      },
+      "layout": "White card, 756px wide, 1px #e6e6e6, radius 8, 20px padding, at the top of the open-job region and level with the list card's top. Row 1: a 24px company initials circle on a pale per-company tint, the company at 24/500... set at 16/500 for the card title since the h1 is the view name, then the stage select (36px, label 'Stage', showing the status pill colours in the closed state). Right: Tailor resume as the near-black primary, then Open posting and Edit as secondaries, and a 36px more menu holding 'Delete job' in #c4242a text. Delete asks for confirmation that names the company ('Delete Northwind Payments? This removes the job and its tailored resume.'). Row 2: role, location, 'Posted 9 min ago on LinkedIn' in 14px grey, and the job ID in Geist Mono. Below a 1px rule, the details column (306px) lists key-value rows on a 32px pitch: Contact, Email (mailto), LinkedIn (link), Referral (pale warning pill 'Needed' or 'Not needed'), Notes. Missing values show a grey dash. Empty (no job selected): the frame stays and one sentence reads 'Choose a job to see its match score, referral message and tailored resume.'",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "state_change",
+        "behavior": "Changing the open job swaps content in place with no transition. Changing the stage updates the pill colour and the row's pill in the list together.",
+        "durationMs": 120,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Instant."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Full-screen view pushed over the list (slides from the right, 220ms). The 48px bar holds 'Back to jobs' and the company. Tailor resume is a full-width 44px primary pinned in a sticky bottom bar. Edit, Open posting and Delete go into a 44px more menu. Key-value rows stack label above value.",
+        "medium": "At 900-1100px it fills the remaining width beside a 340px list, with the details column stacked under the header. Below 900px it pushes as on compact.",
+        "expanded": "756px region; header card with the 306px details column beside the main column."
+      }
+    },
+    {
+      "id": "ats-match",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "inbox-triage"
+      ],
+      "purpose": "Show how well the resume matches this job and what is missing.",
+      "userQuestion": "How well does my resume match this job, and which keywords am I missing?",
+      "stage": "evaluate",
+      "dependencies": [
+        "job-detail-header"
+      ],
+      "evidence": [
+        "AtsScoreCard.jsx: ATS Match Score ring, breakdown rows with label and pct, Matched / Missing chips, Suggestions",
+        "AtsSection.jsx runs the ATS check"
+      ],
+      "copy": {
+        "heading": "Match score",
+        "body": [
+          "Sample data: 72 of 100 · was 64 before tailoring (+8 in green)",
+          "Skills 80% · Experience 70% · Keywords 65%",
+          "Matched: Java, Spring Boot, PostgreSQL, REST, Docker",
+          "Missing: Kafka, Kubernetes",
+          "Suggestions: add a Kafka bullet from the job scraper work if it is true"
+        ],
+        "callsToAction": [
+          {
+            "label": "Run ATS check",
+            "target": "action:run-ats"
+          }
+        ]
+      },
+      "layout": "White card in the 438px main column, 20px padding, 12px below the header. Top: '72' at 30/700 tabular with '/100' in 14px grey; when there is a previous score, a 12px change line '+8 from 64' in #2e7d32 (or #c4242a for a drop, grey for 0). Under it a bullet bar: 8px #f0f0f0 track, #1d5fbf fill at the true ratio, and a 1px #8a8a8a tick for the previous score, both ends labelled 0 and 100 in 12px grey. This replaces the ring. Breakdown rows at a 32px pitch: label, a 4px ink bar at the true ratio, and the percentage right-aligned in tabular figures. Matched and Missing keywords as 24px neutral chips, Missing in the pill-negative pair. Suggestions as a short list in 14px. Empty: 'No match score yet.' with Run ATS check as a secondary. Loading: '72' replaced by a 30px grey bar, and the button shows 'Checking…' with a spinner, disabled. Error: 'ATS check failed. Try again.' with Retry.",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "state_change",
+        "behavior": "When a new score arrives, the blue fill width moves from the previous ratio to the new one; the figure shows its final value at once.",
+        "durationMs": 250,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "The bar is drawn at its final width immediately."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Full width in the pushed job view with 16px margins. The bar spans the width and chips wrap.",
+        "medium": "Full width of the open-job region.",
+        "expanded": "438px main column beside the details column."
+      }
+    },
+    {
+      "id": "referral",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "inbox-triage"
+      ],
+      "purpose": "Give the ready-to-send referral ask and LinkedIn helper for this job.",
+      "userQuestion": "Who do I ask for a referral, and what do I send them?",
+      "stage": "act",
+      "dependencies": [
+        "job-detail-header"
+      ],
+      "evidence": [
+        "ReferralSection.jsx: Referral Message template with copy-btn, LinkedIn Helper, btn-referral"
+      ],
+      "copy": {
+        "heading": "Referral",
+        "body": [
+          "Message to Priya Raman about the Backend Engineer role, ready to copy",
+          "LinkedIn search for Northwind Payments engineers in Bengaluru"
+        ],
+        "callsToAction": [
+          {
+            "label": "Copy message",
+            "target": "action:copy-referral"
+          },
+          {
+            "label": "Find people on LinkedIn",
+            "target": "external:linkedin-search"
+          },
+          {
+            "label": "Mark as asked",
+            "target": "action:status-asked"
+          }
+        ]
+      },
+      "layout": "White card in the main column, 20px padding, 12px below Match score. 16/500 title with a pale warning 'Needed' pill when needs_referral. The message sits in a #f7f7f7 block (radius 6, 14px, 20px line height, monospace off) with Copy message as a secondary that changes to 'Copied' for 2s. Below are Find people on LinkedIn (text link) and Mark as asked (secondary, sets the stage to asked). Collapsible via the existing collapse-toggle with aria-expanded. Empty when the job needs no referral: 'No referral needed for this job.' and the card collapses to its header.",
+      "motion": {
+        "purpose": "feedback",
+        "trigger": "press",
+        "behavior": "Copy button label swaps to 'Copied'; collapse height changes.",
+        "durationMs": 180,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Label swap and collapse are instant."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Full width; buttons 44px and stacked full width.",
+        "medium": "Full width of the open-job region.",
+        "expanded": "Main column card."
+      }
+    },
+    {
+      "id": "tailored-resume",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "inbox-triage"
+      ],
+      "purpose": "Produce and review the resume tailored for this job.",
+      "userQuestion": "Is my resume tailored for this job yet, and can I get the PDF?",
+      "stage": "act",
+      "dependencies": [
+        "job-detail-header",
+        "ats-match"
+      ],
+      "evidence": [
+        "TailorSection.jsx: Key Skills Match pills, tailor-note, tailor-text, Generate PDF",
+        "PdfPreviewModal.jsx opens with the generated blob"
+      ],
+      "copy": {
+        "heading": "Tailored resume",
+        "body": [
+          "Key skills matched: Java, Spring Boot, PostgreSQL, Docker",
+          "Last tailored 4 Nov",
+          "Tailoring your resume for Larkspur Logistics… (in-flight state)"
+        ],
+        "callsToAction": [
+          {
+            "label": "Tailor resume",
+            "target": "action:tailor"
+          },
+          {
+            "label": "Generate PDF",
+            "target": "action:generate-pdf"
+          }
+        ]
+      },
+      "layout": "White card in the main column, 20px padding. Key skills as 24px neutral chips, the tailor note in 14px grey, the tailored text in a #f7f7f7 block capped at 240px with internal scroll, and Generate PDF as a secondary (Tailor resume stays the one primary in the header). Empty: 'Not tailored yet.' and the header's Tailor resume is the action. Loading: 'Tailoring your resume for {company}…' with a spinner; the header button is disabled with aria-busy. Error: 'Tailoring failed. Try again.' with Retry.",
+      "motion": {
+        "purpose": "status",
+        "trigger": "state_change",
+        "behavior": "Spinner rotates only while the tailor call is in flight; content swaps in place when it lands.",
+        "durationMs": 180,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Static 'Tailoring…' text in place of the spinner."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Full width; Generate PDF full width at 44px.",
+        "medium": "Full width of the open-job region.",
+        "expanded": "Main column card under Referral."
+      }
+    },
+    {
+      "id": "job-form",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "app-screen"
+      ],
+      "purpose": "Add or edit a job.",
+      "userQuestion": "Can I record a job I found myself, or fix one?",
+      "stage": "act",
+      "dependencies": [
+        "page-header",
+        "job-detail-header"
+      ],
+      "evidence": [
+        "JobFormModal.jsx fields: Company, Role (select), Job ID, Job URL, Contact Name, Contact Email, LinkedIn URL, Job Description, Notes, Needs referral checkbox; Cancel and Save"
+      ],
+      "copy": {
+        "heading": "Add job",
+        "body": [
+          "Company, Role, Job ID, Job URL, Contact name, Contact email, LinkedIn URL, Job description, Notes, Needs a referral"
+        ],
+        "callsToAction": [
+          {
+            "label": "Save job",
+            "target": "action:save-job"
+          },
+          {
+            "label": "Cancel",
+            "target": "action:close-modal"
+          }
+        ]
+      },
+      "layout": "Modal, 560px wide white panel, radius 8, 24px padding, shadow 0 8px 24px rgba(0,0,0,.08) over a rgba(10,10,10,.32) scrim. Header: 'Add job' or 'Edit job' at 16/500 with a 36px close button. Fields: 14/500 labels, 8px to 40px inputs (1px #d4d4d4, radius 6), 16px between pairs; Company and Role share a row, Job ID in Geist Mono. Job description textarea 160px. Needs a referral as a switch row. Footer right-aligned: Cancel (secondary) and Save job (primary). Validation: inline 12px #c4242a message under the field, aria-invalid. Saving: Save shows 'Saving…', disabled. Focus is trapped; Escape closes and returns focus to the trigger.",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "press",
+        "behavior": "Scrim fades and panel lifts 8px into place; reverses on close.",
+        "durationMs": 180,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Appears and disappears instantly."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Full-screen sheet with a sticky 48px header (title and close) and a sticky footer with Save job full width at 44px. Fields stack one per row with 16px margins.",
+        "medium": "560px centred panel, max-height 90vh with internal scroll.",
+        "expanded": "560px centred panel."
+      }
+    },
+    {
+      "id": "resume-editor",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "app-screen"
+      ],
+      "purpose": "Keep the base LaTeX resume that tailoring works from.",
+      "userQuestion": "Is my base resume current?",
+      "stage": "continue",
+      "dependencies": [
+        "shell"
+      ],
+      "evidence": [
+        "ResumeModal.jsx: 'Your Resume (LaTeX)', resume-textarea, copy-btn, Save and Close"
+      ],
+      "copy": {
+        "heading": "Base resume",
+        "body": [
+          "LaTeX source of the resume every tailored version starts from",
+          "Saved 2 Nov"
+        ],
+        "callsToAction": [
+          {
+            "label": "Save resume",
+            "target": "action:save-resume"
+          },
+          {
+            "label": "Copy LaTeX",
+            "target": "action:copy-latex"
+          },
+          {
+            "label": "Close",
+            "target": "action:close-modal"
+          }
+        ]
+      },
+      "layout": "Modal opened from the Resume nav item at #/resume, 880px wide, 24px padding. Header 'Base resume' 16/500 with close. A textarea filling the panel at 13px Geist Mono on a 20px line, 1px #d4d4d4, radius 6, min 420px tall. Footer: Copy LaTeX (secondary), Close (secondary), Save resume (primary). Empty: 'No resume saved yet. Paste your LaTeX source to start.' as the placeholder in #6b6b6b. Saving and error states as in the job form.",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "press",
+        "behavior": "Same overlay open and close as the job form.",
+        "durationMs": 180,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Instant."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Full-screen sheet; textarea fills the space between a sticky header and a sticky footer with Save resume full width.",
+        "medium": "Panel at calc(100vw - 48px).",
+        "expanded": "880px centred panel."
+      }
+    },
+    {
+      "id": "pdf-preview",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "app-screen"
+      ],
+      "purpose": "Review the tailored PDF and its LaTeX before sending it.",
+      "userQuestion": "Does the tailored resume look right, and can I download it?",
+      "stage": "act",
+      "dependencies": [
+        "tailored-resume"
+      ],
+      "evidence": [
+        "PdfPreviewModal.jsx: 'Resume Preview', pdf-frame, LaTeX Source editor pane, Download, Open in New Tab, copy-btn"
+      ],
+      "copy": {
+        "heading": "Tailored resume for Northwind Payments",
+        "body": [
+          "One-page PDF preview beside its LaTeX source",
+          "File: resume_northwind_payments.pdf"
+        ],
+        "callsToAction": [
+          {
+            "label": "Download PDF",
+            "target": "action:download-pdf"
+          },
+          {
+            "label": "Open in new tab",
+            "target": "action:open-pdf-tab"
+          },
+          {
+            "label": "Copy LaTeX",
+            "target": "action:copy-latex"
+          }
+        ]
+      },
+      "layout": "Large modal at min(1200px, 100vw - 48px) by 100vh - 48px. Header: title 16/500, filename in 12px Geist Mono grey, Download PDF (primary), Open in new tab (secondary) and close. Body: two panes split by a 1px rule, the PDF frame (about 60%) on a #f2f4f7 backdrop with a 1px #e6e6e6 page edge, and the LaTeX source pane (about 40%) in 13px Geist Mono with Copy LaTeX. Loading: the frame shows 'Rendering PDF…' centred in grey. Error: 'Couldn't render the PDF. Check the LaTeX source.' in the frame.",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "press",
+        "behavior": "Same overlay open and close.",
+        "durationMs": 180,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Instant."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Full-screen sheet with underline tabs 'Preview' and 'LaTeX' switching the two panes. Download PDF is a sticky full-width 44px footer button.",
+        "medium": "Full-screen minus 24px; panes stack with the preview first at 70vh, then LaTeX.",
+        "expanded": "Side-by-side panes."
+      }
+    },
+    {
+      "id": "login",
+      "layoutFamily": "dashboard",
+      "layoutCases": [
+        "app-screen"
+      ],
+      "purpose": "Let the single user sign in.",
+      "userQuestion": "How do I get into my tracker?",
+      "stage": "orient",
+      "dependencies": [],
+      "evidence": [
+        "Login.jsx: login-screen, login-form, login-error, btn-primary, h1 Job Tracker"
+      ],
+      "copy": {
+        "heading": "Sign in to Job Tracker",
+        "body": [
+          "Username and password for your workspace"
+        ],
+        "callsToAction": [
+          {
+            "label": "Sign in",
+            "target": "action:login"
+          }
+        ]
+      },
+      "layout": "Centred 360px white card on the #f2f4f7 ground, 1px #e6e6e6, radius 8, 32px padding. Mark (32px) above the h1 'Sign in to Job Tracker' at 24/500. Labelled 40px inputs (Username, Password with show/hide), 16px apart, then a full-width near-black Sign in button. Error under the button in 14px #c4242a with role='alert' ('Wrong username or password.'). Busy: 'Signing in…', disabled.",
+      "motion": {
+        "purpose": "feedback",
+        "trigger": "press",
+        "behavior": "Button press and focus feedback only.",
+        "durationMs": 120,
+        "easing": "cubic-bezier(0.2, 0, 0, 1)",
+        "reducedMotion": "Instant."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "product-mark-svg"
+      ],
+      "transformation": {
+        "compact": "Card becomes full width with 16px margins, no border, inputs and button at 44px.",
+        "medium": "360px centred card.",
+        "expanded": "360px centred card."
+      }
+    }
+  ],
+  "responsive": [
+    "Compact (under 641px): 48px top bar replaces the sidebar; content at full width with 16px margins; one region at a time (list, then the pushed job view with 'Back to jobs'); touch targets at least 44px; modals become full-screen sheets with sticky header and footer; the pipeline strip scrolls sideways in its own frame; the page never scrolls horizontally at 360px.",
+    "Medium (641-1100px): 48px top bar and menu sheet; from 641-899px the list is full width with the job pushed; from 900-1100px the list is 340px beside the open job, and the job's details column stacks under its header.",
+    "Expanded (over 1100px): 240px sidebar, 1152px content at 1440 with a 384px list and 756px open job, fluid between 1101 and wider screens with the list fixed and the open job taking the remainder; at 1920 the content stays fluid with 24px pad.",
+    "The first list row starts in the top 60% of a 390x844 phone screen: top bar 48, finding line about 40, pipeline strip 72, toolbar about 76."
+  ],
+  "interactions": [
+    "Pipeline strip tabs set the existing status state ('all', 'to_ask', 'asked', 'applied', 'responded', 'declined'); arrow keys move focus within the tablist; aria-selected follows the state.",
+    "Sidebar Scraped jobs / Added by me set source and the hash route (#/jobs/scraped, #/jobs/manual); loading the app at either hash selects that view; #/resume opens the resume modal.",
+    "Needs a referral switch toggles needsReferral; the list, counts and finding recompute.",
+    "Search filters by company as the user types using the existing searchRaw state; Clear search resets it and returns focus to the input.",
+    "Sort select sets the existing sort state; rows reorder with stable keys and a 180ms position transition.",
+    "Choosing a row sets selectedJobId; choosing the selected row again keeps it open on desktop (no accidental close). On compact, it pushes the job view; Back or Escape returns to the list at its scroll position with focus on the row.",
+    "Stage select in the job header calls the existing onStatusChange; the list row's pill updates at the same time.",
+    "Tailor resume calls the existing tailor action and adds the job id to tailoringIds; the row and the Tailored resume card show the in-flight state; completion opens PdfPreviewModal as today.",
+    "Run ATS check, Copy message, Mark as asked, Generate PDF, Download PDF, Open in new tab and Copy LaTeX call their existing handlers.",
+    "Delete job asks for confirmation naming the company, then calls the existing onDelete; focus moves to the next row.",
+    "Load 3 more days calls the existing load-more with nextBefore; it shows 'Loading…' and is disabled while loadingMore.",
+    "All overlays (job form, resume editor, PDF preview, mobile nav sheet, delete confirm) trap focus, close on Escape and scrim click, and return focus to their trigger.",
+    "Every control has hover (#eeeeee or #f7f7f7 fill; primary #2a2a2a), focus-visible (2px #1d5fbf ring offset 2px), pressed (one step darker) and disabled (40% opacity, no pointer, aria-disabled) states.",
+    "One shared transition pair: 180ms with cubic-bezier(0.2, 0, 0, 1), 120ms for hover feedback, 220ms for the mobile push and 250ms for the ATS bar; all are instant under prefers-reduced-motion.",
+    "Emoji glyphs in current buttons and meta (📄, 👤, ✉, 🔗, ✎, 🗑) are replaced by 14-16px outline SVG icons or plain words."
+  ],
+  "acceptanceCriteria": [
+    "The app still renders live data from the existing backend API; no figures are hard-coded. 'Sample data' in this plan marks illustrative copy only. A quiet 'Sample data' notice appears only in a dev preview harness that uses a fixture, and never in the production build.",
+    "Preview fixture shape for visual checks when the backend is not running (dev-only, not imported by the production bundle): 18 scraped jobs over 3 days (Today 7, Yesterday 6, Mon 3 Nov 5) and 4 manual jobs. Scraped statuses: to_ask 6, asked 4, applied 5, responded 2, declined 1, summing to 18. 7 need a referral, 11 have an ATS score (range 48-86) and 7 show a dash, 1 has a tailor call in flight. Assertions: group counts sum to 18, stage counts sum to the All count, and the finding's to-ask count equals the To ask cell.",
+    "Companies in the fixture are fictional (e.g. Northwind Payments, Kestrel Health, Larkspur Logistics), and contact emails use the .example domain.",
+    "At 1440x900 the sidebar, page header with finding, pipeline strip, list toolbar, at least 8 job rows and the open job's header plus the Match score card's figure are visible without scrolling.",
+    "Geist 400/500/700 and Geist Mono 400 load from local files; document.fonts.check('500 14px Geist') is true after document.fonts.ready, and tabular-nums changes digit widths in the pipeline counts.",
+    "Coloured pixels stay under 1% on the first screen; #1d5fbf appears only on the selected stage, the selected row's left bar, the ATS bar, focus rings and the mark.",
+    "Every text colour meets 4.5:1 on its surface, including #6b6b6b on #f2f4f7, all six status pill pairs and placeholders.",
+    "No shadow on any element at rest; only overlays carry the floating shadow.",
+    "Exactly one near-black primary per view: Add job in the list view, Tailor resume in the open job, Save in forms, Download PDF in the preview, Sign in on login.",
+    "At 360px and 390px nothing scrolls the page horizontally, the sidebar never takes more than 30% of the width, all tap targets are at least 44px, and the first list row begins in the top 60% of the screen.",
+    "Empty, zero, loading and error states render for the list, pipeline strip, open job, Match score, Referral, Tailored resume and PDF preview, each keeping its frame.",
+    "Filtering by stage, toggling Needs a referral, searching, sorting, switching views, opening and closing every overlay, the mobile push and back, and rapid repeated stage clicks are exercised in the browser on desktop and phone widths, and again with reduced motion. The results are recorded.",
+    "Keyboard-only run: every control reachable, visible focus, Escape closes overlays and returns focus to the trigger.",
+    "The PWA icon, maskable icon and manifest theme colours are updated to the new mark and #f2f4f7.",
+    "vite build succeeds with no new warnings. Only frontend files are committed, resume.tex, resume.pdf and resume.log are left unstaged, and the commit is pushed to master."
+  ]
+}

@@ -1,5 +1,7 @@
 # Job Tracker
 
+**Repo:** https://github.com/Aryaman-Swami/Job-Tracker
+
 A personal job-hunting pipeline. It **finds** jobs from several boards, **tracks** them through an application pipeline, **tailors** your LaTeX resume to each job with Claude, **scores** the match (ATS and recruiter-style), and can **assist applying** through a local browser bot.
 
 | Part | Folder | Tech | Runs where |

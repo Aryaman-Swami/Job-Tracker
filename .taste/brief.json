@@ -1,0 +1,43 @@
+{
+  "originalRequest": "fix the ui make it look professional looking , make it responseive for mobile , fix the color theme and push it after verifying everything",
+  "subject": "Job Tracker: a personal job application tracking web app (React/Vite frontend, Spring Boot backend) that lists scraped and manually added jobs, tracks status, handles referrals, and runs ATS scoring and resume tailoring",
+  "pageType": "dashboard",
+  "scope": "Restyle the whole existing frontend (frontend/src/styles.css and components) so it looks professional, works on mobile, and uses a fixed, coherent color theme. Existing features, data flow and API calls stay as they are.",
+  "primaryGoal": "Let the user scan, filter and act on job applications quickly with a clean, trustworthy interface on desktop and mobile",
+  "audience": "The app owner (a software engineer job hunting) using it daily on a laptop and on a phone",
+  "offer": "One workspace for tracking jobs from multiple sources (LinkedIn, Workday, Naukri, Instahyre, manual), with status tracking, referral notes, ATS scoring and Claude resume tailoring",
+  "primaryAction": "Select a job to open its details, then update its status or tailor the resume; secondary actions are Add Job and Sync",
+  "creativeControl": "Delegated: the designer may refine or replace the color palette and spacing, typography scale and component styling for a professional look, keeping it a focused productivity tool rather than a marketing page",
+  "requiredContent": [
+    "Login screen: sign-in form for the single user, centered and readable on mobile",
+    "Header: app title, Sync button with live label, Resume button, Logout, collapsing cleanly on small screens",
+    "Toolbar: source tabs (auto/manual etc.), status filter, search input, sort select, needs-referral toggle, Add Job button; wraps or scrolls horizontally on mobile",
+    "Job list: job cards grouped by day with company, title, location, source, status badge and tailoring-in-progress state, plus Load more pagination and loading/empty states",
+    "Detail panel: selected job's full info, status controls, edit/delete, ATS score card and ATS section, referral section, tailor section; side panel on desktop, full-screen sheet with back control on mobile",
+    "Job form modal: add/edit job fields, usable as full-screen on mobile",
+    "Resume modal and PDF preview modal: resume management and tailored PDF preview with download, sized for mobile viewports"
+  ],
+  "constraints": [
+    "Keep all existing React behavior, state, API calls and component structure; styling-focused changes",
+    "Responsive from 360px phones to wide desktops, touch targets at least 44px on mobile",
+    "Accessible contrast for text and status badges in the chosen theme",
+    "After changes, verify with a production build (vite build) and a visual check, then commit and push to master",
+    "Do not commit unrelated pending changes to resume.tex, resume.pdf, resume.log"
+  ],
+  "brandInputs": [
+    "Existing theme (frontend/src/styles.css :root): dark color-scheme, bg #0e1015, surface #171a22/#1d212b, border #272c38, text #e8eaf1/#a3a8ba/#70768a, accent indigo #6d66f2, status colors success #34d399, warning #fbbf24, danger #f87171, info #60a5fa",
+    "Existing typography: Inter with system sans fallback",
+    "Existing radii 8/12/16px and shadow tokens; no logo found"
+  ],
+  "assumptions": [
+    "'Fix the color theme' means replacing the current palette with a more restrained, consistent token set; dark theme kept as the base unless the new palette clearly reads better",
+    "Treated as a dashboard (operating product UI), so no marketing sections or eight-section minimum",
+    "Useful transitions included for tabs, filters, detail panel open/close, modals and list loading; no decorative scroll animation",
+    "Only 6 media queries exist today, so mobile layout needs a real master-detail pattern rather than tweaks",
+    "Push goes to the existing master branch with only frontend changes staged"
+  ],
+  "unresolved": [
+    "Whether the user wants a light-mode option as well; default is a single polished dark theme"
+  ],
+  "explicitAnswers": []
+}
