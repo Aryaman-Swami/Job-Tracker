@@ -1,38 +1,39 @@
 import { useState } from 'react';
 import { buildReferralTemplate } from '../utils.js';
+import Card from './Card.jsx';
 
-export function ReferralMessageSection({ job }) {
-  const [open, setOpen] = useState(false);
-  const [copyLabel, setCopyLabel] = useState('Copy');
-  const text = buildReferralTemplate(job);
-
+function useCopy(text, idle) {
+  const [label, setLabel] = useState(idle);
   function copy() {
     navigator.clipboard.writeText(text).then(() => {
-      setCopyLabel('Copied!');
-      setTimeout(() => setCopyLabel('Copy'), 2000);
-    });
+      setLabel('Copied');
+      setTimeout(() => setLabel(idle), 2000);
+    }, () => setLabel('Copy failed'));
   }
+  return [label, copy];
+}
+
+export function ReferralMessageSection({ job, onMarkAsked }) {
+  const text = buildReferralTemplate(job);
+  const [copyLabel, copy] = useCopy(text, 'Copy message');
 
   return (
-    <>
-      <button className="btn-referral" onClick={() => setOpen(o => !o)}>&#9993; Generate Referral Message</button>
-      {open && (
-        <div className="referral-box">
-          <div className="referral-header">
-            <span>Referral Message</span>
-            <button className={`copy-btn${copyLabel === 'Copied!' ? ' copied' : ''}`} onClick={copy}>{copyLabel}</button>
-          </div>
-          <pre className="template-text">{text}</pre>
-        </div>
+    <Card
+      title="Referral message"
+      collapsible
+      defaultOpen={!!job.needs_referral}
+      badge={job.needs_referral ? <span className="pill warn">Needed</span> : null}
+      actions={<button type="button" className="btn" onClick={copy} aria-live="polite">{copyLabel}</button>}
+    >
+      <pre className="well-text">{text}</pre>
+      {job.status === 'to_ask' && (
+        <div><button type="button" className="btn" onClick={onMarkAsked}>Mark as asked</button></div>
       )}
-    </>
+    </Card>
   );
 }
 
 export function LinkedinHelperSection({ job }) {
-  const [open, setOpen] = useState(false);
-  const [copyLabel, setCopyLabel] = useState('Copy Note');
-
   const company = job.company || '';
   const role = job.role || '';
   const firstName = job.contact_name ? job.contact_name.split(' ')[0] : null;
@@ -42,31 +43,23 @@ export function LinkedinHelperSection({ job }) {
     : `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(query)}&origin=GLOBAL_SEARCH_HEADER`;
   const greeting = firstName ? `Hi ${firstName}` : 'Hi';
   const note = `${greeting}, I'm applying for a ${role} role at ${company} and would love a referral if you think I'd be a good fit. Happy to share my resume!`;
-
-  function copy() {
-    navigator.clipboard.writeText(note).then(() => {
-      setCopyLabel('Copied!');
-      setTimeout(() => setCopyLabel('Copy Note'), 2000);
-    });
-  }
+  const [copyLabel, copy] = useCopy(note, 'Copy note');
 
   return (
-    <>
-      <button className="btn-referral" onClick={() => setOpen(o => !o)}>&#128100; LinkedIn Helper</button>
-      {open && (
-        <div className="referral-box">
-          <div className="referral-header">
-            <span>LinkedIn Helper</span>
-            <div style={{ display: 'flex', gap: 6 }}>
-              <a className="copy-btn" target="_blank" rel="noopener noreferrer" href={url}>
-                {job.linkedin_profile_url ? 'Open Profile' : 'Search LinkedIn'}
-              </a>
-              <button className={`copy-btn${copyLabel === 'Copied!' ? ' copied' : ''}`} onClick={copy}>{copyLabel}</button>
-            </div>
-          </div>
-          <pre className="template-text">{note}</pre>
-        </div>
-      )}
-    </>
+    <Card
+      title="LinkedIn note"
+      collapsible
+      defaultOpen={false}
+      actions={
+        <>
+          <a className="btn ghost" target="_blank" rel="noopener noreferrer" href={url}>
+            {job.linkedin_profile_url ? 'Open profile' : 'Find people'}
+          </a>
+          <button type="button" className="btn" onClick={copy} aria-live="polite">{copyLabel}</button>
+        </>
+      }
+    >
+      <pre className="well-text">{note}</pre>
+    </Card>
   );
 }

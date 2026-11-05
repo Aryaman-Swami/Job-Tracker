@@ -1,0 +1,120 @@
+/* tasteskill v2.5 app.css (MIT License, Copyright (c) 2026 Leonxlnx): https://github.com/Leonxlnx/taste-skill. Keep this line in every copy. */
+/* tasteskill / app.css
+   A neutral foundation for app screens (dashboards, admin, settings, inboxes), set to the defaults
+   measured in the study of real product screens (references/app-screens.md). Copy it into the project,
+   replace the token values with the ones on the app sheet (draw.mjs --app), and build on top.
+   Delete what you do not use. It has no brand of its own: neutral grounds, one quiet line, one accent. */
+
+/* ---------- tokens: Achromatic ledger, with the blue-grey ledger ground as this product's face ---------- */
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("/fonts/GeistMono-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+:root {
+  color-scheme: light;
+  --ground: #f2f4f7;          /* the face: a blue-grey ledger ground in place of the sheet's #f8f8f8 */
+  --surface: #ffffff;
+  --raised: #eeeeee;          /* hover fill on controls */
+  --active: #eeeeee;          /* the active nav pill and the selected job row */
+  --well: #f7f7f7;            /* hover on rows and tabs, message wells */
+  --border: #e6e6e6;
+  --rule: #f0f0f0;
+  --control: #d4d4d4;
+  --text: #0a0a0a;
+  --muted: #6b6b6b;           /* 5.3:1 on white, 4.8:1 on the ground */
+  --faint: #6b6b6b;           /* placeholders hold 4.5:1 too */
+  --accent: #1d5fbf;          /* the one data hue (brand chart-3): selected stage, match bar, selected row bar, focus */
+  --primary: #141414;         /* brand "accent": the near-black primary */
+  --primary-hover: #2a2a2a;
+  --primary-ink: #ffffff;
+  --positive: #2e7d32; --negative: #c4242a; --warning: #92400e;
+  --pill-positive-bg: #dcfae5; --pill-positive-ink: #04250e;
+  --pill-negative-bg: #ffedea; --pill-negative-ink: #831c1e;
+  --pill-warning-bg: #fffbeb; --pill-warning-ink: #92400e; --pill-warning-line: #fde68a;
+  --pill-neutral-bg: #eeeeee; --pill-neutral-ink: #3d3d3d;
+  --pill-applied-bg: #e8effa; --pill-applied-ink: #123a75;
+  --chart-1: #141414; --chart-2: #8a8a8a; --chart-3: #1d5fbf;
+  --scrim: rgba(10, 10, 10, 0.32);
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.08);  /* only on what floats */
+  --ink: var(--text);
+
+  --font: "Geist", system-ui, sans-serif;
+  --mono: "Geist Mono", monospace;  /* IDs, keys, filenames and LaTeX only */
+  --fs-title: 24px; --fs-section: 16px; --fs-kpi: 30px; --fs-body: 14px; --fs-meta: 13px; --fs-small: 12px;
+
+  --sidebar-width: 240px;
+  --list-width: 384px;
+  --detail-side: 306px;
+  --pad: 24px;                /* canvas padding */
+  --gap: 12px;                /* one gutter, horizontal and vertical */
+  --card-pad: 20px;
+  --radius-card: 8px;
+  --radius-control: 6px;
+  --control-height: 36px;     /* visible control; every hit box is 44px */
+  --hit: 44px;
+  --row-height: 68px;         /* two-line job row */
+  --nav-row: 32px;            /* visible nav pill, on a 34px pitch */
+
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M4.5 2.5 8 6l-3.5 3.5' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --select-chevron:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5l3-3' fill='none' stroke='%236b6b6b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  /* one shared motion pair for every view */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --t-press: 120ms; --t-hover: 120ms; --t-ui: 180ms; --t-push: 220ms; --t-bar: 250ms;
+}
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--ground); color: var(--text); font: var(--fs-body)/20px var(--font); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, figure, ul, ol, dl, dd { margin: 0; }
+ul[class], ol[class] { padding: 0; list-style: none; }
+img, svg, video, canvas { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.num, table, .kpi-value { font-variant-numeric: tabular-nums; }
+
+/* ---------- title block ---------- */
+.title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.title-row h1 { font-size: var(--fs-title); line-height: 1.2; font-weight: 600; letter-spacing: -0.01em; }
+.title-row .sub { margin-top: 4px; color: var(--muted); }
+
+/* ---------- panels ---------- */
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: var(--card-pad); min-width: 0; }
+.panel > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.panel h2 { font-size: var(--fs-section); line-height: 1.3; font-weight: 600; }
+.panel .meta { color: var(--faint); font-size: var(--fs-small); }
+
+/* list rows: a rule between rows and none above the first. A rule on a rounded box curls up at both ends, so a row
+   that carries a rule has square corners */
+.rows { display: grid; }
+.row { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 0; }
+.row + .row { border-top: 1px solid var(--rule); border-radius: 0; }
+
+/* status pill: a pale tint with dark ink of the same hue, one per row */
+.pill { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 999px; font-size: var(--fs-small); font-weight: 500; background: var(--pill-neutral-bg); color: var(--pill-neutral-ink); white-space: nowrap; }
+.pill.pos { background: var(--pill-positive-bg); color: var(--pill-positive-ink); }
+.pill.neg { background: var(--pill-negative-bg); color: var(--pill-negative-ink); }
+.pill.warn { background: var(--pill-warning-bg); color: var(--pill-warning-ink); }
+
+/* ---------- controls ---------- */
+.field { display: grid; gap: 8px; }
+.field label { font-weight: 500; }
+.field .hint { color: var(--muted); font-size: var(--fs-small); }
+.input, select.input { height: 38px; padding: 0 12px; border: 1px solid var(--control); border-radius: var(--radius-control); background: var(--surface); }
+.input::placeholder { color: var(--faint); }
+.tabs { display: flex; gap: 24px; border-bottom: 1px solid var(--border); margin-bottom: var(--gap); }
+.tabs a { position: relative; padding: 10px 0; color: var(--muted); transition: color var(--t-hover) ease; }
+.tabs a[aria-selected="true"] { color: var(--text); }
+.tabs a[aria-selected="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--text); }
+.switch { appearance: none; width: 32px; height: 20px; border-radius: 999px; background: var(--control); position: relative; cursor: pointer; transition: background-color var(--t-ui) ease; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform var(--t-ui) var(--ease-out); }
+.switch:checked { background: var(--text); } .switch:checked::after { transform: translateX(12px); }
+
+/* empty and loading states keep the frame; a loading value is a flat grey bar at its real size, with no shimmer */
+.empty { display: grid; place-items: center; min-height: 96px; padding: 16px; border: 1px dashed var(--control); border-radius: var(--radius-control); color: var(--muted); text-align: center; }
+.skeleton { background: var(--raised); border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; } }
+
+/* an empty message spans the block it stands in, never one squeezed column */
+.rows .empty, .grid > .empty, li > .empty { grid-column: 1 / -1; width: 100%; }

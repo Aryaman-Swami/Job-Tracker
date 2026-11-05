@@ -2,7 +2,7 @@
 // an installable PWA. Network-first for the app shell (JS/CSS/HTML) with a
 // cache fallback for offline resilience; /api/* is never intercepted, so
 // job data and auth always come straight from the backend, never stale.
-const CACHE = 'job-tracker-shell-v1';
+const CACHE = 'job-tracker-shell-v2';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();

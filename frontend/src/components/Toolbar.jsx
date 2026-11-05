@@ -1,42 +1,31 @@
-import { SOURCE } from '../utils.js';
+import { useRef } from 'react';
 
-const STATUS_FILTERS = [
-  ['all', 'All'], ['to_ask', 'To Ask'], ['asked', 'Asked'], ['applied', 'Applied'],
-  ['responded', 'Responded'], ['declined', 'Declined'],
-];
-
-export default function Toolbar({
-  source, onSourceChange,
-  search, onSearchChange,
-  sort, onSortChange,
-  status, onStatusChange,
-  needsReferral, onToggleNeedsReferral,
-}) {
+// The job list's own toolbar: search by company, sort, and how many rows are shown.
+export default function Toolbar({ search, onSearchChange, sort, onSortChange, count, loading }) {
+  const inputRef = useRef(null);
+  const term = search.trim();
   return (
-    <>
-      <nav className="source-tabs">
-        <button className={`tab-btn${source === SOURCE.AUTO ? ' active' : ''}`} onClick={() => onSourceChange(SOURCE.AUTO)}>Auto-fetched</button>
-        <button className={`tab-btn${source === SOURCE.MANUAL ? ' active' : ''}`} onClick={() => onSourceChange(SOURCE.MANUAL)}>Manually Added</button>
-      </nav>
-
-      <div className="search-bar">
-        <input type="search" placeholder="Search by company…" autoComplete="off" value={search}
-          onChange={e => onSearchChange(e.target.value)} />
-        <select value={sort} onChange={e => onSortChange(e.target.value)}>
-          <option value="added_desc">Sort: Newest Added</option>
-          <option value="posted_desc">Sort: Recently Posted</option>
-          <option value="posted_asc">Sort: Oldest Posted</option>
+    <div className="list-tools">
+      <div className="list-tools-row">
+        <div className="search-wrap">
+          <label htmlFor="job-search" className="sr-only">Search by company</label>
+          <input id="job-search" ref={inputRef} className="control" type="search" placeholder="Search by company"
+            autoComplete="off" value={search} onChange={e => onSearchChange(e.target.value)} />
+          {search && (
+            <button type="button" className="btn ghost icon-btn clear" aria-label="Clear search"
+              onClick={() => { onSearchChange(''); inputRef.current?.focus(); }}>&times;</button>
+          )}
+        </div>
+        <label htmlFor="job-sort" className="sr-only">Sort jobs</label>
+        <select id="job-sort" className="control sort" value={sort} onChange={e => onSortChange(e.target.value)}>
+          <option value="added_desc">Newest added</option>
+          <option value="posted_desc">Recently posted</option>
+          <option value="posted_asc">Oldest posted</option>
         </select>
       </div>
-
-      <nav className="filters">
-        {STATUS_FILTERS.map(([val, label]) => (
-          <button key={val} className={`filter-btn${status === val ? ' active' : ''}`} onClick={() => onStatusChange(val)}>{label}</button>
-        ))}
-        <button className={`filter-btn filter-referral-toggle${needsReferral ? ' active' : ''}`} onClick={onToggleNeedsReferral}>
-          &#128100; Needs Referral
-        </button>
-      </nav>
-    </>
+      <div className="count-line" aria-live="polite">
+        {loading ? 'Loading jobs…' : term ? `${count} match "${term}"` : `${count} shown`}
+      </div>
+    </div>
   );
 }

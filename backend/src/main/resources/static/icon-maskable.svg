@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#4f46e5"/>
-  <text x="256" y="300" font-family="Arial, Helvetica, sans-serif" font-size="160" font-weight="800"
-        text-anchor="middle" fill="#ffffff">JT</text>
+  <rect width="512" height="512" fill="#f2f4f7"/>
+  <g transform="translate(136 136) scale(12)" fill="none" stroke="#1d5fbf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 6.2 L8 9 L14.5 2.8"/>
+    <path d="M3 13 H17"/>
+    <path d="M3 17 H12"/>
+  </g>
 </svg>

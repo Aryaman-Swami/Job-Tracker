@@ -1,56 +1,58 @@
 import { useState } from 'react';
 import AtsScoreCard from './AtsScoreCard.jsx';
+import Card from './Card.jsx';
 
-export default function AtsSection({ atsResult, loading, onRun, onApplyGaps }) {
-  const [open, setOpen] = useState(false);
+export default function AtsSection({ atsResult, prevScore, loading, error, onRun, onApplyGaps, tailoring }) {
   const [extra, setExtra] = useState('');
-
-  async function toggle() {
-    if (open) { setOpen(false); return; }
-    setOpen(true);
-    if (!atsResult) await onRun();
-  }
-
-  async function rerun() {
-    await onRun();
-  }
+  const missing = atsResult?.missing_keywords || [];
+  const suggestions = atsResult?.suggestions || [];
+  const nothingToApply = !missing.length && !suggestions.length && !extra.trim();
 
   function applyGaps() {
-    if (!atsResult) { alert('Run an ATS score for this job first.'); return; }
-    const missing = atsResult.missing_keywords || [];
-    const suggestions = atsResult.suggestions || [];
-    if (!missing.length && !suggestions.length && !extra.trim()) {
-      alert('Nothing to apply — the last scan had no missing keywords or suggestions, and no additional instructions were entered.');
-      return;
-    }
+    if (!atsResult || nothingToApply) return;
     onApplyGaps({ missing_keywords: missing, suggestions, extra_instructions: extra.trim() || undefined });
   }
 
   return (
-    <>
-      <button className="btn-referral" onClick={toggle} disabled={loading}>
-        {loading ? '⏳ Analyzing…' : '📊 ATS Score'}
-      </button>
-      {open && (
-        <div className="referral-box">
-          <div className="referral-header">
-            <span>ATS Match Score</span>
-            <div style={{ display: 'flex', gap: 6 }}>
-              <button className="copy-btn" onClick={applyGaps}>Apply Gaps to Tailoring</button>
-              <button className="copy-btn" onClick={rerun}>Re-run</button>
-            </div>
-          </div>
-          <div className="ats-content">
-            {atsResult ? <AtsScoreCard {...atsResult} /> : <div style={{ color: 'var(--text-3)', fontSize: '0.82rem' }}>No score yet — click Re-run to analyze.</div>}
-          </div>
-          <div className="ats-extra-prompt-wrap" style={{ padding: '0 16px 16px' }}>
-            <label className="resume-section-label">Additional instructions (optional, used when applying gaps)</label>
-            <textarea className="ats-extra-prompt" rows={2}
-              placeholder="e.g. emphasize leadership, keep it formal, don't touch the Skills section..."
-              value={extra} onChange={e => setExtra(e.target.value)} />
-          </div>
-        </div>
+    <Card
+      title="Match score"
+      actions={
+        <button type="button" className="btn" onClick={onRun} disabled={loading} aria-busy={loading}>
+          {loading && <span className="spinner" aria-hidden="true" />}
+          {loading ? 'Checking…' : atsResult ? 'Re-run' : 'Run ATS check'}
+        </button>
+      }
+    >
+      {error && (
+        <p className="error-line" role="alert">
+          ATS check failed: {error}
+          <button type="button" className="link-btn" onClick={onRun}>Try again</button>
+        </p>
       )}
-    </>
+      {atsResult
+        ? <AtsScoreCard {...atsResult} prevScore={prevScore} />
+        : loading
+          ? <div><span className="skeleton score-skeleton" style={{ display: 'block' }} /><div className="bullet" /></div>
+          : <p className="muted">No match score yet. Run an ATS check to compare your resume with this posting.</p>}
+
+      {atsResult && (
+        <details className="disclosure">
+          <summary>Use the gaps when tailoring</summary>
+          <div className="disclosure-body">
+            <label className="field-label">
+              <span>Extra instructions <span className="hint">(optional)</span></span>
+              <textarea className="control" rows={2} placeholder="e.g. keep it formal, leave the Skills section alone"
+                value={extra} onChange={e => setExtra(e.target.value)} />
+            </label>
+            <div>
+              <button type="button" className="btn" onClick={applyGaps} disabled={nothingToApply || tailoring}>
+                Tailor with these gaps
+              </button>
+            </div>
+            {nothingToApply && <p className="muted">The last check found no missing keywords or suggestions.</p>}
+          </div>
+        </details>
+      )}
+    </Card>
   );
 }
