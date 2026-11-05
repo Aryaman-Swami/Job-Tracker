@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import Mark from './Mark.jsx';
 import { useIndicator } from '../hooks.js';
+import { useTheme } from '../theme.js';
 
 const VIEWS = [
   { id: 'scraped', label: 'Scraped jobs', href: '#/jobs/scraped' },
@@ -17,6 +18,7 @@ function syncText(state) {
 // The labelled sidebar on desktop; the same content fills the phone's menu sheet.
 export default function Sidebar({ view, toAsk, onNavigate, onResume, needsReferral, onToggleNeedsReferral, syncState, lastSynced, onSync, onLogout, sheet = false }) {
   const navRef = useRef(null);
+  const [theme, toggleTheme] = useTheme();
   const pill = useIndicator(navRef, '[aria-current="page"]', view);
 
   return (
@@ -53,6 +55,11 @@ export default function Sidebar({ view, toAsk, onNavigate, onResume, needsReferr
       </label>
 
       <div className="sidebar-foot">
+        <label className="switch-row">
+          <span>Dark theme</span>
+          <input type="checkbox" role="switch" className="switch" checked={theme === 'dark'}
+            aria-checked={theme === 'dark'} onChange={toggleTheme} />
+        </label>
         <button type="button" className="nav-item" onClick={onSync} disabled={syncState === 'busy'} aria-busy={syncState === 'busy'}>
           <span>{syncText(syncState)}</span>
           {syncState === 'busy' && <span className="spinner" aria-hidden="true" />}
