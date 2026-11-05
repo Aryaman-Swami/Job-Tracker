@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  4 NOV 2026 20:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  5 NOV 2026 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -415,13 +415,13 @@ LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
 LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 137.
 LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 142.
+(Font)              scaled to size 9.0pt on input line 141.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 201.
+(Font)              <7> on input line 200.
 LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 204.
+(Font)              scaled to size 10.0pt on input line 203.
 LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 204.
+(Font)              scaled to size 9.0pt on input line 203.
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
@@ -442,7 +442,7 @@ Package rerunfilecheck Info: File `resume.out' has not changed.
 Here is how much of TeX's memory you used:
  12413 strings out of 467871
  205308 string characters out of 5419828
- 690454 words of memory out of 5000000
+ 689454 words of memory out of 5000000
  41159 multiletter control sequences out of 15000+600000
  830973 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -452,7 +452,7 @@ d.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/typoland/lato/Lato
 -Italic.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/typoland/lat
 o/Lato-Regular.pfb><C:/Users/hp/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy9.pfb>
-Output written on resume.pdf (1 page, 111710 bytes).
+Output written on resume.pdf (1 page, 111572 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)
