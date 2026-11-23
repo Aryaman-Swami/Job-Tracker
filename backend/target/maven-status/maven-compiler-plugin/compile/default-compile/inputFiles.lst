@@ -9,6 +9,7 @@ C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\HealthController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\JobController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\PdfController.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\PdfTextCheckController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\ResumeController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\SyncController.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\controller\TailorController.java
@@ -17,6 +18,7 @@ C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\JobTracker
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\rubric\HackerRankRubric.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\ClaudeCliService.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\LatexPdfService.java
+C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\PdfTextCheckService.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\service\SyncService.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\util\JobRowMapper.java
 C:\Users\hp\Projects\Job Tracker\backend\src\main\java\com\jobtracker\util\JsonColumns.java

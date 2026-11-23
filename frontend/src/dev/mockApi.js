@@ -80,6 +80,14 @@ export function installFixture(api) {
       const score = Math.min((job?.ats_score ?? 60) + 6, 100);
       return { ok: true, score, breakdown: { keywords: score - 6, skills: Math.min(score + 6, 100), experience: score - 2, title_alignment: Math.min(score + 3, 100) }, matched_keywords: ['Java', 'Spring Boot', 'PostgreSQL', 'REST APIs', 'Docker'], missing_keywords: ['Kafka'], suggestions: ['Name Kafka only if you have used it.'] };
     },
+    async checkPdfText() {
+      await wait(900);
+      return { ok: true, passed: true, pages: 1, checks: [
+        { name: 'Text layer present', ok: true, detail: '3572 characters extracted' },
+        { name: 'Email readable', ok: true, detail: 'Found as plain text' },
+        { name: 'Reading order', ok: true, detail: 'Sections read in order: summary > skills > experience' },
+      ], keywords_in_pdf: ['Java', 'Spring Boot'], keywords_lost_in_pdf: [] };
+    },
     async generatePdf(latex, filename) { await wait(600); return new Response(samplePdf(filename), { status: 200, headers: { 'Content-Type': 'application/pdf' } }); },
     async sync() { await wait(1200); return { ok: true }; },
   });

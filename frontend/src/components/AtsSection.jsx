@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import AtsScoreCard from './AtsScoreCard.jsx';
 import Card from './Card.jsx';
+import PdfParseCheck from './PdfParseCheck.jsx';
 
-export default function AtsSection({ atsResult, prevScore, loading, error, onRun, onApplyGaps, tailoring }) {
+export default function AtsSection({ jobId, atsResult, prevScore, loading, error, onRun, onApplyGaps, tailoring }) {
   const [extra, setExtra] = useState('');
   const missing = atsResult?.missing_keywords || [];
   const suggestions = atsResult?.suggestions || [];
@@ -34,6 +35,8 @@ export default function AtsSection({ atsResult, prevScore, loading, error, onRun
         : loading
           ? <div><span className="skeleton score-skeleton" style={{ display: 'block' }} /><div className="bullet" /></div>
           : <p className="muted">No match score yet. Run an ATS check to compare your resume with this posting.</p>}
+
+      <PdfParseCheck key={jobId} jobId={jobId} />
 
       {atsResult && (
         <details className="disclosure">

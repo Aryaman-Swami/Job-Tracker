@@ -302,6 +302,5 @@ if __name__ == "__main__":
                 total_added += a
                 all_added_jobs.extend(jobs)
     notify_new_jobs(all_added_jobs, source_label="Workday")
-    notify_run_summary(f"{total_added} new jobs added", "Workday")
     logger.info(f"=== Done. Total new jobs added: {total_added} ===")
     print(f"[{datetime.now():%Y-%m-%d %H:%M}] Workday search done. {total_added} new jobs added.")

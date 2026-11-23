@@ -369,3 +369,1078 @@
 2026-10-25 15:17:05,845 INFO ADDED Nasdaq | Software Developer | Mumbai, Maharashtra, India |  | https://nasdaq.wd1.myworkdayjobs.com/global_external_site/job/India-Mumbai/Software-Developer_R0027120
 2026-10-25 15:17:09,735 INFO ADDED Nasdaq | Software Developer-4 | Mumbai, Maharashtra, India |  | https://nasdaq.wd1.myworkdayjobs.com/global_external_site/job/India---Mumbai---Maharashtra/Software-Developer-4_R0027104
 2026-10-25 15:17:58,397 INFO === Done. raw=594 added=53 dupes=0 filtered=541 ===
+2026-11-15 21:40:13,466 INFO === hiring.cafe search run started ===
+2026-11-15 21:40:15,727 INFO [software engineer p0] hits=94 new=94
+2026-11-15 21:40:25,344 INFO [software engineer p1] hits=102 new=102
+2026-11-15 21:40:35,246 INFO [backend developer p0] hits=53 new=46
+2026-11-15 21:40:41,575 INFO [backend developer p1] hits=55 new=55
+2026-11-15 21:40:51,730 INFO [java developer p0] hits=95 new=41
+2026-11-15 21:40:58,179 INFO [java developer p1] hits=101 new=93
+2026-11-15 21:41:06,389 INFO [node.js developer p0] hits=60 new=40
+2026-11-15 21:41:13,832 INFO [node.js developer p1] hits=63 new=56
+2026-11-15 21:41:22,241 INFO [spring boot p0] hits=69 new=28
+2026-11-15 21:41:30,435 INFO [spring boot p1] hits=56 new=41
+2026-11-15 21:41:30,436 INFO raw=596 candidates_after_cheap_filters=80
+2026-11-15 21:41:36,974 INFO ADDED H&M Group | Software Engineer | Bangalore, Karnataka, India |  | https://jobs.smartrecruiters.com/HMGroup/744000161672089-software-engineer
+2026-11-15 21:41:39,373 INFO ADDED H&M Group | Software Engineer- Kafka/Azure & Fluent Commerce | Bangalore, Karnataka, India |  | https://jobs.smartrecruiters.com/HMGroup/744000161332950-software-engineer-kafka-azure-fluent-commerce
+2026-11-15 21:41:41,753 INFO ADDED Caterpillar Inc. | Software Engineer- Automation Testing | Chennai or Bangalore |  | https://cat.wd5.myworkdayjobs.com/caterpillarcareers.keep/job/Chennai-Tamil-Nadu/Software-Engineer_R0000362478
+2026-11-15 21:41:45,569 INFO ADDED Disney Entertainment and ESPN Product & Technology | Product Software Engineer II | Bengaluru, Karnataka, India |  | https://www.disneycareers.com/en/job/bengaluru/product-software-engineer-ii/391/103243200256
+2026-11-15 21:41:48,534 INFO ADDED Airbus | Software Engineer | Bangalore, Karnataka, India |  | https://ag.wd3.myworkdayjobs.com/airbus/job/Bangalore-Area/Software-Engineer_JR10455480
+2026-11-15 21:41:52,294 INFO ADDED Airbus | Software Engineer | Bangalore, Karnataka, India |  | https://ag.wd3.myworkdayjobs.com/airbus/job/Bangalore-Area/Software-Engineer_JR10454552
+2026-11-15 21:41:55,682 INFO ADDED Infor | Software Engineer(3-5Yrs) | Hyderabad, Telangana, India |  | https://careers.infor.com/en/postings/60804395-944f-45bf-a301-ccfdf8065218
+2026-11-15 21:42:05,831 INFO ADDED Amazon | Software Development Engineer, IN Amazon Business | Bengaluru, Karnataka, India |  | https://www.amazon.jobs/en/jobs/10603992/software-development-engineer-in-amazon-business
+2026-11-15 21:42:10,059 INFO ADDED HappyFox | Software Development Engineer in Test (SDET) | Bengaluru, Karnataka, India |  | https://hiring.happyfox.co/jobs/software-development-engineer-in-test-sdet-bengaluru/
+2026-11-15 21:42:14,354 INFO ADDED GE HealthCare | Software Engineer (Test) | Bengaluru, Karnataka, India |  | https://careers.gehealthcare.com/global/en/job/R4049221/Software-Engineer-Test
+2026-11-15 21:42:17,123 INFO ADDED Enterprise Bot | Full Stack Engineer | Bengaluru, Karnataka, India |  | https://join.com/companies/enterprisebot/16927361-full-stack-engineer?pid=0a9968ed210507e82356
+2026-11-15 21:42:21,224 INFO ADDED SurveyMonkey | Software Engineer II - Full Stack | Bengaluru, Karnataka, India |  | https://jobs.ashbyhq.com/surveymonkey/ef79b729-ceb3-4725-ab3c-1314c55c1cb2
+2026-11-15 21:42:24,668 INFO ADDED GE HealthCare | Software Engineer | Bengaluru, Karnataka, India |  | https://gehc.wd5.myworkdayjobs.com/gehc_externalsite/job/IND19-01-Bengaluru-EPIP-122-Phase-II/Software-Engineer_R4049163-1
+2026-11-15 21:42:27,522 INFO ADDED GE HealthCare | Software Engineer (Test) | Bengaluru, Karnataka, India |  | https://gehc.wd5.myworkdayjobs.com/gehc_externalsite/job/IND19-01-Bengaluru-EPIP-122-Phase-II/Software-Engineer--Test-_R4049221-1
+2026-11-15 21:42:31,017 INFO ADDED Protegrity | Software Engineer, Big Data (829) | Navi Mumbai, Maharashtra, India |  | https://jobs.ashbyhq.com/protegrity/132ede34-6b5d-422d-a45b-df400294aacb
+2026-11-15 21:42:37,900 INFO ADDED Barclays | Software Engineer | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/software-engineer/13015/103245532672
+2026-11-15 21:42:40,939 INFO ADDED Barclays | Software Engineer | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/software-engineer/13015/103245532720
+2026-11-15 21:42:48,836 INFO ADDED BNP Paribas | Java Back End Developer | Bengaluru, Karnataka, India |  | https://group.bnpparibas/en/careers/job-offer/java-back-end-developer
+2026-11-15 21:42:51,808 INFO ADDED Altium | Software Development Engineer -Backend(Node Js) | Bangalore, Karnataka, India |  | https://jobs.smartrecruiters.com/RenesasElectronics/744000161454149-software-development-engineer-backend-node-js-
+2026-11-15 21:42:54,426 INFO ADDED PhonePe | Software Engineer, Backend  (1-2 years) | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000006099-software-engineer-backend-1-2-years-
+2026-11-15 21:42:58,678 INFO ADDED PhonePe Limited | Software Engineer, Backend (3-5 years) | Pune, Maharashtra, India |  | https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000005941-software-engineer-backend-3-5-years-
+2026-11-15 21:43:02,010 INFO ADDED PhonePe Limited | Software Engineer , Backend  (5-7 years) | Pune, Maharashtra, India |  | https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000005612-software-engineer-backend-5-7-years-
+2026-11-15 21:43:05,171 INFO ADDED Happiest Minds | SOFTWARE ENGINEER - Slot Game Development | Noida, Uttar Pradesh, India |  | https://jobs.happiestminds.com/happiestminds/jobview/software-engineer-slot-game-development-noida-2026111213552058?id=1209800
+2026-11-15 21:43:09,643 INFO ADDED Happiest Minds | SOFTWARE ENGINEER - Slot Game Development | Noida, Uttar Pradesh, India |  | https://jobs.happiestminds.com/happiestminds/jobview/software-engineer-slot-game-development-noida-2026111213543693?id=1209794
+2026-11-15 21:43:13,523 INFO ADDED Astra Security | Backend Engineer | Bengaluru, Karnataka, India |  | https://getastraus.zohorecruit.in/jobs/careers/91259000012282001/Backend-Engineer
+2026-11-15 21:43:20,061 INFO ADDED H&M | Software Engineer- Kafka/Azure & Fluent Commerce | Bangalore, Karnataka, India |  | https://career.hm.com/job/2da6fe45-0125-4239-8871-e6e6777eb1c8/
+2026-11-15 21:43:25,428 INFO ADDED Cognite | Software Engineer | Bengaluru, Karnataka, India |  | https://job-boards.eu.greenhouse.io/cognite/jobs/5034410101
+2026-11-15 21:43:37,277 INFO ADDED NetApp | Backend Software Engineer (Golang, Kubernetes) | Bengaluru, Karnataka, India |  | https://careers.netapp.com/job/bengaluru/backend-software-engineer-golang-kubernetes/27600/103151213440
+2026-11-15 21:43:40,690 INFO ADDED PUMA | Software Engineer I (Backend) | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-i-backend-r44425
+2026-11-15 21:43:44,971 INFO ADDED PUMA | Software Engineer II (Backend) | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-ii-backend-r44426
+2026-11-15 21:43:47,547 INFO ADDED PUMA | Software Engineer I (Full Stack) | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-i-full-stack-r44422
+2026-11-15 21:43:51,687 INFO ADDED AbhiBus | Software Engineer - I / II(Java) | Hyderabad, Telangana, India |  | https://jobs.smartrecruiters.com/AbhiBus/744000161056750-software-engineer-i-ii-java-
+2026-11-15 21:43:56,010 INFO ADDED N-able | Software Engineer (Java) | Bangalore, Karnataka, India |  | https://careers.n-able.com/jobs/21090?lang=en-us
+2026-11-15 21:43:59,190 INFO ADDED IBM | Cloud Backend Developer | Bangalore, Karnataka, India |  | https://careers.ibm.com/en_US/careers/JobDetail/Cloud-Backend-Developer/140953
+2026-11-15 21:44:03,093 INFO ADDED EXL Service | Fullstack Engineer | Pune, Maharashtra, India |  | https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/requisitions/job/22342
+2026-11-15 21:44:06,201 INFO ADDED The Walt Disney Company (Corporate) | Software Engineer II | Bengaluru, Karnataka, India |  | https://www.disneycareers.com/en/job/bengaluru/software-engineer-ii/391/103196886944
+2026-11-15 21:44:10,140 INFO ADDED FIS Global | Java Developer with Angular , Spring Hibernate | Pune, Maharashtra, India |  | https://fisglobal.phenompro.com/us/en/job/JR0309419/Java-Developer-with-Angular-Spring-Hibernate
+2026-11-15 21:44:14,319 INFO ADDED Turvo | Software Engineer | Hyderabad, Telangana, India |  | https://jobs.lever.co/turvo/d0717ecd-1b7c-4233-be83-c2c700646a07
+2026-11-15 21:44:16,860 INFO ADDED PhonePe | Software Engineer, Backend  (3-5 years) Lending | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000005421-software-engineer-backend-3-5-years-lending-
+2026-11-15 21:44:19,269 INFO ADDED Disney (India) Private Limited | Product Software Engineer II | Bangalore, Karnataka, India | INR 1645000-2585000/yr | https://disney.phenompro.com/global/en/job/10164621/Product-Software-Engineer-II
+2026-11-15 21:44:21,731 INFO ADDED Disney (India) Private Limited | Software Engineer II | Bangalore, Karnataka, India | INR 1505000-2365000/yr | https://disney.phenompro.com/global/en/job/10163777/Software-Engineer-II
+2026-11-15 21:44:25,342 INFO ADDED Microsoft | Software Engineer 2 | Hyderabad, Telangana, India |  | https://microsoft.eightfold.ai/careers/job/1970393557054138
+2026-11-15 21:44:28,990 INFO ADDED Microsoft | Software Engineer II | Bengaluru or Hyderabad or Noida |  | https://microsoft.eightfold.ai/careers/job/1970393557044902
+2026-11-15 21:44:31,812 INFO ADDED Tecsys Inc. | Software Developer in test (Elite WMS) | Bengaluru, Karnataka, India |  | https://jobs.workable.com/view/4gqDARSnFYCHuJU15ZW5Rt/hybrid-software-developer-in-test-(elite-wms)-in-bengaluru-at-tecsys-inc.
+2026-11-15 21:44:35,664 INFO ADDED Cisco | Software Engineer (Java, React, Wireless) | Bangalore, Karnataka, India | INR 2858600-4235600/yr | https://cisco.phenompro.com/global/en/job/2029080/Software-Engineer-Java-React-Wireless
+2026-11-15 21:44:39,557 INFO ADDED Cisco | Software Engineer | Bangalore, Karnataka, India |  | https://careers.cisco.com/global/en/job/2030320/Software-Engineer
+2026-11-15 21:44:42,246 INFO ADDED Nationwide | Consultant, Software Engineer - Java Full Stack, Angular, AWS | Hyderabad, Telangana, India |  | https://nationwide.wd1.myworkdayjobs.com/nationwide_career_india/job/Telangana---Hyderabad-Building-No-14-Mindspace-Madhapur-HITEC-City/Consultant--Software-Engineer---Java-Full-Stack--Angular--AWS_101202-1
+2026-11-15 21:44:45,642 INFO ADDED Nationwide | Specialist, Software Engineer - India (Java Full Stack, Angular, CI/CD, AWS) | Hyderabad, Telangana, India |  | https://nationwide.wd1.myworkdayjobs.com/nationwide_career_india/job/Telangana---Hyderabad-Building-No-14-Mindspace-Madhapur-HITEC-City/Specialist--Software-Engineer---India--Java-Full-Stack--Angular--CI-CD--AWS-_101001
+2026-11-15 21:44:49,141 INFO ADDED Nationwide | Specialist Software Engineer Guidewire | Hyderabad, Telangana, India |  | https://nationwide.wd1.myworkdayjobs.com/nationwide_career_india/job/Telangana---Hyderabad-Building-No-14-Mindspace-Madhapur-HITEC-City/Specialist-Software-Engineer-Guidewire_101086
+2026-11-15 21:44:56,279 INFO ADDED Barclays | Software Engineer | Pune, Maharashtra, India |  | https://barclays.wd3.myworkdayjobs.com/external_career_site_barclays/job/Pune-Gera-Commerzone-SEZ/Software-Engineer_JR-0000121951-1
+2026-11-15 21:44:59,110 INFO ADDED Barclays | Software Engineer | Pune, Maharashtra, India |  | https://barclays.wd3.myworkdayjobs.com/external_career_site_barclays/job/Pune-Gera-Commerzone-SEZ/Software-Engineer_JR-0000121952-1
+2026-11-15 21:45:01,790 INFO ADDED Barclays | Mobile BA4 Software Engineer | Bengaluru, Karnataka, India |  | https://barclays.wd3.myworkdayjobs.com/external_career_site_barclays/job/Bengaluru-Maruthi-Onyx---TESCO-TSA/Mobile-BA4-Software-Engineer_JR-0000133226-1
+2026-11-15 21:45:05,114 INFO ADDED Siemens EDA (India) Private Limited | Full-Stack Developer | Noida, Uttar Pradesh, India |  | https://jobs.siemens.com/en_US/externaljobs/JobDetail/529153
+2026-11-15 21:45:08,107 INFO ADDED Siemens EDA (India) Private Limited | Full-Stack Developer | Noida, Uttar Pradesh, India |  | https://jobs.siemens.com/en_US/externaljobs/JobDetail/529152
+2026-11-15 21:45:12,691 INFO ADDED Happiest Minds | SOFTWARE ENGINEER - Slot Game Development | Noida, Uttar Pradesh, India |  | https://jobs.happiestminds.com/happiestminds/jobview/software-engineer-slot-game-development-noida-2026111312444998?id=1210330
+2026-11-15 21:45:15,385 INFO ADDED Thomson Reuters | Software Engineer | Bengaluru, Karnataka, India |  | https://thomsonreuters.wd5.myworkdayjobs.com/external_career_site/job/India-Bengaluru-Karnataka/Software-Engineer_JREQ204994-1
+2026-11-15 21:45:19,242 INFO ADDED Global Payments | Software Engineer | Pune, Maharashtra, India |  | https://jobs.globalpayments.com/jobs/R0076257-0
+2026-11-15 21:45:21,677 INFO ADDED Newfold Digital | Software Engineer | Mumbai, Maharashtra, India |  | https://web.wd1.myworkdayjobs.com/externalcareersite/job/Mumbai-India/Software-Engineer_R15387
+2026-11-15 21:45:25,659 INFO ADDED Motorola Solutions | Software Engineer I | Bangalore, Karnataka, India |  | https://motorolasolutions.wd5.myworkdayjobs.com/careers/job/Bangalore-India/Software-Engineer-I_R69349
+2026-11-15 21:45:28,130 INFO ADDED C3 India Delivery Centre LLP | Junior Software Engineer 1 | Hyderabad, Telangana, India |  | https://crowe.phenompro.com/job/R-52653/Junior-Software-Engineer-1
+2026-11-15 21:45:32,094 INFO ADDED Roche | IT Software Engineer - RDT Pharma Medicines | Hyderabad, Telangana, India |  | https://roche.phenompro.com/global/en/job/202611-128963/IT-Software-Engineer-RDT-Pharma-Medicines
+2026-11-15 21:45:35,006 INFO ADDED Entrata | Software Engineer ( PHP, Node.js & React ) | Pune, Maharashtra, India |  | https://jobs.lever.co/entrata/56e76067-109c-4f3b-87c2-4374a96eb51f
+2026-11-15 21:45:37,898 INFO ADDED Hitachi Vantara | Full Stack Software Engineer – Product Security Platforms | Pune or Hyderabad |  | https://www.hitachivantara.com/en-us/company/careers/job-details/R0150473
+2026-11-15 21:45:41,888 INFO ADDED TestGrid | Experienced PHP Full Stack Developer | Surat, Gujarat, India |  | https://testgrid.io/career/experienced-php-full-stack-developer
+2026-11-15 21:45:44,945 INFO ADDED Training Basket | Full Stack Developer | Delhi, India |  | https://trainingbasket.zohorecruit.com/jobs/careers/460790000044515440/Full-Stack-Developer
+2026-11-15 21:45:48,919 INFO ADDED Training Basket | Backend Developer | Noida, Uttar Pradesh, India |  | https://trainingbasket.zohorecruit.com/jobs/careers/460790000044289293/Backend-Developer
+2026-11-15 21:45:53,188 INFO ADDED Payinstacard | Software Development Engineer – (SDE-2) | Hyderabad, Telangana, India | INR 600000-900000/yr | https://payinstacard.zohorecruit.in/jobs/Careers/209954000000809013/Software-Development-Engineer-SDE-2
+2026-11-15 21:46:00,223 INFO ADDED PUMA | Software Engineer II - Core Commerce Platform | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-ii-core-commerce-platform-r44418
+2026-11-15 21:47:05,032 INFO === Done. raw=596 added=68 dupes=0 filtered=528 ===
+2026-11-15 21:59:39,318 INFO === hiring.cafe search run started ===
+2026-11-15 21:59:41,752 INFO [software engineer p0] hits=94 new=94
+2026-11-15 21:59:48,688 INFO [software engineer p1] hits=102 new=102
+2026-11-15 21:59:56,802 INFO [backend developer p0] hits=53 new=46
+2026-11-15 22:00:07,405 INFO [backend developer p1] hits=55 new=55
+2026-11-15 22:00:17,202 INFO [java developer p0] hits=95 new=41
+2026-11-15 22:00:23,901 INFO [java developer p1] hits=101 new=93
+2026-11-15 22:00:29,985 INFO [node.js developer p0] hits=60 new=40
+2026-11-15 22:00:38,973 INFO [node.js developer p1] hits=63 new=56
+2026-11-15 22:00:45,221 INFO [spring boot p0] hits=69 new=28
+2026-11-15 22:00:53,083 INFO [spring boot p1] hits=57 new=42
+2026-11-15 22:00:53,084 INFO raw=597 candidates_after_cheap_filters=81
+2026-11-15 22:00:59,176 INFO ADDED H&M Group | Software Engineer | Bangalore, Karnataka, India |  | https://jobs.smartrecruiters.com/HMGroup/744000161672089-software-engineer
+2026-11-15 22:01:03,004 INFO ADDED H&M Group | Software Engineer- Kafka/Azure & Fluent Commerce | Bangalore, Karnataka, India |  | https://jobs.smartrecruiters.com/HMGroup/744000161332950-software-engineer-kafka-azure-fluent-commerce
+2026-11-15 22:01:06,269 INFO ADDED Caterpillar Inc. | Software Engineer- Automation Testing | Chennai or Bangalore |  | https://cat.wd5.myworkdayjobs.com/caterpillarcareers.keep/job/Chennai-Tamil-Nadu/Software-Engineer_R0000362478
+2026-11-15 22:01:08,980 INFO ADDED Disney Entertainment and ESPN Product & Technology | Product Software Engineer II | Bengaluru, Karnataka, India |  | https://www.disneycareers.com/en/job/bengaluru/product-software-engineer-ii/391/103243200256
+2026-11-15 22:01:12,684 INFO ADDED Airbus | Software Engineer | Bangalore, Karnataka, India |  | https://ag.wd3.myworkdayjobs.com/airbus/job/Bangalore-Area/Software-Engineer_JR10455480
+2026-11-15 22:01:15,914 INFO ADDED Airbus | Software Engineer | Bangalore, Karnataka, India |  | https://ag.wd3.myworkdayjobs.com/airbus/job/Bangalore-Area/Software-Engineer_JR10454552
+2026-11-15 22:01:19,557 INFO ADDED Infor | Software Engineer(3-5Yrs) | Hyderabad, Telangana, India |  | https://careers.infor.com/en/postings/60804395-944f-45bf-a301-ccfdf8065218
+2026-11-15 22:01:29,751 INFO ADDED Amazon | Software Development Engineer, IN Amazon Business | Bengaluru, Karnataka, India |  | https://www.amazon.jobs/en/jobs/10603992/software-development-engineer-in-amazon-business
+2026-11-15 22:01:33,583 INFO ADDED HappyFox | Software Development Engineer in Test (SDET) | Bengaluru, Karnataka, India |  | https://hiring.happyfox.co/jobs/software-development-engineer-in-test-sdet-bengaluru/
+2026-11-15 22:01:37,244 INFO ADDED GE HealthCare | Software Engineer (Test) | Bengaluru, Karnataka, India |  | https://careers.gehealthcare.com/global/en/job/R4049221/Software-Engineer-Test
+2026-11-15 22:01:39,846 INFO ADDED Enterprise Bot | Full Stack Engineer | Bengaluru, Karnataka, India |  | https://join.com/companies/enterprisebot/16927361-full-stack-engineer?pid=0a9968ed210507e82356
+2026-11-15 22:01:43,333 INFO ADDED SurveyMonkey | Software Engineer II - Full Stack | Bengaluru, Karnataka, India |  | https://jobs.ashbyhq.com/surveymonkey/ef79b729-ceb3-4725-ab3c-1314c55c1cb2
+2026-11-15 22:01:45,771 INFO ADDED GE HealthCare | Software Engineer | Bengaluru, Karnataka, India |  | https://gehc.wd5.myworkdayjobs.com/gehc_externalsite/job/IND19-01-Bengaluru-EPIP-122-Phase-II/Software-Engineer_R4049163-1
+2026-11-15 22:01:48,735 INFO ADDED GE HealthCare | Software Engineer (Test) | Bengaluru, Karnataka, India |  | https://gehc.wd5.myworkdayjobs.com/gehc_externalsite/job/IND19-01-Bengaluru-EPIP-122-Phase-II/Software-Engineer--Test-_R4049221-1
+2026-11-15 22:01:51,870 INFO ADDED Protegrity | Software Engineer, Big Data (829) | Navi Mumbai, Maharashtra, India |  | https://jobs.ashbyhq.com/protegrity/132ede34-6b5d-422d-a45b-df400294aacb
+2026-11-15 22:01:57,969 INFO ADDED Barclays | Software Engineer | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/software-engineer/13015/103245532672
+2026-11-15 22:02:00,967 INFO ADDED Barclays | Software Engineer | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/software-engineer/13015/103245532720
+2026-11-15 22:02:07,373 INFO ADDED BNP Paribas | Java Back End Developer | Bengaluru, Karnataka, India |  | https://group.bnpparibas/en/careers/job-offer/java-back-end-developer
+2026-11-15 22:02:10,505 INFO ADDED Altium | Software Development Engineer -Backend(Node Js) | Bangalore, Karnataka, India |  | https://jobs.smartrecruiters.com/RenesasElectronics/744000161454149-software-development-engineer-backend-node-js-
+2026-11-15 22:02:13,771 INFO ADDED PhonePe | Software Engineer, Backend  (1-2 years) | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000006099-software-engineer-backend-1-2-years-
+2026-11-15 22:02:17,263 INFO ADDED PhonePe Limited | Software Engineer, Backend (3-5 years) | Pune, Maharashtra, India |  | https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000005941-software-engineer-backend-3-5-years-
+2026-11-15 22:02:21,303 INFO ADDED PhonePe Limited | Software Engineer , Backend  (5-7 years) | Pune, Maharashtra, India |  | https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000005612-software-engineer-backend-5-7-years-
+2026-11-15 22:02:24,466 INFO ADDED Happiest Minds | SOFTWARE ENGINEER - Slot Game Development | Noida, Uttar Pradesh, India |  | https://jobs.happiestminds.com/happiestminds/jobview/software-engineer-slot-game-development-noida-2026111213552058?id=1209800
+2026-11-15 22:02:27,965 INFO ADDED Happiest Minds | SOFTWARE ENGINEER - Slot Game Development | Noida, Uttar Pradesh, India |  | https://jobs.happiestminds.com/happiestminds/jobview/software-engineer-slot-game-development-noida-2026111213543693?id=1209794
+2026-11-15 22:02:30,618 INFO ADDED Astra Security | Backend Engineer | Bengaluru, Karnataka, India |  | https://getastraus.zohorecruit.in/jobs/careers/91259000012282001/Backend-Engineer
+2026-11-15 22:02:38,484 INFO ADDED H&M | Software Engineer- Kafka/Azure & Fluent Commerce | Bangalore, Karnataka, India |  | https://career.hm.com/job/2da6fe45-0125-4239-8871-e6e6777eb1c8/
+2026-11-15 22:02:45,573 INFO ADDED Cognite | Software Engineer | Bengaluru, Karnataka, India |  | https://job-boards.eu.greenhouse.io/cognite/jobs/5034410101
+2026-11-15 22:02:59,938 INFO ADDED NetApp | Backend Software Engineer (Golang, Kubernetes) | Bengaluru, Karnataka, India |  | https://careers.netapp.com/job/bengaluru/backend-software-engineer-golang-kubernetes/27600/103151213440
+2026-11-15 22:03:02,744 INFO ADDED PUMA | Software Engineer I (Backend) | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-i-backend-r44425
+2026-11-15 22:03:05,657 INFO ADDED PUMA | Software Engineer II (Backend) | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-ii-backend-r44426
+2026-11-15 22:03:08,776 INFO ADDED PUMA | Software Engineer I (Full Stack) | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-i-full-stack-r44422
+2026-11-15 22:03:11,081 INFO ADDED AbhiBus | Software Engineer - I / II(Java) | Hyderabad, Telangana, India |  | https://jobs.smartrecruiters.com/AbhiBus/744000161056750-software-engineer-i-ii-java-
+2026-11-15 22:03:14,338 INFO ADDED N-able | Software Engineer (Java) | Bangalore, Karnataka, India |  | https://careers.n-able.com/jobs/21090?lang=en-us
+2026-11-15 22:03:16,806 INFO ADDED IBM | Cloud Backend Developer | Bangalore, Karnataka, India |  | https://careers.ibm.com/en_US/careers/JobDetail/Cloud-Backend-Developer/140953
+2026-11-15 22:03:20,922 INFO ADDED EXL Service | Fullstack Engineer | Pune, Maharashtra, India |  | https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/requisitions/job/22342
+2026-11-15 22:03:23,417 INFO ADDED The Walt Disney Company (Corporate) | Software Engineer II | Bengaluru, Karnataka, India |  | https://www.disneycareers.com/en/job/bengaluru/software-engineer-ii/391/103196886944
+2026-11-15 22:03:26,453 INFO ADDED FIS Global | Java Developer with Angular , Spring Hibernate | Pune, Maharashtra, India |  | https://fisglobal.phenompro.com/us/en/job/JR0309419/Java-Developer-with-Angular-Spring-Hibernate
+2026-11-15 22:03:29,165 INFO ADDED Turvo | Software Engineer | Hyderabad, Telangana, India |  | https://jobs.lever.co/turvo/d0717ecd-1b7c-4233-be83-c2c700646a07
+2026-11-15 22:03:33,758 INFO ADDED PhonePe | Software Engineer, Backend  (3-5 years) Lending | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000005421-software-engineer-backend-3-5-years-lending-
+2026-11-15 22:03:37,168 INFO ADDED Disney (India) Private Limited | Product Software Engineer II | Bangalore, Karnataka, India | INR 1645000-2585000/yr | https://disney.phenompro.com/global/en/job/10164621/Product-Software-Engineer-II
+2026-11-15 22:03:41,025 INFO ADDED Disney (India) Private Limited | Software Engineer II | Bangalore, Karnataka, India | INR 1505000-2365000/yr | https://disney.phenompro.com/global/en/job/10163777/Software-Engineer-II
+2026-11-15 22:03:44,085 INFO ADDED Microsoft | Software Engineer 2 | Hyderabad, Telangana, India |  | https://microsoft.eightfold.ai/careers/job/1970393557054138
+2026-11-15 22:03:46,675 INFO ADDED Microsoft | Software Engineer II | Bengaluru or Hyderabad or Noida |  | https://microsoft.eightfold.ai/careers/job/1970393557044902
+2026-11-15 22:03:50,626 INFO ADDED Tecsys Inc. | Software Developer in test (Elite WMS) | Bengaluru, Karnataka, India |  | https://jobs.workable.com/view/4gqDARSnFYCHuJU15ZW5Rt/hybrid-software-developer-in-test-(elite-wms)-in-bengaluru-at-tecsys-inc.
+2026-11-15 22:03:54,343 INFO ADDED Cisco | Software Engineer (Java, React, Wireless) | Bangalore, Karnataka, India | INR 2858600-4235600/yr | https://cisco.phenompro.com/global/en/job/2029080/Software-Engineer-Java-React-Wireless
+2026-11-15 22:03:57,027 INFO ADDED Cisco | Software Engineer | Bangalore, Karnataka, India |  | https://careers.cisco.com/global/en/job/2030320/Software-Engineer
+2026-11-15 22:03:59,978 INFO ADDED Nationwide | Consultant, Software Engineer - Java Full Stack, Angular, AWS | Hyderabad, Telangana, India |  | https://nationwide.wd1.myworkdayjobs.com/nationwide_career_india/job/Telangana---Hyderabad-Building-No-14-Mindspace-Madhapur-HITEC-City/Consultant--Software-Engineer---Java-Full-Stack--Angular--AWS_101202-1
+2026-11-15 22:04:02,796 INFO ADDED Nationwide | Specialist, Software Engineer - India (Java Full Stack, Angular, CI/CD, AWS) | Hyderabad, Telangana, India |  | https://nationwide.wd1.myworkdayjobs.com/nationwide_career_india/job/Telangana---Hyderabad-Building-No-14-Mindspace-Madhapur-HITEC-City/Specialist--Software-Engineer---India--Java-Full-Stack--Angular--CI-CD--AWS-_101001
+2026-11-15 22:04:06,180 INFO ADDED Nationwide | Specialist Software Engineer Guidewire | Hyderabad, Telangana, India |  | https://nationwide.wd1.myworkdayjobs.com/nationwide_career_india/job/Telangana---Hyderabad-Building-No-14-Mindspace-Madhapur-HITEC-City/Specialist-Software-Engineer-Guidewire_101086
+2026-11-15 22:04:13,438 INFO ADDED Barclays | Software Engineer | Pune, Maharashtra, India |  | https://barclays.wd3.myworkdayjobs.com/external_career_site_barclays/job/Pune-Gera-Commerzone-SEZ/Software-Engineer_JR-0000121951-1
+2026-11-15 22:04:17,783 INFO ADDED Barclays | Software Engineer | Pune, Maharashtra, India |  | https://barclays.wd3.myworkdayjobs.com/external_career_site_barclays/job/Pune-Gera-Commerzone-SEZ/Software-Engineer_JR-0000121952-1
+2026-11-15 22:04:20,105 INFO ADDED Barclays | Mobile BA4 Software Engineer | Bengaluru, Karnataka, India |  | https://barclays.wd3.myworkdayjobs.com/external_career_site_barclays/job/Bengaluru-Maruthi-Onyx---TESCO-TSA/Mobile-BA4-Software-Engineer_JR-0000133226-1
+2026-11-15 22:04:24,310 INFO ADDED Siemens EDA (India) Private Limited | Full-Stack Developer | Noida, Uttar Pradesh, India |  | https://jobs.siemens.com/en_US/externaljobs/JobDetail/529153
+2026-11-15 22:04:27,510 INFO ADDED Siemens EDA (India) Private Limited | Full-Stack Developer | Noida, Uttar Pradesh, India |  | https://jobs.siemens.com/en_US/externaljobs/JobDetail/529152
+2026-11-15 22:04:31,112 INFO ADDED Happiest Minds | SOFTWARE ENGINEER - Slot Game Development | Noida, Uttar Pradesh, India |  | https://jobs.happiestminds.com/happiestminds/jobview/software-engineer-slot-game-development-noida-2026111312444998?id=1210330
+2026-11-15 22:04:35,116 INFO ADDED Thomson Reuters | Software Engineer | Bengaluru, Karnataka, India |  | https://thomsonreuters.wd5.myworkdayjobs.com/external_career_site/job/India-Bengaluru-Karnataka/Software-Engineer_JREQ204994-1
+2026-11-15 22:04:38,779 INFO ADDED Global Payments | Software Engineer | Pune, Maharashtra, India |  | https://jobs.globalpayments.com/jobs/R0076257-0
+2026-11-15 22:04:43,040 INFO ADDED Newfold Digital | Software Engineer | Mumbai, Maharashtra, India |  | https://web.wd1.myworkdayjobs.com/externalcareersite/job/Mumbai-India/Software-Engineer_R15387
+2026-11-15 22:04:46,533 INFO ADDED Motorola Solutions | Software Engineer I | Bangalore, Karnataka, India |  | https://motorolasolutions.wd5.myworkdayjobs.com/careers/job/Bangalore-India/Software-Engineer-I_R69349
+2026-11-15 22:04:49,705 INFO ADDED C3 India Delivery Centre LLP | Junior Software Engineer 1 | Hyderabad, Telangana, India |  | https://crowe.phenompro.com/job/R-52653/Junior-Software-Engineer-1
+2026-11-15 22:04:52,613 INFO ADDED Roche | IT Software Engineer - RDT Pharma Medicines | Hyderabad, Telangana, India |  | https://roche.phenompro.com/global/en/job/202611-128963/IT-Software-Engineer-RDT-Pharma-Medicines
+2026-11-15 22:04:55,351 INFO ADDED Entrata | Software Engineer ( PHP, Node.js & React ) | Pune, Maharashtra, India |  | https://jobs.lever.co/entrata/56e76067-109c-4f3b-87c2-4374a96eb51f
+2026-11-15 22:04:58,387 INFO ADDED Hitachi Vantara | Full Stack Software Engineer – Product Security Platforms | Pune or Hyderabad |  | https://www.hitachivantara.com/en-us/company/careers/job-details/R0150473
+2026-11-15 22:05:01,131 INFO ADDED TestGrid | Experienced PHP Full Stack Developer | Surat, Gujarat, India |  | https://testgrid.io/career/experienced-php-full-stack-developer
+2026-11-15 22:05:05,370 INFO ADDED Training Basket | Full Stack Developer | Delhi, India |  | https://trainingbasket.zohorecruit.com/jobs/careers/460790000044515440/Full-Stack-Developer
+2026-11-15 22:05:09,729 INFO ADDED Training Basket | Backend Developer | Noida, Uttar Pradesh, India |  | https://trainingbasket.zohorecruit.com/jobs/careers/460790000044289293/Backend-Developer
+2026-11-15 22:05:13,922 INFO ADDED Payinstacard | Software Development Engineer – (SDE-2) | Hyderabad, Telangana, India | INR 600000-900000/yr | https://payinstacard.zohorecruit.in/jobs/Careers/209954000000809013/Software-Development-Engineer-SDE-2
+2026-11-15 22:05:19,182 INFO ADDED PUMA | Software Engineer II - Core Commerce Platform | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-ii-core-commerce-platform-r44418
+2026-11-15 22:05:22,247 INFO ADDED Puma | Software Engineer II (Full stack) | Pune, Maharashtra, India |  | https://puma.wd502.myworkdayjobs.com/jobs_at_puma/job/Local-Office-Pune-Global-Function/Software-Engineer-II--Full-stack-_R44423
+2026-11-15 22:06:28,406 INFO === Done. raw=597 added=69 dupes=0 filtered=528 ===
+2026-11-15 22:40:08,114 INFO === hiring.cafe search run started ===
+2026-11-15 22:40:10,464 INFO [software engineer p0] hits=93 new=93
+2026-11-15 22:40:17,870 INFO [software engineer p1] hits=105 new=105
+2026-11-15 22:40:26,364 INFO [backend developer p0] hits=53 new=46
+2026-11-15 22:40:34,210 INFO [backend developer p1] hits=55 new=55
+2026-11-15 22:40:43,143 INFO [java developer p0] hits=95 new=41
+2026-11-15 22:40:52,864 INFO [java developer p1] hits=101 new=93
+2026-11-15 22:41:00,710 INFO [node.js developer p0] hits=60 new=41
+2026-11-15 22:41:09,070 INFO [node.js developer p1] hits=63 new=56
+2026-11-15 22:41:16,944 INFO [spring boot p0] hits=69 new=26
+2026-11-15 22:41:26,592 INFO [spring boot p1] hits=57 new=42
+2026-11-15 22:41:26,595 INFO raw=598 candidates_after_cheap_filters=81
+2026-11-15 22:46:05,998 INFO === Done. raw=598 added=0 dupes=69 filtered=529 ===
+2026-11-15 23:40:07,520 INFO === hiring.cafe search run started ===
+2026-11-15 23:40:10,144 INFO [software engineer p0] hits=93 new=93
+2026-11-15 23:40:16,386 INFO [software engineer p1] hits=105 new=105
+2026-11-15 23:40:25,496 INFO [backend developer p0] hits=55 new=48
+2026-11-15 23:40:33,430 INFO [backend developer p1] hits=55 new=55
+2026-11-15 23:40:40,250 INFO [java developer p0] hits=95 new=43
+2026-11-15 23:40:47,431 INFO [java developer p1] hits=101 new=93
+2026-11-15 23:40:54,893 INFO [node.js developer p0] hits=60 new=42
+2026-11-15 23:41:02,109 INFO [node.js developer p1] hits=63 new=56
+2026-11-15 23:41:10,456 INFO [spring boot p0] hits=69 new=24
+2026-11-15 23:41:16,547 INFO [spring boot p1] hits=57 new=42
+2026-11-15 23:41:16,548 INFO raw=601 candidates_after_cheap_filters=83
+2026-11-15 23:45:56,740 INFO === Done. raw=601 added=0 dupes=69 filtered=532 ===
+2026-11-16 00:40:07,548 INFO === hiring.cafe search run started ===
+2026-11-16 00:40:10,010 INFO [software engineer p0] hits=100 new=100
+2026-11-16 00:40:17,137 INFO [software engineer p1] hits=97 new=97
+2026-11-16 00:40:26,944 INFO [backend developer p0] hits=56 new=49
+2026-11-16 00:40:33,520 INFO [backend developer p1] hits=55 new=55
+2026-11-16 00:40:41,788 INFO [java developer p0] hits=93 new=42
+2026-11-16 00:40:49,759 INFO [java developer p1] hits=104 new=94
+2026-11-16 00:40:56,795 INFO [node.js developer p0] hits=60 new=42
+2026-11-16 00:41:04,896 INFO [node.js developer p1] hits=63 new=54
+2026-11-16 00:41:13,383 INFO [spring boot p0] hits=69 new=27
+2026-11-16 00:41:22,734 INFO [spring boot p1] hits=57 new=42
+2026-11-16 00:41:22,736 INFO raw=602 candidates_after_cheap_filters=83
+2026-11-16 00:44:46,314 ERROR BLOCKED, aborting run (no retries): job-description -> HTTP 403
+2026-11-16 00:44:47,222 INFO === Done. raw=602 added=0 dupes=48 filtered=531 ===
+2026-11-16 00:48:11,788 INFO === hiring.cafe search run started ===
+2026-11-16 00:48:15,114 INFO [software engineer p0] hits=100 new=100
+2026-11-16 00:48:21,958 INFO [software engineer p1] hits=97 new=97
+2026-11-16 00:48:29,431 INFO [backend developer p0] hits=55 new=48
+2026-11-16 00:48:39,065 INFO [backend developer p1] hits=55 new=55
+2026-11-16 00:48:47,088 INFO [java developer p0] hits=93 new=42
+2026-11-16 00:48:54,541 INFO [java developer p1] hits=104 new=94
+2026-11-16 00:49:01,950 ERROR BLOCKED, aborting run (no retries): search 'node.js developer' p0 -> HTTP 403 (Cloudflare block)
+2026-11-16 00:49:03,581 INFO === Done. raw=436 added=0 dupes=0 filtered=371 ===
+2026-11-16 01:40:05,897 INFO === hiring.cafe search run started ===
+2026-11-16 01:40:08,395 INFO [software engineer p0] hits=103 new=103
+2026-11-16 01:40:17,181 INFO [software engineer p1] hits=97 new=97
+2026-11-16 01:40:26,653 INFO [backend developer p0] hits=56 new=48
+2026-11-16 01:40:33,926 INFO [backend developer p1] hits=54 new=54
+2026-11-16 01:40:41,018 INFO [java developer p0] hits=98 new=48
+2026-11-16 01:40:47,590 INFO [java developer p1] hits=104 new=93
+2026-11-16 01:40:55,063 INFO [node.js developer p0] hits=60 new=40
+2026-11-16 01:41:01,934 INFO [node.js developer p1] hits=63 new=55
+2026-11-16 01:41:08,594 INFO [spring boot p0] hits=69 new=25
+2026-11-16 01:41:17,460 INFO [spring boot p1] hits=56 new=41
+2026-11-16 01:41:17,461 INFO raw=604 candidates_after_cheap_filters=81
+2026-11-16 01:41:17,480 INFO already_handled=67 to_fetch=14
+2026-11-16 01:41:27,447 INFO ADDED Cisco | Software Engineer | Bangalore, Karnataka, India |  | https://cisco.wd5.myworkdayjobs.com/cisco_careers/job/Bangalore-India/Software-Engineer_2030320
+2026-11-16 01:42:00,804 INFO === Done. raw=604 added=1 dupes=0 filtered=536 ===
+2026-11-16 02:40:07,774 INFO === hiring.cafe search run started ===
+2026-11-16 02:40:09,885 INFO [software engineer p0] hits=100 new=100
+2026-11-16 02:40:16,352 INFO [software engineer p1] hits=97 new=97
+2026-11-16 02:40:25,346 INFO [backend developer p0] hits=56 new=48
+2026-11-16 02:40:34,438 INFO [backend developer p1] hits=54 new=54
+2026-11-16 02:40:43,159 INFO [java developer p0] hits=98 new=48
+2026-11-16 02:40:51,330 INFO [java developer p1] hits=104 new=93
+2026-11-16 02:40:59,041 INFO [node.js developer p0] hits=59 new=39
+2026-11-16 02:41:08,849 INFO [node.js developer p1] hits=63 new=55
+2026-11-16 02:41:16,491 INFO [spring boot p0] hits=69 new=28
+2026-11-16 02:41:25,170 INFO [spring boot p1] hits=56 new=41
+2026-11-16 02:41:25,172 INFO raw=603 candidates_after_cheap_filters=82
+2026-11-16 02:41:25,193 INFO already_handled=81 to_fetch=1
+2026-11-16 02:41:27,616 INFO === Done. raw=603 added=0 dupes=0 filtered=522 ===
+2026-11-16 03:40:05,981 INFO === hiring.cafe search run started ===
+2026-11-16 03:40:08,081 INFO [software engineer p0] hits=100 new=100
+2026-11-16 03:40:16,525 INFO [software engineer p1] hits=97 new=97
+2026-11-16 03:40:23,029 INFO [backend developer p0] hits=56 new=48
+2026-11-16 03:40:30,717 INFO [backend developer p1] hits=54 new=54
+2026-11-16 03:40:39,564 INFO [java developer p0] hits=98 new=48
+2026-11-16 03:40:49,015 INFO [java developer p1] hits=102 new=91
+2026-11-16 03:40:57,886 INFO [node.js developer p0] hits=59 new=39
+2026-11-16 03:41:03,065 INFO [node.js developer p1] hits=63 new=55
+2026-11-16 03:41:11,947 INFO [spring boot p0] hits=69 new=25
+2026-11-16 03:41:19,173 INFO [spring boot p1] hits=57 new=42
+2026-11-16 03:41:19,174 INFO raw=599 candidates_after_cheap_filters=83
+2026-11-16 03:41:19,191 INFO already_handled=82 to_fetch=1
+2026-11-16 03:41:21,963 INFO === Done. raw=599 added=0 dupes=0 filtered=517 ===
+2026-11-16 10:40:06,015 INFO === hiring.cafe search run started ===
+2026-11-16 10:40:07,834 INFO [software engineer p0] hits=107 new=107
+2026-11-16 10:40:16,150 INFO [software engineer p1] hits=89 new=89
+2026-11-16 10:40:24,947 INFO [backend developer p0] hits=64 new=54
+2026-11-16 10:40:33,071 INFO [backend developer p1] hits=55 new=55
+2026-11-16 10:40:40,645 INFO [java developer p0] hits=91 new=32
+2026-11-16 10:40:47,018 INFO [java developer p1] hits=77 new=65
+2026-11-16 10:40:53,243 INFO [node.js developer p0] hits=52 new=27
+2026-11-16 10:41:02,776 INFO [node.js developer p1] hits=52 new=42
+2026-11-16 10:41:10,520 INFO [spring boot p0] hits=66 new=21
+2026-11-16 10:41:18,870 INFO [spring boot p1] hits=48 new=33
+2026-11-16 10:41:18,871 INFO raw=525 candidates_after_cheap_filters=80
+2026-11-16 10:41:18,892 INFO already_handled=70 to_fetch=10
+2026-11-16 10:41:26,524 INFO ADDED Societe Generale | Specialist Software Engineer - Java Full Stack Angular - Bangalore, India | Bangalore, Karnataka, India |  | https://careers.societegenerale.com/en/job-offers/specialist-software-engineer-java-full-stack-angular-26000MKZ-en
+2026-11-16 10:41:29,804 INFO ADDED Roche | Custom Software Developer, IT Software Engineer, Workflow Automation - Engineering Excellence & Experience | Hyderabad, Telangana, India |  | https://roche.phenompro.com/global/en/job/202611-129036/Custom-Software-Developer-IT-Software-Engineer-Workflow-Automation-Engineering-Excellence-Experience
+2026-11-16 10:41:43,909 INFO ADDED PUMA | Software Engineer II (Full stack) | Pune, Maharashtra, India |  | https://about.puma.com/en/jobs/software-engineer-ii-full-stack-r44423
+2026-11-16 10:41:47,569 INFO ADDED CAMP Systems International | Full Stack Developer | India |  | https://campsystems.zohorecruit.in/jobs/Careers/180795000003154099/Full-Stack-Developer
+2026-11-16 10:41:54,248 INFO ADDED Societe Generale | Specialist Software Engineer - Java Full Stack Angular | Bangalore, Karnataka, India |  | https://careers.societegenerale.com/en/job-offers/specialist-software-engineer-java-full-stack-angular-26000MKY-en
+2026-11-16 10:41:58,743 INFO === Done. raw=525 added=5 dupes=1 filtered=449 ===
+2026-11-16 11:40:05,403 INFO === hiring.cafe search run started ===
+2026-11-16 11:40:07,698 INFO [software engineer p0] hits=109 new=109
+2026-11-16 11:40:16,606 INFO [software engineer p1] hits=80 new=80
+2026-11-16 11:40:24,309 INFO [backend developer p0] hits=63 new=53
+2026-11-16 11:40:32,245 INFO [backend developer p1] hits=55 new=55
+2026-11-16 11:40:39,441 INFO [java developer p0] hits=84 new=34
+2026-11-16 11:40:48,455 INFO [java developer p1] hits=75 new=60
+2026-11-16 11:40:54,951 INFO [node.js developer p0] hits=49 new=26
+2026-11-16 11:41:02,628 INFO [node.js developer p1] hits=52 new=44
+2026-11-16 11:41:11,014 INFO [spring boot p0] hits=67 new=21
+2026-11-16 11:41:20,262 INFO [spring boot p1] hits=49 new=34
+2026-11-16 11:41:20,264 INFO raw=516 candidates_after_cheap_filters=69
+2026-11-16 11:41:20,282 INFO already_handled=67 to_fetch=2
+2026-11-16 11:41:26,926 INFO === Done. raw=516 added=0 dupes=0 filtered=449 ===
+2026-11-16 12:40:06,104 INFO === hiring.cafe search run started ===
+2026-11-16 12:40:08,197 INFO [software engineer p0] hits=102 new=102
+2026-11-16 12:40:14,077 INFO [software engineer p1] hits=82 new=82
+2026-11-16 12:40:20,870 INFO [backend developer p0] hits=64 new=56
+2026-11-16 12:40:28,361 INFO [backend developer p1] hits=54 new=54
+2026-11-16 12:40:35,438 INFO [java developer p0] hits=80 new=27
+2026-11-16 12:40:42,281 INFO [java developer p1] hits=80 new=66
+2026-11-16 12:40:50,860 INFO [node.js developer p0] hits=50 new=28
+2026-11-16 12:41:00,654 INFO [node.js developer p1] hits=53 new=44
+2026-11-16 12:41:07,155 INFO [spring boot p0] hits=67 new=23
+2026-11-16 12:41:15,481 INFO [spring boot p1] hits=49 new=34
+2026-11-16 12:41:15,483 INFO raw=516 candidates_after_cheap_filters=73
+2026-11-16 12:41:15,499 INFO already_handled=69 to_fetch=4
+2026-11-16 12:41:31,597 INFO ADDED Roche | IT Software Engineer - RDT Pharma Medicines | Hyderabad, Telangana, India |  | https://roche.wd3.myworkdayjobs.com/roche-ext/job/Hyderabad/IT-Software-Engineer---RDT-Pharma-Medicines_202611-128963-1
+2026-11-16 12:41:32,493 INFO === Done. raw=516 added=1 dupes=0 filtered=446 ===
+2026-11-16 13:40:05,481 INFO === hiring.cafe search run started ===
+2026-11-16 13:40:07,649 INFO [software engineer p0] hits=99 new=99
+2026-11-16 13:40:16,794 INFO [software engineer p1] hits=85 new=85
+2026-11-16 13:40:23,086 INFO [backend developer p0] hits=61 new=53
+2026-11-16 13:40:31,718 INFO [backend developer p1] hits=55 new=55
+2026-11-16 13:40:38,286 INFO [java developer p0] hits=80 new=23
+2026-11-16 13:40:45,240 INFO [java developer p1] hits=81 new=68
+2026-11-16 13:40:51,449 INFO [node.js developer p0] hits=50 new=28
+2026-11-16 13:41:01,397 INFO [node.js developer p1] hits=52 new=44
+2026-11-16 13:41:07,322 INFO [spring boot p0] hits=67 new=24
+2026-11-16 13:41:14,801 INFO [spring boot p1] hits=50 new=35
+2026-11-16 13:41:14,803 INFO raw=514 candidates_after_cheap_filters=72
+2026-11-16 13:41:14,823 INFO already_handled=72 to_fetch=0
+2026-11-16 13:41:14,824 INFO === Done. raw=514 added=0 dupes=0 filtered=442 ===
+2026-11-16 14:40:15,355 INFO === hiring.cafe search run started ===
+2026-11-16 14:40:17,369 INFO [software engineer p0] hits=98 new=98
+2026-11-16 14:40:25,409 INFO [software engineer p1] hits=110 new=110
+2026-11-16 14:40:33,554 INFO [backend developer p0] hits=61 new=54
+2026-11-16 14:40:40,950 INFO [backend developer p1] hits=54 new=54
+2026-11-16 14:40:50,112 INFO [java developer p0] hits=95 new=36
+2026-11-16 14:40:56,887 INFO [java developer p1] hits=71 new=61
+2026-11-16 14:41:04,012 INFO [node.js developer p0] hits=52 new=31
+2026-11-16 14:41:11,704 INFO [node.js developer p1] hits=54 new=45
+2026-11-16 14:41:18,616 INFO [spring boot p0] hits=68 new=28
+2026-11-16 14:41:27,820 INFO [spring boot p1] hits=50 new=34
+2026-11-16 14:41:27,822 INFO raw=551 candidates_after_cheap_filters=74
+2026-11-16 14:41:27,841 INFO already_handled=67 to_fetch=7
+2026-11-16 14:41:32,665 INFO ADDED NielsenIQ | Software Engineer - Fullstack (Java and Angular) | Pune, Maharashtra, India |  | https://jobs.smartrecruiters.com/NielsenIQ/744000161743462-software-engineer-fullstack-java-and-angular-
+2026-11-16 14:41:43,066 INFO ADDED Renesas Electronics | Software Engineer | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/RenesasElectronics/744000161219560-software-engineer
+2026-11-16 14:41:49,300 INFO ADDED Microsoft | Software Engineer II | Bengaluru, Karnataka, India |  | https://microsoft.eightfold.ai/careers/job/1970393557073045
+2026-11-16 14:41:52,319 INFO ADDED Citi | Java Developer | Pune, Maharashtra, India |  | https://citi.eightfold.ai/careers/job/859038563000
+2026-11-16 14:41:55,893 INFO === Done. raw=551 added=4 dupes=0 filtered=480 ===
+2026-11-16 15:40:05,779 INFO === hiring.cafe search run started ===
+2026-11-16 15:40:07,919 INFO [software engineer p0] hits=95 new=95
+2026-11-16 15:40:14,229 INFO [software engineer p1] hits=102 new=102
+2026-11-16 15:40:22,097 INFO [backend developer p0] hits=59 new=53
+2026-11-16 15:40:28,778 INFO [backend developer p1] hits=54 new=54
+2026-11-16 15:40:35,309 INFO [java developer p0] hits=98 new=37
+2026-11-16 15:40:42,251 INFO [java developer p1] hits=77 new=66
+2026-11-16 15:40:49,539 INFO [node.js developer p0] hits=52 new=31
+2026-11-16 15:40:56,147 INFO [node.js developer p1] hits=56 new=48
+2026-11-16 15:41:06,025 INFO [spring boot p0] hits=68 new=22
+2026-11-16 15:41:13,704 INFO [spring boot p1] hits=53 new=36
+2026-11-16 15:41:13,705 INFO raw=544 candidates_after_cheap_filters=76
+2026-11-16 15:41:13,724 INFO already_handled=68 to_fetch=8
+2026-11-16 15:41:17,693 INFO ADDED Happiest Minds Technologies | SOFTWARE ENGINEER - Java | Noida, Uttar Pradesh, India |  | https://jobs.happiestminds.com/happiestminds/jobview/software-engineer-java-noida-2026111615044951?id=1211093
+2026-11-16 15:41:21,044 INFO ADDED Renesas Electronics | Software Engineer | Bengaluru, Karnataka, India |  | https://jobs.renesas.com/job/software-engineer-in-bengaluru-ka-india-jid-7582
+2026-11-16 15:41:36,136 INFO ADDED Eurofins | Software engineer | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/Eurofins/744000161732359-software-engineer
+2026-11-16 15:41:38,614 INFO ADDED Kloudspot | Software Engineer / Graduate Engineer – Backend | Bangalore South, Karnataka, India |  | https://kloudspot.zohorecruit.in/jobs/Careers/244254000000410255/Software-Engineer-Graduate-Engineer-Backend
+2026-11-16 15:41:42,514 INFO ADDED Citi | Java Developer | Pune, Maharashtra, India |  | https://jobs.citi.com/job/pune/java-developer/287/103370630384
+2026-11-16 15:41:46,940 INFO === Done. raw=544 added=5 dupes=0 filtered=471 ===
+2026-11-16 16:40:05,980 INFO === hiring.cafe search run started ===
+2026-11-16 16:40:08,051 INFO [software engineer p0] hits=96 new=96
+2026-11-16 16:40:17,719 INFO [software engineer p1] hits=86 new=86
+2026-11-16 16:40:26,589 INFO [backend developer p0] hits=50 new=46
+2026-11-16 16:40:33,891 INFO [backend developer p1] hits=47 new=47
+2026-11-16 16:40:40,072 INFO [java developer p0] hits=85 new=41
+2026-11-16 16:40:49,282 INFO [java developer p1] hits=76 new=67
+2026-11-16 16:40:56,530 INFO [node.js developer p0] hits=55 new=33
+2026-11-16 16:41:03,316 INFO [node.js developer p1] hits=55 new=47
+2026-11-16 16:41:10,483 INFO [spring boot p0] hits=66 new=31
+2026-11-16 16:41:19,116 INFO [spring boot p1] hits=54 new=37
+2026-11-16 16:41:19,117 INFO raw=531 candidates_after_cheap_filters=71
+2026-11-16 16:41:19,139 INFO already_handled=65 to_fetch=6
+2026-11-16 16:41:40,797 INFO ADDED Roche | Custom Software Developer, IT Software Engineer, Workflow Automation - Engineering Excellence & Experience | Hyderabad, Telangana, India |  | https://roche.wd3.myworkdayjobs.com/roche-ext/job/Hyderabad/Custom-Software-Developer--IT-Software-Engineer--Workflow-Automation---Engineering-Excellence---Experience_202611-129036-1
+2026-11-16 16:41:41,724 INFO === Done. raw=531 added=1 dupes=1 filtered=464 ===
+2026-11-16 17:40:05,692 INFO === hiring.cafe search run started ===
+2026-11-16 17:40:07,672 INFO [software engineer p0] hits=94 new=94
+2026-11-16 17:40:15,493 INFO [software engineer p1] hits=88 new=88
+2026-11-16 17:40:23,138 INFO [backend developer p0] hits=62 new=58
+2026-11-16 17:40:30,921 INFO [backend developer p1] hits=50 new=50
+2026-11-16 17:40:38,232 INFO [java developer p0] hits=87 new=43
+2026-11-16 17:40:44,135 INFO [java developer p1] hits=79 new=68
+2026-11-16 17:40:52,478 INFO [node.js developer p0] hits=56 new=34
+2026-11-16 17:41:01,880 INFO [node.js developer p1] hits=55 new=47
+2026-11-16 17:41:09,661 INFO [spring boot p0] hits=72 new=32
+2026-11-16 17:41:15,869 INFO [spring boot p1] hits=51 new=36
+2026-11-16 17:41:15,870 INFO raw=550 candidates_after_cheap_filters=76
+2026-11-16 17:41:15,887 INFO already_handled=68 to_fetch=8
+2026-11-16 17:41:20,595 INFO ADDED Vonage | Full Stack Developer II (Vue.js, Node.js, AWS) | Bengaluru, Karnataka, India |  | https://job-boards.greenhouse.io/vonage/jobs/8940917002
+2026-11-16 17:41:24,590 INFO ADDED Barclays | AI Software Engineer | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/ai-software-engineer/13015/103374232544
+2026-11-16 17:41:28,167 INFO ADDED Barclays | AI Software Engineer | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/ai-software-engineer/13015/103374233072
+2026-11-16 17:41:31,447 INFO ADDED PayPal | Software Engineer | Bengaluru, Karnataka, India |  | https://paypal.eightfold.ai/careers/job/274923287904
+2026-11-16 17:41:34,841 INFO ADDED TSYS | Software Engineer | Pune, Maharashtra, India |  | https://tsys.wd1.myworkdayjobs.com/tsys/job/PUNE--INDIA/Software-Engineer_R0076257-1
+2026-11-16 17:41:40,975 INFO ADDED Puma | Software Engineer I (Backend) | Pune, Maharashtra, India |  | https://puma.wd502.myworkdayjobs.com/jobs_at_puma/job/Local-Office-Pune-Global-Function/Software-Engineer-I--Backend-_R44425
+2026-11-16 17:41:44,517 INFO ADDED Puma | Software Engineer II - Core Commerce Platform | Pune, Maharashtra, India |  | https://puma.wd502.myworkdayjobs.com/jobs_at_puma/job/Local-Office-Pune-Global-Function/Software-Engineer-II---Core-Commerce-Platform_R44418
+2026-11-16 17:41:50,708 INFO === Done. raw=550 added=7 dupes=0 filtered=475 ===
+2026-11-16 18:40:06,555 INFO === hiring.cafe search run started ===
+2026-11-16 18:40:08,554 INFO [software engineer p0] hits=98 new=98
+2026-11-16 18:40:15,516 INFO [software engineer p1] hits=82 new=82
+2026-11-16 18:40:23,972 INFO [backend developer p0] hits=62 new=60
+2026-11-16 18:40:32,299 INFO [backend developer p1] hits=50 new=48
+2026-11-16 18:40:39,901 INFO [java developer p0] hits=82 new=40
+2026-11-16 18:40:49,353 INFO [java developer p1] hits=77 new=67
+2026-11-16 18:40:56,674 INFO [node.js developer p0] hits=56 new=34
+2026-11-16 18:41:03,620 INFO [node.js developer p1] hits=54 new=45
+2026-11-16 18:41:11,324 INFO [spring boot p0] hits=72 new=35
+2026-11-16 18:41:17,237 INFO [spring boot p1] hits=51 new=37
+2026-11-16 18:41:17,238 INFO raw=546 candidates_after_cheap_filters=73
+2026-11-16 18:41:17,275 INFO already_handled=71 to_fetch=2
+2026-11-16 18:41:24,801 INFO ADDED Chevron | Full stack Software Engineer | Bengaluru, Karnataka, India |  | https://careers.chevron.com/job/bengaluru/full-stack-software-engineer/38138/103239777344
+2026-11-16 18:41:25,674 INFO === Done. raw=546 added=1 dupes=0 filtered=474 ===
+2026-11-16 19:40:05,665 INFO === hiring.cafe search run started ===
+2026-11-16 19:40:08,285 INFO [software engineer p0] hits=116 new=116
+2026-11-16 19:40:18,094 INFO [software engineer p1] hits=96 new=96
+2026-11-16 19:40:25,069 INFO [backend developer p0] hits=53 new=47
+2026-11-16 19:40:34,840 INFO [backend developer p1] hits=44 new=44
+2026-11-16 19:40:42,475 INFO [java developer p0] hits=90 new=28
+2026-11-16 19:40:48,653 INFO [java developer p1] hits=85 new=76
+2026-11-16 19:40:56,464 INFO [node.js developer p0] hits=59 new=37
+2026-11-16 19:41:05,229 INFO [node.js developer p1] hits=52 new=45
+2026-11-16 19:41:12,251 INFO [spring boot p0] hits=78 new=38
+2026-11-16 19:41:20,028 INFO [spring boot p1] hits=53 new=40
+2026-11-16 19:41:20,029 INFO raw=567 candidates_after_cheap_filters=82
+2026-11-16 19:41:20,056 INFO already_handled=63 to_fetch=19
+2026-11-16 19:41:24,246 INFO ADDED Hiver | AI SDE 2 - Full Stack | Bengaluru, Karnataka, India |  | https://hiverhq.pinpointhq.com/en/postings/7e049ee0-21a9-4676-94ef-8324ad9fab76
+2026-11-16 19:41:26,754 INFO ADDED ServiceNow | Software Engineer | Hyderabad, Telangana, India |  | https://jobs.smartrecruiters.com/ServiceNow/744000161760969-software-engineer
+2026-11-16 19:41:46,616 INFO ADDED NatWest Group | Software Engineer | Bangalore, Karnataka, India |  | https://jobs.natwestgroup.com/jobs/18474497
+2026-11-16 19:41:55,420 INFO ADDED Uber | Software Engineer II - Machine Learning Engineer | Hyderabad, Telangana, India |  | https://iaziqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/UberCareers/requisitions/job/304583
+2026-11-16 19:42:03,934 INFO ADDED NetApp | Backend Software Engineer (Golang, Kubernetes) | Bangalore, Karnataka, India |  | https://netapp.eightfold.ai/careers/job/45332438
+2026-11-16 19:42:06,760 INFO ADDED NatWest Group | Software Engineer | Gurugram, Haryana, India |  | https://jobs.natwestgroup.com/jobs/18474498
+2026-11-16 19:42:10,577 INFO ADDED American Express | Software Engineer I | Bengaluru, Karnataka, India |  | https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions/job/26015127
+2026-11-16 19:42:13,843 INFO ADDED Bosch Group | Full stack Engineer | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/BoschGroup/744000160794268-full-stack-engineer
+2026-11-16 19:42:16,416 INFO ADDED Bosch Group | Full Stack Developer | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/BoschGroup/744000160600719-full-stack-developer
+2026-11-16 19:42:20,067 INFO ADDED Cornerstone OnDemand | Software Engineer | Hyderabad, Telangana, India |  | https://cornerstone.csod.com/ux/ats/careersite/2/home/requisition/11813?c=cornerstone
+2026-11-16 19:42:23,587 INFO ADDED Kumaran Systems | Java Developer | Chennai or Hyderabad |  | https://kumaran.zohorecruit.in/jobs/Careers/31840000021988124/Java-Developer
+2026-11-16 19:42:33,288 INFO === Done. raw=567 added=11 dupes=0 filtered=493 ===
+2026-11-16 20:40:06,686 INFO === hiring.cafe search run started ===
+2026-11-16 20:40:08,737 INFO [software engineer p0] hits=111 new=111
+2026-11-16 20:40:18,589 INFO [software engineer p1] hits=95 new=95
+2026-11-16 20:40:27,835 INFO [backend developer p0] hits=52 new=47
+2026-11-16 20:40:36,617 INFO [backend developer p1] hits=44 new=44
+2026-11-16 20:40:43,367 INFO [java developer p0] hits=91 new=28
+2026-11-16 20:40:53,028 INFO [java developer p1] hits=78 new=68
+2026-11-16 20:40:59,685 INFO [node.js developer p0] hits=56 new=38
+2026-11-16 20:41:07,429 INFO [node.js developer p1] hits=52 new=45
+2026-11-16 20:41:14,263 INFO [spring boot p0] hits=76 new=38
+2026-11-16 20:41:20,698 INFO [spring boot p1] hits=53 new=42
+2026-11-16 20:41:20,700 INFO raw=556 candidates_after_cheap_filters=81
+2026-11-16 20:41:20,727 INFO already_handled=75 to_fetch=6
+2026-11-16 20:41:25,222 INFO ADDED ServiceNow | Software Engineer | Hyderabad, Telangana, India |  | https://careers.servicenow.com/jobs/744000161760969/software-engineer/
+2026-11-16 20:41:29,639 INFO ADDED Amazon | Software Development Engineer, Amazon Business India | Bengaluru, Karnataka, India |  | https://www.amazon.jobs/en/jobs/10605712/software-development-engineer-amazon-business-india
+2026-11-16 20:41:33,179 INFO ADDED Amazon | SDE II, Amazon Business India | Bengaluru, Karnataka, India |  | https://www.amazon.jobs/en/jobs/10605713/sde-ii-amazon-business-india
+2026-11-16 20:41:42,460 INFO ADDED H&M Group | Software Engineer – SAP Commerce Cloud / Hybris | Bangalore, Karnataka, India |  | https://jobs.smartrecruiters.com/HMGroup/744000161766119-software-engineer-sap-commerce-cloud-hybris
+2026-11-16 20:41:47,232 INFO === Done. raw=556 added=4 dupes=0 filtered=477 ===
+2026-11-16 21:40:14,381 INFO === hiring.cafe search run started ===
+2026-11-16 21:40:16,857 INFO [software engineer p0] hits=101 new=101
+2026-11-16 21:40:24,433 INFO [software engineer p1] hits=107 new=107
+2026-11-16 21:40:30,368 INFO [backend developer p0] hits=49 new=43
+2026-11-16 21:40:36,688 INFO [backend developer p1] hits=50 new=49
+2026-11-16 21:40:44,388 INFO [java developer p0] hits=89 new=30
+2026-11-16 21:40:51,972 INFO [java developer p1] hits=83 new=72
+2026-11-16 21:40:59,646 INFO [node.js developer p0] hits=56 new=30
+2026-11-16 21:41:07,254 INFO [node.js developer p1] hits=52 new=44
+2026-11-16 21:41:13,886 INFO [spring boot p0] hits=79 new=40
+2026-11-16 21:41:22,274 INFO [spring boot p1] hits=52 new=41
+2026-11-16 21:41:22,275 INFO raw=557 candidates_after_cheap_filters=81
+2026-11-16 21:41:22,295 INFO already_handled=78 to_fetch=3
+2026-11-16 21:41:33,567 INFO ADDED Lowe's | Software Engineer | Bengaluru, Karnataka, India |  | https://talent.lowes.com/in/en/job/JR-02681422/Software-Engineer
+2026-11-16 21:41:34,521 INFO === Done. raw=557 added=1 dupes=0 filtered=478 ===
+2026-11-16 22:40:07,330 INFO === hiring.cafe search run started ===
+2026-11-16 22:40:09,496 INFO [software engineer p0] hits=101 new=101
+2026-11-16 22:40:17,831 INFO [software engineer p1] hits=102 new=102
+2026-11-16 22:40:26,394 INFO [backend developer p0] hits=51 new=45
+2026-11-16 22:40:33,157 INFO [backend developer p1] hits=48 new=47
+2026-11-16 22:40:40,816 INFO [java developer p0] hits=86 new=26
+2026-11-16 22:40:50,786 INFO [java developer p1] hits=81 new=70
+2026-11-16 22:40:58,696 INFO [node.js developer p0] hits=56 new=30
+2026-11-16 22:41:04,924 INFO [node.js developer p1] hits=53 new=45
+2026-11-16 22:41:14,825 INFO [spring boot p0] hits=77 new=41
+2026-11-16 22:41:22,890 INFO [spring boot p1] hits=53 new=43
+2026-11-16 22:41:22,892 INFO raw=550 candidates_after_cheap_filters=82
+2026-11-16 22:41:22,938 INFO already_handled=80 to_fetch=2
+2026-11-16 22:41:35,386 INFO ADDED NetApp, Inc. | Software Engineer 3 | Bengaluru, Karnataka, India |  | https://netapp.searchgreatcareers.com/job/bengaluru/software-engineer-3/28458/103155970128
+2026-11-16 22:41:36,548 INFO === Done. raw=550 added=1 dupes=0 filtered=469 ===
+2026-11-16 23:40:06,618 INFO === hiring.cafe search run started ===
+2026-11-16 23:40:08,625 INFO [software engineer p0] hits=105 new=105
+2026-11-16 23:40:14,937 INFO [software engineer p1] hits=97 new=97
+2026-11-16 23:40:21,777 INFO [backend developer p0] hits=51 new=46
+2026-11-16 23:40:28,788 INFO [backend developer p1] hits=48 new=47
+2026-11-16 23:40:37,976 INFO [java developer p0] hits=92 new=33
+2026-11-16 23:40:44,193 INFO [java developer p1] hits=76 new=68
+2026-11-16 23:40:52,339 INFO [node.js developer p0] hits=56 new=31
+2026-11-16 23:41:02,336 INFO [node.js developer p1] hits=53 new=45
+2026-11-16 23:41:10,028 INFO [spring boot p0] hits=77 new=42
+2026-11-16 23:41:19,476 INFO [spring boot p1] hits=50 new=37
+2026-11-16 23:41:19,477 INFO raw=551 candidates_after_cheap_filters=82
+2026-11-16 23:41:19,498 INFO already_handled=82 to_fetch=0
+2026-11-16 23:41:19,500 INFO === Done. raw=551 added=0 dupes=0 filtered=469 ===
+2026-11-17 00:40:06,433 INFO === hiring.cafe search run started ===
+2026-11-17 00:40:08,872 INFO [software engineer p0] hits=105 new=105
+2026-11-17 00:40:15,868 INFO [software engineer p1] hits=104 new=104
+2026-11-17 00:40:24,079 INFO [backend developer p0] hits=50 new=45
+2026-11-17 00:40:30,622 INFO [backend developer p1] hits=50 new=49
+2026-11-17 00:40:38,671 INFO [java developer p0] hits=89 new=37
+2026-11-17 00:40:44,743 INFO [java developer p1] hits=80 new=65
+2026-11-17 00:40:51,772 INFO [node.js developer p0] hits=56 new=30
+2026-11-17 00:40:58,300 INFO [node.js developer p1] hits=53 new=47
+2026-11-17 00:41:04,766 INFO [spring boot p0] hits=77 new=43
+2026-11-17 00:41:11,398 INFO [spring boot p1] hits=50 new=38
+2026-11-17 00:41:11,399 INFO raw=563 candidates_after_cheap_filters=82
+2026-11-17 00:41:11,403 INFO already_handled=79 to_fetch=3
+2026-11-17 00:41:16,167 INFO ADDED Akamai | Software Development Engineer in Test II | Bengaluru or India |  | https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions/job/4292
+2026-11-17 00:41:22,781 INFO === Done. raw=563 added=1 dupes=0 filtered=483 ===
+2026-11-17 01:40:07,859 INFO === hiring.cafe search run started ===
+2026-11-17 01:40:10,124 INFO [software engineer p0] hits=105 new=105
+2026-11-17 01:40:20,050 INFO [software engineer p1] hits=108 new=108
+2026-11-17 01:40:28,522 INFO [backend developer p0] hits=50 new=45
+2026-11-17 01:40:37,089 INFO [backend developer p1] hits=50 new=49
+2026-11-17 01:40:46,183 INFO [java developer p0] hits=94 new=41
+2026-11-17 01:40:55,974 INFO [java developer p1] hits=79 new=68
+2026-11-17 01:41:03,375 INFO [node.js developer p0] hits=57 new=31
+2026-11-17 01:41:12,759 INFO [node.js developer p1] hits=53 new=47
+2026-11-17 01:41:18,788 INFO [spring boot p0] hits=78 new=43
+2026-11-17 01:41:26,180 INFO [spring boot p1] hits=49 new=36
+2026-11-17 01:41:26,181 INFO raw=573 candidates_after_cheap_filters=83
+2026-11-17 01:41:26,199 INFO already_handled=81 to_fetch=2
+2026-11-17 01:41:33,012 INFO === Done. raw=573 added=0 dupes=0 filtered=492 ===
+2026-11-17 02:40:06,551 INFO === hiring.cafe search run started ===
+2026-11-17 02:40:08,542 INFO [software engineer p0] hits=103 new=103
+2026-11-17 02:40:17,959 INFO [software engineer p1] hits=108 new=108
+2026-11-17 02:40:24,343 INFO [backend developer p0] hits=50 new=44
+2026-11-17 02:40:30,426 INFO [backend developer p1] hits=50 new=49
+2026-11-17 02:40:38,542 INFO [java developer p0] hits=92 new=39
+2026-11-17 02:40:45,842 INFO [java developer p1] hits=80 new=69
+2026-11-17 02:40:54,786 INFO [node.js developer p0] hits=57 new=31
+2026-11-17 02:41:01,889 INFO [node.js developer p1] hits=53 new=47
+2026-11-17 02:41:11,392 INFO [spring boot p0] hits=79 new=42
+2026-11-17 02:41:19,288 INFO [spring boot p1] hits=46 new=33
+2026-11-17 02:41:19,290 INFO raw=565 candidates_after_cheap_filters=77
+2026-11-17 02:41:19,309 INFO already_handled=77 to_fetch=0
+2026-11-17 02:41:19,310 INFO === Done. raw=565 added=0 dupes=0 filtered=488 ===
+2026-11-17 03:40:08,782 INFO === hiring.cafe search run started ===
+2026-11-17 03:40:10,822 INFO [software engineer p0] hits=95 new=95
+2026-11-17 03:40:19,140 INFO [software engineer p1] hits=106 new=106
+2026-11-17 03:40:25,320 INFO [backend developer p0] hits=50 new=45
+2026-11-17 03:40:34,392 INFO [backend developer p1] hits=50 new=49
+2026-11-17 03:40:41,570 INFO [java developer p0] hits=94 new=41
+2026-11-17 03:40:49,215 INFO [java developer p1] hits=76 new=65
+2026-11-17 03:40:56,983 INFO [node.js developer p0] hits=57 new=33
+2026-11-17 03:41:02,577 INFO [node.js developer p1] hits=53 new=48
+2026-11-17 03:41:11,749 INFO [spring boot p0] hits=80 new=45
+2026-11-17 03:41:18,399 INFO [spring boot p1] hits=46 new=33
+2026-11-17 03:41:18,400 INFO raw=560 candidates_after_cheap_filters=78
+2026-11-17 03:41:18,404 INFO already_handled=76 to_fetch=2
+2026-11-17 03:41:26,866 INFO ADDED Cisco | Software Engineer | Bangalore, Karnataka, India | INR 2858600-4235600/yr | https://careers.cisco.com/global/en/job/2026385/Software-Engineer
+2026-11-17 03:41:27,748 INFO === Done. raw=560 added=1 dupes=1 filtered=482 ===
+2026-11-17 15:40:06,874 INFO === hiring.cafe search run started ===
+2026-11-17 15:40:08,809 INFO [software engineer p0] hits=103 new=103
+2026-11-17 15:40:18,528 INFO [software engineer p1] hits=93 new=93
+2026-11-17 15:40:26,022 INFO [backend developer p0] hits=53 new=45
+2026-11-17 15:40:35,508 INFO [backend developer p1] hits=49 new=48
+2026-11-17 15:40:42,627 INFO [java developer p0] hits=104 new=45
+2026-11-17 15:40:48,583 INFO [java developer p1] hits=77 new=71
+2026-11-17 15:40:55,366 INFO [node.js developer p0] hits=56 new=37
+2026-11-17 15:41:04,446 INFO [node.js developer p1] hits=55 new=49
+2026-11-17 15:41:14,394 INFO [spring boot p0] hits=84 new=48
+2026-11-17 15:41:21,779 INFO [spring boot p1] hits=44 new=32
+2026-11-17 15:41:21,779 INFO raw=571 candidates_after_cheap_filters=80
+2026-11-17 15:41:21,798 INFO already_handled=62 to_fetch=18
+2026-11-17 15:41:26,345 INFO ADDED Societe Generale | Specialist Software Engineer - Java Back End - Bangalore, India | Bangalore, Karnataka, India |  | https://careers.societegenerale.com/en/job-offers/specialist-software-engineer-java-back-end-26000EVL-en
+2026-11-17 15:41:32,673 INFO ADDED American Express | Software Engineer II | Bengaluru, Karnataka, India |  | https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions/job/26016217
+2026-11-17 15:41:36,640 INFO ADDED GreyOrange | Software Development Engineer in Test I | Gurugram, Haryana, India |  | https://careers.greyorange.com/greyorange/jobview/software-development-engineer-in-test-i-gurugram-hq-202611161242434
+2026-11-17 15:41:52,690 INFO ADDED Cisco | Software Engineer | Bangalore, Karnataka, India |  | https://careers.cisco.com/global/en/job/2031703/Software-Engineer
+2026-11-17 15:41:55,811 INFO ADDED Cisco | Software Engineer | Java/Golang/Python/C or C++ | 2 to 4 years | Bangalore | Bangalore, Karnataka, India | INR 2858600-4235600/yr | https://careers.cisco.com/global/en/job/2031706/Software-Engineer-Java-Golang-Python-C-or-C-2-to-4-years-Bangalore
+2026-11-17 15:42:00,229 INFO ADDED Citi | Java developer | Pune, Maharashtra, India |  | https://jobs.citi.com/job/pune/java-developer/287/103413789216
+2026-11-17 15:42:04,091 INFO ADDED Citi | Java Developer | Pune, Maharashtra, India |  | https://jobs.citi.com/job/pune/java-developer/287/103413789120
+2026-11-17 15:42:08,339 INFO ADDED BNP Paribas | Java Developer | Mumbai or Chennai |  | https://group.bnpparibas/en/careers/job-offer/java-developer-50
+2026-11-17 15:42:11,163 INFO ADDED BNP Paribas | Java Developer | Mumbai or Chennai |  | https://group.bnpparibas/en/careers/job-offer/java-developer-47
+2026-11-17 15:42:14,564 INFO ADDED BNP Paribas India Solutions | Java Developer | Mumbai or Chennai |  | https://group.bnpparibas/en/careers/job-offer/java-developer-49
+2026-11-17 15:42:18,665 INFO ADDED IBM | Cloud Backend Developer | Bangalore, Karnataka, India |  | https://careers.ibm.com/en_US/careers/JobDetail/Cloud-Backend-Developer/140950
+2026-11-17 15:42:23,034 INFO ADDED BNP Paribas | Java Developer | Mumbai or Chennai |  | https://group.bnpparibas/en/careers/job-offer/java-developer-51
+2026-11-17 15:42:25,519 INFO ADDED BNP Paribas | Java Developer | Mumbai or Chennai |  | https://group.bnpparibas/en/careers/job-offer/java-developer-46
+2026-11-17 15:42:28,368 INFO ADDED Crowe | Junior Software Engineer 1 | Hyderabad, Telangana, India |  | https://crowe.wd12.myworkdayjobs.com/external_careers/job/Hyderabad-Telangana-India/Junior-Software-Engineer-1_R-52653
+2026-11-17 15:42:42,123 INFO === Done. raw=571 added=14 dupes=1 filtered=494 ===
+2026-11-17 16:40:06,213 INFO === hiring.cafe search run started ===
+2026-11-17 16:40:08,443 INFO [software engineer p0] hits=102 new=102
+2026-11-17 16:40:15,530 INFO [software engineer p1] hits=101 new=101
+2026-11-17 16:40:24,699 INFO [backend developer p0] hits=56 new=48
+2026-11-17 16:40:34,266 INFO [backend developer p1] hits=49 new=46
+2026-11-17 16:40:42,936 INFO [java developer p0] hits=94 new=38
+2026-11-17 16:40:49,873 INFO [java developer p1] hits=90 new=77
+2026-11-17 16:40:56,341 INFO [node.js developer p0] hits=64 new=42
+2026-11-17 16:41:05,862 INFO [node.js developer p1] hits=51 new=43
+2026-11-17 16:41:14,918 INFO [spring boot p0] hits=81 new=42
+2026-11-17 16:41:24,042 INFO [spring boot p1] hits=53 new=41
+2026-11-17 16:41:24,043 INFO raw=580 candidates_after_cheap_filters=78
+2026-11-17 16:41:24,059 INFO already_handled=59 to_fetch=19
+2026-11-17 16:41:31,433 INFO ADDED Siemens | Software Engineer | Bangalore or Pune |  | https://jobs.siemens.com/en_US/externaljobs/JobDetail/528691
+2026-11-17 16:41:36,597 INFO ADDED StoneX Group | Java Developer POD PAYMENTS | Pune, Maharashtra, India |  | https://confidential-stonex.icims.com/jobs/16584/java-developer-pod-payments/job?in_iframe=1
+2026-11-17 16:41:40,265 INFO ADDED Infor | Software Engineer, Associate (Java) | Hyderabad, Telangana, India |  | https://careers.infor.com/en/postings/614d3734-d24a-402b-8382-1eb21fa3fd8d
+2026-11-17 16:41:51,834 INFO ADDED Nike | Software Engineer II, ITC | Bengaluru, Karnataka, India |  | https://nike.wd1.myworkdayjobs.com/nke/job/Karnataka-India/Software-Engineer-II--ITC_R-91605/apply
+2026-11-17 16:41:54,447 INFO ADDED PennEngineering | Software Engineer | Bangalore, Karnataka, India |  | https://www.penn-eng.com/cn/software-engineer/
+2026-11-17 16:42:02,029 INFO ADDED Entrata | Software Engineer ( AI, Python & AWS ) | Pune, Maharashtra, India |  | https://jobs.lever.co/entrata/fce2a8b4-042d-41ce-90ba-8363e182e897
+2026-11-17 16:42:12,302 INFO ADDED Cisco | Software Engineer | Bangalore, Karnataka, India | INR 2858600-4235600/yr | https://careers.cisco.com/global/en/job/2031707/Software-Engineer
+2026-11-17 16:42:15,841 INFO ADDED Cisco | Software Engineer | Bangalore, Karnataka, India |  | https://careers.cisco.com/global/en/job/2031713/Software-Engineer
+2026-11-17 16:42:19,781 INFO ADDED Clarivate | Software Engineer | Bangalore, Karnataka, India |  | https://careers.clarivate.com/job/JREQ136475/Software-Engineer
+2026-11-17 16:42:22,703 INFO ADDED Mastercard | Software Engineer I | Pune, Maharashtra, India |  | https://careers.mastercard.com/us/en/job/R-294428/Software-Engineer-I
+2026-11-17 16:42:26,882 INFO ADDED Google Operations Center | Full Stack Developer Specialist - Applied AI and Engineering | Bangalore, Karnataka, India |  | https://googleoperationscenter.com/jobs/38616/
+2026-11-17 16:42:29,816 INFO ADDED Cornerstone | Software Engineer | Hyderabad or Pune |  | https://cornerstone.csod.com/ux/ats/careersite/2/home/requisition/11818?c=cornerstone
+2026-11-17 16:42:40,748 INFO === Done. raw=580 added=12 dupes=2 filtered=507 ===
+2026-11-17 17:40:05,576 INFO === hiring.cafe search run started ===
+2026-11-17 17:40:07,785 INFO [software engineer p0] hits=100 new=100
+2026-11-17 17:40:14,856 INFO [software engineer p1] hits=102 new=102
+2026-11-17 17:40:24,491 INFO [backend developer p0] hits=54 new=46
+2026-11-17 17:40:32,480 INFO [backend developer p1] hits=51 new=48
+2026-11-17 17:40:40,445 INFO [java developer p0] hits=89 new=35
+2026-11-17 17:40:48,191 INFO [java developer p1] hits=90 new=75
+2026-11-17 17:40:56,099 INFO [node.js developer p0] hits=62 new=40
+2026-11-17 17:41:04,840 INFO [node.js developer p1] hits=51 new=40
+2026-11-17 17:41:10,700 INFO [spring boot p0] hits=76 new=36
+2026-11-17 17:41:18,049 INFO [spring boot p1] hits=53 new=43
+2026-11-17 17:41:18,050 INFO raw=565 candidates_after_cheap_filters=73
+2026-11-17 17:41:18,073 INFO already_handled=72 to_fetch=1
+2026-11-17 17:41:22,949 INFO ADDED Ford Motor Private Limited | Java Full Stack Engineer | India |  | https://www.careers.ford.com/en/job/india/java-full-stack-engineer/48560/103413764288
+2026-11-17 17:41:23,870 INFO === Done. raw=565 added=1 dupes=0 filtered=492 ===
+2026-11-17 20:40:05,537 INFO === hiring.cafe search run started ===
+2026-11-17 20:40:07,634 INFO [software engineer p0] hits=115 new=115
+2026-11-17 20:40:15,594 INFO [software engineer p1] hits=101 new=101
+2026-11-17 20:40:22,025 INFO [backend developer p0] hits=59 new=51
+2026-11-17 20:40:31,684 INFO [backend developer p1] hits=52 new=51
+2026-11-17 20:40:40,372 INFO [java developer p0] hits=113 new=53
+2026-11-17 20:40:47,994 INFO [java developer p1] hits=83 new=73
+2026-11-17 20:40:57,436 INFO [node.js developer p0] hits=68 new=38
+2026-11-17 20:41:05,974 INFO [node.js developer p1] hits=51 new=41
+2026-11-17 20:41:14,477 INFO [spring boot p0] hits=82 new=44
+2026-11-17 20:41:23,399 INFO [spring boot p1] hits=54 new=43
+2026-11-17 20:41:23,401 INFO raw=610 candidates_after_cheap_filters=68
+2026-11-17 20:41:23,417 INFO already_handled=61 to_fetch=7
+2026-11-17 20:41:39,978 INFO ADDED Akamai | Software Engineer II | Bengaluru or India |  | https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions/job/4524
+2026-11-17 20:41:43,648 INFO ADDED NatWest Group | Software Engineer | Gurugram, Haryana, India |  | https://jobs.natwestgroup.com/jobs/18446667
+2026-11-17 20:41:46,583 INFO ADDED Bristol Myers Squibb | Software Engineer - II, Full Stack Engineer | Hyderabad, Telangana, India |  | https://bms.eightfold.ai/careers/job/137484422250
+2026-11-17 20:41:49,308 INFO === Done. raw=610 added=3 dupes=1 filtered=545 ===
+2026-11-17 21:40:14,752 INFO === hiring.cafe search run started ===
+2026-11-17 21:40:17,365 INFO [software engineer p0] hits=101 new=101
+2026-11-17 21:40:25,682 INFO [software engineer p1] hits=116 new=116
+2026-11-17 21:40:35,886 INFO [backend developer p0] hits=52 new=42
+2026-11-17 21:40:44,084 INFO [backend developer p1] hits=56 new=55
+2026-11-17 21:40:53,287 INFO [java developer p0] hits=110 new=47
+2026-11-17 21:41:07,307 INFO [java developer p1] hits=85 new=74
+2026-11-17 21:41:16,016 INFO [node.js developer p0] hits=69 new=40
+2026-11-17 21:41:23,592 INFO [node.js developer p1] hits=50 new=39
+2026-11-17 21:41:31,012 INFO [spring boot p0] hits=84 new=36
+2026-11-17 21:41:39,427 INFO [spring boot p1] hits=53 new=43
+2026-11-17 21:41:39,436 INFO raw=593 candidates_after_cheap_filters=74
+2026-11-17 21:41:39,471 INFO already_handled=68 to_fetch=6
+2026-11-17 21:41:59,641 INFO ADDED Continental Group Sector ContiTech | Software Engineer – Data Platform | Bengaluru, Karnataka, India |  | https://jobs.smartrecruiters.com/ContinentalGroupSectorContiTech/744000162041360-software-engineer-data-platform
+2026-11-17 21:42:04,138 INFO ADDED Citi | Java Developer | Pune, Maharashtra, India |  | https://citi.eightfold.ai/careers/job/859038717929
+2026-11-17 21:42:06,236 INFO === Done. raw=593 added=2 dupes=0 filtered=523 ===
+2026-11-17 22:40:06,259 INFO === hiring.cafe search run started ===
+2026-11-17 22:40:08,579 INFO [software engineer p0] hits=99 new=99
+2026-11-17 22:40:18,596 INFO [software engineer p1] hits=122 new=122
+2026-11-17 22:40:28,432 INFO [backend developer p0] hits=51 new=43
+2026-11-17 22:40:38,161 INFO [backend developer p1] hits=53 new=52
+2026-11-17 22:40:45,757 INFO [java developer p0] hits=104 new=44
+2026-11-17 22:40:52,597 INFO [java developer p1] hits=81 new=70
+2026-11-17 22:41:00,935 INFO [node.js developer p0] hits=70 new=41
+2026-11-17 22:41:07,645 INFO [node.js developer p1] hits=50 new=39
+2026-11-17 22:41:13,924 INFO [spring boot p0] hits=81 new=37
+2026-11-17 22:41:23,900 INFO [spring boot p1] hits=53 new=44
+2026-11-17 22:41:23,901 INFO raw=591 candidates_after_cheap_filters=71
+2026-11-17 22:41:23,918 INFO already_handled=71 to_fetch=0
+2026-11-17 22:41:23,919 INFO === Done. raw=591 added=0 dupes=0 filtered=520 ===
+2026-11-17 23:40:05,998 INFO === hiring.cafe search run started ===
+2026-11-17 23:40:08,272 INFO [software engineer p0] hits=98 new=98
+2026-11-17 23:40:15,224 INFO [software engineer p1] hits=122 new=122
+2026-11-17 23:40:22,144 INFO [backend developer p0] hits=51 new=43
+2026-11-17 23:40:32,521 INFO [backend developer p1] hits=53 new=52
+2026-11-17 23:40:42,107 INFO [java developer p0] hits=101 new=41
+2026-11-17 23:40:52,158 INFO [java developer p1] hits=85 new=74
+2026-11-17 23:40:59,008 INFO [node.js developer p0] hits=70 new=41
+2026-11-17 23:41:05,142 INFO [node.js developer p1] hits=50 new=39
+2026-11-17 23:41:11,681 INFO [spring boot p0] hits=79 new=36
+2026-11-17 23:41:20,454 INFO [spring boot p1] hits=53 new=43
+2026-11-17 23:41:20,456 INFO raw=589 candidates_after_cheap_filters=71
+2026-11-17 23:41:20,459 INFO already_handled=69 to_fetch=2
+2026-11-17 23:41:27,249 INFO === Done. raw=589 added=0 dupes=0 filtered=520 ===
+2026-11-18 00:40:05,786 INFO === hiring.cafe search run started ===
+2026-11-18 00:40:08,955 INFO [software engineer p0] hits=90 new=90
+2026-11-18 00:40:18,315 INFO [software engineer p1] hits=122 new=122
+2026-11-18 00:40:28,126 INFO [backend developer p0] hits=52 new=44
+2026-11-18 00:40:35,984 INFO [backend developer p1] hits=54 new=53
+2026-11-18 00:40:43,963 INFO [java developer p0] hits=100 new=45
+2026-11-18 00:40:50,919 INFO [java developer p1] hits=85 new=73
+2026-11-18 00:41:00,841 INFO [node.js developer p0] hits=69 new=39
+2026-11-18 00:41:07,799 INFO [node.js developer p1] hits=52 new=42
+2026-11-18 00:41:14,078 INFO [spring boot p0] hits=80 new=37
+2026-11-18 00:41:23,087 INFO [spring boot p1] hits=53 new=44
+2026-11-18 00:41:23,088 INFO raw=589 candidates_after_cheap_filters=73
+2026-11-18 00:41:23,110 INFO already_handled=73 to_fetch=0
+2026-11-18 00:41:23,111 INFO === Done. raw=589 added=0 dupes=0 filtered=516 ===
+2026-11-18 01:40:05,810 INFO === hiring.cafe search run started ===
+2026-11-18 01:40:08,450 INFO [software engineer p0] hits=88 new=88
+2026-11-18 01:40:15,952 INFO [software engineer p1] hits=120 new=120
+2026-11-18 01:40:23,364 INFO [backend developer p0] hits=52 new=43
+2026-11-18 01:40:30,964 INFO [backend developer p1] hits=53 new=52
+2026-11-18 01:40:40,088 INFO [java developer p0] hits=104 new=47
+2026-11-18 01:40:48,264 INFO [java developer p1] hits=84 new=74
+2026-11-18 01:40:56,712 INFO [node.js developer p0] hits=72 new=41
+2026-11-18 01:41:03,179 INFO [node.js developer p1] hits=48 new=39
+2026-11-18 01:41:11,159 INFO [spring boot p0] hits=79 new=34
+2026-11-18 01:41:19,200 INFO [spring boot p1] hits=54 new=46
+2026-11-18 01:41:19,201 INFO raw=584 candidates_after_cheap_filters=72
+2026-11-18 01:41:19,204 INFO already_handled=68 to_fetch=4
+2026-11-18 01:41:31,355 INFO === Done. raw=584 added=0 dupes=0 filtered=516 ===
+2026-11-18 02:40:06,907 INFO === hiring.cafe search run started ===
+2026-11-18 02:40:08,860 INFO [software engineer p0] hits=87 new=87
+2026-11-18 02:40:17,198 INFO [software engineer p1] hits=118 new=118
+2026-11-18 02:40:26,794 INFO [backend developer p0] hits=52 new=44
+2026-11-18 02:40:33,490 INFO [backend developer p1] hits=53 new=52
+2026-11-18 02:40:42,662 INFO [java developer p0] hits=103 new=45
+2026-11-18 02:40:49,667 INFO [java developer p1] hits=83 new=73
+2026-11-18 02:40:56,560 INFO [node.js developer p0] hits=71 new=40
+2026-11-18 02:41:06,146 INFO [node.js developer p1] hits=51 new=42
+2026-11-18 02:41:12,401 INFO [spring boot p0] hits=78 new=34
+2026-11-18 02:41:21,394 INFO [spring boot p1] hits=54 new=46
+2026-11-18 02:41:21,395 INFO raw=581 candidates_after_cheap_filters=69
+2026-11-18 02:41:21,437 INFO already_handled=68 to_fetch=1
+2026-11-18 02:41:25,097 INFO ADDED Dassault Systèmes | Software Engineer-Java (Bangalore) | Bangalore, Karnataka, India |  | https://www.3ds.com/careers/jobs/software-engineer-java-bangalore-550684
+2026-11-18 02:41:26,047 INFO === Done. raw=581 added=1 dupes=0 filtered=512 ===
+2026-11-18 03:40:07,912 INFO === hiring.cafe search run started ===
+2026-11-18 03:40:11,597 INFO [software engineer p0] hits=86 new=86
+2026-11-18 03:40:19,982 INFO [software engineer p1] hits=117 new=117
+2026-11-18 03:40:28,702 INFO [backend developer p0] hits=53 new=45
+2026-11-18 03:40:35,085 INFO [backend developer p1] hits=52 new=52
+2026-11-18 03:40:41,728 INFO [java developer p0] hits=103 new=47
+2026-11-18 03:40:48,014 INFO [java developer p1] hits=86 new=77
+2026-11-18 03:40:58,031 INFO [node.js developer p0] hits=71 new=44
+2026-11-18 03:41:05,252 INFO [node.js developer p1] hits=56 new=48
+2026-11-18 03:41:14,226 INFO [spring boot p0] hits=78 new=29
+2026-11-18 03:41:20,869 INFO [spring boot p1] hits=54 new=45
+2026-11-18 03:41:20,870 INFO raw=590 candidates_after_cheap_filters=73
+2026-11-18 03:41:20,892 INFO already_handled=66 to_fetch=7
+2026-11-18 03:41:25,420 INFO ADDED Walmart | DISTINGUISHED, SOFTWARE ENGINEER | Bengaluru, Karnataka, India |  | https://walmart.wd504.myworkdayjobs.com/walmartexternal/job/IN-KA-BANGALORE-Home-Office-Building-11/DISTINGUISHED--SOFTWARE-ENGINEER_R-2669661
+2026-11-18 03:41:29,233 INFO ADDED Citi | Java Developer | Pune, Maharashtra, India |  | https://citi.wd5.myworkdayjobs.com/2/job/Pune-Maharashtra-India/Java-Developer_261006332
+2026-11-18 03:41:31,770 INFO ADDED Citi | Java Fullstack Developer | Mumbai, Maharashtra, India |  | https://citi.wd5.myworkdayjobs.com/2/job/1124-SHIVAJI-GARDENS-MOONLI/Java-Fullstack-Developer_261004646
+2026-11-18 03:41:34,477 INFO ADDED Equifax | Software Engineer II | Pune, Maharashtra, India |  | https://equifax.wd5.myworkdayjobs.com/external/job/IND-Pune-Equifax-Analytics-PEC/Software-Engineer-II_J00179988-1
+2026-11-18 03:41:37,255 INFO ADDED Equifax | Software Engineer | Pune, Maharashtra, India |  | https://equifax.wd5.myworkdayjobs.com/external/job/IND-Pune-Equifax-Analytics-PEC/Software-Engineer_J00179384
+2026-11-18 03:41:41,215 INFO ADDED Equifax | Software Engineer II | Pune, Maharashtra, India |  | https://equifax.wd5.myworkdayjobs.com/external/job/IND-Pune-Equifax-Analytics-PEC/Software-Engineer-II_J00179994-1
+2026-11-18 03:41:44,301 INFO ADDED Bristol Myers Squibb | Software Engineer - II, Full Stack Engineer | Hyderabad, Telangana, India |  | https://bristolmyerssquibb.wd5.myworkdayjobs.com/bms/job/Hyderabad---TS---IN/Software-Engineer---II--Full-Stack-Engineer_R1608332
+2026-11-18 03:41:51,260 INFO === Done. raw=590 added=7 dupes=0 filtered=517 ===
+2026-11-18 04:40:05,813 INFO === hiring.cafe search run started ===
+2026-11-18 04:40:08,067 INFO [software engineer p0] hits=90 new=90
+2026-11-18 04:40:18,146 INFO [software engineer p1] hits=114 new=114
+2026-11-18 04:40:26,158 INFO [backend developer p0] hits=48 new=40
+2026-11-18 04:40:35,152 INFO [backend developer p1] hits=50 new=50
+2026-11-18 04:40:43,229 INFO [java developer p0] hits=103 new=50
+2026-11-18 04:40:51,245 INFO [java developer p1] hits=84 new=75
+2026-11-18 04:41:00,176 INFO [node.js developer p0] hits=68 new=43
+2026-11-18 04:41:06,358 INFO [node.js developer p1] hits=54 new=47
+2026-11-18 04:41:15,538 INFO [spring boot p0] hits=83 new=32
+2026-11-18 04:41:25,488 INFO [spring boot p1] hits=59 new=47
+2026-11-18 04:41:25,489 INFO raw=588 candidates_after_cheap_filters=71
+2026-11-18 04:41:25,508 INFO already_handled=61 to_fetch=10
+2026-11-18 04:41:34,047 INFO ADDED NatWest Group | Software Engineer | Bengaluru or Chennai or Gurugram |  | https://rbs.wd3.myworkdayjobs.com/rbs/job/Bengaluru/Software-Engineer_R-00287488
+2026-11-18 04:41:42,314 INFO ADDED Telstra | Software Engineer II - Full Stack - Java, Springboot, React | Bengaluru, Karnataka, India |  | https://telstra.wd3.myworkdayjobs.com/telstra_careers/job/Bengaluru-Karnataka/Software-Engineer-II---Full-Stack---Java--Springboot--React_JR-10176661
+2026-11-18 04:41:46,276 INFO ADDED Citi | Java developer | Pune, Maharashtra, India |  | https://citi.wd5.myworkdayjobs.com/2/job/Pune-Maharashtra-India/Java-developer_261006327
+2026-11-18 04:41:49,374 INFO ADDED Motorola Solutions | Software Engineer | Bangalore, Karnataka, India |  | https://motorolasolutions.wd5.myworkdayjobs.com/careers/job/Bangalore-India/Software-Engineer_R69470
+2026-11-18 04:41:53,607 INFO ADDED Rbs | Software Engineer | Gurugram, Haryana, India |  | https://rbs.wd3.myworkdayjobs.com/rbs/job/Gurugram/Software-Engineer_R-00287465-1
+2026-11-18 04:41:57,217 INFO ADDED Qualys | Software Engineer | Pune, Maharashtra, India |  | https://qualys.wd5.myworkdayjobs.com/careers/job/Pune/Software-Engineer_R0005297
+2026-11-18 04:42:00,479 INFO ADDED Qualys | Software Engineer | Pune, Maharashtra, India |  | https://qualys.wd5.myworkdayjobs.com/careers/job/Pune/Software-Engineer_R0005294
+2026-11-18 04:42:06,681 INFO === Done. raw=588 added=7 dupes=0 filtered=520 ===
+2026-11-18 05:40:05,890 INFO === hiring.cafe search run started ===
+2026-11-18 05:40:07,929 INFO [software engineer p0] hits=92 new=92
+2026-11-18 05:40:17,290 INFO [software engineer p1] hits=114 new=114
+2026-11-18 05:40:24,619 INFO [backend developer p0] hits=48 new=39
+2026-11-18 05:40:31,376 INFO [backend developer p1] hits=51 new=51
+2026-11-18 05:40:40,716 INFO [java developer p0] hits=103 new=50
+2026-11-18 05:40:46,920 INFO [java developer p1] hits=82 new=75
+2026-11-18 05:40:53,889 INFO [node.js developer p0] hits=68 new=43
+2026-11-18 05:41:00,141 INFO [node.js developer p1] hits=52 new=45
+2026-11-18 05:41:08,624 INFO [spring boot p0] hits=80 new=32
+2026-11-18 05:41:15,653 INFO [spring boot p1] hits=59 new=47
+2026-11-18 05:41:15,654 INFO raw=588 candidates_after_cheap_filters=69
+2026-11-18 05:41:15,678 INFO already_handled=69 to_fetch=0
+2026-11-18 05:41:15,679 INFO === Done. raw=588 added=0 dupes=0 filtered=519 ===
+2026-11-18 06:40:05,953 INFO === hiring.cafe search run started ===
+2026-11-18 06:40:08,064 INFO [software engineer p0] hits=91 new=91
+2026-11-18 06:40:16,154 INFO [software engineer p1] hits=114 new=114
+2026-11-18 06:40:24,198 INFO [backend developer p0] hits=48 new=38
+2026-11-18 06:40:30,469 INFO [backend developer p1] hits=50 new=50
+2026-11-18 06:40:36,539 INFO [java developer p0] hits=104 new=50
+2026-11-18 06:40:44,917 INFO [java developer p1] hits=85 new=78
+2026-11-18 06:40:52,919 INFO [node.js developer p0] hits=67 new=42
+2026-11-18 06:41:00,153 INFO [node.js developer p1] hits=52 new=46
+2026-11-18 06:41:06,741 INFO [spring boot p0] hits=79 new=34
+2026-11-18 06:41:14,099 INFO [spring boot p1] hits=58 new=47
+2026-11-18 06:41:14,101 INFO raw=590 candidates_after_cheap_filters=69
+2026-11-18 06:41:14,106 INFO already_handled=69 to_fetch=0
+2026-11-18 06:41:14,107 INFO === Done. raw=590 added=0 dupes=0 filtered=521 ===
+2026-11-18 07:40:06,405 INFO === hiring.cafe search run started ===
+2026-11-18 07:40:08,461 INFO [software engineer p0] hits=95 new=95
+2026-11-18 07:40:17,506 INFO [software engineer p1] hits=109 new=109
+2026-11-18 07:40:26,341 INFO [backend developer p0] hits=47 new=35
+2026-11-18 07:40:34,438 INFO [backend developer p1] hits=50 new=50
+2026-11-18 07:40:43,482 INFO [java developer p0] hits=104 new=59
+2026-11-18 07:40:51,774 INFO [java developer p1] hits=82 new=77
+2026-11-18 07:40:59,876 INFO [node.js developer p0] hits=65 new=41
+2026-11-18 07:41:07,519 INFO [node.js developer p1] hits=51 new=45
+2026-11-18 07:41:16,341 INFO [spring boot p0] hits=75 new=31
+2026-11-18 07:41:25,434 INFO [spring boot p1] hits=59 new=48
+2026-11-18 07:41:25,435 INFO raw=590 candidates_after_cheap_filters=69
+2026-11-18 07:41:25,438 INFO already_handled=68 to_fetch=1
+2026-11-18 07:41:29,858 INFO ADDED Barclays | AI Software Engineer | Pune, Maharashtra, India |  | https://barclays.wd3.myworkdayjobs.com/external_career_site_barclays/job/Pune-Gera-Commerzone-SEZ/AI-Software-Engineer_JR-0000129112
+2026-11-18 07:41:30,750 INFO === Done. raw=590 added=1 dupes=0 filtered=521 ===
+2026-11-18 08:40:06,080 INFO === hiring.cafe search run started ===
+2026-11-18 08:40:09,636 INFO [software engineer p0] hits=94 new=94
+2026-11-18 08:40:18,596 INFO [software engineer p1] hits=112 new=112
+2026-11-18 08:40:26,286 INFO [backend developer p0] hits=47 new=36
+2026-11-18 08:40:35,287 INFO [backend developer p1] hits=50 new=50
+2026-11-18 08:40:44,229 INFO [java developer p0] hits=104 new=59
+2026-11-18 08:40:51,441 INFO [java developer p1] hits=81 new=76
+2026-11-18 08:41:00,154 INFO [node.js developer p0] hits=65 new=41
+2026-11-18 08:41:07,611 INFO [node.js developer p1] hits=49 new=43
+2026-11-18 08:41:16,431 INFO [spring boot p0] hits=75 new=32
+2026-11-18 08:41:24,513 INFO [spring boot p1] hits=59 new=48
+2026-11-18 08:41:24,515 INFO raw=591 candidates_after_cheap_filters=69
+2026-11-18 08:41:24,543 INFO already_handled=69 to_fetch=0
+2026-11-18 08:41:24,544 INFO === Done. raw=591 added=0 dupes=0 filtered=522 ===
+2026-11-18 09:40:06,525 INFO === hiring.cafe search run started ===
+2026-11-18 09:40:08,770 INFO [software engineer p0] hits=100 new=100
+2026-11-18 09:40:15,216 INFO [software engineer p1] hits=109 new=109
+2026-11-18 09:40:21,320 INFO [backend developer p0] hits=51 new=40
+2026-11-18 09:40:28,229 INFO [backend developer p1] hits=46 new=45
+2026-11-18 09:40:37,387 INFO [java developer p0] hits=109 new=64
+2026-11-18 09:40:43,366 INFO [java developer p1] hits=78 new=72
+2026-11-18 09:40:52,903 INFO [node.js developer p0] hits=69 new=45
+2026-11-18 09:41:00,878 INFO [node.js developer p1] hits=47 new=39
+2026-11-18 09:41:06,942 INFO [spring boot p0] hits=79 new=35
+2026-11-18 09:41:16,238 INFO [spring boot p1] hits=58 new=47
+2026-11-18 09:41:16,239 INFO raw=596 candidates_after_cheap_filters=67
+2026-11-18 09:41:16,242 INFO already_handled=64 to_fetch=3
+2026-11-18 09:41:23,509 INFO ADDED EY | DE-AWS Cloud Native -Full Stack Engineer-BMO-GDSF02 (1730076) | Bengaluru, Karnataka, India |  | https://career012.successfactors.eu/career?career_ns=job_listing&company=EYHRISPRD1&career_job_req_id=1730076
+2026-11-18 09:41:26,310 INFO ADDED EY | DE-AWS Cloud Native -Full Stack Engineer-BMO-GDSF02 | Bengaluru, Karnataka, India |  | https://careers.ey.com/ey/job/Bengaluru-DE-AWS-Cloud-Native-Full-Stack-Engineer-BMO-GDSF02-KA-560016/1457936233/
+2026-11-18 09:41:28,128 INFO === Done. raw=596 added=2 dupes=0 filtered=530 ===
+2026-11-18 10:40:06,468 INFO === hiring.cafe search run started ===
+2026-11-18 10:40:09,372 INFO [software engineer p0] hits=101 new=101
+2026-11-18 10:40:15,928 INFO [software engineer p1] hits=105 new=105
+2026-11-18 10:40:23,529 INFO [backend developer p0] hits=51 new=40
+2026-11-18 10:40:31,146 INFO [backend developer p1] hits=46 new=45
+2026-11-18 10:40:39,550 INFO [java developer p0] hits=107 new=66
+2026-11-18 10:40:49,330 INFO [java developer p1] hits=81 new=72
+2026-11-18 10:40:58,614 INFO [node.js developer p0] hits=67 new=44
+2026-11-18 10:41:07,620 INFO [node.js developer p1] hits=47 new=39
+2026-11-18 10:41:17,181 INFO [spring boot p0] hits=76 new=33
+2026-11-18 10:41:23,526 INFO [spring boot p1] hits=58 new=47
+2026-11-18 10:41:23,527 INFO raw=592 candidates_after_cheap_filters=68
+2026-11-18 10:41:23,550 INFO already_handled=67 to_fetch=1
+2026-11-18 10:41:28,107 INFO ADDED Nike | Software Engineer II, ITC | Bengaluru, Karnataka, India |  | https://nike.wd1.myworkdayjobs.com/nke/job/Karnataka-India/Software-Engineer-II--ITC_R-87978/apply
+2026-11-18 10:41:28,976 INFO === Done. raw=592 added=1 dupes=0 filtered=524 ===
+2026-11-18 11:40:06,268 INFO === hiring.cafe search run started ===
+2026-11-18 11:40:09,393 INFO [software engineer p0] hits=93 new=93
+2026-11-18 11:40:18,280 INFO [software engineer p1] hits=88 new=88
+2026-11-18 11:40:26,678 INFO [backend developer p0] hits=50 new=37
+2026-11-18 11:40:34,641 INFO [backend developer p1] hits=46 new=45
+2026-11-18 11:40:41,190 INFO [java developer p0] hits=106 new=71
+2026-11-18 11:40:50,442 INFO [java developer p1] hits=79 new=72
+2026-11-18 11:40:59,608 INFO [node.js developer p0] hits=67 new=44
+2026-11-18 11:41:07,510 INFO [node.js developer p1] hits=46 new=38
+2026-11-18 11:41:14,153 INFO [spring boot p0] hits=77 new=34
+2026-11-18 11:41:21,687 INFO [spring boot p1] hits=57 new=47
+2026-11-18 11:41:21,688 INFO raw=569 candidates_after_cheap_filters=61
+2026-11-18 11:41:21,712 INFO already_handled=57 to_fetch=4
+2026-11-18 11:41:34,359 INFO === Done. raw=569 added=0 dupes=0 filtered=512 ===
+2026-11-18 12:40:06,128 INFO === hiring.cafe search run started ===
+2026-11-18 12:40:09,312 INFO [software engineer p0] hits=94 new=94
+2026-11-18 12:40:19,449 INFO [software engineer p1] hits=87 new=87
+2026-11-18 12:40:27,689 INFO [backend developer p0] hits=50 new=39
+2026-11-18 12:40:34,603 INFO [backend developer p1] hits=46 new=45
+2026-11-18 12:40:41,527 INFO [java developer p0] hits=102 new=67
+2026-11-18 12:40:48,998 INFO [java developer p1] hits=83 new=76
+2026-11-18 12:40:55,495 INFO [node.js developer p0] hits=67 new=42
+2026-11-18 12:41:02,757 INFO [node.js developer p1] hits=47 new=39
+2026-11-18 12:41:13,156 INFO [spring boot p0] hits=76 new=37
+2026-11-18 12:41:20,878 INFO [spring boot p1] hits=57 new=47
+2026-11-18 12:41:20,880 INFO raw=573 candidates_after_cheap_filters=61
+2026-11-18 12:41:20,898 INFO already_handled=61 to_fetch=0
+2026-11-18 12:41:20,899 INFO === Done. raw=573 added=0 dupes=0 filtered=512 ===
+2026-11-18 13:40:07,374 INFO === hiring.cafe search run started ===
+2026-11-18 13:40:09,823 INFO [software engineer p0] hits=93 new=93
+2026-11-18 13:40:17,992 INFO [software engineer p1] hits=87 new=87
+2026-11-18 13:40:24,625 INFO [backend developer p0] hits=50 new=40
+2026-11-18 13:40:31,061 INFO [backend developer p1] hits=46 new=45
+2026-11-18 13:40:38,285 INFO [java developer p0] hits=101 new=67
+2026-11-18 13:40:46,164 INFO [java developer p1] hits=83 new=76
+2026-11-18 13:40:55,469 INFO [node.js developer p0] hits=67 new=42
+2026-11-18 13:41:02,983 INFO [node.js developer p1] hits=46 new=38
+2026-11-18 13:41:09,092 INFO [spring boot p0] hits=77 new=38
+2026-11-18 13:41:16,877 INFO [spring boot p1] hits=56 new=45
+2026-11-18 13:41:16,878 INFO raw=571 candidates_after_cheap_filters=62
+2026-11-18 13:41:16,882 INFO already_handled=62 to_fetch=0
+2026-11-18 13:41:16,885 INFO === Done. raw=571 added=0 dupes=0 filtered=509 ===
+2026-11-18 14:40:06,878 INFO === hiring.cafe search run started ===
+2026-11-18 14:40:09,118 INFO [software engineer p0] hits=102 new=102
+2026-11-18 14:40:17,963 INFO [software engineer p1] hits=95 new=95
+2026-11-18 14:40:25,157 INFO [backend developer p0] hits=50 new=35
+2026-11-18 14:40:32,850 INFO [backend developer p1] hits=48 new=47
+2026-11-18 14:40:42,119 INFO [java developer p0] hits=101 new=55
+2026-11-18 14:40:51,385 INFO [java developer p1] hits=90 new=82
+2026-11-18 14:40:57,320 INFO [node.js developer p0] hits=70 new=49
+2026-11-18 14:41:03,083 INFO [node.js developer p1] hits=45 new=36
+2026-11-18 14:41:11,798 INFO [spring boot p0] hits=80 new=29
+2026-11-18 14:41:17,836 INFO [spring boot p1] hits=64 new=54
+2026-11-18 14:41:17,837 INFO raw=584 candidates_after_cheap_filters=56
+2026-11-18 14:41:17,853 INFO already_handled=51 to_fetch=5
+2026-11-18 14:41:21,217 INFO ADDED American Express | Software Engineer II | Bengaluru, Karnataka, India |  | https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions/job/26014297
+2026-11-18 14:41:24,362 INFO ADDED AbhiBus | Software Engineer - I / II(Java) | Hyderabad, Telangana, India |  | https://jobs.smartrecruiters.com/AbhiBus/744000162233780-software-engineer-i-ii-java-
+2026-11-18 14:41:28,061 INFO ADDED IncubXperts TechnoConsulting | Software Engineer- AI | Pune, Maharashtra, India |  | https://incubxperts.zohorecruit.com/jobs/careers/620458000021335079/Software-Engineer-AI
+2026-11-18 14:41:31,387 INFO ADDED Nike | Software Engineer II, ITC | Karnataka, India |  | https://nike.wd1.myworkdayjobs.com/nke/job/Karnataka-India/Software-Engineer-II--ITC_R-87978
+2026-11-18 14:41:35,311 INFO ADDED Applied Materials | Software Development Engineer in Test (SDET) – Java | Bengaluru, Karnataka, India |  | https://appliedmaterials.eightfold.ai/careers/job/790318752565
+2026-11-18 14:41:39,786 INFO === Done. raw=584 added=5 dupes=0 filtered=528 ===
+2026-11-18 15:40:10,403 INFO === hiring.cafe search run started ===
+2026-11-18 15:40:12,540 INFO [software engineer p0] hits=105 new=105
+2026-11-18 15:40:21,943 INFO [software engineer p1] hits=106 new=106
+2026-11-18 15:40:28,424 INFO [backend developer p0] hits=51 new=37
+2026-11-18 15:40:35,383 INFO [backend developer p1] hits=46 new=46
+2026-11-18 15:40:44,072 INFO [java developer p0] hits=92 new=49
+2026-11-18 15:40:51,595 INFO [java developer p1] hits=99 new=90
+2026-11-18 15:40:59,202 INFO [node.js developer p0] hits=70 new=50
+2026-11-18 15:41:06,208 INFO [node.js developer p1] hits=50 new=42
+2026-11-18 15:41:12,999 INFO [spring boot p0] hits=82 new=28
+2026-11-18 15:41:22,636 INFO [spring boot p1] hits=62 new=53
+2026-11-18 15:41:22,638 INFO raw=606 candidates_after_cheap_filters=65
+2026-11-18 15:41:22,671 INFO already_handled=50 to_fetch=15
+2026-11-18 15:41:43,172 INFO ADDED GE HealthCare | Software Engineer | Bengaluru, Karnataka, India |  | https://gehc.wd5.myworkdayjobs.com/gehc_externalsite/job/IND19-01-Bengaluru-EPIP-122-Phase-II/Software-Engineer_R4049534-1
+2026-11-18 15:41:47,166 INFO ADDED GE HealthCare | Software Engineer | Bengaluru, Karnataka, India |  | https://careers.gehealthcare.com/global/en/job/R4049534/Software-Engineer
+2026-11-18 15:41:50,170 INFO ADDED Kyndryl | Software Engineer Application Development | Bangalore, Karnataka, India |  | https://kyndryl.wd5.myworkdayjobs.com/kyndrylprofessionalcareers/job/Bangalore-Karnataka-India/Software-Engineer-Application-Development_R-71761-1
+2026-11-18 15:42:07,374 INFO ADDED KION Group | Software Developer (Java / Web) | Pune, Maharashtra, India |  | https://kiongroup.wd3.myworkdayjobs.com/kiongroup/job/Pune-India/Software-Developer--Java---Web-_JR-0098453
+2026-11-18 15:42:10,406 INFO ADDED Citi | Java Fullstack Developer | Gurugram, Haryana, India |  | https://citi.wd5.myworkdayjobs.com/2/job/DLF-CYBERCITY-12B/Java-Fullstack-Developer_261007111
+2026-11-18 15:42:14,467 INFO ADDED MUFG | SDE - Java Full Stack (BET GCM) | Bengaluru, Karnataka, India |  | https://mufgub.wd3.myworkdayjobs.com/mufg-careers/job/MUFG-Global-Service-Private-Ltd---Bengaluru-BCIT/SDE---Java-Full-Stack--BET-GCM-_10080855-WD
+2026-11-18 15:42:20,064 INFO === Done. raw=606 added=6 dupes=0 filtered=550 ===
+2026-11-18 16:40:06,978 INFO === hiring.cafe search run started ===
+2026-11-18 16:40:09,113 INFO [software engineer p0] hits=102 new=102
+2026-11-18 16:40:17,031 INFO [software engineer p1] hits=98 new=98
+2026-11-18 16:40:25,646 INFO [backend developer p0] hits=52 new=39
+2026-11-18 16:40:33,593 INFO [backend developer p1] hits=47 new=47
+2026-11-18 16:40:40,715 INFO [java developer p0] hits=87 new=54
+2026-11-18 16:40:50,752 INFO [java developer p1] hits=83 new=70
+2026-11-18 16:40:59,481 INFO [node.js developer p0] hits=65 new=48
+2026-11-18 16:41:07,361 INFO [node.js developer p1] hits=50 new=43
+2026-11-18 16:41:15,597 INFO [spring boot p0] hits=77 new=29
+2026-11-18 16:41:23,619 INFO [spring boot p1] hits=62 new=54
+2026-11-18 16:41:23,620 INFO raw=584 candidates_after_cheap_filters=65
+2026-11-18 16:41:23,646 INFO already_handled=57 to_fetch=8
+2026-11-18 16:41:51,244 INFO ADDED Applied Materials | Software Development Engineer in Test (SDET) – Java | Bengaluru, Karnataka, India |  | https://jobs.appliedmaterials.com/job/bengaluru/software-development-engineer-in-test-sdet-java/95/103458464928
+2026-11-18 16:41:52,143 INFO === Done. raw=584 added=1 dupes=0 filtered=526 ===
+2026-11-18 17:40:09,819 INFO === hiring.cafe search run started ===
+2026-11-18 17:40:12,471 INFO [software engineer p0] hits=106 new=106
+2026-11-18 17:40:19,892 INFO [software engineer p1] hits=93 new=93
+2026-11-18 17:40:28,883 INFO [backend developer p0] hits=51 new=38
+2026-11-18 17:40:38,525 INFO [backend developer p1] hits=46 new=46
+2026-11-18 17:40:47,106 INFO [java developer p0] hits=83 new=51
+2026-11-18 17:40:53,143 INFO [java developer p1] hits=82 new=73
+2026-11-18 17:41:00,912 INFO [node.js developer p0] hits=64 new=47
+2026-11-18 17:41:09,926 INFO [node.js developer p1] hits=53 new=46
+2026-11-18 17:41:19,118 INFO [spring boot p0] hits=75 new=28
+2026-11-18 17:41:27,609 INFO [spring boot p1] hits=64 new=56
+2026-11-18 17:41:27,610 INFO raw=584 candidates_after_cheap_filters=64
+2026-11-18 17:41:27,642 INFO already_handled=63 to_fetch=1
+2026-11-18 17:41:31,407 INFO ADDED G-P | Software Engineer II | India |  | https://job-boards.greenhouse.io/globalizationpartners/jobs/8164414003
+2026-11-18 17:41:32,976 INFO === Done. raw=584 added=1 dupes=0 filtered=520 ===
+2026-11-18 18:40:06,797 INFO === hiring.cafe search run started ===
+2026-11-18 18:40:08,964 INFO [software engineer p0] hits=106 new=106
+2026-11-18 18:40:17,465 INFO [software engineer p1] hits=97 new=97
+2026-11-18 18:40:25,834 INFO [backend developer p0] hits=51 new=38
+2026-11-18 18:40:35,777 INFO [backend developer p1] hits=46 new=46
+2026-11-18 18:40:44,657 INFO [java developer p0] hits=84 new=48
+2026-11-18 18:40:53,139 INFO [java developer p1] hits=76 new=68
+2026-11-18 18:41:02,682 INFO [node.js developer p0] hits=64 new=47
+2026-11-18 18:41:11,560 INFO [node.js developer p1] hits=53 new=46
+2026-11-18 18:41:21,144 INFO [spring boot p0] hits=76 new=32
+2026-11-18 18:41:28,171 INFO [spring boot p1] hits=64 new=56
+2026-11-18 18:41:28,173 INFO raw=584 candidates_after_cheap_filters=58
+2026-11-18 18:41:28,191 INFO already_handled=58 to_fetch=0
+2026-11-18 18:41:28,192 INFO === Done. raw=584 added=0 dupes=0 filtered=526 ===
+2026-11-18 23:26:29,636 INFO === hiring.cafe search run started ===
+2026-11-18 23:26:33,281 INFO [software engineer p0] hits=107 new=107
+2026-11-18 23:26:42,743 INFO [software engineer p1] hits=103 new=103
+2026-11-18 23:26:49,294 INFO [backend developer p0] hits=52 new=40
+2026-11-18 23:26:57,984 INFO [backend developer p1] hits=44 new=44
+2026-11-18 23:27:07,441 INFO [java developer p0] hits=104 new=52
+2026-11-18 23:27:15,090 INFO [java developer p1] hits=77 new=74
+2026-11-18 23:27:23,152 INFO [node.js developer p0] hits=56 new=27
+2026-11-18 23:27:29,930 INFO [node.js developer p1] hits=61 new=55
+2026-11-18 23:27:37,382 INFO [spring boot p0] hits=71 new=35
+2026-11-18 23:27:45,154 INFO [spring boot p1] hits=70 new=60
+2026-11-18 23:27:45,156 INFO raw=597 candidates_after_cheap_filters=66
+2026-11-18 23:27:45,183 INFO already_handled=51 to_fetch=15
+2026-11-18 23:27:55,029 INFO ADDED UBS | Software Engineer (Test Automation Engineer) | Pune, Maharashtra, India |  | https://jobs.ubs.com/TGnewUI/Search/home/HomeWithPreLoad?partnerid=25008&siteid=5155&PageType=JobDetails&jobid=354075
+2026-11-18 23:28:02,974 INFO ADDED Citi | Java Developer | Pune, Maharashtra, India |  | https://jobs.citi.com/job/pune/java-developer/287/103461208048
+2026-11-18 23:28:06,395 INFO ADDED Hevodata | Associate SDE | Bangalore, Karnataka, India |  | https://jobs.lever.co/hevodata/4eccaf98-ba19-42ea-b040-e0976d4dadfe
+2026-11-18 23:28:09,448 INFO ADDED Autodesk | Software Engineer (Python/Node.JS,AWS) | Pune, Maharashtra, India | INR 1533000-2409000/yr | https://autodesk.eightfold.ai/careers/job/1443154578110
+2026-11-18 23:28:16,751 INFO ADDED Citi | Java and Angular Fullstack developer | Pune, Maharashtra, India |  | https://jobs.citi.com/job/pune/java-and-angular-fullstack-developer/287/103461200864
+2026-11-18 23:28:20,889 INFO ADDED Citi | Java Developer | Pune, Maharashtra, India |  | https://citi.eightfold.ai/careers/job/859038889097
+2026-11-18 23:28:23,435 INFO ADDED First Citizens India | Software Engineer I - Devops | Bengaluru, Karnataka, India |  | https://svb.wd5.myworkdayjobs.com/firstcitizensindia/job/Bangalore-India/Software-Engineer-I---Devops_25006
+2026-11-18 23:28:27,809 INFO ADDED Cisco | Software Engineer – AI & Agentic Systems - 4to8yrs - Python, C/C++, LTE/5G, Networking | Bangalore, Karnataka, India |  | https://cisco.wd5.myworkdayjobs.com/cisco_careers/job/Bangalore-India/Software-Engineer---AI---Agentic-Systems---4to8yrs---Python--C-C----LTE-5G--Networking_2029278-1
+2026-11-18 23:28:32,302 INFO ADDED Cisco | Software Engineer – AI & Agentic Systems - 4to8yrs - Python, C/C++, AI/ML(LLM, RAG), IEEE 802.1AE MACsec & IEEE 802.1X MKA, Networking | Bangalore, Karnataka, India |  | https://cisco.wd5.myworkdayjobs.com/cisco_careers/job/Bangalore-India/Software-Engineer---AI---Agentic-Systems---4to8yrs---Python--C-C----AI-ML-LLM--RAG---IEEE-8021AE-MACsec---IEEE-8021X-MKA--Networking_2029280-1
+2026-11-18 23:28:36,140 INFO ADDED Cisco | Software Engineer | Bangalore, Karnataka, India | INR 1807900-2482600/yr | https://cisco.phenompro.com/global/en/job/2027972/Software-Engineer
+2026-11-18 23:28:51,515 INFO === Done. raw=597 added=10 dupes=2 filtered=534 ===
+2026-11-18 23:40:08,261 INFO === hiring.cafe search run started ===
+2026-11-18 23:40:10,621 INFO [software engineer p0] hits=107 new=107
+2026-11-18 23:40:18,507 INFO [software engineer p1] hits=103 new=103
+2026-11-18 23:40:24,900 INFO [backend developer p0] hits=52 new=40
+2026-11-18 23:40:34,594 INFO [backend developer p1] hits=44 new=44
+2026-11-18 23:40:43,126 INFO [java developer p0] hits=104 new=52
+2026-11-18 23:40:50,693 INFO [java developer p1] hits=77 new=74
+2026-11-18 23:40:56,795 INFO [node.js developer p0] hits=56 new=27
+2026-11-18 23:41:02,520 INFO [node.js developer p1] hits=61 new=55
+2026-11-18 23:41:10,981 INFO [spring boot p0] hits=71 new=35
+2026-11-18 23:41:19,292 INFO [spring boot p1] hits=69 new=59
+2026-11-18 23:41:19,294 INFO raw=596 candidates_after_cheap_filters=66
+2026-11-18 23:41:19,319 INFO already_handled=66 to_fetch=0
+2026-11-18 23:41:19,320 INFO === Done. raw=596 added=0 dupes=0 filtered=530 ===
+2026-11-19 00:40:07,198 INFO === hiring.cafe search run started ===
+2026-11-19 00:40:09,507 INFO [software engineer p0] hits=110 new=110
+2026-11-19 00:40:16,066 INFO [software engineer p1] hits=102 new=102
+2026-11-19 00:40:22,425 INFO [backend developer p0] hits=52 new=40
+2026-11-19 00:40:28,930 INFO [backend developer p1] hits=44 new=44
+2026-11-19 00:40:37,990 INFO [java developer p0] hits=105 new=51
+2026-11-19 00:40:46,712 INFO [java developer p1] hits=78 new=75
+2026-11-19 00:40:53,160 INFO [node.js developer p0] hits=56 new=27
+2026-11-19 00:41:01,648 INFO [node.js developer p1] hits=61 new=55
+2026-11-19 00:41:10,150 INFO [spring boot p0] hits=71 new=36
+2026-11-19 00:41:16,769 INFO [spring boot p1] hits=70 new=60
+2026-11-19 00:41:16,771 INFO raw=600 candidates_after_cheap_filters=66
+2026-11-19 00:41:16,776 INFO already_handled=65 to_fetch=1
+2026-11-19 00:41:20,767 INFO === Done. raw=600 added=0 dupes=0 filtered=535 ===
+2026-11-19 01:40:07,996 INFO === hiring.cafe search run started ===
+2026-11-19 01:40:10,687 INFO [software engineer p0] hits=110 new=110
+2026-11-19 01:40:20,443 INFO [software engineer p1] hits=104 new=104
+2026-11-19 01:40:27,469 INFO [backend developer p0] hits=54 new=41
+2026-11-19 01:40:34,556 INFO [backend developer p1] hits=44 new=44
+2026-11-19 01:40:41,731 INFO [java developer p0] hits=108 new=60
+2026-11-19 01:40:48,037 INFO [java developer p1] hits=77 new=74
+2026-11-19 01:40:54,398 INFO [node.js developer p0] hits=59 new=28
+2026-11-19 01:41:03,861 INFO [node.js developer p1] hits=59 new=53
+2026-11-19 01:41:10,943 INFO [spring boot p0] hits=71 new=36
+2026-11-19 01:41:16,933 INFO [spring boot p1] hits=69 new=59
+2026-11-19 01:41:16,935 INFO raw=609 candidates_after_cheap_filters=66
+2026-11-19 01:41:16,971 INFO already_handled=63 to_fetch=3
+2026-11-19 01:41:26,358 INFO === Done. raw=609 added=0 dupes=0 filtered=546 ===
+2026-11-19 02:40:08,747 INFO === hiring.cafe search run started ===
+2026-11-19 02:40:11,075 INFO [software engineer p0] hits=109 new=109
+2026-11-19 02:40:17,228 INFO [software engineer p1] hits=107 new=107
+2026-11-19 02:40:26,479 INFO [backend developer p0] hits=55 new=41
+2026-11-19 02:40:37,766 INFO [backend developer p1] hits=44 new=44
+2026-11-19 02:40:45,095 INFO [java developer p0] hits=105 new=59
+2026-11-19 02:40:52,916 INFO [java developer p1] hits=75 new=72
+2026-11-19 02:41:02,677 INFO [node.js developer p0] hits=59 new=29
+2026-11-19 02:41:08,978 INFO [node.js developer p1] hits=59 new=53
+2026-11-19 02:41:15,521 INFO [spring boot p0] hits=73 new=39
+2026-11-19 02:41:24,809 INFO [spring boot p1] hits=66 new=56
+2026-11-19 02:41:24,811 INFO raw=609 candidates_after_cheap_filters=62
+2026-11-19 02:41:24,835 INFO already_handled=62 to_fetch=0
+2026-11-19 02:41:24,836 INFO === Done. raw=609 added=0 dupes=0 filtered=547 ===
+2026-11-19 03:40:15,306 INFO === hiring.cafe search run started ===
+2026-11-19 03:40:17,507 INFO [software engineer p0] hits=105 new=105
+2026-11-19 03:40:24,787 INFO [software engineer p1] hits=106 new=106
+2026-11-19 03:40:32,110 INFO [backend developer p0] hits=56 new=44
+2026-11-19 03:40:38,239 INFO [backend developer p1] hits=44 new=44
+2026-11-19 03:40:44,439 INFO [java developer p0] hits=104 new=58
+2026-11-19 03:40:50,841 INFO [java developer p1] hits=77 new=74
+2026-11-19 03:40:57,185 INFO [node.js developer p0] hits=62 new=29
+2026-11-19 03:41:03,721 INFO [node.js developer p1] hits=62 new=57
+2026-11-19 03:41:12,018 INFO [spring boot p0] hits=72 new=38
+2026-11-19 03:41:21,586 INFO [spring boot p1] hits=68 new=55
+2026-11-19 03:41:21,588 INFO raw=610 candidates_after_cheap_filters=68
+2026-11-19 03:41:21,628 INFO already_handled=63 to_fetch=5
+2026-11-19 03:41:29,608 INFO ADDED Barclays | Software Engineer - AI | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/software-engineer-ai/13015/103473668768
+2026-11-19 03:41:37,772 INFO ADDED Advance Auto Parts | Software Developer | Hyderabad, Telangana, India |  | https://advanceautoparts.phenompro.com/us/en/job/R-0619822/Software-Developer
+2026-11-19 03:41:42,013 INFO ADDED Barclays | Software Engineer - AI | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/software-engineer-ai/13015/103473668848
+2026-11-19 03:41:44,932 INFO === Done. raw=610 added=3 dupes=0 filtered=544 ===

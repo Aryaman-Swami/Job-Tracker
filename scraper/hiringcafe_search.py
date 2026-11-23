@@ -44,7 +44,7 @@ except ImportError:  # pragma: no cover
 import requests
 
 from run_scraper import TITLE_EXCLUDE, LOCATION_EXCLUDE, COMPANY_EXCLUDE, clean
-from notify import notify_new_jobs
+from notify import notify_new_jobs, notify_run_summary
 from auth_client import get_auth_header
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -162,11 +162,37 @@ def comp_text(vp):
     return f"{cur} {int(lo) if lo else '?'}-{int(hi) if hi else '?'}/yr".strip()
 
 
+HANDLED_PATH = SCRIPT_DIR / "hiringcafe_handled.json"
+HANDLED_TTL_DAYS = 30
+
+
+def load_handled():
+    """Job ids already fetched+decided (posted, deduped, or rejected by description).
+    Skipping them avoids re-hitting /api/job-description for ~80 jobs every hour,
+    which is what trips Cloudflare's 403."""
+    try:
+        data = json.loads(HANDLED_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    cutoff = time.time() - HANDLED_TTL_DAYS * 86400
+    return {k: v for k, v in data.items() if v >= cutoff}
+
+
+def save_handled(handled):
+    try:
+        HANDLED_PATH.write_text(json.dumps(handled), encoding="utf-8")
+    except Exception as e:
+        logger.warning(f"could not save {HANDLED_PATH.name}: {e}")
+
+
 def main():
+    if os.environ.get("RENDER"):
+        raise SystemExit("hiring.cafe scraper must not run on Render (Cloudflare blocks it); local only")
     logger.info("=== hiring.cafe search run started ===")
     session = cffi_requests.Session(impersonate="chrome")
     added, skipped, filtered, raw, seen = 0, 0, 0, 0, set()
     added_jobs = []
+    run_error = None
     now = time.time()
     first = True
     candidates = []
@@ -212,13 +238,25 @@ def main():
                     break
 
         logger.info(f"raw={raw} candidates_after_cheap_filters={len(candidates)}")
-        for jid, h, vp, title, company, pub, pre_text in candidates:
+        handled = load_handled()
+        fresh = [c for c in candidates if c[0] not in handled]
+        logger.info(f"already_handled={len(candidates) - len(fresh)} to_fetch={len(fresh)}")
+        for jid, h, vp, title, company, pub, pre_text in fresh:
             time.sleep(random.uniform(*DESC_DELAY))
-            desc = html_to_text(fetch_description(session, jid))
+            try:
+                raw_desc = fetch_description(session, jid)
+            except Blocked:
+                # Cloudflare rate limit: cool down once and retry before giving up.
+                logger.warning("job-description blocked; cooling down 90s then retrying once")
+                time.sleep(90)
+                raw_desc = fetch_description(session, jid)
+            desc = html_to_text(raw_desc)
             combined = f"{pre_text} {desc}"
             if (not any(re.search(p, combined, re.I) for p in TECH_INCLUDE)
                     or not years_ok(vp, desc)):
                 filtered += 1
+                handled[jid] = now
+                save_handled(handled)
                 continue
             locs = vp.get("formatted_workplace_location") or ", ".join(vp.get("workplace_cities") or []) or "India"
             comp = comp_text(vp)
@@ -235,6 +273,8 @@ def main():
             try:
                 r = requests.post(BACKEND, json=payload, headers=get_auth_header(BASE_URL), timeout=5)
                 r.raise_for_status()
+                handled[jid] = now
+                save_handled(handled)
                 if r.json().get("skipped"):
                     skipped += 1
                 else:
@@ -245,11 +285,17 @@ def main():
                 logger.warning(f"Failed to post job {jid}: {e}")
     except Blocked as e:
         logger.error(f"BLOCKED, aborting run (no retries): {e}")
+        run_error = f"Blocked: {e}"
     except Exception as e:
         logger.error(f"Run aborted: {e}")
+        run_error = f"Run aborted: {e}"
     notify_new_jobs(added_jobs, source_label="hiring.cafe")
+    if run_error:
+        notify_run_summary(f"{run_error} ({added} added before failure)", "hiring.cafe", failed=True)
     logger.info(f"=== Done. raw={raw} added={added} dupes={skipped} filtered={filtered} ===")
     print(f"[{datetime.now():%Y-%m-%d %H:%M}] hiring.cafe search done. {added} new jobs added.")
+    if run_error:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

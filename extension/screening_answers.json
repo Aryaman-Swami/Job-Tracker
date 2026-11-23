@@ -1,0 +1,14 @@
+[
+  {"match": "legally authorized|authorized to work|eligible to work", "answer": "Yes"},
+  {"match": "sponsorship|visa", "answer": "No"},
+  {"match": "restrictive covenant|non-compete|non-disclosure", "answer": "No"},
+  {"match": "^gender|gender\\*?$", "answer": "Male"},
+  {"match": "veteran", "answer": "No"},
+  {"match": "disabilit", "answer": "No"},
+  {"match": "ever worked for|previously (worked|employed)|former employee", "answer": "No"},
+  {"match": "how did you hear|source", "answer": "LinkedIn"},
+  {"match": "notice period", "answer": "30 days"},
+  {"match": "referral|referred by", "answer": "No"},
+  {"match": "bachelor", "answer": "Yes"},
+  {"match": "related to anyone|close personal relationship|outside employment|government office|negotiate, influence", "answer": "No"}
+]

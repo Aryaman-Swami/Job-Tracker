@@ -43,17 +43,16 @@ def notify_new_jobs(jobs: list[dict], source_label: str):
         return
 
     for j in jobs:
-        title = f"{source_label}: {j['company']}"
-        message = j["role"]
+        title = f"{source_label}: {j.get('company') or 'Unknown company'}"
+        message = j.get("role") or "New role"
+        headers = {"Title": title.encode("utf-8"), "Tags": "briefcase"}
+        if j.get("job_url"):
+            headers["Click"] = j["job_url"]
         try:
             resp = requests.post(
                 f"https://ntfy.sh/{topic}",
                 data=message.encode("utf-8"),
-                headers={
-                    "Title": title.encode("utf-8"),
-                    "Tags": "briefcase",
-                    "Click": j["job_url"],
-                },
+                headers=headers,
                 timeout=10,
             )
             resp.raise_for_status()
@@ -62,8 +61,10 @@ def notify_new_jobs(jobs: list[dict], source_label: str):
 
 
 def notify_run_summary(text: str, source_label: str, failed: bool = False):
-    """One message per run even when nothing is new, so silence means the
-    scheduled check did not run rather than 'no jobs'."""
+    """Failure alerts only. Successful runs stay silent: the user wants a push
+    per new job (company + role), never a "done" / "N jobs added" count."""
+    if not failed:
+        return
     topic = _topic()
     if not topic:
         return

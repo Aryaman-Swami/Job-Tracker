@@ -1,0 +1,9 @@
+{
+  "experience": [
+    {"title": "Software Development Engineer", "company": "Bajaj Finserv Health Ltd.", "location": "Pune, India", "current": true, "from": "09/2025"},
+    {"title": "Associate Software Development Engineer", "company": "Bajaj Finserv Health Ltd.", "location": "Pune, India", "current": false, "from": "06/2024", "to": "09/2025"}
+  ],
+  "education": [
+    {"school": "University Institute of Technology, Bhopal", "degree": "Bachelors", "field": "Computer Science", "gpa": "8.3", "from": "2020", "to": "2024"}
+  ]
+}

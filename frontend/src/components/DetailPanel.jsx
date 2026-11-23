@@ -173,6 +173,7 @@ export default function DetailPanel({ job, overlay, onClose, onJobUpdated, onOpe
       <div className="detail-grid">
         <div className="detail-main">
           <AtsSection
+            jobId={job.id}
             atsResult={atsResult}
             prevScore={prevScore}
             loading={atsLoading}

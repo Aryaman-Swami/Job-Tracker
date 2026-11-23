@@ -21,3 +21,4 @@ instahyre-scraper/.env
 instahyre-scraper/sessions/
 instahyre-scraper/applied_jobs.json
 instahyre-scraper/*.log
+scraper/hiringcafe_handled.json

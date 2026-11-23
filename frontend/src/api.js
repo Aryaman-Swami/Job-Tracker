@@ -118,6 +118,9 @@ export const api = {
   getPersistedAtsScore(id) {
     return authFetch(`/api/ats-score/${id}`).then(json);
   },
+  checkPdfText(id) {
+    return authFetch(`/api/pdf-check/${id}`, { method: 'POST' }).then(json);
+  },
   generatePdf(latex, filename) {
     return authFetch(`${BACKEND_URL}/api/pdf`, {
       method: 'POST',

@@ -1377,5 +1377,47 @@
   "status": "external",
   "at": "2026-11-01T16:41:14.977Z",
   "attempts": 1
+ },
+ "https://www.naukri.com/job-listings-java-developer-brilliantech-software-pune-2-to-3-years-051126038738": {
+  "company": "Brilliantech Software",
+  "role": "Java Developer",
+  "status": "needs_input",
+  "at": "2026-11-05T20:53:22.425Z",
+  "attempts": 1
+ },
+ "https://www.naukri.com/job-listings-software-engineer-ii-java-backend-guidewire-software-inc-bengaluru-2-to-3-years-310826501312": {
+  "company": "Guidewire Software",
+  "role": "Software Engineer II (Java, backend)",
+  "status": "external",
+  "at": "2026-11-05T20:53:52.821Z",
+  "attempts": 1
+ },
+ "https://www.naukri.com/job-listings-java-developer-airtel-pune-2-to-3-years-060826015740": {
+  "company": "Airtel",
+  "role": "Java Developer",
+  "status": "applied",
+  "at": "2026-11-06T07:35:17.861Z",
+  "attempts": 1
+ },
+ "https://www.naukri.com/job-listings-java-developer-2-3-techtree-bengaluru-belagavi-2-to-3-years-111126017655": {
+  "company": "Techtree",
+  "role": "Java Developer 2-3",
+  "status": "applied",
+  "at": "2026-11-11T11:35:16.599Z",
+  "attempts": 1
+ },
+ "https://www.naukri.com/job-listings-java-developer-java-springboot-microservices-motorola-solutions-kodiak-networks-india-private-limited-bengaluru-9-to-9-years-111126916978": {
+  "company": "Motorola Solutions India",
+  "role": "JAVA Developer (Java Springboot,Microservices)",
+  "status": "applied",
+  "at": "2026-11-11T11:35:56.700Z",
+  "attempts": 1
+ },
+ "https://www.naukri.com/job-listings-java-developer-microservices-promunim-of-india-pune-3-to-5-years-261026014174": {
+  "company": "Promunim Of India",
+  "role": "Walk-in || Java Developer - Microservices",
+  "status": "error",
+  "at": "2026-11-16T19:35:22.055Z",
+  "attempts": 3
  }
 }

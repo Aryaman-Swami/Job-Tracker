@@ -184,3 +184,594 @@
 2026-10-25 15:07:47,586 INFO [full-stack-engineer p1] listings=28
 2026-10-25 15:07:52,929 INFO [full-stack-engineer p2] listings=23
 2026-10-25 15:07:52,931 INFO DRY-RUN reasons: {"location": 3, "too_old": 152, "no_tech_match": 15, "title_not_included": 7, "title_excluded": 44, "years": 2} passed=8
+2026-11-15 21:14:10,639 INFO === Wellfound search run started ===
+2026-11-15 21:14:11,532 INFO ADDED Vested Finance | Software Engineer | Bangalore Urban |  | https://wellfound.com/jobs/4981464-software-engineer
+2026-11-15 21:14:11,658 INFO [software-engineer p1] listings=35
+2026-11-15 21:14:18,911 INFO [software-engineer p2] listings=32
+2026-11-15 21:14:23,095 INFO [backend-engineer p1] listings=35
+2026-11-15 21:14:30,024 INFO [backend-engineer p2] listings=36
+2026-11-15 21:14:35,329 INFO [java-developer p1] listings=27
+2026-11-15 21:14:42,056 INFO [java-developer p2] listings=24
+2026-11-15 21:14:49,162 INFO [full-stack-engineer p1] listings=28
+2026-11-15 21:14:54,624 INFO [full-stack-engineer p2] listings=19
+2026-11-15 21:15:03,648 INFO === Done. added=10 dupes=0 filtered=226 ===
+2026-11-15 22:14:03,966 INFO === Wellfound search run started ===
+2026-11-15 22:14:08,356 WARNING Failed to post job 4981464: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:14:12,458 WARNING Failed to post job 2351282: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:14:16,561 WARNING Failed to post job 4970038: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:14:20,677 WARNING Failed to post job 5061221: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:14:24,782 WARNING Failed to post job 5067375: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:14:28,877 WARNING Failed to post job 4890545: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:14:28,886 INFO [software-engineer p1] listings=35
+2026-11-15 22:14:33,324 INFO [software-engineer p2] listings=32
+2026-11-15 22:14:40,488 INFO [backend-engineer p1] listings=35
+2026-11-15 22:14:45,039 INFO [backend-engineer p2] listings=37
+2026-11-15 22:14:52,537 INFO [java-developer p1] listings=27
+2026-11-15 22:15:01,134 WARNING Failed to post job 4632678: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:15:05,234 WARNING Failed to post job 4970040: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:15:05,242 INFO [java-developer p2] listings=24
+2026-11-15 22:15:16,652 WARNING Failed to post job 4866983: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError("HTTPConnection(host='localhost', port=3000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-15 22:15:16,672 INFO [full-stack-engineer p1] listings=28
+2026-11-15 22:15:22,092 INFO [full-stack-engineer p2] listings=19
+2026-11-15 22:15:22,093 INFO === Done. added=0 dupes=0 filtered=228 ===
+2026-11-15 22:18:51,184 INFO === Wellfound search run started ===
+2026-11-15 22:18:53,287 INFO [software-engineer p1] listings=35
+2026-11-15 22:18:57,807 INFO [software-engineer p2] listings=32
+2026-11-15 22:19:02,433 INFO [backend-engineer p1] listings=35
+2026-11-15 22:19:09,807 INFO [backend-engineer p2] listings=37
+2026-11-15 22:19:13,991 INFO [java-developer p1] listings=27
+2026-11-15 22:19:22,476 INFO [java-developer p2] listings=24
+2026-11-15 22:19:26,867 INFO [full-stack-engineer p1] listings=28
+2026-11-15 22:19:31,231 INFO [full-stack-engineer p2] listings=19
+2026-11-15 22:19:31,233 INFO === Done. added=0 dupes=9 filtered=228 ===
+2026-11-15 23:14:05,061 INFO === Wellfound search run started ===
+2026-11-15 23:14:07,233 INFO [software-engineer p1] listings=35
+2026-11-15 23:14:12,886 INFO [software-engineer p2] listings=32
+2026-11-15 23:14:17,699 INFO [backend-engineer p1] listings=38
+2026-11-15 23:14:25,471 INFO [backend-engineer p2] listings=33
+2026-11-15 23:14:33,080 INFO [java-developer p1] listings=27
+2026-11-15 23:14:38,471 INFO [java-developer p2] listings=24
+2026-11-15 23:14:43,404 INFO [full-stack-engineer p1] listings=28
+2026-11-15 23:14:51,358 INFO [full-stack-engineer p2] listings=19
+2026-11-15 23:14:51,364 INFO === Done. added=0 dupes=9 filtered=227 ===
+2026-11-16 00:14:05,106 INFO === Wellfound search run started ===
+2026-11-16 00:14:07,259 INFO [software-engineer p1] listings=35
+2026-11-16 00:14:12,748 INFO [software-engineer p2] listings=32
+2026-11-16 00:14:18,734 INFO [backend-engineer p1] listings=38
+2026-11-16 00:14:24,371 INFO [backend-engineer p2] listings=33
+2026-11-16 00:14:30,209 INFO [java-developer p1] listings=27
+2026-11-16 00:14:36,345 INFO [java-developer p2] listings=24
+2026-11-16 00:14:43,991 INFO [full-stack-engineer p1] listings=28
+2026-11-16 00:14:51,109 INFO [full-stack-engineer p2] listings=19
+2026-11-16 00:14:51,111 INFO === Done. added=0 dupes=9 filtered=227 ===
+2026-11-16 01:14:05,522 INFO === Wellfound search run started ===
+2026-11-16 01:14:07,717 INFO [software-engineer p1] listings=35
+2026-11-16 01:14:15,623 INFO [software-engineer p2] listings=32
+2026-11-16 01:14:20,138 INFO [backend-engineer p1] listings=38
+2026-11-16 01:14:27,447 INFO [backend-engineer p2] listings=33
+2026-11-16 01:14:35,373 INFO [java-developer p1] listings=27
+2026-11-16 01:14:42,907 INFO [java-developer p2] listings=24
+2026-11-16 01:14:50,015 INFO [full-stack-engineer p1] listings=28
+2026-11-16 01:14:54,973 INFO [full-stack-engineer p2] listings=19
+2026-11-16 01:14:54,975 INFO === Done. added=0 dupes=9 filtered=227 ===
+2026-11-16 02:14:17,784 INFO === Wellfound search run started ===
+2026-11-16 02:14:20,155 INFO [software-engineer p1] listings=35
+2026-11-16 02:14:26,484 INFO [software-engineer p2] listings=32
+2026-11-16 02:14:34,084 INFO [backend-engineer p1] listings=38
+2026-11-16 02:14:41,269 INFO [backend-engineer p2] listings=33
+2026-11-16 02:14:45,721 INFO [java-developer p1] listings=27
+2026-11-16 02:14:51,790 INFO [java-developer p2] listings=24
+2026-11-16 02:14:57,564 INFO [full-stack-engineer p1] listings=28
+2026-11-16 02:15:02,270 INFO [full-stack-engineer p2] listings=19
+2026-11-16 02:15:02,274 INFO === Done. added=0 dupes=9 filtered=227 ===
+2026-11-16 03:14:04,943 INFO === Wellfound search run started ===
+2026-11-16 03:14:08,184 INFO [software-engineer p1] listings=35
+2026-11-16 03:14:12,698 INFO [software-engineer p2] listings=32
+2026-11-16 03:14:17,747 INFO [backend-engineer p1] listings=38
+2026-11-16 03:14:25,092 INFO [backend-engineer p2] listings=33
+2026-11-16 03:14:32,952 INFO [java-developer p1] listings=27
+2026-11-16 03:14:38,818 INFO [java-developer p2] listings=24
+2026-11-16 03:14:43,736 INFO [full-stack-engineer p1] listings=28
+2026-11-16 03:14:50,213 INFO [full-stack-engineer p2] listings=19
+2026-11-16 03:14:50,215 INFO === Done. added=0 dupes=9 filtered=227 ===
+2026-11-16 10:14:04,854 INFO === Wellfound search run started ===
+2026-11-16 10:14:06,909 INFO [software-engineer p1] listings=31
+2026-11-16 10:14:14,988 INFO [software-engineer p2] listings=31
+2026-11-16 10:14:19,982 INFO [backend-engineer p1] listings=38
+2026-11-16 10:14:25,942 INFO [backend-engineer p2] listings=33
+2026-11-16 10:14:30,565 INFO [java-developer p1] listings=27
+2026-11-16 10:14:36,310 INFO [java-developer p2] listings=24
+2026-11-16 10:14:44,135 INFO [full-stack-engineer p1] listings=28
+2026-11-16 10:14:50,885 INFO [full-stack-engineer p2] listings=19
+2026-11-16 10:14:52,703 INFO === Done. added=2 dupes=9 filtered=220 ===
+2026-11-16 11:14:05,336 INFO === Wellfound search run started ===
+2026-11-16 11:14:07,290 INFO [software-engineer p1] listings=31
+2026-11-16 11:14:12,942 INFO [software-engineer p2] listings=31
+2026-11-16 11:14:19,797 INFO [backend-engineer p1] listings=38
+2026-11-16 11:14:27,447 INFO [backend-engineer p2] listings=33
+2026-11-16 11:14:34,873 INFO [java-developer p1] listings=27
+2026-11-16 11:14:41,616 INFO [java-developer p2] listings=24
+2026-11-16 11:14:49,472 INFO [full-stack-engineer p1] listings=28
+2026-11-16 11:14:56,272 INFO [full-stack-engineer p2] listings=19
+2026-11-16 11:14:56,275 INFO === Done. added=0 dupes=11 filtered=220 ===
+2026-11-16 12:14:05,043 INFO === Wellfound search run started ===
+2026-11-16 12:14:07,248 INFO [software-engineer p1] listings=31
+2026-11-16 12:14:13,386 INFO [software-engineer p2] listings=31
+2026-11-16 12:14:21,430 INFO [backend-engineer p1] listings=38
+2026-11-16 12:14:27,616 INFO [backend-engineer p2] listings=33
+2026-11-16 12:14:34,606 INFO [java-developer p1] listings=27
+2026-11-16 12:14:42,700 INFO [java-developer p2] listings=24
+2026-11-16 12:14:49,381 INFO [full-stack-engineer p1] listings=28
+2026-11-16 12:14:55,354 INFO [full-stack-engineer p2] listings=19
+2026-11-16 12:14:55,358 INFO === Done. added=0 dupes=11 filtered=220 ===
+2026-11-16 13:14:05,271 INFO === Wellfound search run started ===
+2026-11-16 13:14:07,187 INFO [software-engineer p1] listings=31
+2026-11-16 13:14:11,981 INFO [software-engineer p2] listings=31
+2026-11-16 13:14:17,184 INFO [backend-engineer p1] listings=38
+2026-11-16 13:14:22,508 INFO [backend-engineer p2] listings=33
+2026-11-16 13:14:29,401 INFO [java-developer p1] listings=27
+2026-11-16 13:14:34,297 INFO [java-developer p2] listings=24
+2026-11-16 13:14:39,737 INFO [full-stack-engineer p1] listings=28
+2026-11-16 13:14:47,023 INFO [full-stack-engineer p2] listings=19
+2026-11-16 13:14:47,024 INFO === Done. added=0 dupes=11 filtered=220 ===
+2026-11-16 14:14:05,406 INFO === Wellfound search run started ===
+2026-11-16 14:14:08,951 INFO [software-engineer p1] listings=31
+2026-11-16 14:14:15,780 INFO [software-engineer p2] listings=31
+2026-11-16 14:14:22,808 INFO [backend-engineer p1] listings=38
+2026-11-16 14:14:28,847 INFO [backend-engineer p2] listings=33
+2026-11-16 14:14:36,069 INFO [java-developer p1] listings=27
+2026-11-16 14:14:42,062 INFO [java-developer p2] listings=24
+2026-11-16 14:14:48,975 INFO [full-stack-engineer p1] listings=28
+2026-11-16 14:14:56,349 INFO [full-stack-engineer p2] listings=19
+2026-11-16 14:14:56,353 INFO === Done. added=0 dupes=11 filtered=220 ===
+2026-11-16 15:14:05,290 INFO === Wellfound search run started ===
+2026-11-16 15:14:07,148 INFO [software-engineer p1] listings=31
+2026-11-16 15:14:11,765 INFO [software-engineer p2] listings=31
+2026-11-16 15:14:16,833 INFO [backend-engineer p1] listings=38
+2026-11-16 15:14:22,405 INFO [backend-engineer p2] listings=33
+2026-11-16 15:14:28,605 INFO [java-developer p1] listings=27
+2026-11-16 15:14:36,661 INFO [java-developer p2] listings=24
+2026-11-16 15:14:43,932 INFO [full-stack-engineer p1] listings=28
+2026-11-16 15:14:50,952 INFO [full-stack-engineer p2] listings=19
+2026-11-16 15:14:50,954 INFO === Done. added=0 dupes=11 filtered=220 ===
+2026-11-16 16:14:05,449 INFO === Wellfound search run started ===
+2026-11-16 16:14:07,480 INFO [software-engineer p1] listings=31
+2026-11-16 16:14:14,678 INFO [software-engineer p2] listings=32
+2026-11-16 16:14:19,528 INFO [backend-engineer p1] listings=38
+2026-11-16 16:14:27,117 INFO [backend-engineer p2] listings=33
+2026-11-16 16:14:32,072 INFO [java-developer p1] listings=27
+2026-11-16 16:14:38,138 INFO [java-developer p2] listings=26
+2026-11-16 16:14:45,192 INFO [full-stack-engineer p1] listings=28
+2026-11-16 16:14:51,727 INFO [full-stack-engineer p2] listings=19
+2026-11-16 16:14:51,730 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-16 17:14:05,291 INFO === Wellfound search run started ===
+2026-11-16 17:14:07,009 INFO [software-engineer p1] listings=31
+2026-11-16 17:14:11,433 INFO [software-engineer p2] listings=32
+2026-11-16 17:14:19,137 INFO [backend-engineer p1] listings=38
+2026-11-16 17:14:26,151 INFO [backend-engineer p2] listings=33
+2026-11-16 17:14:32,563 INFO [java-developer p1] listings=27
+2026-11-16 17:14:39,966 INFO [java-developer p2] listings=26
+2026-11-16 17:14:47,263 INFO [full-stack-engineer p1] listings=28
+2026-11-16 17:14:51,987 INFO [full-stack-engineer p2] listings=19
+2026-11-16 17:14:51,990 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-16 18:14:05,541 INFO === Wellfound search run started ===
+2026-11-16 18:14:07,658 INFO [software-engineer p1] listings=31
+2026-11-16 18:14:13,702 INFO [software-engineer p2] listings=32
+2026-11-16 18:14:19,609 INFO [backend-engineer p1] listings=38
+2026-11-16 18:14:26,096 INFO [backend-engineer p2] listings=33
+2026-11-16 18:14:32,586 INFO [java-developer p1] listings=27
+2026-11-16 18:14:40,922 INFO [java-developer p2] listings=26
+2026-11-16 18:14:45,706 INFO [full-stack-engineer p1] listings=28
+2026-11-16 18:14:53,093 INFO [full-stack-engineer p2] listings=19
+2026-11-16 18:14:53,097 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-16 19:14:05,321 INFO === Wellfound search run started ===
+2026-11-16 19:14:07,304 INFO [software-engineer p1] listings=31
+2026-11-16 19:14:14,134 INFO [software-engineer p2] listings=32
+2026-11-16 19:14:20,075 INFO [backend-engineer p1] listings=38
+2026-11-16 19:14:24,249 INFO [backend-engineer p2] listings=33
+2026-11-16 19:14:28,544 INFO [java-developer p1] listings=27
+2026-11-16 19:14:33,623 INFO [java-developer p2] listings=26
+2026-11-16 19:14:41,694 INFO [full-stack-engineer p1] listings=28
+2026-11-16 19:14:47,237 INFO [full-stack-engineer p2] listings=19
+2026-11-16 19:14:47,239 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-16 20:14:05,702 INFO === Wellfound search run started ===
+2026-11-16 20:14:07,748 INFO [software-engineer p1] listings=31
+2026-11-16 20:14:14,686 INFO [software-engineer p2] listings=32
+2026-11-16 20:14:21,276 INFO [backend-engineer p1] listings=38
+2026-11-16 20:14:25,813 INFO [backend-engineer p2] listings=33
+2026-11-16 20:14:32,305 INFO [java-developer p1] listings=27
+2026-11-16 20:14:39,255 INFO [java-developer p2] listings=26
+2026-11-16 20:14:47,609 INFO [full-stack-engineer p1] listings=28
+2026-11-16 20:14:52,456 INFO [full-stack-engineer p2] listings=19
+2026-11-16 20:14:52,460 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-16 21:14:07,186 INFO === Wellfound search run started ===
+2026-11-16 21:14:10,110 INFO [software-engineer p1] listings=31
+2026-11-16 21:14:17,593 INFO [software-engineer p2] listings=32
+2026-11-16 21:14:23,291 INFO [backend-engineer p1] listings=38
+2026-11-16 21:14:29,167 INFO [backend-engineer p2] listings=33
+2026-11-16 21:14:34,292 INFO [java-developer p1] listings=27
+2026-11-16 21:14:40,480 INFO [java-developer p2] listings=26
+2026-11-16 21:14:45,070 INFO [full-stack-engineer p1] listings=28
+2026-11-16 21:14:51,200 INFO [full-stack-engineer p2] listings=19
+2026-11-16 21:14:51,205 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-16 22:14:08,078 INFO === Wellfound search run started ===
+2026-11-16 22:14:10,993 INFO [software-engineer p1] listings=31
+2026-11-16 22:14:15,273 INFO [software-engineer p2] listings=32
+2026-11-16 22:14:22,647 INFO [backend-engineer p1] listings=38
+2026-11-16 22:14:28,036 INFO [backend-engineer p2] listings=31
+2026-11-16 22:14:33,703 INFO [java-developer p1] listings=27
+2026-11-16 22:14:40,091 INFO [java-developer p2] listings=26
+2026-11-16 22:14:47,151 INFO [full-stack-engineer p1] listings=28
+2026-11-16 22:14:54,904 INFO [full-stack-engineer p2] listings=19
+2026-11-16 22:14:54,909 INFO === Done. added=0 dupes=11 filtered=221 ===
+2026-11-16 23:14:04,895 INFO === Wellfound search run started ===
+2026-11-16 23:14:06,847 INFO [software-engineer p1] listings=31
+2026-11-16 23:14:10,951 INFO [software-engineer p2] listings=32
+2026-11-16 23:14:16,704 INFO ADDED Nandi Pipes | Backend Engineer | Hyderabad, Nandyal |  | https://wellfound.com/jobs/5085724-backend-engineer
+2026-11-16 23:14:16,716 INFO [backend-engineer p1] listings=35
+2026-11-16 23:14:23,841 INFO [backend-engineer p2] listings=36
+2026-11-16 23:14:27,983 INFO [java-developer p1] listings=27
+2026-11-16 23:14:34,991 INFO [java-developer p2] listings=26
+2026-11-16 23:14:42,992 INFO [full-stack-engineer p1] listings=28
+2026-11-16 23:14:48,515 INFO [full-stack-engineer p2] listings=19
+2026-11-16 23:14:49,400 INFO === Done. added=1 dupes=11 filtered=222 ===
+2026-11-17 00:14:05,142 INFO === Wellfound search run started ===
+2026-11-17 00:14:07,240 INFO [software-engineer p1] listings=31
+2026-11-17 00:14:13,640 INFO [software-engineer p2] listings=32
+2026-11-17 00:14:20,047 INFO [backend-engineer p1] listings=35
+2026-11-17 00:14:25,961 INFO [backend-engineer p2] listings=36
+2026-11-17 00:14:31,062 INFO [java-developer p1] listings=27
+2026-11-17 00:14:36,950 INFO [java-developer p2] listings=26
+2026-11-17 00:14:44,145 INFO [full-stack-engineer p1] listings=28
+2026-11-17 00:14:51,777 INFO [full-stack-engineer p2] listings=19
+2026-11-17 00:14:51,781 INFO === Done. added=0 dupes=12 filtered=222 ===
+2026-11-17 01:14:12,398 INFO === Wellfound search run started ===
+2026-11-17 01:14:14,366 INFO [software-engineer p1] listings=31
+2026-11-17 01:14:21,152 INFO [software-engineer p2] listings=32
+2026-11-17 01:14:27,724 INFO [backend-engineer p1] listings=35
+2026-11-17 01:14:35,166 INFO [backend-engineer p2] listings=36
+2026-11-17 01:14:40,075 INFO [java-developer p1] listings=27
+2026-11-17 01:14:46,610 INFO [java-developer p2] listings=26
+2026-11-17 01:14:52,602 INFO [full-stack-engineer p1] listings=28
+2026-11-17 01:14:58,516 INFO [full-stack-engineer p2] listings=19
+2026-11-17 01:14:58,519 INFO === Done. added=0 dupes=12 filtered=222 ===
+2026-11-17 02:14:05,840 INFO === Wellfound search run started ===
+2026-11-17 02:14:08,066 INFO [software-engineer p1] listings=31
+2026-11-17 02:14:13,793 INFO [software-engineer p2] listings=32
+2026-11-17 02:14:21,705 INFO [backend-engineer p1] listings=35
+2026-11-17 02:14:28,550 INFO [backend-engineer p2] listings=36
+2026-11-17 02:14:32,859 INFO [java-developer p1] listings=27
+2026-11-17 02:14:40,720 INFO [java-developer p2] listings=26
+2026-11-17 02:14:46,911 INFO [full-stack-engineer p1] listings=28
+2026-11-17 02:14:51,618 INFO [full-stack-engineer p2] listings=19
+2026-11-17 02:14:51,620 INFO === Done. added=0 dupes=12 filtered=222 ===
+2026-11-17 03:14:08,073 INFO === Wellfound search run started ===
+2026-11-17 03:14:10,175 INFO [software-engineer p1] listings=31
+2026-11-17 03:14:14,432 INFO [software-engineer p2] listings=32
+2026-11-17 03:14:22,600 INFO [backend-engineer p1] listings=35
+2026-11-17 03:14:27,232 INFO [backend-engineer p2] listings=36
+2026-11-17 03:14:34,588 INFO [java-developer p1] listings=27
+2026-11-17 03:14:41,270 INFO [java-developer p2] listings=26
+2026-11-17 03:14:49,228 INFO [full-stack-engineer p1] listings=28
+2026-11-17 03:14:57,138 INFO [full-stack-engineer p2] listings=19
+2026-11-17 03:14:57,142 INFO === Done. added=0 dupes=12 filtered=222 ===
+2026-11-17 15:14:04,635 INFO === Wellfound search run started ===
+2026-11-17 15:14:06,462 INFO [software-engineer p1] listings=31
+2026-11-17 15:14:13,523 INFO [software-engineer p2] listings=32
+2026-11-17 15:14:20,126 INFO [backend-engineer p1] listings=35
+2026-11-17 15:14:26,505 INFO [backend-engineer p2] listings=36
+2026-11-17 15:14:32,242 INFO [java-developer p1] listings=29
+2026-11-17 15:14:38,680 INFO [java-developer p2] listings=23
+2026-11-17 15:14:45,150 INFO [full-stack-engineer p1] listings=28
+2026-11-17 15:14:50,337 INFO [full-stack-engineer p2] listings=22
+2026-11-17 15:14:51,233 INFO === Done. added=1 dupes=13 filtered=222 ===
+2026-11-17 16:14:05,073 INFO === Wellfound search run started ===
+2026-11-17 16:14:07,355 INFO [software-engineer p1] listings=31
+2026-11-17 16:14:15,358 INFO [software-engineer p2] listings=32
+2026-11-17 16:14:22,332 INFO [backend-engineer p1] listings=35
+2026-11-17 16:14:27,452 INFO [backend-engineer p2] listings=36
+2026-11-17 16:14:33,644 INFO [java-developer p1] listings=29
+2026-11-17 16:14:40,231 INFO [java-developer p2] listings=23
+2026-11-17 16:14:47,402 INFO [full-stack-engineer p1] listings=28
+2026-11-17 16:14:52,268 INFO [full-stack-engineer p2] listings=22
+2026-11-17 16:14:52,272 INFO === Done. added=0 dupes=14 filtered=222 ===
+2026-11-17 17:14:05,050 INFO === Wellfound search run started ===
+2026-11-17 17:14:07,318 INFO [software-engineer p1] listings=31
+2026-11-17 17:14:11,828 INFO [software-engineer p2] listings=32
+2026-11-17 17:14:18,740 INFO [backend-engineer p1] listings=35
+2026-11-17 17:14:25,204 INFO [backend-engineer p2] listings=36
+2026-11-17 17:14:31,066 INFO [java-developer p1] listings=29
+2026-11-17 17:14:36,571 INFO [java-developer p2] listings=23
+2026-11-17 17:14:44,674 INFO [full-stack-engineer p1] listings=28
+2026-11-17 17:14:49,346 INFO [full-stack-engineer p2] listings=22
+2026-11-17 17:14:49,348 INFO === Done. added=0 dupes=14 filtered=222 ===
+2026-11-17 20:33:09,221 INFO === Wellfound search run started ===
+2026-11-17 20:33:12,566 INFO [software-engineer p1] listings=31
+2026-11-17 20:33:20,042 INFO [software-engineer p2] listings=32
+2026-11-17 20:33:28,319 INFO [backend-engineer p1] listings=35
+2026-11-17 20:33:34,573 INFO [backend-engineer p2] listings=36
+2026-11-17 20:33:43,840 INFO [java-developer p1] listings=29
+2026-11-17 20:33:50,955 INFO [java-developer p2] listings=23
+2026-11-17 20:33:57,349 INFO [full-stack-engineer p1] listings=28
+2026-11-17 20:34:02,452 INFO [full-stack-engineer p2] listings=22
+2026-11-17 20:34:02,455 INFO === Done. added=0 dupes=14 filtered=222 ===
+2026-11-17 21:14:05,737 INFO === Wellfound search run started ===
+2026-11-17 21:14:11,891 INFO [software-engineer p1] listings=31
+2026-11-17 21:14:18,740 INFO [software-engineer p2] listings=32
+2026-11-17 21:14:27,327 INFO [backend-engineer p1] listings=35
+2026-11-17 21:14:34,827 INFO [backend-engineer p2] listings=36
+2026-11-17 21:14:41,188 INFO [java-developer p1] listings=29
+2026-11-17 21:14:48,142 INFO [java-developer p2] listings=23
+2026-11-17 21:14:55,719 INFO [full-stack-engineer p1] listings=28
+2026-11-17 21:15:02,841 INFO [full-stack-engineer p2] listings=22
+2026-11-17 21:15:02,845 INFO === Done. added=0 dupes=14 filtered=222 ===
+2026-11-17 22:14:05,588 INFO === Wellfound search run started ===
+2026-11-17 22:14:08,174 INFO [software-engineer p1] listings=31
+2026-11-17 22:14:16,138 INFO [software-engineer p2] listings=32
+2026-11-17 22:14:24,044 INFO [backend-engineer p1] listings=35
+2026-11-17 22:14:31,301 INFO [backend-engineer p2] listings=39
+2026-11-17 22:14:38,249 INFO [java-developer p1] listings=29
+2026-11-17 22:14:44,709 INFO [java-developer p2] listings=23
+2026-11-17 22:14:52,646 INFO [full-stack-engineer p1] listings=28
+2026-11-17 22:14:57,552 INFO [full-stack-engineer p2] listings=22
+2026-11-17 22:14:57,556 INFO === Done. added=0 dupes=14 filtered=225 ===
+2026-11-17 23:14:07,181 INFO === Wellfound search run started ===
+2026-11-17 23:14:13,958 INFO [software-engineer p1] listings=31
+2026-11-17 23:14:22,071 INFO [software-engineer p2] listings=32
+2026-11-17 23:14:34,154 INFO [backend-engineer p1] listings=35
+2026-11-17 23:14:41,626 INFO [backend-engineer p2] listings=38
+2026-11-17 23:14:50,226 INFO [java-developer p1] listings=29
+2026-11-17 23:14:58,697 INFO [java-developer p2] listings=23
+2026-11-17 23:15:06,123 INFO [full-stack-engineer p1] listings=28
+2026-11-17 23:15:15,032 INFO [full-stack-engineer p2] listings=22
+2026-11-17 23:15:15,036 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 00:14:06,367 INFO === Wellfound search run started ===
+2026-11-18 00:14:12,140 INFO [software-engineer p1] listings=31
+2026-11-18 00:14:17,843 INFO [software-engineer p2] listings=32
+2026-11-18 00:14:25,526 INFO [backend-engineer p1] listings=35
+2026-11-18 00:14:30,211 INFO [backend-engineer p2] listings=38
+2026-11-18 00:14:38,070 INFO [java-developer p1] listings=29
+2026-11-18 00:14:46,687 INFO [java-developer p2] listings=23
+2026-11-18 00:14:54,103 INFO [full-stack-engineer p1] listings=28
+2026-11-18 00:15:01,697 INFO [full-stack-engineer p2] listings=22
+2026-11-18 00:15:01,699 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 01:14:05,280 INFO === Wellfound search run started ===
+2026-11-18 01:14:07,846 INFO [software-engineer p1] listings=31
+2026-11-18 01:14:15,885 INFO [software-engineer p2] listings=32
+2026-11-18 01:14:21,058 INFO [backend-engineer p1] listings=35
+2026-11-18 01:14:27,126 INFO [backend-engineer p2] listings=38
+2026-11-18 01:14:34,245 INFO [java-developer p1] listings=29
+2026-11-18 01:14:41,730 INFO [java-developer p2] listings=23
+2026-11-18 01:14:48,857 INFO [full-stack-engineer p1] listings=28
+2026-11-18 01:14:55,179 INFO [full-stack-engineer p2] listings=22
+2026-11-18 01:14:55,182 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 02:14:06,017 INFO === Wellfound search run started ===
+2026-11-18 02:14:08,231 INFO [software-engineer p1] listings=31
+2026-11-18 02:14:12,922 INFO [software-engineer p2] listings=32
+2026-11-18 02:14:20,293 INFO [backend-engineer p1] listings=35
+2026-11-18 02:14:24,873 INFO [backend-engineer p2] listings=38
+2026-11-18 02:14:32,158 INFO [java-developer p1] listings=29
+2026-11-18 02:14:38,987 INFO [java-developer p2] listings=23
+2026-11-18 02:14:44,961 INFO [full-stack-engineer p1] listings=28
+2026-11-18 02:14:52,573 INFO [full-stack-engineer p2] listings=22
+2026-11-18 02:14:52,575 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 03:14:13,601 INFO === Wellfound search run started ===
+2026-11-18 03:14:16,120 INFO [software-engineer p1] listings=31
+2026-11-18 03:14:23,683 INFO [software-engineer p2] listings=32
+2026-11-18 03:14:28,722 INFO [backend-engineer p1] listings=35
+2026-11-18 03:14:36,640 INFO [backend-engineer p2] listings=38
+2026-11-18 03:14:45,162 INFO [java-developer p1] listings=29
+2026-11-18 03:14:52,898 INFO [java-developer p2] listings=23
+2026-11-18 03:15:00,061 INFO [full-stack-engineer p1] listings=28
+2026-11-18 03:15:05,590 INFO [full-stack-engineer p2] listings=22
+2026-11-18 03:15:05,592 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 04:14:05,631 INFO === Wellfound search run started ===
+2026-11-18 04:14:07,772 INFO [software-engineer p1] listings=31
+2026-11-18 04:14:12,458 INFO [software-engineer p2] listings=32
+2026-11-18 04:14:18,282 INFO [backend-engineer p1] listings=35
+2026-11-18 04:14:24,872 INFO [backend-engineer p2] listings=38
+2026-11-18 04:14:29,914 INFO [java-developer p1] listings=29
+2026-11-18 04:14:34,917 INFO [java-developer p2] listings=23
+2026-11-18 04:14:41,308 INFO [full-stack-engineer p1] listings=28
+2026-11-18 04:14:48,137 INFO [full-stack-engineer p2] listings=22
+2026-11-18 04:14:48,140 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 05:14:05,025 INFO === Wellfound search run started ===
+2026-11-18 05:14:06,914 INFO [software-engineer p1] listings=31
+2026-11-18 05:14:14,747 INFO [software-engineer p2] listings=32
+2026-11-18 05:14:20,826 INFO [backend-engineer p1] listings=35
+2026-11-18 05:14:28,499 INFO [backend-engineer p2] listings=38
+2026-11-18 05:14:36,984 INFO [java-developer p1] listings=29
+2026-11-18 05:14:43,591 INFO [java-developer p2] listings=23
+2026-11-18 05:14:48,840 INFO [full-stack-engineer p1] listings=28
+2026-11-18 05:14:54,784 INFO [full-stack-engineer p2] listings=22
+2026-11-18 05:14:54,785 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 06:14:04,991 INFO === Wellfound search run started ===
+2026-11-18 06:14:06,727 INFO [software-engineer p1] listings=31
+2026-11-18 06:14:10,868 INFO [software-engineer p2] listings=32
+2026-11-18 06:14:15,712 INFO [backend-engineer p1] listings=35
+2026-11-18 06:14:19,846 INFO [backend-engineer p2] listings=38
+2026-11-18 06:14:25,811 INFO [java-developer p1] listings=29
+2026-11-18 06:14:31,547 INFO [java-developer p2] listings=23
+2026-11-18 06:14:38,210 INFO [full-stack-engineer p1] listings=28
+2026-11-18 06:14:42,861 INFO [full-stack-engineer p2] listings=22
+2026-11-18 06:14:42,865 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 07:14:05,078 INFO === Wellfound search run started ===
+2026-11-18 07:14:06,972 INFO [software-engineer p1] listings=31
+2026-11-18 07:14:11,782 INFO [software-engineer p2] listings=32
+2026-11-18 07:14:18,516 INFO [backend-engineer p1] listings=35
+2026-11-18 07:14:26,439 INFO [backend-engineer p2] listings=38
+2026-11-18 07:14:33,046 INFO [java-developer p1] listings=29
+2026-11-18 07:14:37,287 INFO [java-developer p2] listings=23
+2026-11-18 07:14:45,531 INFO [full-stack-engineer p1] listings=28
+2026-11-18 07:14:53,380 INFO [full-stack-engineer p2] listings=22
+2026-11-18 07:14:53,383 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 08:14:05,516 INFO === Wellfound search run started ===
+2026-11-18 08:14:07,551 INFO [software-engineer p1] listings=31
+2026-11-18 08:14:11,966 INFO [software-engineer p2] listings=32
+2026-11-18 08:14:17,242 INFO [backend-engineer p1] listings=35
+2026-11-18 08:14:22,958 INFO [backend-engineer p2] listings=38
+2026-11-18 08:14:29,904 INFO [java-developer p1] listings=29
+2026-11-18 08:14:36,102 INFO [java-developer p2] listings=23
+2026-11-18 08:14:42,707 INFO [full-stack-engineer p1] listings=28
+2026-11-18 08:14:47,018 INFO [full-stack-engineer p2] listings=22
+2026-11-18 08:14:47,021 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 09:14:05,509 INFO === Wellfound search run started ===
+2026-11-18 09:14:07,315 INFO [software-engineer p1] listings=31
+2026-11-18 09:14:13,065 INFO [software-engineer p2] listings=32
+2026-11-18 09:14:17,794 INFO [backend-engineer p1] listings=35
+2026-11-18 09:14:25,108 INFO [backend-engineer p2] listings=38
+2026-11-18 09:14:32,537 INFO [java-developer p1] listings=29
+2026-11-18 09:14:39,609 INFO [java-developer p2] listings=23
+2026-11-18 09:14:46,897 INFO [full-stack-engineer p1] listings=28
+2026-11-18 09:14:52,745 INFO [full-stack-engineer p2] listings=22
+2026-11-18 09:14:52,749 INFO === Done. added=0 dupes=14 filtered=224 ===
+2026-11-18 10:14:05,555 INFO === Wellfound search run started ===
+2026-11-18 10:14:07,467 INFO [software-engineer p1] listings=34
+2026-11-18 10:14:11,914 INFO [software-engineer p2] listings=32
+2026-11-18 10:14:20,214 INFO [backend-engineer p1] listings=35
+2026-11-18 10:14:24,847 INFO [backend-engineer p2] listings=38
+2026-11-18 10:14:29,495 INFO [java-developer p1] listings=29
+2026-11-18 10:14:35,738 INFO [java-developer p2] listings=23
+2026-11-18 10:14:42,411 INFO [full-stack-engineer p1] listings=28
+2026-11-18 10:14:47,780 INFO [full-stack-engineer p2] listings=22
+2026-11-18 10:14:47,782 INFO === Done. added=0 dupes=13 filtered=228 ===
+2026-11-18 11:14:06,172 INFO === Wellfound search run started ===
+2026-11-18 11:14:10,094 INFO [software-engineer p1] listings=34
+2026-11-18 11:14:15,577 INFO [software-engineer p2] listings=32
+2026-11-18 11:14:22,127 INFO [backend-engineer p1] listings=35
+2026-11-18 11:14:28,435 INFO [backend-engineer p2] listings=38
+2026-11-18 11:14:35,173 INFO [java-developer p1] listings=29
+2026-11-18 11:14:42,729 INFO [java-developer p2] listings=23
+2026-11-18 11:14:49,142 INFO [full-stack-engineer p1] listings=28
+2026-11-18 11:14:59,767 INFO [full-stack-engineer p2] listings=22
+2026-11-18 11:14:59,769 INFO === Done. added=0 dupes=13 filtered=228 ===
+2026-11-18 12:27:48,969 INFO === Wellfound search run started ===
+2026-11-18 12:27:56,040 INFO [software-engineer p1] listings=34
+2026-11-18 12:28:01,768 INFO [software-engineer p2] listings=32
+2026-11-18 12:28:08,077 INFO [backend-engineer p1] listings=35
+2026-11-18 12:28:15,475 INFO [backend-engineer p2] listings=38
+2026-11-18 12:28:21,368 INFO [java-developer p1] listings=29
+2026-11-18 12:28:26,195 INFO [java-developer p2] listings=23
+2026-11-18 12:28:34,850 INFO [full-stack-engineer p1] listings=28
+2026-11-18 12:28:41,525 INFO [full-stack-engineer p2] listings=22
+2026-11-18 12:28:41,530 INFO === Done. added=0 dupes=13 filtered=228 ===
+2026-11-18 13:14:06,326 INFO === Wellfound search run started ===
+2026-11-18 13:14:09,053 INFO [software-engineer p1] listings=34
+2026-11-18 13:14:15,609 INFO [software-engineer p2] listings=32
+2026-11-18 13:14:20,315 INFO [backend-engineer p1] listings=35
+2026-11-18 13:14:26,533 INFO [backend-engineer p2] listings=38
+2026-11-18 13:14:35,707 INFO [java-developer p1] listings=27
+2026-11-18 13:14:42,374 INFO [java-developer p2] listings=25
+2026-11-18 13:14:49,085 INFO [full-stack-engineer p1] listings=27
+2026-11-18 13:14:55,269 INFO [full-stack-engineer p2] listings=22
+2026-11-18 13:14:55,275 INFO === Done. added=0 dupes=13 filtered=227 ===
+2026-11-18 14:14:10,859 INFO === Wellfound search run started ===
+2026-11-18 14:14:14,793 INFO [software-engineer p1] listings=34
+2026-11-18 14:14:20,848 INFO [software-engineer p2] listings=32
+2026-11-18 14:14:26,577 INFO [backend-engineer p1] listings=35
+2026-11-18 14:14:31,974 INFO [backend-engineer p2] listings=38
+2026-11-18 14:14:37,388 INFO [java-developer p1] listings=27
+2026-11-18 14:14:45,207 INFO [java-developer p2] listings=25
+2026-11-18 14:14:53,695 INFO [full-stack-engineer p1] listings=27
+2026-11-18 14:14:58,601 INFO [full-stack-engineer p2] listings=22
+2026-11-18 14:14:58,605 INFO === Done. added=0 dupes=13 filtered=227 ===
+2026-11-18 15:14:23,435 INFO === Wellfound search run started ===
+2026-11-18 15:14:26,345 INFO [software-engineer p1] listings=34
+2026-11-18 15:14:30,756 INFO [software-engineer p2] listings=32
+2026-11-18 15:14:36,771 INFO [backend-engineer p1] listings=35
+2026-11-18 15:14:44,593 INFO [backend-engineer p2] listings=38
+2026-11-18 15:14:49,257 INFO [java-developer p1] listings=27
+2026-11-18 15:14:57,463 INFO [java-developer p2] listings=25
+2026-11-18 15:15:02,451 INFO [full-stack-engineer p1] listings=27
+2026-11-18 15:15:08,555 INFO [full-stack-engineer p2] listings=22
+2026-11-18 15:15:08,559 INFO === Done. added=0 dupes=13 filtered=227 ===
+2026-11-18 16:14:06,989 INFO === Wellfound search run started ===
+2026-11-18 16:14:09,049 INFO [software-engineer p1] listings=34
+2026-11-18 16:14:15,629 INFO [software-engineer p2] listings=32
+2026-11-18 16:14:20,355 INFO [backend-engineer p1] listings=35
+2026-11-18 16:14:27,778 INFO [backend-engineer p2] listings=38
+2026-11-18 16:14:35,317 INFO [java-developer p1] listings=27
+2026-11-18 16:14:40,828 INFO [java-developer p2] listings=25
+2026-11-18 16:14:47,618 INFO [full-stack-engineer p1] listings=27
+2026-11-18 16:14:52,933 INFO [full-stack-engineer p2] listings=22
+2026-11-18 16:14:52,938 INFO === Done. added=0 dupes=12 filtered=228 ===
+2026-11-18 17:14:06,183 INFO === Wellfound search run started ===
+2026-11-18 17:14:07,801 INFO [software-engineer p1] listings=34
+2026-11-18 17:14:14,721 INFO [software-engineer p2] listings=30
+2026-11-18 17:14:19,222 INFO [backend-engineer p1] listings=35
+2026-11-18 17:14:25,432 INFO [backend-engineer p2] listings=38
+2026-11-18 17:14:31,063 INFO [java-developer p1] listings=27
+2026-11-18 17:14:38,092 INFO [java-developer p2] listings=23
+2026-11-18 17:14:44,285 INFO [full-stack-engineer p1] listings=27
+2026-11-18 17:14:50,087 INFO [full-stack-engineer p2] listings=22
+2026-11-18 17:14:50,090 INFO === Done. added=0 dupes=12 filtered=224 ===
+2026-11-18 18:25:20,752 INFO === Wellfound search run started ===
+2026-11-18 18:25:27,069 INFO [software-engineer p1] listings=34
+2026-11-18 18:25:33,270 INFO [software-engineer p2] listings=30
+2026-11-18 18:25:41,023 INFO [backend-engineer p1] listings=35
+2026-11-18 18:25:46,993 INFO [backend-engineer p2] listings=38
+2026-11-18 18:25:54,645 INFO [java-developer p1] listings=27
+2026-11-18 18:26:00,607 INFO [java-developer p2] listings=23
+2026-11-18 18:26:07,594 INFO [full-stack-engineer p1] listings=27
+2026-11-18 18:26:12,966 INFO [full-stack-engineer p2] listings=22
+2026-11-18 18:26:12,970 INFO === Done. added=0 dupes=12 filtered=224 ===
+2026-11-18 19:14:07,376 INFO === Wellfound search run started ===
+2026-11-18 19:14:10,062 INFO [software-engineer p1] listings=34
+2026-11-18 19:14:15,824 INFO [software-engineer p2] listings=30
+2026-11-18 19:14:23,632 INFO [backend-engineer p1] listings=35
+2026-11-18 19:14:31,556 INFO [backend-engineer p2] listings=38
+2026-11-18 19:14:38,760 INFO [java-developer p1] listings=27
+2026-11-18 19:14:45,448 INFO [java-developer p2] listings=23
+2026-11-18 19:14:50,938 INFO [full-stack-engineer p1] listings=27
+2026-11-18 19:14:55,359 INFO [full-stack-engineer p2] listings=22
+2026-11-18 19:14:55,363 INFO === Done. added=0 dupes=12 filtered=224 ===
+2026-11-18 23:26:29,993 INFO === Wellfound search run started ===
+2026-11-18 23:26:32,645 INFO [software-engineer p1] listings=34
+2026-11-18 23:26:38,030 INFO [software-engineer p2] listings=30
+2026-11-18 23:26:45,068 INFO [backend-engineer p1] listings=37
+2026-11-18 23:26:52,435 INFO [backend-engineer p2] listings=34
+2026-11-18 23:26:58,636 INFO [java-developer p1] listings=27
+2026-11-18 23:27:03,446 INFO [java-developer p2] listings=23
+2026-11-18 23:27:10,136 INFO [full-stack-engineer p1] listings=27
+2026-11-18 23:27:17,269 INFO [full-stack-engineer p2] listings=22
+2026-11-18 23:27:17,274 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-19 00:14:07,075 INFO === Wellfound search run started ===
+2026-11-19 00:14:09,422 INFO [software-engineer p1] listings=34
+2026-11-19 00:14:13,806 INFO [software-engineer p2] listings=30
+2026-11-19 00:14:20,046 INFO [backend-engineer p1] listings=37
+2026-11-19 00:14:26,287 INFO [backend-engineer p2] listings=34
+2026-11-19 00:14:31,953 INFO [java-developer p1] listings=27
+2026-11-19 00:14:38,771 INFO [java-developer p2] listings=23
+2026-11-19 00:14:43,188 INFO [full-stack-engineer p1] listings=27
+2026-11-19 00:14:50,984 INFO [full-stack-engineer p2] listings=22
+2026-11-19 00:14:50,988 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-19 01:14:06,861 INFO === Wellfound search run started ===
+2026-11-19 01:14:08,891 INFO [software-engineer p1] listings=34
+2026-11-19 01:14:16,536 INFO [software-engineer p2] listings=30
+2026-11-19 01:14:21,802 INFO [backend-engineer p1] listings=37
+2026-11-19 01:14:29,236 INFO [backend-engineer p2] listings=34
+2026-11-19 01:14:36,806 INFO [java-developer p1] listings=27
+2026-11-19 01:14:44,841 INFO [java-developer p2] listings=23
+2026-11-19 01:14:49,711 INFO [full-stack-engineer p1] listings=27
+2026-11-19 01:14:55,504 INFO [full-stack-engineer p2] listings=22
+2026-11-19 01:14:55,510 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-19 02:14:06,769 INFO === Wellfound search run started ===
+2026-11-19 02:14:09,149 INFO [software-engineer p1] listings=34
+2026-11-19 02:14:16,486 INFO [software-engineer p2] listings=30
+2026-11-19 02:14:21,664 INFO [backend-engineer p1] listings=37
+2026-11-19 02:14:29,250 INFO [backend-engineer p2] listings=34
+2026-11-19 02:14:35,682 INFO [java-developer p1] listings=27
+2026-11-19 02:14:43,148 INFO [java-developer p2] listings=23
+2026-11-19 02:14:51,335 INFO [full-stack-engineer p1] listings=27
+2026-11-19 02:14:57,361 INFO [full-stack-engineer p2] listings=22
+2026-11-19 02:14:57,366 INFO === Done. added=0 dupes=11 filtered=223 ===
+2026-11-19 03:14:07,261 INFO === Wellfound search run started ===
+2026-11-19 03:14:09,539 INFO [software-engineer p1] listings=34
+2026-11-19 03:14:17,205 INFO [software-engineer p2] listings=30
+2026-11-19 03:14:21,740 INFO [backend-engineer p1] listings=37
+2026-11-19 03:14:27,552 INFO [backend-engineer p2] listings=34
+2026-11-19 03:14:35,274 INFO [java-developer p1] listings=27
+2026-11-19 03:14:40,662 INFO [java-developer p2] listings=23
+2026-11-19 03:14:46,023 INFO [full-stack-engineer p1] listings=27
+2026-11-19 03:14:52,842 INFO [full-stack-engineer p2] listings=22
+2026-11-19 03:14:52,843 INFO === Done. added=0 dupes=11 filtered=223 ===
