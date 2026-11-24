@@ -62,8 +62,7 @@ public class SyncService {
         Map<String, Object> workdayResult = runScript(WORKDAY_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_WORKDAY_SECONDS", LONG_TIMEOUT_SECONDS));
 
         boolean ok = Boolean.TRUE.equals(jobspyResult.get("ok")) && Boolean.TRUE.equals(workdayResult.get("ok"));
-        String message = "jobspy: " + jobspyResult.get("message") + "
-workday: " + workdayResult.get("message");
+        String message = "jobspy: " + jobspyResult.get("message") + "\nworkday: " + workdayResult.get("message");
         return Map.of("ok", ok, "message", tail(message));
     }
 
