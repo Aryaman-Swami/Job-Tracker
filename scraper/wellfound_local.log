@@ -772,3 +772,94 @@ Arguments: ()
 2026-11-19 03:14:52,842 INFO [full-stack-engineer p2] listings=22
 2026-11-19 03:14:52,843 INFO === Done. added=0 dupes=11 filtered=223 ===
 2026-11-19 03:14:53 [wellfound] wellfound_search.py exit code 0
+2026-11-24 03:14:05 [wellfound] starting wellfound_search.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 03:15] Wellfound search done. 0 new jobs added.
+2026-11-24 03:14:15,034 INFO === Wellfound search run started ===
+2026-11-24 03:14:21,483 INFO [software-engineer p1] listings=36
+2026-11-24 03:14:26,113 INFO [software-engineer p2] listings=33
+2026-11-24 03:14:32,622 INFO [backend-engineer p1] listings=38
+2026-11-24 03:14:39,627 INFO [backend-engineer p2] listings=34
+2026-11-24 03:14:48,086 INFO [java-developer p1] listings=29
+2026-11-24 03:14:52,709 INFO [java-developer p2] listings=20
+2026-11-24 03:14:59,535 INFO [full-stack-engineer p1] listings=26
+2026-11-24 03:15:05,631 INFO [full-stack-engineer p2] listings=22
+2026-11-24 03:15:05,633 INFO === Done. added=0 dupes=11 filtered=227 ===
+2026-11-24 03:15:06 [wellfound] wellfound_search.py exit code 0
+2026-11-24 19:14:03 [wellfound] starting wellfound_search.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 19:14] Wellfound search done. 0 new jobs added.
+2026-11-24 19:14:04,751 INFO === Wellfound search run started ===
+2026-11-24 19:14:07,051 INFO [software-engineer p1] listings=35
+2026-11-24 19:14:14,523 INFO [software-engineer p2] listings=32
+2026-11-24 19:14:20,656 INFO [backend-engineer p1] listings=38
+2026-11-24 19:14:26,487 INFO [backend-engineer p2] listings=34
+2026-11-24 19:14:33,575 INFO [java-developer p1] listings=29
+2026-11-24 19:14:40,956 INFO [java-developer p2] listings=22
+2026-11-24 19:14:45,830 INFO [full-stack-engineer p1] listings=27
+2026-11-24 19:14:51,949 INFO [full-stack-engineer p2] listings=22
+2026-11-24 19:14:51,951 INFO === Done. added=0 dupes=11 filtered=228 ===
+2026-11-24 19:14:53 [wellfound] wellfound_search.py exit code 0
+2026-11-24 20:14:04 [wellfound] starting wellfound_search.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 20:14] Wellfound search done. 0 new jobs added.
+2026-11-24 20:14:06,649 INFO === Wellfound search run started ===
+2026-11-24 20:14:08,425 INFO [software-engineer p1] listings=35
+2026-11-24 20:14:15,147 INFO [software-engineer p2] listings=32
+2026-11-24 20:14:20,851 INFO [backend-engineer p1] listings=38
+2026-11-24 20:14:28,617 INFO [backend-engineer p2] listings=34
+2026-11-24 20:14:33,849 INFO [java-developer p1] listings=29
+2026-11-24 20:14:40,574 INFO [java-developer p2] listings=22
+2026-11-24 20:14:45,620 INFO [full-stack-engineer p1] listings=27
+2026-11-24 20:14:51,344 INFO [full-stack-engineer p2] listings=22
+2026-11-24 20:14:51,347 INFO === Done. added=0 dupes=11 filtered=228 ===
+2026-11-24 20:14:52 [wellfound] wellfound_search.py exit code 0
+2026-11-24 21:14:03 [wellfound] starting wellfound_search.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 21:14] Wellfound search done. 0 new jobs added.
+2026-11-24 21:14:04,644 INFO === Wellfound search run started ===
+2026-11-24 21:14:06,860 INFO [software-engineer p1] listings=35
+2026-11-24 21:14:11,974 INFO [software-engineer p2] listings=32
+2026-11-24 21:14:19,477 INFO [backend-engineer p1] listings=38
+2026-11-24 21:14:23,949 INFO [backend-engineer p2] listings=34
+2026-11-24 21:14:29,114 INFO [java-developer p1] listings=29
+2026-11-24 21:14:34,879 INFO [java-developer p2] listings=22
+2026-11-24 21:14:41,259 INFO [full-stack-engineer p1] listings=27
+2026-11-24 21:14:48,465 INFO [full-stack-engineer p2] listings=22
+2026-11-24 21:14:48,467 INFO === Done. added=0 dupes=11 filtered=228 ===
+2026-11-24 21:14:49 [wellfound] wellfound_search.py exit code 0
+2026-11-24 22:14:05 [wellfound] starting wellfound_search.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 22:14] Wellfound search done. 0 new jobs added.
+2026-11-24 22:14:14,668 INFO === Wellfound search run started ===
+2026-11-24 22:14:16,926 INFO [software-engineer p1] listings=35
+2026-11-24 22:14:24,474 INFO [software-engineer p2] listings=32
+2026-11-24 22:14:29,346 INFO [backend-engineer p1] listings=38
+2026-11-24 22:14:34,640 INFO [backend-engineer p2] listings=34
+2026-11-24 22:14:39,288 INFO [java-developer p1] listings=29
+2026-11-24 22:14:45,473 INFO [java-developer p2] listings=22
+2026-11-24 22:14:53,260 INFO [full-stack-engineer p1] listings=27
+2026-11-24 22:14:59,641 INFO [full-stack-engineer p2] listings=22
+2026-11-24 22:14:59,643 INFO === Done. added=0 dupes=11 filtered=228 ===
+2026-11-24 22:15:00 [wellfound] wellfound_search.py exit code 0
+2026-11-24 23:14:03 [wellfound] starting wellfound_search.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 23:14] Wellfound search done. 0 new jobs added.
+2026-11-24 23:14:04,932 INFO === Wellfound search run started ===
+2026-11-24 23:14:06,590 INFO [software-engineer p1] listings=35
+2026-11-24 23:14:11,716 INFO [software-engineer p2] listings=32
+2026-11-24 23:14:18,764 INFO [backend-engineer p1] listings=38
+2026-11-24 23:14:24,221 INFO [backend-engineer p2] listings=30
+2026-11-24 23:14:30,094 INFO [java-developer p1] listings=29
+2026-11-24 23:14:36,274 INFO [java-developer p2] listings=23
+2026-11-24 23:14:42,686 INFO [full-stack-engineer p1] listings=27
+2026-11-24 23:14:49,726 INFO [full-stack-engineer p2] listings=22
+2026-11-24 23:14:49,729 INFO === Done. added=0 dupes=11 filtered=225 ===
+2026-11-24 23:14:50 [wellfound] wellfound_search.py exit code 0
+2026-11-25 00:14:04 [wellfound] starting wellfound_search.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-25 00:14] Wellfound search done. 0 new jobs added.
+2026-11-25 00:14:06,006 INFO === Wellfound search run started ===
+2026-11-25 00:14:08,145 INFO [software-engineer p1] listings=35
+2026-11-25 00:14:12,928 INFO [software-engineer p2] listings=32
+2026-11-25 00:14:19,161 INFO [backend-engineer p1] listings=39
+2026-11-25 00:14:26,808 INFO [backend-engineer p2] listings=29
+2026-11-25 00:14:31,697 INFO [java-developer p1] listings=29
+2026-11-25 00:14:36,463 INFO [java-developer p2] listings=22
+2026-11-25 00:14:43,919 INFO [full-stack-engineer p1] listings=27
+2026-11-25 00:14:51,545 INFO [full-stack-engineer p2] listings=22
+2026-11-25 00:14:51,547 INFO === Done. added=0 dupes=11 filtered=224 ===
+2026-11-25 00:14:52 [wellfound] wellfound_search.py exit code 0

@@ -1444,3 +1444,24 @@
 2026-11-19 03:41:37,772 INFO ADDED Advance Auto Parts | Software Developer | Hyderabad, Telangana, India |  | https://advanceautoparts.phenompro.com/us/en/job/R-0619822/Software-Developer
 2026-11-19 03:41:42,013 INFO ADDED Barclays | Software Engineer - AI | Pune, Maharashtra, India |  | https://search.jobs.barclays/job/pune/software-engineer-ai/13015/103473668848
 2026-11-19 03:41:44,932 INFO === Done. raw=610 added=3 dupes=0 filtered=544 ===
+2026-11-24 19:40:14,495 INFO === hiring.cafe search run started ===
+2026-11-24 19:40:14,984 ERROR BLOCKED, aborting run (no retries): search 'software engineer' p0 -> HTTP 403 (Cloudflare block)
+2026-11-24 19:40:15,988 INFO === Done. raw=0 added=0 dupes=0 filtered=0 ===
+2026-11-24 20:40:05,259 INFO === hiring.cafe search run started ===
+2026-11-24 20:40:05,793 ERROR BLOCKED, aborting run (no retries): search 'software engineer' p0 -> HTTP 403 (Cloudflare block)
+2026-11-24 20:40:06,712 INFO === Done. raw=0 added=0 dupes=0 filtered=0 ===
+2026-11-24 21:40:05,286 INFO === hiring.cafe search run started ===
+2026-11-24 21:40:05,995 ERROR BLOCKED, aborting run (no retries): search 'software engineer' p0 -> HTTP 403 (Cloudflare block)
+2026-11-24 21:40:06,901 INFO === Done. raw=0 added=0 dupes=0 filtered=0 ===
+2026-11-24 22:40:07,192 INFO === hiring.cafe search run started ===
+2026-11-24 22:40:07,705 ERROR BLOCKED, aborting run (no retries): search 'software engineer' p0 -> HTTP 403 (Cloudflare block)
+2026-11-24 22:40:08,683 INFO === Done. raw=0 added=0 dupes=0 filtered=0 ===
+2026-11-24 23:40:06,177 INFO === hiring.cafe search run started ===
+2026-11-24 23:40:06,795 ERROR BLOCKED, aborting run (no retries): search 'software engineer' p0 -> HTTP 403 (Cloudflare block)
+2026-11-24 23:40:07,679 INFO === Done. raw=0 added=0 dupes=0 filtered=0 ===
+2026-11-25 00:40:06,369 INFO === hiring.cafe search run started ===
+2026-11-25 00:40:06,865 ERROR BLOCKED, aborting run (no retries): search 'software engineer' p0 -> HTTP 403 (Cloudflare block)
+2026-11-25 00:40:07,795 INFO === Done. raw=0 added=0 dupes=0 filtered=0 ===
+2026-11-25 01:05:02,917 INFO === hiring.cafe search run started ===
+2026-11-25 01:05:03,595 ERROR BLOCKED, aborting run (no retries): search 'software engineer' p0 -> HTTP 403 (Cloudflare block)
+2026-11-25 01:05:05,168 INFO === Done. raw=0 added=0 dupes=0 filtered=0 ===

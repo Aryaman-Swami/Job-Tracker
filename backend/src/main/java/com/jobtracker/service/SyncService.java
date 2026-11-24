@@ -19,8 +19,6 @@ public class SyncService {
     private static final Logger log = LoggerFactory.getLogger(SyncService.class);
     private static final Path SCRAPER_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "run_scraper.py").normalize();
     private static final Path WORKDAY_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "workday_search.py").normalize();
-    private static final Path WELLFOUND_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "wellfound_search.py").normalize();
-    private static final Path GREENHOUSE_SCRIPT = Path.of(System.getProperty("user.dir"), "..", "scraper", "greenhouse_search.py").normalize();
     private static final long DEFAULT_TIMEOUT_SECONDS = 300;
     private static final long LONG_TIMEOUT_SECONDS = 900;
     private static final int MAX_MESSAGE_LEN = 500;
@@ -58,16 +56,14 @@ public class SyncService {
                   AND (tailored_resume_latex IS NULL OR BTRIM(tailored_resume_latex) = '')
                 """);
 
-        // hiring.cafe is intentionally not run here: Cloudflare blocks Render, so it runs locally only.
+        // Render only runs LinkedIn/Indeed/Adzuna (run_scraper.py) and Workday. hiring.cafe (Cloudflare
+        // 503s Render), Wellfound, Naukri, Instahyre and Greenhouse run locally via Task Scheduler.
         Map<String, Object> jobspyResult = runScript(SCRAPER_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_JOBSPY_SECONDS", LONG_TIMEOUT_SECONDS));
         Map<String, Object> workdayResult = runScript(WORKDAY_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_WORKDAY_SECONDS", LONG_TIMEOUT_SECONDS));
-        Map<String, Object> wellfoundResult = runScript(WELLFOUND_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_WELLFOUND_SECONDS", DEFAULT_TIMEOUT_SECONDS));
-        Map<String, Object> greenhouseResult = runScript(GREENHOUSE_SCRIPT, timeoutSeconds("SYNC_TIMEOUT_GREENHOUSE_SECONDS", DEFAULT_TIMEOUT_SECONDS));
 
-        boolean ok = Boolean.TRUE.equals(jobspyResult.get("ok")) && Boolean.TRUE.equals(workdayResult.get("ok"))
-                && Boolean.TRUE.equals(wellfoundResult.get("ok")) && Boolean.TRUE.equals(greenhouseResult.get("ok"));
-        String message = "jobspy: " + jobspyResult.get("message") + "\nworkday: " + workdayResult.get("message")
-                + "\nwellfound: " + wellfoundResult.get("message") + "\ngreenhouse: " + greenhouseResult.get("message");
+        boolean ok = Boolean.TRUE.equals(jobspyResult.get("ok")) && Boolean.TRUE.equals(workdayResult.get("ok"));
+        String message = "jobspy: " + jobspyResult.get("message") + "
+workday: " + workdayResult.get("message");
         return Map.of("ok", ok, "message", tail(message));
     }
 

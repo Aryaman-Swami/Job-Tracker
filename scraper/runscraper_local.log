@@ -4819,3 +4819,637 @@
 2026-11-19 03:12:44,122 INFO === Stage totals: adzuna_rej_company=6, adzuna_rej_exp_out_of_range=12, adzuna_rej_exp_too_senior=33, adzuna_rej_location=7, adzuna_rej_no_java=36, adzuna_rej_title=100, already_seen=983, desc_fetched=5, dupes=137, rej_company=196, rej_exp_out_of_range=31, rej_exp_too_senior=200, rej_location=179, rej_no_java=3, rej_title=1117, scraped=2846 ===
 2026-11-19 03:12:45,381 INFO === Done. Total new jobs added: 0 ===
 2026-11-19 03:12:46 [runscraper] run_scraper.py exit code 0
+2026-11-24 19:08:31 [runscraper] starting run_scraper.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 19:41] Done. 16 new jobs added.
+2026-11-24 19:08:35,751 INFO === Scraper run started ===
+2026-11-24 19:08:35,756 INFO Searching: 'java developer 2 years experience' in India
+2026-11-24 19:08:53,564 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:08:59,406 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 19:09:39,324 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492656640; retry 1/3 in 5s
+2026-11-24 19:09:55,367 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493000428; retry 1/3 in 5s
+2026-11-24 19:10:41,329 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494312951; retry 1/3 in 5s
+2026-11-24 19:11:09,476 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492692715; retry 1/3 in 5s
+2026-11-24 19:11:16,343 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494322587; retry 1/3 in 6s
+2026-11-24 19:11:34,390 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493634735; retry 1/3 in 6s
+2026-11-24 19:11:57,412 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494117112; retry 1/3 in 6s
+2026-11-24 19:12:05,627 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493639320; retry 1/3 in 6s
+2026-11-24 19:12:16,251 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493664660; retry 1/3 in 6s
+2026-11-24 19:12:30,338 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4414664061; retry 1/3 in 6s
+2026-11-24 19:12:41,636 INFO   scraped=114, added=1, dupes=46, filtered=65 | already_seen=2, desc_fetched=59, rej_company=7, rej_exp_out_of_range=7, rej_exp_too_senior=21, rej_location=9, rej_title=21
+2026-11-24 19:12:41,642 INFO Searching: 'java developer 1 year experience' in India
+2026-11-24 19:13:13,527 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4486131636; retry 1/3 in 7s
+2026-11-24 19:13:32,030 INFO   scraped=108, added=0, dupes=11, filtered=48 | already_seen=49, desc_fetched=8, rej_company=7, rej_exp_out_of_range=1, rej_exp_too_senior=9, rej_location=9, rej_no_java=2, rej_title=20
+2026-11-24 19:13:32,037 INFO Searching: 'junior java developer' in India
+2026-11-24 19:13:46,363 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:13:57,291 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:14:12,263 INFO   scraped=96, added=0, dupes=9, filtered=33 | already_seen=54, desc_fetched=4, rej_company=3, rej_exp_too_senior=2, rej_location=5, rej_title=23
+2026-11-24 19:14:12,268 INFO Searching: 'java developer entry level' in India
+2026-11-24 19:14:15,479 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:14:22,302 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 12s
+2026-11-24 19:14:34,261 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 3/4 in 21s
+2026-11-24 19:15:17,815 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4484640998; retry 1/3 in 5s
+2026-11-24 19:15:23,306 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4484640998; retry 2/3 in 10s
+2026-11-24 19:15:35,199 INFO   scraped=80, added=1, dupes=1, filtered=26 | already_seen=52, desc_fetched=3, rej_company=3, rej_exp_too_senior=1, rej_location=6, rej_title=16
+2026-11-24 19:15:35,205 INFO Searching: 'SDE 1 java' in India
+2026-11-24 19:15:38,167 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:15:45,296 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 10s
+2026-11-24 19:16:04,338 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:16:13,470 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:16:26,263 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494119939; retry 1/3 in 6s
+2026-11-24 19:16:37,189 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493638469; retry 1/3 in 5s
+2026-11-24 19:16:48,384 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493649245; retry 1/3 in 6s
+2026-11-24 19:16:54,380 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493649245; retry 2/3 in 12s
+2026-11-24 19:17:07,708 INFO   scraped=81, added=0, dupes=3, filtered=25 | already_seen=53, desc_fetched=8, rej_company=3, rej_location=7, rej_no_java=5, rej_title=10
+2026-11-24 19:17:07,713 INFO Searching: 'SDE-1 java' in India
+2026-11-24 19:17:08,441 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:17:36,269 INFO   scraped=80, added=0, dupes=0, filtered=20 | already_seen=60, desc_fetched=1, rej_company=3, rej_location=6, rej_no_java=1, rej_title=10
+2026-11-24 19:17:36,276 INFO Searching: 'associate software engineer java' in India
+2026-11-24 19:17:37,271 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:17:48,428 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:18:04,381 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:18:22,362 INFO   scraped=98, added=0, dupes=7, filtered=34 | already_seen=57, desc_fetched=3, rej_company=6, rej_exp_too_senior=5, rej_location=7, rej_no_java=1, rej_title=15
+2026-11-24 19:18:22,367 INFO Searching: 'java software engineer' in India
+2026-11-24 19:18:34,509 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:18:53,465 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492386236; retry 1/3 in 6s
+2026-11-24 19:19:04,324 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492390283; retry 1/3 in 5s
+2026-11-24 19:19:12,459 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493760945; retry 1/3 in 5s
+2026-11-24 19:19:19,269 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4291065685; retry 1/3 in 6s
+2026-11-24 19:19:28,458 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492688690; retry 1/3 in 6s
+2026-11-24 19:19:35,299 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492688690; retry 2/3 in 10s
+2026-11-24 19:19:47,284 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494325008; retry 1/3 in 6s
+2026-11-24 19:20:04,089 INFO   scraped=160, added=0, dupes=17, filtered=125 | already_seen=18, desc_fetched=19, rej_company=10, rej_exp_out_of_range=6, rej_exp_too_senior=32, rej_location=7, rej_title=70
+2026-11-24 19:20:04,094 INFO Searching: 'java programmer' in India
+2026-11-24 19:20:13,343 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:20:30,290 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492387876; retry 1/3 in 6s
+2026-11-24 19:20:37,503 INFO   scraped=83, added=0, dupes=2, filtered=48 | already_seen=33, desc_fetched=2, rej_company=4, rej_exp_out_of_range=1, rej_exp_too_senior=1, rej_location=5, rej_title=37
+2026-11-24 19:20:37,507 INFO Searching: 'java spring boot developer' in India
+2026-11-24 19:20:43,284 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:20:52,348 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:20:59,328 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 12s
+2026-11-24 19:21:20,275 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:21:30,377 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494330185; retry 1/3 in 5s
+2026-11-24 19:21:37,919 INFO   scraped=136, added=0, dupes=10, filtered=94 | already_seen=32, desc_fetched=2, rej_company=6, rej_exp_out_of_range=2, rej_exp_too_senior=13, rej_location=10, rej_title=63
+2026-11-24 19:21:37,922 INFO Searching: 'java microservices developer' in India
+2026-11-24 19:21:43,279 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:21:50,468 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 12s
+2026-11-24 19:22:13,399 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:22:19,393 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 10s
+2026-11-24 19:22:34,744 INFO   scraped=136, added=0, dupes=6, filtered=98 | already_seen=32, desc_fetched=1, rej_company=6, rej_exp_out_of_range=4, rej_exp_too_senior=10, rej_location=7, rej_title=71
+2026-11-24 19:22:34,791 INFO Searching: 'java backend engineer' in India
+2026-11-24 19:22:56,150 INFO   scraped=144, added=0, dupes=12, filtered=98 | already_seen=34, rej_company=2, rej_exp_out_of_range=1, rej_exp_too_senior=15, rej_location=4, rej_title=76
+2026-11-24 19:22:56,156 INFO Searching: 'java rest api developer' in India
+2026-11-24 19:22:59,347 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:23:17,401 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:23:26,372 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:23:36,912 INFO   scraped=129, added=0, dupes=7, filtered=87 | already_seen=35, desc_fetched=1, rej_company=4, rej_exp_out_of_range=1, rej_exp_too_senior=13, rej_location=6, rej_title=63
+2026-11-24 19:23:36,916 INFO Searching: 'java developer' in Bengaluru
+2026-11-24 19:23:40,335 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:23:46,381 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 19:23:57,372 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 3/4 in 20s
+2026-11-24 19:24:20,285 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:24:30,339 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:24:39,394 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:24:46,413 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 19:25:09,849 INFO   scraped=120, added=0, dupes=9, filtered=89 | already_seen=22, desc_fetched=6, rej_company=6, rej_exp_out_of_range=8, rej_exp_too_senior=14, rej_title=61
+2026-11-24 19:25:09,856 INFO Searching: 'java backend developer' in Bengaluru
+2026-11-24 19:25:17,389 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:25:27,192 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:25:36,793 INFO   scraped=63, added=0, dupes=0, filtered=41 | already_seen=22, desc_fetched=1, rej_company=1, rej_exp_out_of_range=2, rej_exp_too_senior=1, rej_title=37
+2026-11-24 19:25:36,797 INFO Searching: 'java developer' in Pune
+2026-11-24 19:25:48,359 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:26:00,404 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492373869; retry 1/3 in 6s
+2026-11-24 19:26:18,328 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492609371; retry 1/3 in 5s
+2026-11-24 19:26:24,271 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492609371; retry 2/3 in 11s
+2026-11-24 19:26:36,409 INFO   scraped=84, added=0, dupes=6, filtered=69 | already_seen=9, desc_fetched=11, rej_company=7, rej_exp_out_of_range=6, rej_exp_too_senior=4, rej_no_java=1, rej_title=51
+2026-11-24 19:26:36,413 INFO Searching: 'java backend developer' in Pune
+2026-11-24 19:26:37,433 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:26:59,819 INFO   scraped=60, added=0, dupes=1, filtered=43 | already_seen=16, desc_fetched=2, rej_company=5, rej_no_java=1, rej_title=37
+2026-11-24 19:26:59,828 INFO Searching: 'java developer' in Mumbai
+2026-11-24 19:27:07,614 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:27:27,359 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493657007; retry 1/3 in 7s
+2026-11-24 19:27:34,409 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493657007; retry 2/3 in 11s
+2026-11-24 19:27:47,388 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4477279129; retry 1/3 in 7s
+2026-11-24 19:28:06,346 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4466691752; retry 1/3 in 5s
+2026-11-24 19:28:13,284 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4482585578; retry 1/3 in 7s
+2026-11-24 19:28:24,243 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493620610; retry 1/3 in 6s
+2026-11-24 19:28:30,403 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493620610; retry 2/3 in 11s
+2026-11-24 19:28:47,480 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493586934; retry 1/3 in 6s
+2026-11-24 19:28:54,716 INFO   scraped=77, added=0, dupes=7, filtered=64 | already_seen=6, desc_fetched=21, rej_company=5, rej_exp_out_of_range=2, rej_exp_too_senior=7, rej_no_java=17, rej_title=33
+2026-11-24 19:28:54,722 INFO Searching: 'java backend developer' in Mumbai
+2026-11-24 19:29:16,267 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4486103963; retry 1/3 in 5s
+2026-11-24 19:29:25,468 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4486853305; retry 1/3 in 6s
+2026-11-24 19:29:34,338 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4485471130; retry 1/3 in 7s
+2026-11-24 19:29:41,317 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4485471130; retry 2/3 in 11s
+2026-11-24 19:29:53,786 INFO   scraped=65, added=0, dupes=2, filtered=41 | already_seen=22, desc_fetched=9, rej_company=4, rej_exp_out_of_range=1, rej_exp_too_senior=3, rej_no_java=8, rej_title=25
+2026-11-24 19:29:53,792 INFO Searching: 'java developer' in Delhi NCR
+2026-11-24 19:30:06,407 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494147230; retry 1/3 in 7s
+2026-11-24 19:30:17,599 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492632288; retry 1/3 in 5s
+2026-11-24 19:30:23,418 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492632288; retry 2/3 in 10s
+2026-11-24 19:30:35,532 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494070576; retry 1/3 in 5s
+2026-11-24 19:30:41,377 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494070576; retry 2/3 in 10s
+2026-11-24 19:30:57,281 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494073572; retry 1/3 in 6s
+2026-11-24 19:31:03,431 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494073572; retry 2/3 in 10s
+2026-11-24 19:31:15,331 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493532063; retry 1/3 in 5s
+2026-11-24 19:31:22,428 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494316066; retry 1/3 in 5s
+2026-11-24 19:31:28,833 INFO   scraped=26, added=0, dupes=2, filtered=24 | desc_fetched=13, rej_exp_too_senior=5, rej_no_java=7, rej_title=12
+2026-11-24 19:31:28,838 INFO Searching: 'java backend developer' in Delhi NCR
+2026-11-24 19:31:38,356 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494311505; retry 1/3 in 6s
+2026-11-24 19:31:46,593 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492643155; retry 1/3 in 6s
+2026-11-24 19:31:54,603 INFO   scraped=29, added=0, dupes=1, filtered=19 | already_seen=9, desc_fetched=4, rej_exp_too_senior=3, rej_no_java=1, rej_title=15
+2026-11-24 19:31:54,610 INFO Searching: 'java developer' in Noida
+2026-11-24 19:32:21,425 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494339208; retry 1/3 in 5s
+2026-11-24 19:32:27,130 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494339208; retry 2/3 in 11s
+2026-11-24 19:32:43,295 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4346542571; retry 1/3 in 5s
+2026-11-24 19:32:59,041 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4343602153; retry 1/3 in 6s
+2026-11-24 19:33:07,571 INFO   scraped=82, added=0, dupes=8, filtered=62 | already_seen=12, desc_fetched=18, rej_company=4, rej_exp_out_of_range=3, rej_exp_too_senior=12, rej_no_java=6, rej_title=37
+2026-11-24 19:33:07,576 INFO Searching: 'java backend developer' in Noida
+2026-11-24 19:33:08,439 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:33:23,242 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:33:35,422 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492607181; retry 1/3 in 7s
+2026-11-24 19:33:47,244 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493724410; retry 1/3 in 6s
+2026-11-24 19:33:56,364 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493643827; retry 1/3 in 7s
+2026-11-24 19:34:06,001 INFO   scraped=62, added=0, dupes=3, filtered=35 | already_seen=24, desc_fetched=7, rej_company=3, rej_no_java=6, rej_title=26
+2026-11-24 19:34:06,011 INFO Searching: 'java developer' in Gurugram
+2026-11-24 19:34:09,229 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:34:21,407 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:34:28,508 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 10s
+2026-11-24 19:34:39,452 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 3/4 in 20s
+2026-11-24 19:35:05,172 INFO   scraped=79, added=0, dupes=5, filtered=44 | already_seen=30, rej_company=4, rej_exp_out_of_range=1, rej_exp_too_senior=4, rej_title=35
+2026-11-24 19:35:05,178 INFO Searching: 'java backend developer' in Gurugram
+2026-11-24 19:35:17,299 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:35:26,791 INFO   scraped=62, added=0, dupes=2, filtered=30 | already_seen=30, desc_fetched=1, rej_company=3, rej_no_java=1, rej_title=26
+2026-11-24 19:35:26,795 INFO Searching: 'java developer' in Ahmedabad
+2026-11-24 19:35:34,544 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494330852; retry 1/3 in 7s
+2026-11-24 19:35:43,234 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494108429; retry 1/3 in 5s
+2026-11-24 19:35:52,530 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4486185973; retry 1/3 in 6s
+2026-11-24 19:36:05,330 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4482849314; retry 1/3 in 7s
+2026-11-24 19:36:16,289 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4291068086; retry 1/3 in 6s
+2026-11-24 19:36:23,578 INFO   scraped=29, added=0, dupes=1, filtered=28 | desc_fetched=11, rej_company=1, rej_exp_out_of_range=1, rej_exp_too_senior=2, rej_no_java=9, rej_title=15
+2026-11-24 19:36:23,583 INFO Searching: 'java backend developer' in Ahmedabad
+2026-11-24 19:36:29,450 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:36:41,901 INFO   scraped=27, added=0, dupes=0, filtered=19 | already_seen=8, desc_fetched=3, rej_no_java=3, rej_title=16
+2026-11-24 19:36:41,910 INFO Searching: 'java developer' in Hyderabad
+2026-11-24 19:36:49,516 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:36:59,337 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:37:12,372 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493967990; retry 1/3 in 6s
+2026-11-24 19:37:18,422 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493967990; retry 2/3 in 12s
+2026-11-24 19:37:32,244 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492630555; retry 1/3 in 6s
+2026-11-24 19:37:44,522 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493918271; retry 1/3 in 6s
+2026-11-24 19:37:51,295 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493918271; retry 2/3 in 12s
+2026-11-24 19:38:09,571 INFO   scraped=105, added=0, dupes=12, filtered=77 | already_seen=16, desc_fetched=10, rej_company=14, rej_exp_out_of_range=4, rej_exp_too_senior=15, rej_title=44
+2026-11-24 19:38:09,578 INFO Searching: 'java backend developer' in Hyderabad
+2026-11-24 19:38:10,336 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:38:16,276 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 19:38:30,264 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:38:37,365 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 10s
+2026-11-24 19:38:54,361 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:39:06,258 INFO   scraped=63, added=0, dupes=1, filtered=39 | already_seen=23, desc_fetched=1, rej_company=6, rej_exp_too_senior=2, rej_title=31
+2026-11-24 19:39:06,262 INFO Searching: 'java developer' in India
+2026-11-24 19:39:13,484 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:39:25,571 INFO   scraped=60, added=0, dupes=0, filtered=29 | already_seen=31, rej_company=1, rej_location=4, rej_title=24
+2026-11-24 19:39:25,577 INFO Searching: 'java backend developer' in India
+2026-11-24 19:39:26,139 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:39:33,384 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 19:39:44,349 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 3/4 in 21s
+2026-11-24 19:40:12,348 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 19:40:20,078 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 19:40:28,232 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 19:40:37,369 INFO   scraped=60, added=0, dupes=0, filtered=35 | already_seen=25, rej_location=4, rej_title=31
+2026-11-24 19:40:37,389 INFO [adzuna] Searching: 'java developer 2 years experience' in India
+2026-11-24 19:40:38,558 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:40:38,563 INFO [adzuna] Searching: 'java developer 1 year experience' in India
+2026-11-24 19:40:39,648 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 19:40:39,653 INFO [adzuna] Searching: 'junior java developer' in India
+2026-11-24 19:40:40,586 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:40:40,591 INFO [adzuna] Searching: 'java developer entry level' in India
+2026-11-24 19:40:41,412 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:40:41,416 INFO [adzuna] Searching: 'SDE 1 java' in India
+2026-11-24 19:40:42,213 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:40:42,219 INFO [adzuna] Searching: 'SDE-1 java' in India
+2026-11-24 19:40:43,012 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:40:43,016 INFO [adzuna] Searching: 'associate software engineer java' in India
+2026-11-24 19:40:43,832 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:40:43,835 INFO [adzuna] Searching: 'java software engineer' in India
+2026-11-24 19:40:50,681 INFO   [adzuna] scraped=12, added=4, dupes=0, filtered=8
+2026-11-24 19:40:50,686 INFO [adzuna] Searching: 'java programmer' in India
+2026-11-24 19:40:51,899 INFO   [adzuna] scraped=3, added=2, dupes=0, filtered=1
+2026-11-24 19:40:51,905 INFO [adzuna] Searching: 'java spring boot developer' in India
+2026-11-24 19:40:52,804 INFO   [adzuna] scraped=5, added=0, dupes=0, filtered=5
+2026-11-24 19:40:52,809 INFO [adzuna] Searching: 'java microservices developer' in India
+2026-11-24 19:40:53,679 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 19:40:53,685 INFO [adzuna] Searching: 'java backend engineer' in India
+2026-11-24 19:40:54,813 INFO   [adzuna] scraped=3, added=1, dupes=1, filtered=1
+2026-11-24 19:40:54,823 INFO [adzuna] Searching: 'java rest api developer' in India
+2026-11-24 19:40:55,815 INFO   [adzuna] scraped=3, added=0, dupes=1, filtered=2
+2026-11-24 19:40:55,821 INFO [adzuna] Searching: 'java developer' in Bengaluru
+2026-11-24 19:40:57,719 INFO   [adzuna] scraped=11, added=1, dupes=3, filtered=7
+2026-11-24 19:40:57,727 INFO [adzuna] Searching: 'java backend developer' in Bengaluru
+2026-11-24 19:40:58,842 INFO   [adzuna] scraped=2, added=0, dupes=1, filtered=1
+2026-11-24 19:40:58,851 INFO [adzuna] Searching: 'java developer' in Pune
+2026-11-24 19:40:59,651 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 19:40:59,656 INFO [adzuna] Searching: 'java backend developer' in Pune
+2026-11-24 19:41:00,536 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:00,542 INFO [adzuna] Searching: 'java developer' in Mumbai
+2026-11-24 19:41:02,150 INFO   [adzuna] scraped=5, added=2, dupes=1, filtered=2
+2026-11-24 19:41:02,163 INFO [adzuna] Searching: 'java backend developer' in Mumbai
+2026-11-24 19:41:03,007 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 19:41:03,012 INFO [adzuna] Searching: 'java developer' in Delhi NCR
+2026-11-24 19:41:03,822 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:03,828 INFO [adzuna] Searching: 'java backend developer' in Delhi NCR
+2026-11-24 19:41:04,653 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:04,658 INFO [adzuna] Searching: 'java developer' in Noida
+2026-11-24 19:41:05,459 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:05,464 INFO [adzuna] Searching: 'java backend developer' in Noida
+2026-11-24 19:41:06,311 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:06,316 INFO [adzuna] Searching: 'java developer' in Gurugram
+2026-11-24 19:41:07,081 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:07,085 INFO [adzuna] Searching: 'java backend developer' in Gurugram
+2026-11-24 19:41:07,878 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:07,882 INFO [adzuna] Searching: 'java developer' in Ahmedabad
+2026-11-24 19:41:08,738 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:08,744 INFO [adzuna] Searching: 'java backend developer' in Ahmedabad
+2026-11-24 19:41:09,566 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:09,572 INFO [adzuna] Searching: 'java developer' in Hyderabad
+2026-11-24 19:41:10,985 INFO   [adzuna] scraped=12, added=1, dupes=0, filtered=11
+2026-11-24 19:41:10,990 INFO [adzuna] Searching: 'java backend developer' in Hyderabad
+2026-11-24 19:41:11,778 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 19:41:11,783 INFO [adzuna] Searching: 'java developer' in India
+2026-11-24 19:41:15,023 INFO   [adzuna] scraped=48, added=3, dupes=7, filtered=38
+2026-11-24 19:41:15,030 INFO [adzuna] Searching: 'java backend developer' in India
+2026-11-24 19:41:16,016 INFO   [adzuna] scraped=3, added=0, dupes=1, filtered=2
+2026-11-24 19:41:16,025 INFO === Stage totals: added=2, adzuna_rej_company=9, adzuna_rej_exp_out_of_range=9, adzuna_rej_exp_too_senior=17, adzuna_rej_location=3, adzuna_rej_no_java=19, adzuna_rej_title=25, already_seen=816, desc_fetched=229, dupes=191, rej_company=128, rej_exp_out_of_range=51, rej_exp_too_senior=194, rej_location=96, rej_no_java=69, rej_title=1051, scraped=2598 ===
+2026-11-24 19:41:32,461 INFO === Done. Total new jobs added: 16 ===
+2026-11-24 19:41:33 [runscraper] run_scraper.py exit code 0
+2026-11-24 21:00:15 [runscraper] starting run_scraper.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 21:16] Done. 9 new jobs added.
+2026-11-24 21:00:17,020 INFO === Scraper run started ===
+2026-11-24 21:00:17,024 INFO Searching: 'java developer 2 years experience' in India
+2026-11-24 21:00:20,143 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:00:28,197 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 21:00:46,166 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:00:59,544 INFO   scraped=120, added=1, dupes=7, filtered=50 | already_seen=62, desc_fetched=1, rej_company=7, rej_exp_too_senior=11, rej_location=9, rej_title=23
+2026-11-24 21:00:59,548 INFO Searching: 'java developer 1 year experience' in India
+2026-11-24 21:01:11,270 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:01:22,044 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:01:28,249 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 12s
+2026-11-24 21:01:46,361 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494383192; retry 1/3 in 6s
+2026-11-24 21:01:55,194 INFO   scraped=112, added=0, dupes=9, filtered=45 | already_seen=58, desc_fetched=2, rej_company=6, rej_exp_out_of_range=1, rej_exp_too_senior=10, rej_location=10, rej_title=18
+2026-11-24 21:01:55,199 INFO Searching: 'junior java developer' in India
+2026-11-24 21:01:58,334 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:02:19,201 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:02:27,660 INFO   scraped=97, added=0, dupes=5, filtered=34 | already_seen=58, rej_company=3, rej_exp_too_senior=2, rej_location=4, rej_title=25
+2026-11-24 21:02:27,665 INFO Searching: 'java developer entry level' in India
+2026-11-24 21:02:33,031 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:02:53,854 INFO   scraped=81, added=0, dupes=0, filtered=26 | already_seen=55, rej_company=3, rej_exp_too_senior=1, rej_location=6, rej_title=16
+2026-11-24 21:02:53,859 INFO Searching: 'SDE 1 java' in India
+2026-11-24 21:03:01,469 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:03:12,329 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:03:18,288 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 21:03:29,366 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 3/4 in 21s
+2026-11-24 21:04:01,229 INFO   scraped=81, added=0, dupes=1, filtered=19 | already_seen=61, desc_fetched=2, rej_company=3, rej_location=6, rej_no_java=1, rej_title=9
+2026-11-24 21:04:01,234 INFO Searching: 'SDE-1 java' in India
+2026-11-24 21:04:21,115 INFO   scraped=80, added=0, dupes=0, filtered=19 | already_seen=61, rej_company=3, rej_location=5, rej_title=11
+2026-11-24 21:04:21,124 INFO Searching: 'associate software engineer java' in India
+2026-11-24 21:04:37,402 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 21:04:44,220 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 21:04:58,216 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:05:07,497 INFO   scraped=99, added=0, dupes=6, filtered=33 | already_seen=60, rej_company=6, rej_exp_too_senior=5, rej_location=8, rej_title=14
+2026-11-24 21:05:07,501 INFO Searching: 'java software engineer' in India
+2026-11-24 21:05:18,149 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:05:27,139 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 21:05:36,222 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:05:50,311 INFO   scraped=160, added=0, dupes=14, filtered=110 | already_seen=36, desc_fetched=1, rej_company=11, rej_exp_out_of_range=3, rej_exp_too_senior=23, rej_location=8, rej_title=65
+2026-11-24 21:05:50,319 INFO Searching: 'java programmer' in India
+2026-11-24 21:05:51,510 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:06:00,259 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:06:16,141 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:06:26,508 INFO   scraped=83, added=0, dupes=1, filtered=46 | already_seen=36, rej_company=5, rej_exp_out_of_range=1, rej_location=5, rej_title=35
+2026-11-24 21:06:26,514 INFO Searching: 'java spring boot developer' in India
+2026-11-24 21:06:28,059 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:06:38,068 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:06:58,138 INFO   scraped=140, added=0, dupes=11, filtered=95 | already_seen=34, rej_company=6, rej_exp_out_of_range=2, rej_exp_too_senior=11, rej_location=11, rej_title=65
+2026-11-24 21:06:58,145 INFO Searching: 'java microservices developer' in India
+2026-11-24 21:07:05,306 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:07:17,096 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:07:29,673 INFO   scraped=142, added=0, dupes=5, filtered=104 | already_seen=33, rej_company=7, rej_exp_out_of_range=4, rej_exp_too_senior=13, rej_location=8, rej_title=72
+2026-11-24 21:07:29,680 INFO Searching: 'java backend engineer' in India
+2026-11-24 21:07:50,436 INFO   scraped=153, added=1, dupes=14, filtered=105 | already_seen=33, rej_company=3, rej_exp_out_of_range=1, rej_exp_too_senior=16, rej_location=5, rej_title=80
+2026-11-24 21:07:50,441 INFO Searching: 'java rest api developer' in India
+2026-11-24 21:08:09,573 INFO   scraped=135, added=0, dupes=7, filtered=92 | already_seen=36, rej_company=5, rej_exp_out_of_range=1, rej_exp_too_senior=15, rej_location=7, rej_title=64
+2026-11-24 21:08:09,578 INFO Searching: 'java developer' in Bengaluru
+2026-11-24 21:08:21,053 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 21:08:28,130 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 12s
+2026-11-24 21:08:43,100 INFO   scraped=120, added=0, dupes=6, filtered=87 | already_seen=27, rej_company=7, rej_exp_out_of_range=6, rej_exp_too_senior=12, rej_title=62
+2026-11-24 21:08:43,106 INFO Searching: 'java backend developer' in Bengaluru
+2026-11-24 21:08:56,639 INFO   scraped=63, added=0, dupes=0, filtered=42 | already_seen=21, rej_company=2, rej_exp_out_of_range=1, rej_exp_too_senior=1, rej_title=38
+2026-11-24 21:08:56,644 INFO Searching: 'java developer' in Pune
+2026-11-24 21:09:04,297 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:09:15,140 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:09:21,037 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 21:09:32,147 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 3/4 in 21s
+2026-11-24 21:09:57,830 INFO   scraped=91, added=1, dupes=7, filtered=65 | already_seen=18, desc_fetched=1, rej_company=7, rej_exp_too_senior=2, rej_title=56
+2026-11-24 21:09:57,837 INFO Searching: 'java backend developer' in Pune
+2026-11-24 21:10:09,225 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:10:16,427 INFO   scraped=60, added=0, dupes=0, filtered=43 | already_seen=17, rej_company=6, rej_title=37
+2026-11-24 21:10:16,433 INFO Searching: 'java developer' in Mumbai
+2026-11-24 21:10:34,265 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493020295; retry 1/3 in 5s
+2026-11-24 21:10:41,167 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4468565791; retry 1/3 in 5s
+2026-11-24 21:10:49,291 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4414730434; retry 1/3 in 6s
+2026-11-24 21:10:57,193 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494144724; retry 1/3 in 6s
+2026-11-24 21:11:04,293 INFO   scraped=77, added=0, dupes=6, filtered=47 | already_seen=24, desc_fetched=5, rej_company=5, rej_exp_out_of_range=1, rej_exp_too_senior=8, rej_no_java=2, rej_title=31
+2026-11-24 21:11:04,298 INFO Searching: 'java backend developer' in Mumbai
+2026-11-24 21:11:12,267 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:11:26,193 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:11:38,306 INFO   scraped=64, added=0, dupes=2, filtered=30 | already_seen=32, desc_fetched=1, rej_company=3, rej_exp_too_senior=2, rej_no_java=1, rej_title=24
+2026-11-24 21:11:38,312 INFO Searching: 'java developer' in Delhi NCR
+2026-11-24 21:11:39,141 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 21:11:48,140 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:11:56,226 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 21:12:08,644 INFO   scraped=27, added=0, dupes=2, filtered=13 | already_seen=12, desc_fetched=2, rej_no_java=1, rej_title=12
+2026-11-24 21:12:08,650 INFO Searching: 'java backend developer' in Delhi NCR
+2026-11-24 21:12:13,912 INFO   scraped=21, added=0, dupes=1, filtered=11 | already_seen=9, rej_title=11
+2026-11-24 21:12:13,918 INFO Searching: 'java developer' in Noida
+2026-11-24 21:12:17,296 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:12:34,382 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 21:12:46,301 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4423385486; retry 1/3 in 6s
+2026-11-24 21:12:54,825 INFO   scraped=82, added=0, dupes=6, filtered=48 | already_seen=28, desc_fetched=4, rej_company=4, rej_exp_out_of_range=1, rej_exp_too_senior=5, rej_no_java=3, rej_title=35
+2026-11-24 21:12:54,831 INFO Searching: 'java backend developer' in Noida
+2026-11-24 21:13:09,555 INFO   scraped=62, added=0, dupes=2, filtered=30 | already_seen=30, desc_fetched=1, rej_company=4, rej_no_java=1, rej_title=25
+2026-11-24 21:13:09,560 INFO Searching: 'java developer' in Gurugram
+2026-11-24 21:13:26,079 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4459221837; retry 1/3 in 6s
+2026-11-24 21:13:34,392 INFO   scraped=79, added=1, dupes=5, filtered=43 | already_seen=30, desc_fetched=3, rej_company=4, rej_exp_out_of_range=1, rej_exp_too_senior=5, rej_no_java=1, rej_title=32
+2026-11-24 21:13:34,400 INFO Searching: 'java backend developer' in Gurugram
+2026-11-24 21:13:35,212 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 21:13:55,108 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4492396644; retry 1/3 in 6s
+2026-11-24 21:14:02,661 INFO   scraped=62, added=0, dupes=2, filtered=28 | already_seen=32, desc_fetched=1, rej_company=3, rej_no_java=1, rej_title=24
+2026-11-24 21:14:02,666 INFO Searching: 'java developer' in Ahmedabad
+2026-11-24 21:14:11,219 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493010818; retry 1/3 in 7s
+2026-11-24 21:14:20,449 INFO   scraped=29, added=0, dupes=1, filtered=17 | already_seen=11, desc_fetched=1, rej_company=1, rej_exp_too_senior=2, rej_title=14
+2026-11-24 21:14:20,454 INFO Searching: 'java backend developer' in Ahmedabad
+2026-11-24 21:14:21,220 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 21:14:35,196 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4484671381; retry 1/3 in 6s
+2026-11-24 21:14:42,193 INFO   scraped=28, added=0, dupes=0, filtered=16 | already_seen=12, desc_fetched=1, rej_no_java=1, rej_title=15
+2026-11-24 21:14:42,198 INFO Searching: 'java developer' in Hyderabad
+2026-11-24 21:14:57,704 INFO   scraped=112, added=2, dupes=11, filtered=73 | already_seen=26, rej_company=14, rej_exp_out_of_range=2, rej_exp_too_senior=11, rej_title=46
+2026-11-24 21:14:57,708 INFO Searching: 'java backend developer' in Hyderabad
+2026-11-24 21:15:11,185 INFO   scraped=63, added=0, dupes=1, filtered=38 | already_seen=24, rej_company=6, rej_exp_too_senior=1, rej_title=31
+2026-11-24 21:15:11,191 INFO Searching: 'java developer' in India
+2026-11-24 21:15:24,732 INFO   scraped=60, added=0, dupes=0, filtered=29 | already_seen=31, rej_company=2, rej_location=4, rej_title=23
+2026-11-24 21:15:24,738 INFO Searching: 'java backend developer' in India
+2026-11-24 21:15:25,208 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 21:15:44,972 INFO   scraped=60, added=0, dupes=0, filtered=36 | already_seen=24, rej_company=1, rej_location=4, rej_title=31
+2026-11-24 21:15:44,978 INFO [adzuna] Searching: 'java developer 2 years experience' in India
+2026-11-24 21:15:46,160 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:15:46,163 INFO [adzuna] Searching: 'java developer 1 year experience' in India
+2026-11-24 21:15:47,332 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 21:15:47,339 INFO [adzuna] Searching: 'junior java developer' in India
+2026-11-24 21:15:48,330 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:15:48,333 INFO [adzuna] Searching: 'java developer entry level' in India
+2026-11-24 21:15:49,148 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:15:49,152 INFO [adzuna] Searching: 'SDE 1 java' in India
+2026-11-24 21:15:50,060 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:15:50,067 INFO [adzuna] Searching: 'SDE-1 java' in India
+2026-11-24 21:15:50,979 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:15:50,983 INFO [adzuna] Searching: 'associate software engineer java' in India
+2026-11-24 21:15:51,793 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:15:51,798 INFO [adzuna] Searching: 'java software engineer' in India
+2026-11-24 21:15:53,603 INFO   [adzuna] scraped=12, added=0, dupes=4, filtered=8
+2026-11-24 21:15:53,609 INFO [adzuna] Searching: 'java programmer' in India
+2026-11-24 21:15:54,813 INFO   [adzuna] scraped=3, added=1, dupes=1, filtered=1
+2026-11-24 21:15:54,822 INFO [adzuna] Searching: 'java spring boot developer' in India
+2026-11-24 21:15:55,973 INFO   [adzuna] scraped=5, added=0, dupes=0, filtered=5
+2026-11-24 21:15:55,976 INFO [adzuna] Searching: 'java microservices developer' in India
+2026-11-24 21:15:56,873 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 21:15:56,876 INFO [adzuna] Searching: 'java backend engineer' in India
+2026-11-24 21:15:58,271 INFO   [adzuna] scraped=3, added=0, dupes=2, filtered=1
+2026-11-24 21:15:58,281 INFO [adzuna] Searching: 'java rest api developer' in India
+2026-11-24 21:15:59,269 INFO   [adzuna] scraped=3, added=0, dupes=1, filtered=2
+2026-11-24 21:15:59,277 INFO [adzuna] Searching: 'java developer' in Bengaluru
+2026-11-24 21:16:01,476 INFO   [adzuna] scraped=11, added=0, dupes=4, filtered=7
+2026-11-24 21:16:01,481 INFO [adzuna] Searching: 'java backend developer' in Bengaluru
+2026-11-24 21:16:02,666 INFO   [adzuna] scraped=2, added=0, dupes=1, filtered=1
+2026-11-24 21:16:02,674 INFO [adzuna] Searching: 'java developer' in Pune
+2026-11-24 21:16:03,515 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 21:16:03,518 INFO [adzuna] Searching: 'java backend developer' in Pune
+2026-11-24 21:16:04,342 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:04,346 INFO [adzuna] Searching: 'java developer' in Mumbai
+2026-11-24 21:16:05,869 INFO   [adzuna] scraped=5, added=1, dupes=2, filtered=2
+2026-11-24 21:16:05,875 INFO [adzuna] Searching: 'java backend developer' in Mumbai
+2026-11-24 21:16:06,710 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 21:16:06,713 INFO [adzuna] Searching: 'java developer' in Delhi NCR
+2026-11-24 21:16:07,595 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:07,600 INFO [adzuna] Searching: 'java backend developer' in Delhi NCR
+2026-11-24 21:16:08,425 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:08,429 INFO [adzuna] Searching: 'java developer' in Noida
+2026-11-24 21:16:09,226 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:09,231 INFO [adzuna] Searching: 'java backend developer' in Noida
+2026-11-24 21:16:10,097 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:10,103 INFO [adzuna] Searching: 'java developer' in Gurugram
+2026-11-24 21:16:10,888 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:10,892 INFO [adzuna] Searching: 'java backend developer' in Gurugram
+2026-11-24 21:16:11,675 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:11,681 INFO [adzuna] Searching: 'java developer' in Ahmedabad
+2026-11-24 21:16:12,499 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:12,504 INFO [adzuna] Searching: 'java backend developer' in Ahmedabad
+2026-11-24 21:16:13,342 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:13,347 INFO [adzuna] Searching: 'java developer' in Hyderabad
+2026-11-24 21:16:15,020 INFO   [adzuna] scraped=12, added=0, dupes=1, filtered=11
+2026-11-24 21:16:15,026 INFO [adzuna] Searching: 'java backend developer' in Hyderabad
+2026-11-24 21:16:15,834 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 21:16:15,837 INFO [adzuna] Searching: 'java developer' in India
+2026-11-24 21:16:21,172 INFO   [adzuna] scraped=48, added=1, dupes=9, filtered=38
+2026-11-24 21:16:21,181 INFO [adzuna] Searching: 'java backend developer' in India
+2026-11-24 21:16:22,767 INFO   [adzuna] scraped=3, added=0, dupes=1, filtered=2
+2026-11-24 21:16:22,776 INFO === Stage totals: added=6, adzuna_rej_company=9, adzuna_rej_exp_out_of_range=9, adzuna_rej_exp_too_senior=17, adzuna_rej_location=3, adzuna_rej_no_java=19, adzuna_rej_title=25, already_seen=1031, desc_fetched=26, dupes=132, rej_company=137, rej_exp_out_of_range=25, rej_exp_too_senior=156, rej_location=100, rej_no_java=12, rej_title=1044, scraped=2643 ===
+2026-11-24 21:16:30,712 INFO === Done. Total new jobs added: 9 ===
+2026-11-24 21:16:31 [runscraper] run_scraper.py exit code 0
+2026-11-24 23:00:14 [runscraper] starting run_scraper.py -> https://job-tracker-g8bx.onrender.com
+[2026-11-24 23:17] Done. 12 new jobs added.
+2026-11-24 23:00:16,055 INFO === Scraper run started ===
+2026-11-24 23:00:16,059 INFO Searching: 'java developer 2 years experience' in India
+2026-11-24 23:00:18,320 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:00:51,988 INFO   scraped=124, added=1, dupes=12, filtered=51 | already_seen=60, desc_fetched=4, rej_company=7, rej_exp_out_of_range=1, rej_exp_too_senior=12, rej_location=9, rej_title=22
+2026-11-24 23:00:51,993 INFO Searching: 'java developer 1 year experience' in India
+2026-11-24 23:01:08,405 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:01:21,719 INFO   scraped=113, added=0, dupes=9, filtered=43 | already_seen=61, rej_company=6, rej_exp_out_of_range=1, rej_exp_too_senior=8, rej_location=10, rej_title=18
+2026-11-24 23:01:21,726 INFO Searching: 'junior java developer' in India
+2026-11-24 23:01:40,423 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:01:46,344 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 10s
+2026-11-24 23:01:59,651 INFO   scraped=97, added=0, dupes=5, filtered=33 | already_seen=59, rej_company=4, rej_exp_too_senior=2, rej_location=3, rej_title=24
+2026-11-24 23:01:59,656 INFO Searching: 'java developer entry level' in India
+2026-11-24 23:02:09,273 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:02:22,315 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:02:33,338 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494383666; retry 1/3 in 7s
+2026-11-24 23:02:41,373 INFO   scraped=81, added=0, dupes=1, filtered=25 | already_seen=55, desc_fetched=2, rej_company=3, rej_exp_out_of_range=1, rej_exp_too_senior=1, rej_location=5, rej_title=15
+2026-11-24 23:02:41,379 INFO Searching: 'SDE 1 java' in India
+2026-11-24 23:02:43,412 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:02:50,351 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 23:03:17,191 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:03:27,146 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:03:33,234 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 23:03:48,949 INFO   scraped=81, added=0, dupes=1, filtered=19 | already_seen=61, desc_fetched=1, rej_company=3, rej_location=7, rej_title=9
+2026-11-24 23:03:48,954 INFO Searching: 'SDE-1 java' in India
+2026-11-24 23:03:58,224 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:04:15,802 INFO   scraped=80, added=0, dupes=1, filtered=15 | already_seen=64, desc_fetched=1, rej_company=3, rej_location=4, rej_title=8
+2026-11-24 23:04:15,807 INFO Searching: 'associate software engineer java' in India
+2026-11-24 23:04:19,461 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:04:33,103 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:04:54,254 INFO   scraped=99, added=0, dupes=7, filtered=34 | already_seen=58, desc_fetched=2, rej_company=6, rej_exp_out_of_range=1, rej_exp_too_senior=5, rej_location=8, rej_title=14
+2026-11-24 23:04:54,261 INFO Searching: 'java software engineer' in India
+2026-11-24 23:04:55,395 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:05:06,310 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:05:16,351 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:05:22,192 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 23:05:40,190 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:05:52,087 INFO   scraped=160, added=0, dupes=15, filtered=107 | already_seen=38, rej_company=12, rej_exp_out_of_range=3, rej_exp_too_senior=22, rej_location=8, rej_title=62
+2026-11-24 23:05:52,092 INFO Searching: 'java programmer' in India
+2026-11-24 23:05:57,293 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:06:11,310 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:06:19,091 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:06:26,796 INFO   scraped=83, added=0, dupes=1, filtered=44 | already_seen=38, rej_company=6, rej_exp_out_of_range=1, rej_location=5, rej_title=32
+2026-11-24 23:06:26,802 INFO Searching: 'java spring boot developer' in India
+2026-11-24 23:06:30,348 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:06:59,013 INFO   scraped=141, added=0, dupes=10, filtered=99 | already_seen=32, desc_fetched=3, rej_company=7, rej_exp_out_of_range=3, rej_exp_too_senior=14, rej_location=12, rej_title=63
+2026-11-24 23:06:59,017 INFO Searching: 'java microservices developer' in India
+2026-11-24 23:07:04,337 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:07:22,151 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:07:31,624 INFO   scraped=145, added=0, dupes=6, filtered=104 | already_seen=35, rej_company=8, rej_exp_out_of_range=4, rej_exp_too_senior=13, rej_location=9, rej_title=70
+2026-11-24 23:07:31,633 INFO Searching: 'java backend engineer' in India
+2026-11-24 23:07:39,456 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:07:59,436 INFO   scraped=159, added=0, dupes=17, filtered=109 | already_seen=33, rej_company=4, rej_exp_out_of_range=1, rej_exp_too_senior=18, rej_location=6, rej_title=80
+2026-11-24 23:07:59,440 INFO Searching: 'java rest api developer' in India
+2026-11-24 23:08:00,523 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:08:07,267 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 11s
+2026-11-24 23:08:33,122 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:08:42,063 INFO   scraped=141, added=0, dupes=7, filtered=99 | already_seen=35, rej_company=5, rej_exp_out_of_range=2, rej_exp_too_senior=18, rej_location=9, rej_title=65
+2026-11-24 23:08:42,067 INFO Searching: 'java developer' in Bengaluru
+2026-11-24 23:08:57,581 INFO   scraped=120, added=0, dupes=7, filtered=84 | already_seen=29, rej_company=7, rej_exp_out_of_range=6, rej_exp_too_senior=11, rej_title=60
+2026-11-24 23:08:57,588 INFO Searching: 'java backend developer' in Bengaluru
+2026-11-24 23:08:58,288 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:09:16,935 INFO   scraped=63, added=0, dupes=0, filtered=39 | already_seen=24, rej_company=2, rej_exp_out_of_range=1, rej_exp_too_senior=1, rej_title=35
+2026-11-24 23:09:16,941 INFO Searching: 'java developer' in Pune
+2026-11-24 23:09:21,423 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:09:41,206 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4484655994; retry 1/3 in 7s
+2026-11-24 23:09:50,648 INFO   scraped=95, added=0, dupes=10, filtered=68 | already_seen=17, desc_fetched=3, rej_company=8, rej_exp_too_senior=6, rej_title=54
+2026-11-24 23:09:50,654 INFO Searching: 'java backend developer' in Pune
+2026-11-24 23:10:02,166 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:10:09,409 INFO   scraped=60, added=0, dupes=0, filtered=41 | already_seen=19, rej_company=5, rej_title=36
+2026-11-24 23:10:09,413 INFO Searching: 'java developer' in Mumbai
+2026-11-24 23:10:28,736 INFO   scraped=77, added=1, dupes=6, filtered=42 | already_seen=28, desc_fetched=2, rej_company=5, rej_exp_out_of_range=2, rej_exp_too_senior=5, rej_title=30
+2026-11-24 23:10:28,742 INFO Searching: 'java backend developer' in Mumbai
+2026-11-24 23:10:46,481 INFO   scraped=65, added=0, dupes=2, filtered=33 | already_seen=30, desc_fetched=1, rej_company=3, rej_exp_too_senior=4, rej_title=26
+2026-11-24 23:10:46,486 INFO Searching: 'java developer' in Delhi NCR
+2026-11-24 23:10:47,619 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:10:57,446 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:11:05,298 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:11:17,412 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493025231; retry 1/3 in 6s
+2026-11-24 23:11:25,250 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494384817; retry 1/3 in 6s
+2026-11-24 23:11:31,400 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494384817; retry 2/3 in 11s
+2026-11-24 23:11:47,315 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4493673839; retry 1/3 in 6s
+2026-11-24 23:11:56,342 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494398556; retry 1/3 in 7s
+2026-11-24 23:12:05,687 INFO   scraped=39, added=0, dupes=1, filtered=24 | already_seen=14, desc_fetched=8, rej_exp_too_senior=1, rej_no_java=7, rej_title=16
+2026-11-24 23:12:05,695 INFO Searching: 'java backend developer' in Delhi NCR
+2026-11-24 23:12:13,038 INFO   scraped=28, added=0, dupes=1, filtered=17 | already_seen=10, rej_title=17
+2026-11-24 23:12:13,042 INFO Searching: 'java developer' in Noida
+2026-11-24 23:12:22,258 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:12:28,508 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 2/4 in 10s
+2026-11-24 23:12:39,331 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 3/4 in 22s
+2026-11-24 23:13:15,374 INFO   scraped=82, added=0, dupes=6, filtered=44 | already_seen=32, desc_fetched=4, rej_company=3, rej_exp_out_of_range=1, rej_exp_too_senior=5, rej_no_java=3, rej_title=32
+2026-11-24 23:13:15,378 INFO Searching: 'java backend developer' in Noida
+2026-11-24 23:13:16,204 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:13:28,220 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:13:41,790 INFO   scraped=62, added=0, dupes=2, filtered=31 | already_seen=29, rej_company=2, rej_title=29
+2026-11-24 23:13:41,796 INFO Searching: 'java developer' in Gurugram
+2026-11-24 23:13:45,254 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:14:05,357 WARNING [linkedin] HTTP 429 for //www.linkedin.com/jobs-guest/jobs/api/jobPosting/4487015143; retry 1/3 in 7s
+2026-11-24 23:14:13,264 INFO   scraped=79, added=0, dupes=5, filtered=42 | already_seen=32, desc_fetched=1, rej_company=3, rej_exp_out_of_range=1, rej_exp_too_senior=5, rej_title=33
+2026-11-24 23:14:13,270 INFO Searching: 'java backend developer' in Gurugram
+2026-11-24 23:14:26,998 INFO   scraped=62, added=0, dupes=2, filtered=30 | already_seen=30, rej_company=2, rej_title=28
+2026-11-24 23:14:27,002 INFO Searching: 'java developer' in Ahmedabad
+2026-11-24 23:14:30,197 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:14:41,067 INFO   scraped=29, added=0, dupes=0, filtered=18 | already_seen=11, rej_company=1, rej_exp_too_senior=2, rej_title=15
+2026-11-24 23:14:41,070 INFO Searching: 'java backend developer' in Ahmedabad
+2026-11-24 23:14:44,313 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:14:54,125 INFO   scraped=28, added=0, dupes=0, filtered=16 | already_seen=12, rej_title=16
+2026-11-24 23:14:54,131 INFO Searching: 'java developer' in Hyderabad
+2026-11-24 23:15:16,067 INFO   scraped=113, added=1, dupes=13, filtered=80 | already_seen=19, desc_fetched=4, rej_company=15, rej_exp_out_of_range=2, rej_exp_too_senior=14, rej_title=49
+2026-11-24 23:15:16,072 INFO Searching: 'java backend developer' in Hyderabad
+2026-11-24 23:15:21,195 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:15:31,300 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 7s
+2026-11-24 23:15:42,449 INFO   scraped=63, added=0, dupes=0, filtered=41 | already_seen=22, rej_company=7, rej_exp_too_senior=1, rej_title=33
+2026-11-24 23:15:42,454 INFO Searching: 'java developer' in India
+2026-11-24 23:15:47,222 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:15:55,370 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:16:06,292 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:16:13,921 INFO   scraped=60, added=0, dupes=0, filtered=28 | already_seen=32, rej_company=3, rej_location=4, rej_title=21
+2026-11-24 23:16:13,927 INFO Searching: 'java backend developer' in India
+2026-11-24 23:16:14,346 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:16:25,440 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 6s
+2026-11-24 23:16:38,132 WARNING [linkedin] HTTP 429 for w.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search; retry 1/4 in 5s
+2026-11-24 23:16:45,623 INFO   scraped=60, added=0, dupes=0, filtered=34 | already_seen=26, rej_company=1, rej_location=5, rej_title=28
+2026-11-24 23:16:45,632 INFO [adzuna] Searching: 'java developer 2 years experience' in India
+2026-11-24 23:16:46,580 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:16:46,584 INFO [adzuna] Searching: 'java developer 1 year experience' in India
+2026-11-24 23:16:47,710 INFO   [adzuna] scraped=2, added=0, dupes=0, filtered=2
+2026-11-24 23:16:47,714 INFO [adzuna] Searching: 'junior java developer' in India
+2026-11-24 23:16:48,551 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:16:48,555 INFO [adzuna] Searching: 'java developer entry level' in India
+2026-11-24 23:16:49,396 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:16:49,399 INFO [adzuna] Searching: 'SDE 1 java' in India
+2026-11-24 23:16:50,220 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:16:50,224 INFO [adzuna] Searching: 'SDE-1 java' in India
+2026-11-24 23:16:51,070 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:16:51,075 INFO [adzuna] Searching: 'associate software engineer java' in India
+2026-11-24 23:16:51,907 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:16:51,913 INFO [adzuna] Searching: 'java software engineer' in India
+2026-11-24 23:16:55,260 INFO   [adzuna] scraped=23, added=2, dupes=4, filtered=17
+2026-11-24 23:16:55,269 INFO [adzuna] Searching: 'java programmer' in India
+2026-11-24 23:16:57,247 INFO   [adzuna] scraped=4, added=1, dupes=1, filtered=2
+2026-11-24 23:16:57,255 INFO [adzuna] Searching: 'java spring boot developer' in India
+2026-11-24 23:16:58,966 INFO   [adzuna] scraped=14, added=2, dupes=0, filtered=12
+2026-11-24 23:16:58,973 INFO [adzuna] Searching: 'java microservices developer' in India
+2026-11-24 23:16:59,972 INFO   [adzuna] scraped=3, added=0, dupes=1, filtered=2
+2026-11-24 23:16:59,979 INFO [adzuna] Searching: 'java backend engineer' in India
+2026-11-24 23:17:02,557 INFO   [adzuna] scraped=6, added=0, dupes=3, filtered=3
+2026-11-24 23:17:02,563 INFO [adzuna] Searching: 'java rest api developer' in India
+2026-11-24 23:17:03,856 INFO   [adzuna] scraped=2, added=0, dupes=1, filtered=1
+2026-11-24 23:17:03,861 INFO [adzuna] Searching: 'java developer' in Bengaluru
+2026-11-24 23:17:06,037 INFO   [adzuna] scraped=15, added=1, dupes=4, filtered=10
+2026-11-24 23:17:06,045 INFO [adzuna] Searching: 'java backend developer' in Bengaluru
+2026-11-24 23:17:07,153 INFO   [adzuna] scraped=2, added=0, dupes=1, filtered=1
+2026-11-24 23:17:07,163 INFO [adzuna] Searching: 'java developer' in Pune
+2026-11-24 23:17:07,997 INFO   [adzuna] scraped=4, added=0, dupes=0, filtered=4
+2026-11-24 23:17:08,000 INFO [adzuna] Searching: 'java backend developer' in Pune
+2026-11-24 23:17:08,855 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 23:17:08,860 INFO [adzuna] Searching: 'java developer' in Mumbai
+2026-11-24 23:17:10,976 INFO   [adzuna] scraped=6, added=1, dupes=2, filtered=3
+2026-11-24 23:17:10,982 INFO [adzuna] Searching: 'java backend developer' in Mumbai
+2026-11-24 23:17:11,833 INFO   [adzuna] scraped=1, added=0, dupes=0, filtered=1
+2026-11-24 23:17:11,837 INFO [adzuna] Searching: 'java developer' in Delhi NCR
+2026-11-24 23:17:12,668 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:17:12,675 INFO [adzuna] Searching: 'java backend developer' in Delhi NCR
+2026-11-24 23:17:13,541 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:17:13,549 INFO [adzuna] Searching: 'java developer' in Noida
+2026-11-24 23:17:14,416 INFO   [adzuna] scraped=2, added=0, dupes=0, filtered=2
+2026-11-24 23:17:14,427 INFO [adzuna] Searching: 'java backend developer' in Noida
+2026-11-24 23:17:15,261 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:17:15,269 INFO [adzuna] Searching: 'java developer' in Gurugram
+2026-11-24 23:17:16,145 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:17:16,152 INFO [adzuna] Searching: 'java backend developer' in Gurugram
+2026-11-24 23:17:17,033 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:17:17,040 INFO [adzuna] Searching: 'java developer' in Ahmedabad
+2026-11-24 23:17:18,468 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:17:18,473 INFO [adzuna] Searching: 'java backend developer' in Ahmedabad
+2026-11-24 23:17:19,407 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:17:19,411 INFO [adzuna] Searching: 'java developer' in Hyderabad
+2026-11-24 23:17:21,090 INFO   [adzuna] scraped=15, added=0, dupes=1, filtered=14
+2026-11-24 23:17:21,098 INFO [adzuna] Searching: 'java backend developer' in Hyderabad
+2026-11-24 23:17:21,959 INFO   [adzuna] scraped=0, added=0, dupes=0, filtered=0
+2026-11-24 23:17:21,963 INFO [adzuna] Searching: 'java developer' in India
+2026-11-24 23:17:28,685 INFO   [adzuna] scraped=50, added=2, dupes=10, filtered=38
+2026-11-24 23:17:28,690 INFO [adzuna] Searching: 'java backend developer' in India
+2026-11-24 23:17:29,796 INFO   [adzuna] scraped=6, added=0, dupes=1, filtered=5
+2026-11-24 23:17:29,808 INFO === Stage totals: added=3, adzuna_rej_company=7, adzuna_rej_exp_out_of_range=9, adzuna_rej_exp_too_senior=17, adzuna_rej_location=1, adzuna_rej_no_java=20, adzuna_rej_title=64, already_seen=1045, desc_fetched=36, dupes=147, rej_company=141, rej_exp_out_of_range=31, rej_exp_too_senior=168, rej_location=104, rej_no_java=10, rej_title=1040, scraped=2689 ===
+2026-11-24 23:17:42,790 INFO === Done. Total new jobs added: 12 ===
+2026-11-24 23:17:43 [runscraper] run_scraper.py exit code 0
+2026-11-25 01:00:14 [runscraper] starting run_scraper.py -> https://job-tracker-g8bx.onrender.com
